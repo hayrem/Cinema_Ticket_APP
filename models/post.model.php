@@ -10,6 +10,5 @@ function createUser(string $userName, string $email,string $password, string $co
         ':password' => $password,
         ':confirm_password' => $confirmPassword
     ]);
-
     return $statement->rowCount() > 0;
 }
