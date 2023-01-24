@@ -1,5 +1,5 @@
 <?php
-require "head.php"
+        require "head.php"
 ?>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
@@ -180,13 +180,13 @@ require "head.php"
                     <a class="<?= urlIs('/') ? 'active bg-dark text-white' : '' ?> nav-link" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="<?= urlIs('/post') ? 'active bg-dark text-white' : '' ?> nav-link" href="/movie">MOVIE</a>
+                    <a class="<?= urlIs('/movie') ? 'active bg-dark text-white' : '' ?> nav-link" href="/movie">MOVIE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="<?= urlIs('/post') ? 'active bg-dark text-white' : '' ?> nav-link" href="/cinema">CINEMA</a>
+                    <a class="<?= urlIs('/cinema') ? 'active bg-dark text-white' : '' ?> nav-link" href="/cinema">CINEMA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="<?= urlIs('/post') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
+                    <a class="<?= urlIs('/ticket') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
                 </li>
             </ul>
         </div>
