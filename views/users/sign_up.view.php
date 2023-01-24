@@ -32,7 +32,6 @@ require("../partials/head.php");
                             <label class="form-label" for="form2Example17">Email</label>
                             <input type="email" id="form2Example17" class="form-control" />
                         </div>
-            
 
                         <div class="form-outline mb-2">
                             <label class="form-label" for="form2Example27">Password</label>
