@@ -43,7 +43,6 @@ require "../partials/head.php";
                   <a href="#!" class="small text-muted">Terms of use.</a>
                   <a href="#!" class="small text-muted">Privacy policy</a>
                 </form>
-
               </div>
             </div>
           </div>
