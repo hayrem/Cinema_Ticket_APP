@@ -1,7 +1,3 @@
-<?php
-        require "head.php"
-?>
-
 <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -176,7 +172,7 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
+                <li class="nav-item active"> 
                     <a class="<?= urlIs('/') ? 'active bg-dark text-white' : '' ?> nav-link" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
