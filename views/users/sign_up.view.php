@@ -45,7 +45,7 @@ require("../partials/head.php");
 
                         <div class="form-outline mb-2">
                             <input type="checkbox"/>
-                            <label class="form-label" >remember me</label>
+                            <label class="form-label" >Remember Me</label>
                         </div>
 
                         <div>
