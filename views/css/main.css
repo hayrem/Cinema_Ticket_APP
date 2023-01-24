@@ -53,14 +53,6 @@ body{
   }
 
   
-  .sub-menu.navbar-light .navbar-nav .active > .nav-link,
-  .sub-menu.navbar-light .navbar-nav .nav-link.active,
-  .sub-menu.navbar-light .navbar-nav .nav-link.show,
-  .sub-menu.navbar-light .navbar-nav .show > .nav-link {
-    border-bottom: 3px solid #007bff;
-    color: #007bff;
-  }
-  
   .navbar .navbar-toggler {
     border: none;
   }

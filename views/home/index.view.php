@@ -1,8 +1,9 @@
 <?php
-require "../partials/head.php";
-require "../partials/nav.php";
-require "../partials/banner.php";
+require "views/partials/head.php";
+require "views/partials/nav.php";
+require "views/partials/banner.php";
 ?>
+
 
 <!-- insert home page -->
 <div class="container-fluid mb-4">
@@ -56,4 +57,4 @@ require "../partials/banner.php";
 </div>
 
 
-<?php require "../partials/footer.php" ?>
+<?php require "views/partials/footer.php" ?>
