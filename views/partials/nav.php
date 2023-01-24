@@ -177,16 +177,16 @@ require "head.php"
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">HOME</a>
+                    <a class="<?= urlIs('/') ? 'active bg-dark text-white' : '' ?> nav-link" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MOVIE</a>
+                    <a class="<?= urlIs('/post') ? 'active bg-dark text-white' : '' ?> nav-link" href="/movie">MOVIE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CINEMA</a>
+                    <a class="<?= urlIs('/post') ? 'active bg-dark text-white' : '' ?> nav-link" href="/cinema">CINEMA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">TICKET</a>
+                    <a class="<?= urlIs('/post') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
                 </li>
             </ul>
         </div>
