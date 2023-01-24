@@ -1,4 +1,5 @@
 <?php
+
 function getMovie() : array
 {
     global $connection;
@@ -9,5 +10,7 @@ function getMovie() : array
 }
 ?>
 // example if we use it 
- <?= $row['title'] 
- ?> 
+<?= $row['title'] ?> 
+
+
+
