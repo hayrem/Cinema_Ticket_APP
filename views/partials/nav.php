@@ -61,16 +61,16 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Movie</a>
+                    <a class="nav-link" href="#">MOVIE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cinema</a>
+                    <a class="nav-link" href="#">CINEMA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ticket</a>
+                    <a class="nav-link" href="#">TICKET</a>
                 </li>
             </ul>
         </div>

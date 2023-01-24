@@ -7,7 +7,7 @@
                     </div>
                     <div class="col-sm-3  my-sm-0 mt-5">
                         <ul class="list-unstyled">
-                            <h4>MOVIE</h4>
+                            <h5>MOVIE</h5>
                             <li>New showing</li>
                             <li>Cinemas</li>
                             <li>Coming soon</li>
@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-sm-3  my-sm-0 mt-5">
                         <ul class="list-unstyled">
-                            <h4>SYSTEM TYPE</h4>
+                            <h5>SYSTEM TYPE</h5>
                             <li>4DX</li>
                             <li>IMAX</li>
                             <li>KIDS CINEMA</li>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-sm-3  my-sm-0 mt-5">
                         <ul class="list-unstyled">
-                            <h4>MOVIE LINE</h4>
+                            <h5>MOVIE LINE</h5>
                             <li class="mt-0">098-999-123</li>
                             <li></li>
                             <li></li>

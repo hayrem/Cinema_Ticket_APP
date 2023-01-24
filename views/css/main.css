@@ -20,7 +20,6 @@ body{
   
   .btn {
     font-size: 1rem;
-    /* padding: 0.5rem 0.75rem; */
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
@@ -76,12 +75,9 @@ body{
   
 
   section {
-    /* padding: 6rem; */
     height: 60vh;
     background: #e4e4e4;
-    margin-bottom: 15%;
-    position: relative;
-    /* z-index: 1; */
+    margin-bottom: 10%;
   }
   
   /* search bar */
@@ -173,7 +169,7 @@ h3{
 .card{
     background: #000;
     /* border: rgb(68, 50, 50) solid 1px; */
-    height: 60vh;
+    height: 70vh;
 
 }
 
