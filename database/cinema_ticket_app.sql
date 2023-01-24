@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2023 at 07:22 AM
+-- Generation Time: Jan 24, 2023 at 08:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -88,19 +88,20 @@ CREATE TABLE `movies` (
   `duration` time NOT NULL,
   `released` year(4) NOT NULL,
   `language` varchar(50) NOT NULL,
-  `description` varchar(225) NOT NULL
+  `description` varchar(225) NOT NULL,
+  `image` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `movies`
 --
 
-INSERT INTO `movies` (`movie_id`, `title`, `genre`, `country`, `duration`, `released`, `language`, `description`) VALUES
-(1, 'Streets of Blood', 'Zamboniari', 'Cambodia', '01:33:00', 2022, 'Tetum', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.'),
-(2, 'Wild Oranges', 'Born', 'Cambodia', '11:01:00', 2020, 'Guaraní', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sap'),
-(3, 'We Own the Night', 'Occleshaw', 'Cambodia', '08:39:00', 2022, 'Kyrgyz', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.'),
-(4, 'Films to Keep You Awake: The Baby\'s Room (Película', 'Lynde', 'Cambodia', '12:23:00', 2022, 'Northern Sotho', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.'),
-(5, 'Dragon Ball Z the Movie: The Tree of Might (Dorago', 'Ney', 'Cambodia', '10:40:00', 2022, 'Bislama', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipis');
+INSERT INTO `movies` (`movie_id`, `title`, `genre`, `country`, `duration`, `released`, `language`, `description`, `image`) VALUES
+(1, 'Streets of Blood', 'Zamboniari', 'Cambodia', '01:33:00', 2022, 'Tetum', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
+(2, 'Wild Oranges', 'Born', 'Cambodia', '11:01:00', 2020, 'Guaraní', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sap', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
+(3, 'We Own the Night', 'Occleshaw', 'Cambodia', '08:39:00', 2022, 'Kyrgyz', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
+(4, 'Films to Keep You Awake: The Baby\'s Room (Película', 'Lynde', 'Cambodia', '12:23:00', 2022, 'Northern Sotho', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
+(5, 'Dragon Ball Z the Movie: The Tree of Might (Dorago', 'Ney', 'Cambodia', '10:40:00', 2022, 'Bislama', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipis', 'https://res.cloudinary.com/demo/image/upload/sample.jpg');
 
 -- --------------------------------------------------------
 
