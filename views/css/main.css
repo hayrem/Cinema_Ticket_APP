@@ -186,3 +186,8 @@ h3{
 .mt-dialog{
     margin-top: 25px;
 }
+
+.bg-img{
+    display: flex;
+    align-items: center;
+}
