@@ -2,9 +2,9 @@
 
 $heading = "Home page";
 
-// require "models/post.model.php";
+require "models/movie.model.php";
 
-// $posts = getPosts();
+$shows =  getMovie($tilte,$duration,$released,$image);
 
 require "views/home/index.view.php";
 
