@@ -23,19 +23,18 @@ require "head.php"
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content  w-100px">
 
-                                    <div class="modal-body d-flex">
+                                    <div class="modal-body d-flex mt-dialog">
 
                                         <div class="col-md-6 col-lg-5 d-none d-md-block ">
-                                            <img src="https://images-na.ssl-images-amazon.com/images/I/6138vGyCo2L._AC_UL900_SR615,900_.jpg" alt="login form" class="img-fluid" />
+                                            <img src="https://images-na.ssl-images-amazon.com/images/I/6138vGyCo2L._AC_UL900_SR615,900_.jpg"  alt="login form" class="img-fluid" />
                                         </div>
                                         <div class="col-md-6 col-lg-7 ">
                                             <div class="card-body p-4 p-lg-5 text-white">
+                                                <div class="d-flex  mb-4">
+                                                    <h3>Sign In</h3>
+                                                </div>
 
                                                 <form>
-
-                                                    <div class="d-flex  mb-3 pb-1">
-                                                        <h3>Sign In</h3>
-                                                    </div>
 
                                                     <div class="form-outline mb-4">
                                                         <label class="form-label d-flex justify-content-start" >Email address</label>

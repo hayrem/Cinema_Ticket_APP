@@ -69,10 +69,10 @@ body{
     outline: none;
   }
   
-  .navbar {
-    /* padding: 1rem; */
-  }
-  
+    /* .navbar {
+        padding: 1rem;
+    }
+        */
 
   section {
     height: 60vh;
@@ -168,7 +168,6 @@ h3{
 /* card style */
 .card{
     background: #000;
-    /* border: rgb(68, 50, 50) solid 1px; */
     height: 70vh;
 
 }
@@ -176,11 +175,14 @@ h3{
 .container-fluid {
     height: auto;
     padding: 0px 65px 0px 60px;
-    /* background: #000; */
 
 }
 
 .w-100px{
     margin-top: 0;
-    background: #000;
+    background: rgb(37, 36, 36);
+    /* background: white; */
+}
+.mt-dialog{
+    margin-top: 25px;
 }

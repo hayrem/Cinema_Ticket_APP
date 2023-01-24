@@ -6,10 +6,10 @@ require("../partials/head.php");
 <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
-            <div class="card" style="border-radius: 1rem;">
+            <div class="card">
                 <div class="row g-0" style="background-color: #000000;">
-                    <div class="col-md-6 col-lg-5 d-none d-md-block">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/6138vGyCo2L._AC_UL900_SR615,900_.jpg" alt="login form" class="img-fluid" />
+                    <div class="mt-4 bg-danger">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/6138vGyCo2L._AC_UL900_SR615,900_.jpg"/>
                     </div>
                     <div class="col-md-6 col-lg-7 d-flex align-items-center">
                         <div class="card-body p-4 p-lg-5 text-white">
