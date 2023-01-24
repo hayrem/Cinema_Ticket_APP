@@ -2,7 +2,7 @@
 
 $heading = "Home page";
 
-require "models/post.model.php";
+// require "models/post.model.php";
 
 // $posts = getPosts();
 
