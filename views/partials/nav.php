@@ -13,6 +13,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item ml-md-3">
                     <div class="btn btn-primary">
+                        <!-- login modal -->
                         <a href="#" class="text-white" data-toggle="modal" data-target="#login-modal"> Log In / </a>
                         <!-- Modal login -->
                         <div class="modal fade " id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,13 +73,13 @@
                         <a href="" class="text-white" data-toggle="modal" data-target="#register"> Register</a>
 
                         <div class="modal fade " id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content  w-100px">
+                            <div class="modal-dialog modal-lg ">
+                                <div class="modal-content  p-0 w-100px">
 
-                                    <div class="modal-body d-flex mt-dialog">
+                                    <div class="modal-body d-flex ">
 
                                         <div class="bg-img">
-                                            <img src="https://images-na.ssl-images-amazon.com/images/I/6138vGyCo2L._AC_UL900_SR615,900_.jpg" alt="login form"  width="100%" />
+                                            <img src="https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg" alt="login form"  width="100%" />
                                         </div>
                                         <div class="col-md-6 col-lg-7 ">
                                             <div class="card-body p-4 p-lg-5 text-white">
@@ -113,7 +114,7 @@
                                                     </div>
 
                                                     <p class="mb-5 pb-lg-2 text-white d-flex justify-content-start" style="color: #393f81;">Have an account? <a href="./sign_up.view.php" style="color: #dc3545;">Sign In</a></p>
-                                                    <div class="pt-1 mb-4">
+                                                    <div class="pt-1 mb-2">
                                                         <button class="form-control form-control-lg text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Sign Up</button>
                                                     </div>
 
@@ -176,16 +177,16 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active"> 
-                    <a class="<?= urlIs('/') ? 'active bg-dark text-white' : '' ?> nav-link" href="/">HOME</a>
+                <li class="nav-item me-4"> 
+                    <a class="<?= urlIs('/') ? 'active bg-dark text-white ' : '' ?> nav-link" href="/">HOME</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item me-4">
                     <a class="<?= urlIs('/movie') ? 'active bg-dark text-white' : '' ?> nav-link" href="/movie">MOVIE</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item me-4">
                     <a class="<?= urlIs('/cinema') ? 'active bg-dark text-white' : '' ?> nav-link" href="/cinema">CINEMA</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item me-4">
                     <a class="<?= urlIs('/ticket') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
                 </li>
             </ul>

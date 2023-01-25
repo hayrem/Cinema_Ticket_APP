@@ -1,3 +1,4 @@
+<!-- 
 
 
     <div class="container py-5 h-100" >
@@ -15,7 +16,7 @@
                     <form>
 
                     <div class="d-flex align-items-center mb-3 pb-1" >
-                        <!-- <i class="fas fa-cubes fa-2x me-3" style="color: #ffffff;"></i> -->
+                        
                         <span class="h1 fw-bold mb-0">Sign In</span>
                     </div>
 
@@ -32,7 +33,7 @@
                         <input type="password" id="form2Example27" class="form-control form-control-lg" />
                     </div>
 
-                    <!-- Checkbox -->
+                   
                     <div class="form-check d-flex justify-content-start mb-4">
                         <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
                         <label class="form-check-label" for="form1Example3"> Remember me! </label>
@@ -51,4 +52,8 @@
             </div>
         </div>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+    </div> -->
+>>>>>>> f9950a5036fc515b54a51d78f0b7e7242dc3daaa

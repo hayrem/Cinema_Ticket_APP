@@ -1,16 +1,25 @@
-<?php
 
-function getMovie() : array
+<?php
+// require "../database/database.php";
+function getMovie(string $title,int $duration, int $released,string $image) : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from movies");
-    $statement->execute();
-    $result = $statement->get_result();
-    return ($row = $result->fetch_assoc());
+    $statement = $connection->prepare("select * from movies where title = :title, duration = :duration, released = :released, image = :image");
+    $statement->execute(
+        [
+            ":title" => $title,
+            ":duration" => $duration,
+            ":released" => $released,
+            ":image" => $image
+        ]
+    );
+    return $statement->fetch();
 }
-?>
-// example if we use it 
-<?= $row['title'] ?> 
+
+// $shows =  getMovie($tilte,$duration,$released,$image);
 
 
-
+// foreach($shows as $show){
+//     echo  $shpw['title'];
+// }
+?>  

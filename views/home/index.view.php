@@ -1,3 +1,9 @@
+<?php
+require "views/partials/head.php";
+require "views/partials/nav.php";
+require "views/partials/banner.php";
+?>
+
 
 <!-- insert home page -->
 <div class="container-fluid mb-4">
@@ -6,14 +12,19 @@
 <!-- <h3>Show</h3> -->
 <div class="container-fluid d-flex flex-wrap">
 
+    <?php foreach ($shows as $show): ?>
+
     <div class="card me-3" style="width: 14rem;">
         <img src="https://i.ebayimg.com/images/g/dxAAAOSw071iK6QC/s-l500.jpg" width="20%" height="70%" class="card-img-top" >
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">2023 : 2h:10nm</p>
+            <h5 class="card-title"><?= $show['titile']?></h5>
+            <p class="card-text"> <?= $show['released']?>.<? $show ['duration']?></p>
             <a href="#" class="btn btn-danger">Booking</a>
         </div>
     </div>
+
+    <?php endforeach;?>
+
     <div class="card  me-3" style="width: 14rem;">
         <img src="https://bst.icons8.com/wp-content/themes/icons8/app/uploads/2019/05/poster-for-movie.png" width="20%" height="70%" class="card-img-top" >
         <div class="card-body">
@@ -51,3 +62,4 @@
 </div>
 
 
+<?php require "views/partials/footer.php" ?>
