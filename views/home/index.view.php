@@ -14,7 +14,7 @@ require "views/partials/banner.php";
 
     <?php foreach ($shows as $show): ?>
 
-    <div class="card me-3" style="width: 16rem;">
+    <div id=<?php echo $show['movie_id'];?>class="card me-3" style="width: 16rem;">
         <img src=" <?php  echo $show['image'];?> " width="20%" height="70%" class="card-img-top" >
         <div class="card-body" height="30%">
             <h6 class="card-title"><?= $show['title']?></h6>
@@ -27,6 +27,5 @@ require "views/partials/banner.php";
 
     <?php endforeach;?>
 </div>
-
 
 <?php require "views/partials/footer.php" ?>
