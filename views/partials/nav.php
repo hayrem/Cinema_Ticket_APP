@@ -29,7 +29,26 @@
 
     </div>
 </nav>
-
+<nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item me-4"> 
+                    <a class="<?= urlIs('/') ? 'active bg-dark text-white ' : '' ?> nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="<?= urlIs('/movie') ? 'active bg-dark text-white' : '' ?> nav-link" href="/movie">MOVIE</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="<?= urlIs('/cinema') ? 'active bg-dark text-white' : '' ?> nav-link" href="/cinema">CINEMA</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="<?= urlIs('/ticket') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
