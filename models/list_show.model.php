@@ -16,10 +16,9 @@ function getDetailMovie(int $getId) : array
     if(isset($_GET['movie_id'])){
         global $connection;
         $statement = $connection->prepare("select * from movies where movie_id = :movie_id");
-        $statement->execute([':id' => $getId]);
+        $statement->execute([':movie_id' => $getId]);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 
-$movies=getDetailMovie($getId)
 ?>
