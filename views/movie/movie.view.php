@@ -61,7 +61,7 @@
         <div class="card  m-2" style="width: 15rem;">
             <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="20%" height="70%" class="card-img-top" >
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Black Adam</h5>
                 <p class="card-text">2023 : 2h:10nm</p>
                 <a href="#" class="btn btn-danger">Booking</a>
             </div>
