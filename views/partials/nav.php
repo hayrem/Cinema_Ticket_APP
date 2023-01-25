@@ -1,6 +1,4 @@
-<div class="container-fluid text-white bg-danger p-0">
-
-
+<div class="container-fluid text-white bg-danger p-0 ">
 <nav class="navbar navbar-expand-md navbar-light  main-menu">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">

@@ -6,20 +6,15 @@
 ?>
 
 <div class="login d-flex justify-content-center align-items-center vh-100 text-white">
-    	
+	<!-- <div class="img  w-25">
+		<img src="../../assets/login.svg" width="100%" alt="">
+	</div> -->
     	<form class="shadow w-450" 
     	      action="" 
     	      method="post">
 
     		<h4 class="display-4  fs-1">Create Account</h4><br>
-    		
-        
-
-		 
-    		<!-- <div class="alert alert-success" role="alert">
-			 
-			</div> -->
-		   
+		<!-- <label for=""></label> -->
 		  <div class="mb-3">
 		    <label class="form-label">Username</label>
 		    <input type="text" 
@@ -53,8 +48,8 @@
 			<span style="color:red;"><?= $comfirm_password_err ?></span>
 		  </div>
             <div class="d-flex">
-                <p>Have an acoount</p>
-                <a href="sign_in.view.php" class="link-secondary ms-2">Login</a>
+				<label class="form-label">Hav an Account</label>
+                <a href="sign_in.view.php" class="link-secondary ms-2 text-primary">Login</a>
             </div>
 		  <div class="contain-btn">
               <button type="submit" class="btn btn-danger">Sign Up</button>

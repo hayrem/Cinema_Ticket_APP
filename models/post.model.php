@@ -12,3 +12,12 @@ function createUser(string $userName, string $email,string $password, string $co
     ]);
     return $statement->rowCount() > 0;
 }
+
+function getUserAccount(string $email,string $password)
+{
+    global $connection;
+    $sql = "SELECT * FROM users WHERE user_name='$email' AND password='$password'";
+
+	$stmt = $$connection->prepare($sql);
+	$stmt ->execute();
+}

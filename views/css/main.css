@@ -1,5 +1,5 @@
 /* navbar style */
-@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap'); */
 body{
     height: auto;
     /* background:#7E1616; */
@@ -49,9 +49,7 @@ body{
   .active{
     border-radius: 10px;
   }
-  .text-white{
-    border-radius: 10px;
-  }
+ 
   /* Extra large devices (large desktops, 1200px and up) */
    @media (min-width: 1200px) {
     .form-inline .form-control {
@@ -60,19 +58,6 @@ body{
     }
   }
 
-  
-  .navbar .navbar-toggler {
-    border: none;
-  }
-  
-  .navbar-light .navbar-toggler:focus {
-    outline: none;
-  }
-  
-    /* .navbar {
-        padding: 1rem;
-    }
-        */
 
   section {
     height: 60vh;
@@ -169,7 +154,9 @@ h3{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 }
-
+.container-card{
+  gap: 23px;
+}
 .container-fluid {
     height: auto;
     padding: 0px 65px 0px 60px;
@@ -197,7 +184,7 @@ h3{
 .w-450 {
 	width: 500px;
   border-radius: 10px;
-  background: rgb(119, 93, 93);
+  background: rgb(10, 5, 5);
   padding: 30px;
 }
 .vh-100 {
@@ -205,7 +192,6 @@ h3{
 }
 
 .contain-cienma{
- 
   /* background:#DC2026; */
   height: 40vh;
   border-radius: 10px;
@@ -217,6 +203,12 @@ h3{
 }
 .contain-btn{
   margin-top: 10%;
-  /* height: 10vh; */
-  /* background: #000; */
+
 }
+
+.container-nav{
+  background: #000;
+}
+
+
+

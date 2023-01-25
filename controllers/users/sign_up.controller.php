@@ -15,7 +15,11 @@ function testInput($data): string
   
 }
 if ($_SERVER["REQUEST_METHOD"] === "POST")
-{
+
+{   
+    // require database connection
+    require "../../database/database.php";
+
     $name = testInput($_POST["fname"]);
     $password = testInput($_POST["pass"]);
     $comfirm_password = testInput($_POST["comfirm-pass"]);
@@ -58,7 +62,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     }
     if ($name_err==="" && $password_err==='' && $email_err===''  && $comfirm_password_err==='')
     {
-        header('Location:../../index.php');
+       //incript password
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        // insert data into database
+    	$sql = "INSERT INTO users(user_name, email, password,confirm_password) 
+    	        VALUES(?,?,?,?)";
+    	$stmt = $connection->prepare($sql);
+    	$stmt->execute([$name, $email, $password,$comfirm_password]);
+
+    	// header("Location: ../../index.php?success=Your account has been created successfully");
+	    // exit;
+        header("location: ../../index.php");
+        
 
     }
 }
