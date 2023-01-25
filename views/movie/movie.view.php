@@ -1,9 +1,9 @@
 <?php
-    require "../partials/head.php";
-    require "../partials/nav.php";
+    require "views/partials/head.php";
+    require "views/partials/nav.php";
 ?>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="card m-3 d-flex flex-lg-row" >
             <img src="images/cat.png" class="card-img-top" style="width: 15rem;">
             <div class="card-body">
@@ -23,58 +23,29 @@
                 <a href="#" class="btn btn-danger">Booking</a>
               </div>
         </div>
-    </div>
-    <h2 class="container-fluid p-2" style="color: white;">Treding</h2>
-    <div class="container-fluid d-flex flex-wrap">
-        <div class="card  m-2" style="width: 15rem;">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="30%" height="70%" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">2023 : 2h:10nm</p>
-                <a href="#" class="btn btn-danger">Booking</a>
-            </div>
-        </div>
-        <div class="card  m-2" style="width: 15rem;">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="20%" height="70%" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">2023 : 2h:10nm</p>
-                <a href="#" class="btn btn-danger">Booking</a>
-            </div>
-        </div>
-        <div class="card  m-2" style="width: 15rem;">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="20%" height="70%" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">2023 : 2h:10nm</p>
-                <a href="#" class="btn btn-danger">Booking</a>
-            </div>
-        </div>
-        <div class="card  m-2" style="width: 15rem;">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="20%" height="70%" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">2023 : 2h:10nm</p>
-                <a href="#" class="btn btn-danger">Booking</a>
-            </div>
-        </div>
-        <div class="card  m-2" style="width: 15rem;">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="20%" height="70%" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title">Black Adam</h5>
-                <p class="card-text">2023 : 2h:10nm</p>
-                <a href="#" class="btn btn-danger">Booking</a>
-            </div>
-        </div>
-        <div class="card  m-2" style="width: 15rem;">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/p_blackwidow_21043_v2_6d1b73b8.jpeg" width="20%" height="70%" class="card-img-top" >
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">2023 : 2h:10nm</p>
-                <a href="#" class="btn btn-danger">Booking</a>
+    </div> -->
+   <!-- insert home page -->
+<div class="container-fluid mb-4">
+    <h2>Movies</h2>
+</div>
+<!-- <h3>Show</h3> -->
+<div class="container-fluid d-flex flex-wrap" >
+
+    <?php foreach ($shows as $show): ?>
+
+    <div class="card me-3" style="width: 16rem;" id='<?php echo $show['movie_id']?>'>
+        <img src=" <?php  echo $show['image'];?> " width="20%" height="70%" class="card-img-top" >
+        <div class="card-body" height="30%">
+            <h6 class="card-title"><?= $show['title']?></h6>
+            <div class='d-flex justify-content-between align-items-center' >
+                <p class="card-text"> <?= $show['released'] . ' ' . $show ['duration'].'s'?></p>
+                <a href="#" class="btn btn-danger">Booking</a>  
             </div>
         </div>
     </div>
+
+    <?php endforeach;?>
+</div>
 
 </div>
 
