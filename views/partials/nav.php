@@ -13,14 +13,14 @@
             <ul class="navbar-nav">
                 <li class="nav-item ml-md-3">
                     <div class="btn btn-primary">
+                        <!-- <login -->
                         <a href="views/users/sign_in.view.php" class="text-white"> Log In / </a>
-                        <!-- Modal login -->
                       
-                        <!-- register modal -->
+                        <!-- register  -->
                         <a href="views/users/sign_up.view.php" class="text-white"> Register</a>
                         
                     </li>
-                    <!-- Modal manage account-->
+                    <!--  manage account-->
                     <span class="material-symbols-outlined mt-4 ms-4" data-toggle="modal" data-target="#exampleModal">account_circle </span>
                    
                 </ul>

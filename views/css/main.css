@@ -189,3 +189,18 @@ h3{
     align-items: center;
 }
 /* sing in form  */
+.btn-danger{
+    width: 100%;
+}
+
+
+.w-450 {
+	width: 500px;
+  border-radius: 10px;
+  background: rgb(119, 93, 93);
+  padding: 30px;
+}
+.vh-100 {
+	min-height: 100vh;
+}
+
