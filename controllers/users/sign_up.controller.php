@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $password = testInput($_POST["password"]);
     $comfirm_password = testInput($_POST["comfirm_password"]);
 
-    if (emty($name))
+    if (empty($name))
     {
         $name_err = 'Please enter you username';
     }
