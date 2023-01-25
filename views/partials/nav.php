@@ -6,24 +6,23 @@
 
         <div class="collapse navbar-collapse p-0">
             <form class="form-inline mx-auto d-flex ">
-                <input class="form-control " type="search" placeholder="Search for products..." aria-label="Search">
+                <input class="form-control " id="live_search" type="search" placeholder="Search for products..." aria-label="Search">
                 <button class="btn btn-success " type="submit"><span class="material-symbols-outlined">search</span></i></button>
             </form>
 
             <ul class="navbar-nav">
                 <li class="nav-item ml-md-3">
                     <div class="btn btn-primary">
-                        <a href="#" class="text-white" data-toggle="modal" data-target="#login-modal"> Log In / </a>
+                        <a href="views/users/sign_in.view.php" class="text-white"> Log In / </a>
                         <!-- Modal login -->
-                        <?php require "views/users/sign_in.view.php"; ?>
+                      
                         <!-- register modal -->
-                        <a href="" class="text-white" data-toggle="modal" data-target="#register"> Register</a>
-                        <?php require "views/users/sign_up.view.php"; ?>
+                        <a href="views/users/sign_up.view.php" class="text-white"> Register</a>
                         
                     </li>
                     <!-- Modal manage account-->
                     <span class="material-symbols-outlined mt-4 ms-4" data-toggle="modal" data-target="#exampleModal">account_circle </span>
-                    <?php require "views/users/manage_account.php"; ?>
+                   
                 </ul>
         </div>
 
