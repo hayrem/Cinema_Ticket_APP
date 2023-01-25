@@ -1,6 +1,6 @@
 <?php
-    require("views/partials/head.php");
-    require("views/partials/nav.php");
+    require("../partials/head.php");
+    require("../partials/nav.php");
 ?>
 
 
