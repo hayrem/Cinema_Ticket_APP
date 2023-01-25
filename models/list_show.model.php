@@ -1,13 +1,11 @@
 <?php
-function getMovie(int $id) : array
+require("../database/database.php");
+function getMovie() : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from movies where id = :id ");
-    $statement->execute(
-        [
-            ":id" => $id
-        ]
-    );
-    return $statement->fetchAll();
+    $statement = $connection->prepare("select title,released, duration from movies");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+$shows=getMovie();
 ?>
