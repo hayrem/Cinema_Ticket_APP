@@ -2,12 +2,13 @@
     require "../partials/head.php";
     require "../../utils/url.php" ;
     require "../partials/nav.php";
+    require "../../controllers/users/sign_up.controller.php";
 ?>
 
 <div class="login d-flex justify-content-center align-items-center vh-100 text-white">
     	
     	<form class="shadow w-450" 
-    	      action="php/signup.php" 
+    	      action="" 
     	      method="post">
 
     		<h4 class="display-4  fs-1">Create Account</h4><br>
@@ -25,6 +26,7 @@
 		           class="form-control"
 		           name="fname"
 		           value="">
+			<span style="color:red;"><?= $name_err ?></span>
 		  </div>
 
 		  <div class="mb-3">
@@ -33,20 +35,22 @@
 		           class="form-control"
 		           name="email"
 		           value="">
+			<span style="color:red;"><?= $email_err ?></span>
 		  </div>
 		  <div class="mb-3">
 		    <label class="form-label">Password</label>
 		    <input type="password" 
 		           class="form-control"
 		           name="pass">
+			<span style="color:red;"><?= $password_err ?></span>
 		  </div>
 
-<<<<<<< HEAD
 		  <div class="mb-3">
 		    <label class="form-label">Comfirm Password</label>
 		    <input type="password" 
 		           class="form-control"
-		           name="pass">
+		           name="comfirm-pass">
+			<span style="color:red;"><?= $comfirm_password_err ?></span>
 		  </div>
             <div class="d-flex">
                 <p>Have an acoount</p>
@@ -61,44 +65,3 @@
 <?php
     require "../partials/footer.php";
 ?>
-=======
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example17">Username</label>
-                            <input type="text" id="form2Example17" class="form-control" name="username"/>
-                        </div>
-
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example17">Email</label>
-                            <input type="email" id="form2Example17" class="form-control" name="email"/>
-                        </div>
-
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example27">Password</label>
-                            <input type="password" id="form2Example27" class="form-control" name="password" />
-                        </div>
-
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="form2Example27">Comfirm Password</label>
-                            <input type="password" id="form2Example27" class="form-control" name="comfirmPassword" />
-                        </div>
-
-                        <div class="form-outline mb-2">
-                            <input type="checkbox" name="remember"/>
-                            <label class="form-label" >Remember Me</label>
-                        </div>
-
-                        <div>
-                            <button class="form-control text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Sing Up</button>
-                        </div>
-
-                    </form>
-
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
->>>>>>> create_account
