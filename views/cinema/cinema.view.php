@@ -1,8 +1,8 @@
 <?php
-    require "views/partials/nav.php";
     require "views/partials/head.php";
+    require "views/partials/nav.php";
 ?>
-<body class="body bg-dark d-flex flex-column container">
+<!-- <body class="body bg-dark d-flex flex-column container"> -->
     <div class="card m-3 d-flex flex-lg-row" >
         <img src="../images/cinema.png" class="card-img-top" style="width: 12rem;">
         <div class="card-body">
