@@ -20,6 +20,8 @@ require "views/partials/banner.php";
             <h6 class="card-title"><?= $show['title']?></h6>
             <div class='d-flex justify-content-between align-items-center' >
                 <p class="card-text"> <?= $show['released'] . ' ' . $show ['duration'].'s'?></p>
+            </div>
+            <div>
                 <a href="#" class="btn btn-danger">Booking</a>  
             </div>
         </div>

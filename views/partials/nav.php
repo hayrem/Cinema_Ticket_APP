@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+<div class="container-fluid text-white bg-danger p-0">
+
+
+<nav class="navbar navbar-expand-md navbar-light  main-menu">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <h4 class="font-weight-bold">Logo</h4>
@@ -28,7 +31,7 @@
 
     </div>
 </nav>
-<nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
+<nav class="navbar navbar-expand-md text-white">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
@@ -48,7 +51,7 @@
         </div>
     </div>
 </nav>
-
+</div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
