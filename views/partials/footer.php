@@ -53,4 +53,5 @@
 <!-- cdn js link -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 
+<script src="views/js/main.js"></script>
 </html>
