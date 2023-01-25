@@ -1,4 +1,6 @@
-
+<?php
+require("../../controllers/users/sign_up.controller.php")
+?>
 
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -22,31 +24,31 @@
 
                         <div class="form-outline mb-2">
                             <label class="form-label" for="form2Example17">Username</label>
-                            <input type="email" id="form2Example17" class="form-control" />
+                            <input type="text" id="form2Example17" class="form-control" name="username"/>
                         </div>
 
                         <div class="form-outline mb-2">
                             <label class="form-label" for="form2Example17">Email</label>
-                            <input type="email" id="form2Example17" class="form-control" />
+                            <input type="email" id="form2Example17" class="form-control" name="email"/>
                         </div>
 
                         <div class="form-outline mb-2">
                             <label class="form-label" for="form2Example27">Password</label>
-                            <input type="password" id="form2Example27" class="form-control" />
+                            <input type="password" id="form2Example27" class="form-control" name="password" />
                         </div>
 
                         <div class="form-outline mb-2">
                             <label class="form-label" for="form2Example27">Comfirm Password</label>
-                            <input type="password" id="form2Example27" class="form-control" />
+                            <input type="password" id="form2Example27" class="form-control" name="comfirmPassword" />
                         </div>
 
                         <div class="form-outline mb-2">
-                            <input type="checkbox"/>
+                            <input type="checkbox" name="remember"/>
                             <label class="form-label" >Remember Me</label>
                         </div>
 
                         <div>
-                        <button class="form-control text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Sing Up</button>
+                            <button class="form-control text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Sing Up</button>
                         </div>
 
                     </form>
@@ -57,8 +59,5 @@
             </div>
         </div>
         </div>
-<<<<<<< HEAD
     </div>
-=======
-    </div> -->
->>>>>>> f9950a5036fc515b54a51d78f0b7e7242dc3daaa
+
