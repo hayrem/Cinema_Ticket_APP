@@ -10,6 +10,7 @@ function getMovie() : array
 $shows=getMovie();
 
 
+
 function getDetailMovie(int $getId) : array
 {
     $getId=$_GET['movie_id'];
