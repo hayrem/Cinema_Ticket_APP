@@ -167,7 +167,11 @@
 
     </div>
 </nav>
-
+<?php
+// function urlIs(string $value) { 
+//     return $_SERVER['REQUEST_URI'] === $value;
+// }
+?>
 <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">

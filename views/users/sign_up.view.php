@@ -1,6 +1,3 @@
-<?php
-require("../partials/head.php");
-?>
 
 
     <div class="container py-5 h-100">
@@ -61,7 +58,3 @@ require("../partials/head.php");
         </div>
         </div>
     </div>
-
-<?php
-    require("../partials/footer.php");
-?>
