@@ -30,4 +30,4 @@
           <a href="#" class="btn btn-danger">Show Items</a>
         </div>
     </div>
-<?php require "../partials/footer.php"; ?>
+<?php require "views/partials/footer.php"; ?>
