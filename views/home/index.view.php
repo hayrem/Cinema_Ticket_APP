@@ -2,6 +2,7 @@
 require "views/partials/head.php";
 require "views/partials/nav.php";
 require "views/partials/banner.php";
+require "models/list_show.model.php"
 ?>
 
 
@@ -15,7 +16,7 @@ require "views/partials/banner.php";
     <?php foreach ($shows as $show): ?>
 
     <div class="card me-3" style="width: 14rem;">
-        <img src="https://i.ebayimg.com/images/g/dxAAAOSw071iK6QC/s-l500.jpg" width="20%" height="70%" class="card-img-top" >
+        <img src=" <?php  echo $show['image'];?> " width="20%" height="70%" class="card-img-top" >
         <div class="card-body">
             <h5 class="card-title"><?= $show['titile']?></h5>
             <p class="card-text"> <?= $show['released']?>.<? $show ['duration']?></p>
