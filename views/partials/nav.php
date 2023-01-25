@@ -48,8 +48,10 @@
                                                         <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
                                                         <label class="form-check-label ms-3" for="form1Example3"> Remember me! </label>
                                                     </div>
-
-                                                    <p class="mb-5 pb-lg-2 text-white d-flex justify-content-start" style="color: #393f81;">Don't have an account? <a href="./sign_up.view.php" style="color: #dc3545;">Sign Up</a></p>
+                                                    <div class="d-flex">
+                                                        <p>Don't have an account?</p>
+                                                        <p class="mb-5 pb-lg-2 text-white d-flex justify-content-start ms-2" data-toggle="modal" data-target="#register" style="color: #393f81;">Sign Up</p>
+                                                    </div>
                                                     <div class="pt-1 mb-4">
                                                         <button class="form-control form-control-lg text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Login</button>
                                                     </div>
@@ -112,8 +114,11 @@
                                                         <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
                                                         <label class="form-check-label ms-3" for="form1Example3"> Remember me! </label>
                                                     </div>
-
-                                                    <p class="mb-5 pb-lg-2 text-white d-flex justify-content-start" style="color: #393f81;">Have an account? <a href="./sign_up.view.php" style="color: #dc3545;">Sign In</a></p>
+                                                    <div class="d-flex">
+                                                        <p>Have an account?</p>
+                                                        <p class="mb-5 pb-lg-2 text-white d-flex justify-content-start" data-toggle="modal" data-target="#login-modal" style="color: #393f81;">Sign In</p>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
                                                     <div class="pt-1 mb-2">
                                                         <button class="form-control form-control-lg text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Sign Up</button>
                                                     </div>
@@ -168,11 +173,7 @@
 
     </div>
 </nav>
-<?php
-// function urlIs(string $value) { 
-//     return $_SERVER['REQUEST_URI'] === $value;
-// }
-?>
+
 <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">
