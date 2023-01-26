@@ -1,7 +1,9 @@
 <?php
 
+session_start();
+
 require "models/post.model.php";
-require "database/database.php";
+
 $messageError = [];
 function validation($data): string
 {
@@ -41,25 +43,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $messageError["password"]  = 'Please enter your password more that 8 cheraters';
     }
-    if (empty($comfirm_password)) {
+    if (empty($comfirm_password)) 
+    {
         $messageError["comfirm-password"] = 'Please enter you comfirm password';
     }
-    if ($password != $comfirm_password){
+    if ($password != $comfirm_password)
+    {
         $messageError["password"] ="Password doesn't match";
         $messageError["comfirm-password"] ="Password doesn't match";
     }
-    if(empty($messageError)){
-        // echo $username;
-        // echo $email;
-        // $password = password_hash($password, PASSWORD_DEFAULT);
-        // $comfirm_password = password_hash($password, PASSWORD_DEFAULT);
-        // createUser($username,$email,$password,$comfirm_password);
+    if(empty($messageError))
+    {
+
         $password = password_hash($password, PASSWORD_DEFAULT);
-        // insert data into database
-    	$sql = "INSERT INTO users(user_name, email, password,confirm_password) 
-    	        VALUES(?,?,?,?)";
-    	$stmt = $connection->prepare($sql);
-    	$stmt->execute([$username, $email, $password,$comfirm_password]);
+        $comfirm_password = password_hash($password, PASSWORD_DEFAULT);
+        createUser($username,$email,$password,$comfirm_password);
+
+        $_SESSION = $_POST['username'];
+        header("location:/");
     }
     
 }
