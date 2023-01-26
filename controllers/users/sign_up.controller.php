@@ -1,7 +1,7 @@
 <?php
 
-require "views/users/sign_up.view.php";
 require "models/post.model.php";
+require "views/users/sign_up.view.php";
 
 $name_err="";
 $email_err="";
@@ -24,10 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     // require database connection
     require "database/database.php";
 
-    $name = testInput($_POST["fname"]);
-    $password = testInput($_POST["pass"]);
-    $comfirm_password = testInput($_POST["comfirm-pass"]);
-    $email =($_POST["email"]);
+    $name = testInput($_POST["username"]);
+    $password = testInput($_POST["password"]);
+    $comfirm_password = testInput($_POST["comfirm-password"]);
+    $email = ($_POST["email"]);
     
 
     if (empty($name))
