@@ -48,7 +48,7 @@
 			<span style="color:red;"><?= $comfirm_password_err ?></span>
 		  </div>
             <div class="d-flex">
-				<label class="form-label">Hav an Account</label>
+				<label class="form-label">Have an Account</label>
                 <a href="sign_in.view.php" class="link-secondary ms-2 text-primary">Login</a>
             </div>
 		  <div class="contain-btn">
