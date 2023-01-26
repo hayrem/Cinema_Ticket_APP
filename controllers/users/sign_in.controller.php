@@ -1,47 +1,68 @@
 <?php
-// session_start();
-// // require ("sign_in.model.php");
-// require "../../models/post.model.php";
-// $email = ($_POST['email']);
-// $password = ($_POST['password']);
-// $user = getUserAccount($email,$password);
-
-// if ($email===$user[0]['user_name'] && $password===$user[0]['password'])
-// {
-
-//     if(!empty($_POST["remember"])) 
-//     {
-//         setcookie ("email",$_POST["email"],time()+ 3600);
-//         setcookie ("password",$_POST["password"],time()+ 3600);
-//     } else {
-//         setcookie("email","");
-//         setcookie("password","");
-//     };
-// }
-?>
-<?php 
-session_start(); 
-require "views/users/sign_in.view.php";
-
+require "models/post.model.php";
 require "database/database.php";
 
-if(isset($_POST['submit'])){
 
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $pass = sha1($_POST['password']);
-   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+?>
 
-   $select_users = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-   $select_users->execute([$email, $pass]);
-   $row = $select_users->fetch(PDO::FETCH_ASSOC);
+<?php 
 
-   if($select_users->rowCount() > 0){
-      setcookie('user_id', $row['id'], time() + 60*60*24, '/');
-      header('location:/');
-   }else{
-      $message[] = 'incorrect email or password!';
+$messageError = [];
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+
+    $email = $_POST['email'];
+ 
+    $password = $_POST['password'];
+
+    $data = "email=".$email;
+    
+   if(empty($email))
+   {
+      $messageError["email"] = "Please enter your email address";
+	   
+   }if(empty($password))
+   {
+      $messageError["password"] = "Please enter your password";
+   
    }
+   if(empty($messageError)) {
 
-   echo $message;
-}
+    	$sql = "SELECT * FROM users WHERE email = ?";
+    	$stmt = $connection->prepare($sql);
+    	$stmt->execute([$email]);
+
+      if($stmt->rowCount()){
+         $user = $stmt->fetch();
+         $orldemail =  $user['email'];
+         $orldpassword =  $user['password'];
+         echo $orldpassword;
+         // if($email === $orldemail && password_verify($password,$orldpassword)){
+         //    echo "Email successfully";
+         //    header("location:/");
+            
+         // }else{
+         //    // echo "Email failed";
+         //    $messageError["password"] = "Incorect password";
+         //    $messageError["email"] = "Encorrect email";
+         // }
+         if(password_verify($password,$orldpassword)){
+            echo "Email successfully";
+            if($email === $orldemail){
+               header("location:/");
+               $messageError["email"] = "Encorrect email";
+            }
+            
+         }else{
+            // echo "Email failed";
+            $messageError["password"] = "Incorect password";
+         }
+      }
+    
+
+}}
+
+
+require "views/users/sign_in.view.php";

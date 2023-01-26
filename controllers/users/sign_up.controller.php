@@ -41,16 +41,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     }   
     elseif(!preg_match("/^[a-zA-Z\d]{8,50}+$/" ,$password))
     {
-        $messageError["password"]  = 'Please enter your password more that 8 cheraters';
+        $messageError["password"]  = "Please enter your password more that 8 cheraters";
     }
     if (empty($comfirm_password)) 
     {
-        $messageError["comfirm-password"] = 'Please enter you comfirm password';
+        $messageError["comfirm-password"] = "Please enter you comfirm password";
     }
     if ($password != $comfirm_password)
     {
-        $messageError["password"] ="Password doesn't match";
-        $messageError["comfirm-password"] ="Password doesn't match";
+        $messageError["password"] = "Password doesn't match";
+        $messageError["comfirm-password"] = "Password doesn't match";
     }
     if(empty($messageError))
     {
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         $comfirm_password = password_hash($password, PASSWORD_DEFAULT);
         createUser($username,$email,$password,$comfirm_password);
 
-        $_SESSION = $_POST['username'];
+        $_SESSION = $_POST['username'];$_SESSION = $_POST['email'];$_SESSION = $_POST['password'];
         header("location:/");
     }
     

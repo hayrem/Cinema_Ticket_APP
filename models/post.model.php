@@ -18,6 +18,6 @@ function getUserAccount(string $email,string $password)
     global $connection;
     $sql = "SELECT * FROM users WHERE user_name='$email' AND password='$password'";
 
-	$stmt = $$connection->prepare($sql);
+	$stmt = $connection->prepare($sql);
 	$stmt ->execute();
 }

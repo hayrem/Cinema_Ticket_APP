@@ -1,6 +1,6 @@
 <?php
 require "views/partials/head.php";
-require "views/partials/nav.php";
+// require "views/partials/nav.php";
 
 ?>
 
@@ -13,12 +13,19 @@ require "views/partials/nav.php";
 
 		<div class="mb-3">
 			<label class="form-label">Email</label>
-			<input type="email" class="form-control" name="email" value="">
+			<input
+			type="email" 
+			class="form-control" 
+			name="email" value="">
+			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		</div>
 
 		<div class="mb-3">
 			<label class="form-label">Password</label>
-			<input type="password" class="form-control" name="pass">
+			<input type="password" 
+			class="form-control" 
+			name="password">
+			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		</div>
 		<div class="form-check mb-4">
 			<input class="form-check-input " type="checkbox" value="" id="remember-me" checked>
@@ -37,5 +44,5 @@ require "views/partials/nav.php";
 </div>
 
 <?php
-require "views/partials/footer.php";
+// require "views/partials/footer.php";
 ?>
