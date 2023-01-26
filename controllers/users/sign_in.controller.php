@@ -52,6 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             echo "Email successfully";
             if($email === $orldemail){
                header("location:/");
+            }else{
                $messageError["email"] = "Encorrect email";
             }
             
