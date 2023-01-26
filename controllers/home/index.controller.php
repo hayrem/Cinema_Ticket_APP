@@ -7,10 +7,6 @@ $heading = "Home page";
 
 require "models/post.model.php";
 // $posts = getPosts();
-require "views/home/index.view.php";
-
-
-
 
 
 ?>
@@ -41,3 +37,5 @@ if (isset($_POST['input'])) {
         echo "<h6 class='text-danger text-ceter mt-3 '> no results found</h6>";
     }
 }
+
+require "views/home/index.view.php";

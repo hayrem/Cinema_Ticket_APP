@@ -1,5 +1,5 @@
 <?php
-
+require "database/database.php";
 function createUser(string $userName, string $email,string $password, string $confirmPassword ) : bool
 {
     global $connection;
