@@ -1,66 +1,67 @@
 <?php
-    require("../partials/head.php");
-    require("../partials/nav.php");
+    require "../partials/head.php";
+    require "../../utils/url.php" ;
+    require "../partials/nav.php";
+    require "../../controllers/users/sign_up.controller.php";
 ?>
 
+<div class="login d-flex justify-content-center align-items-center vh-100 text-white">
+    	
+    	<form class="shadow w-450" 
+    	      action="" 
+    	      method="post">
 
-<div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-10">
-            <div class="card" style="border-radius: 1rem;">
-                <div class="row g-0">
-                    <div class="col-md-6 col-lg-5 d-none d-md-block">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/6138vGyCo2L._AC_UL900_SR615,900_.jpg" alt="login form" class="img-fluid" />
-                    </div>
-                    <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color: #FFFFFF;">
-                        <div class="card-body p-1 p-lg-5 text-white " style="background-color: #000000;">
-                            <form>
+    		<h4 class="display-4  fs-1">Create Account</h4><br>
+    		
+        
 
-                                <div class="d-flex align-items-center">
-                                    <span class="h1 fw-bold mb-0" style="margin-top: -8px;">Sign Up</span>
-                                </div>
+		 
+    		<!-- <div class="alert alert-success" role="alert">
+			 
+			</div> -->
+		   
+		  <div class="mb-3">
+		    <label class="form-label">Username</label>
+		    <input type="text" 
+		           class="form-control"
+		           name="fname"
+		           value="">
+			<span style="color:red;"><?= $name_err ?></span>
+		  </div>
 
-                                <div class="form-outline mb-2">
-                                    <label class="form-label" for="form2Example17">Username</label>
-                                    <input type="email" id="form2Example17" class="form-control" />
-                                </div>
+		  <div class="mb-3">
+		    <label class="form-label">Email</label>
+		    <input type="email" 
+		           class="form-control"
+		           name="email"
+		           value="">
+			<span style="color:red;"><?= $email_err ?></span>
+		  </div>
+		  <div class="mb-3">
+		    <label class="form-label">Password</label>
+		    <input type="password" 
+		           class="form-control"
+		           name="pass">
+			<span style="color:red;"><?= $password_err ?></span>
+		  </div>
 
-                                <div class="form-outline mb-2">
-                                    <label class="form-label" for="form2Example17">Email</label>
-                                    <input type="email" id="form2Example17" class="form-control" />
-                                </div>
-
-                                <div class="form-outline mb-2">
-                                    <label class="form-label" for="form2Example27">Password</label>
-                                    <input type="password" id="form2Example27" class="form-control" />
-                                </div>
-
-                                <div class="form-outline mb-2">
-                                    <label class="form-label" for="form2Example27">Comfirm Password</label>
-                                    <input type="password" id="form2Example27" class="form-control" />
-                                </div>
-
-                                <div class="form-outline mb-2">
-                                    <input type="checkbox" />
-                                    <label class="form-label">Remember Me</label>
-                                </div>
-
-                                <p class="mb-1 pb-lg-2 text-white" style="color: #393f81;">Have an account? <a href="sign_in.view.php" style="color: #dc3545;">Sign In</a></p>
-
-                                <div>
-                                    <button class="form-control text-white border border-danger" style="background-color: rgb(159, 4, 4)" type="button">Sing Up</button>
-                                </div>
-
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
+		  <div class="mb-3">
+		    <label class="form-label">Comfirm Password</label>
+		    <input type="password" 
+		           class="form-control"
+		           name="comfirm-pass">
+			<span style="color:red;"><?= $comfirm_password_err ?></span>
+		  </div>
+            <div class="d-flex">
+                <p>Have an acoount</p>
+                <a href="sign_in.view.php" class="link-secondary ms-2">Login</a>
             </div>
-        </div>
+		  <div class="contain-btn">
+              <button type="submit" class="btn btn-danger">Sign Up</button>
+          </div>
+		</form>
     </div>
-</div>
 
 <?php
-    require("../partials/footer.php");
+    require "../partials/footer.php";
 ?>
