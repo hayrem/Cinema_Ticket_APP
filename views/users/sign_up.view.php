@@ -1,8 +1,7 @@
 <?php
-    require "../partials/head.php";
-    require "../../utils/url.php" ;
-    require "../partials/nav.php";
-    require "../../controllers/users/sign_up.controller.php";
+    require "views/partials/head.php";
+    // require "utils/url.php" ;
+    require "views/partials/nav.php";
 ?>
 
 <div class="login d-flex justify-content-center align-items-center vh-100 text-white">
@@ -10,7 +9,7 @@
 		<img src="../../assets/login.svg" width="100%" alt="">
 	</div> -->
     	<form class="shadow w-450" 
-    	      action="" 
+    	      action="/sign_up" 
     	      method="post">
 
     		<h4 class="display-4  fs-1">Create Account</h4><br>
@@ -58,5 +57,5 @@
     </div>
 
 <?php
-    require "../partials/footer.php";
+    require "views/partials/footer.php";
 ?>

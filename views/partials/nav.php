@@ -15,10 +15,10 @@
                 <li class="nav-item ml-md-3">
                     <div class="btn btn-primary">
                         <!-- <login -->
-                        <a href="views/users/sign_in.view.php" class="text-white"> Log In / </a>
+                        <a href="sign_in" class="<?= urlIs('/sign_in') ?>text-white"> Log In / </a>
                       
                         <!-- register  -->
-                        <a href="views/users/sign_up.view.php" class="text-white"> Register</a>
+                        <a href="sign_up" class="<?= urlIs('/sign_up') ?>text-white"> Register</a>
                         
                     </li>
                     <!--  manage account-->

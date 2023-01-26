@@ -1,15 +1,14 @@
 <?php
-require "../partials/head.php";
-require "../../utils/url.php";
-require "../partials/nav.php";
+require "views/partials/head.php";
+// require "../../utils/url.php";
+require "views/partials/nav.php";
 
-require "../../controllers/users/sign_in.controller.php";
 ?>
 
 
 <div class="d-flex justify-content-center align-items-center vh-100 text-white">
 
-	<form class="shadow w-450" action="" method="post">
+	<form class="shadow w-450" action="/sign_in" method="post">
 
 		<h4 class="display-4  fs-1">LOGIN</h4><br>
 
@@ -39,5 +38,5 @@ require "../../controllers/users/sign_in.controller.php";
 </div>
 
 <?php
-require "../partials/footer.php";
+require "views/partials/footer.php";
 ?>

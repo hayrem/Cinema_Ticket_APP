@@ -1,4 +1,8 @@
 <?php
+
+require "views/users/sign_up.view.php";
+require "models/post.model.php";
+
 $name_err="";
 $email_err="";
 $password_err="";
@@ -18,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
 {   
     // require database connection
-    require "../../database/database.php";
+    require "database/database.php";
 
     $name = testInput($_POST["fname"]);
     $password = testInput($_POST["pass"]);
@@ -72,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
     	// header("Location: ../../index.php?success=Your account has been created successfully");
 	    // exit;
-        header("location: ../../index.php");
+        header("location: /");
         
 
     }

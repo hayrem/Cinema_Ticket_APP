@@ -21,8 +21,9 @@
 ?>
 <?php 
 session_start(); 
+require "views/users/sign_in.view.php";
 
-require "../../database/database.php";
+require "database/database.php";
 
 if(isset($_POST['submit'])){
 
@@ -37,7 +38,7 @@ if(isset($_POST['submit'])){
 
    if($select_users->rowCount() > 0){
       setcookie('user_id', $row['id'], time() + 60*60*24, '/');
-      header('location:home.php');
+      header('location:/');
    }else{
       $message[] = 'incorrect email or password!';
    }
