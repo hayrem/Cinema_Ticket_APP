@@ -9,14 +9,14 @@ $password_err="";
 $comfirm_password_err="";
 
 
-//php form data validation function 
+// php form data validation function 
 function testInput($data): string
 {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
-  
+
 }
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     $password = testInput($_POST["password"]);
     $comfirm_password = testInput($_POST["comfirm-password"]);
     $email = ($_POST["email"]);
-    
+
 
     if (empty($name))
     {
@@ -74,11 +74,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     	$stmt = $connection->prepare($sql);
     	$stmt->execute([$name, $email, $password,$comfirm_password]);
 
-    	// header("Location: ../../index.php?success=Your account has been created successfully");
-	    // exit;
-        header("location: /");
-        
+    	header("Location:/?success=Your account has been created successfully");
+	    exit;
+        // header("location: /");
+
 
     }
 }
 ?>
+
+<?php
+

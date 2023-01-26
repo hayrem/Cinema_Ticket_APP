@@ -19,7 +19,7 @@
 		           class="form-control"
 		           name="username"
 		           value="">
-			<span style="color:red;"><?= (isset($name_err['username']))?$name_err['username']:"" ?></span>
+			<span style="color:red;"><?= (isset($messageError['username']))?$messageError['username']:"" ?></span>
 		  </div>
 
 		  <div class="mb-3">
@@ -28,14 +28,14 @@
 		           class="form-control"
 		           name="email"
 		           value="">
-			<span style="color:red;"><?= (isset($email_err['email']))?$email_err['email']:"" ?></span>
+			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		  </div>
 		  <div class="mb-3">
 		    <label class="form-label">Password</label>
 		    <input type="password" 
 		           class="form-control"
 		           name="password">
-			<span style="color:red;"><?= (isset($password_err['password']))?$password_err['password']:"" ?></span>
+			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		  </div>
 
 		  <div class="mb-3">
@@ -43,7 +43,7 @@
 		    <input type="password" 
 		           class="form-control"
 		           name="comfirm-password">
-			<span style="color:red;"><?= (isset($comfirm_password_err['comfirm-password']))?$comfirm_password_err['comfirm-password']:"" ?></span>
+			<span style="color:red;"><?= (isset($messageError['comfirm-password']))?$messageError['comfirm-password']:"" ?></span>
 		  </div>
             <div class="d-flex">
 				<label class="form-label">Have an Account</label>
