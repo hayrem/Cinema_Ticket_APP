@@ -1,5 +1,7 @@
 <?php
 
+    require "views/partials/nav.php";
+    require "views/partials/head.php";
 ?>
 <body class="body d-flex flex-column container">
     <div class="m-3 d-flex flex-lg-row p-5" style="border: 1px grey solid;">
@@ -30,4 +32,4 @@
         </div>
     </div>
 </div>
-
+<?php require "views/partials/footer.php"; ?>

@@ -9,6 +9,7 @@ $routes = [
     '/sign_up' => 'controllers/users/sign_up.controller.php',
     '/sign_in' => 'controllers/users/sign_in.controller.php',
     '/manage_acc' => 'controllers/users/manage_acc.controller.php',
+    '/detail' => 'controllers/movie/detail_movie.controller.php',
 
 ];
 

@@ -1,5 +1,8 @@
 <?php
 // $heading = "Home page";
+require "views/partials/head.php";
+require "views/partials/nav.php";
+require "views/partials/banner.php";
 
 require "models/list_show.model.php";
 
@@ -7,6 +10,7 @@ $heading = "Home page";
 
 require "models/post.model.php";
 // $posts = getPosts();
+require "views/home/index.view.php";
 
 
 ?>
@@ -39,3 +43,4 @@ if (isset($_POST['input'])) {
 }
 
 require "views/home/index.view.php";
+require "views/partials/footer.php"?>

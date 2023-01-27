@@ -6,9 +6,9 @@
         </a>
 
         <div class="collapse navbar-collapse p-0">
-            <form class="form-inline mx-auto d-flex ">
-                <input class="form-control " id="live_search" type="search" placeholder="Search for products..." aria-label="Search">
-                <button class="btn btn-success " type="submit"><span class="material-symbols-outlined">search</span></i></button>
+            <form class="form-inline mx-auto d-flex " method='post' name='fsearch'>
+                <input class="form-control " id="live_search" type="search" placeholder="Search for products..." aria-label="Search" name='search'>
+                <button class="btn btn-success " type="submit"><span class="material-symbols-outlined" value='search'>search</span></i></button>
             </form>
 
             <ul class="navbar-nav">
