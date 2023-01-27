@@ -1,6 +1,6 @@
 <?php
 require("database/database.php");
-function getMovie($search) : array
+function getMovie(string $search) : array
 {
     global $connection;
     $statement = $connection->prepare("select title,released,image,duration from movies where title like '%{$search}%'");

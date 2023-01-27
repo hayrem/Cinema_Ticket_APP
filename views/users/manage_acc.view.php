@@ -1,5 +1,5 @@
 <?php
-require "views/partials/head.php";
+// require "views/partials/head.php";
 ?>
 
 <div class="modal fade" id="manage_acc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

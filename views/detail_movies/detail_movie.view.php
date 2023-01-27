@@ -12,7 +12,7 @@
                     <h2 class="card-title " style="margin-top: -25px;"><?= $movie['title']?></h2>
                     <div class="card-text d-flex ">
                         <span class="card-text bg-danger p-1">HD</span>
-                        <span class="card-text  p-1">⭐</span>
+                        <span class="card-text  p-1">⭐️</span>
                         <span class="card-text  p-1"><?= $movie['released']?></span>
                         <span class="card-text  p-1">Genre:  <?= $movie['genre']?></span>
                     </div>
