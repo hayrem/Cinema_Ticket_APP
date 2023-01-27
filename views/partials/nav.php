@@ -22,8 +22,10 @@
                         
                     </li>
                     <!--  manage account-->
-                    <span class="material-symbols-outlined mt-4 ms-4" data-toggle="modal" data-target="#exampleModal">account_circle </span>
-                   
+                  
+                        <span class="material-symbols-outlined mt-4 ms-4" data-toggle="modal" data-target="#manage_acc">account_circle </span>
+                        <?php require "views/users/manage_acc.view.php"; ?>
+                    <!-- </a> -->
                 </ul>
         </div>
 

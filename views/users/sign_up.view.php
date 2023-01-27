@@ -18,7 +18,7 @@
 		    <input type="text" 
 		           class="form-control"
 		           name="username"
-		           value="">
+		           value="<?= (isset($_POST['username']))?$_POST['username']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['username']))?$messageError['username']:"" ?></span>
 		  </div>
 
@@ -27,14 +27,15 @@
 		    <input type="email" 
 		           class="form-control"
 		           name="email"
-		           value="">
+		           value="<?= (isset($_POST['email']))?$_POST['email']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		  </div>
 		  <div class="mb-3">
 		    <label class="form-label">Password</label>
 		    <input type="password" 
 		           class="form-control"
-		           name="password">
+		           name="password"
+				   value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		  </div>
 
@@ -42,7 +43,8 @@
 		    <label class="form-label">Comfirm Password</label>
 		    <input type="password" 
 		           class="form-control"
-		           name="comfirm-password">
+		           name="comfirm-password"
+				   value="<?= (isset($_POST['comfirm-password']))?$_POST['comfirm-password']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['comfirm-password']))?$messageError['comfirm-password']:"" ?></span>
 		  </div>
             <div class="d-flex">

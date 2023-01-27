@@ -16,7 +16,8 @@ require "views/partials/head.php";
 			<input
 			type="email" 
 			class="form-control" 
-			name="email" value="">
+			name="email"
+			value="<?= (isset($_POST['email']))?$_POST['email']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		</div>
 
@@ -24,7 +25,8 @@ require "views/partials/head.php";
 			<label class="form-label">Password</label>
 			<input type="password" 
 			class="form-control" 
-			name="password">
+			name="password"
+			value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		</div>
 		<div class="form-check mb-4">
