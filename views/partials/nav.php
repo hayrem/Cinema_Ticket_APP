@@ -1,5 +1,5 @@
-<div class="container-fluid text-white bg-danger p-0 ">
-<nav class="navbar navbar-expand-md navbar-light  main-menu">
+<div class="container-fluid text-white  p-0 position-sticky" style="top:0">
+<nav class="navbar navbar-expand-md navbar-light  main-menu" style="background:#072f4e;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <h4 class="font-weight-bold">Logo</h4>
@@ -31,7 +31,7 @@
 
     </div>
 </nav>
-<nav class="navbar navbar-expand-md text-white">
+<nav class="navbar navbar-expand-md text-white " style="background:#072f4e;">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">

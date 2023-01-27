@@ -6,7 +6,7 @@
 
         <?php foreach ($shows as $show): ?>
 
-        <div class="card me-3" style="width: 16rem;">
+        <div class="card me-3" style="width: 16rem; position: relative ;z-index: -1;">
             <img src=" <?php  echo $show['image'];?> " width="100%" height="70%" class="card-img-top" >
             <div class="card-body" height="30%">
                 <h6 class="card-title"><?= $show['title']?></h6>

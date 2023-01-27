@@ -1,5 +1,6 @@
 <?php
 require("database/database.php");
+// seach fucntion 
 function getMovie(string $search) : array
 {
     global $connection;
@@ -8,7 +9,7 @@ function getMovie(string $search) : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
+// details fucntion
 function showMovie() : array
 {
     global $connection;
@@ -18,7 +19,7 @@ function showMovie() : array
 }
 $shows=showMovie();
 
-
+// get id movie
 function getDetailMovie(int $getID) : array
 {
     global $connection;
@@ -27,4 +28,17 @@ function getDetailMovie(int $getID) : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
  
 }
+
+//cinema detail fuction 
+function getDetaCinemas() : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from cinemas");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+ 
+}
+
+// $cinemas = getDetaCinemas();
+// echo $cinemas;
 ?>

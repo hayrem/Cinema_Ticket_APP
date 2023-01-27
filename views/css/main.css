@@ -3,6 +3,10 @@
 body{
   height: auto;
   /* background:#7E1616; */
+  background: #330000;
+  position: relative;
+  /* position: absolute; */
+
 }
 .btn .bx {
   vertical-align: inherit;
@@ -63,6 +67,8 @@ section {
   height: 60vh;
   background: #e4e4e4;
   margin-bottom: 10%;
+  position: relative;
+  z-index: -1;
 }
 
 /* search bar */
@@ -162,6 +168,8 @@ gap: 23px;
   padding: 0px 65px 0px 60px;
   /* background:#7E1616; */
   /* background: rgb(2, 78, 78); */
+  /* background: #072f4e; */
+  /* background: #330000; */
   
 
 }
@@ -201,6 +209,7 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 .w-20{
 width: 15%;
+/* height:; */
 }
 .contain-btn{
 margin-top: 10%;
