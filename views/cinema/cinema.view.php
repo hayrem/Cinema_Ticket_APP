@@ -1,33 +1,34 @@
 <?php
-    require "views/partials/head.php";
     require "views/partials/nav.php";
+    require "views/partials/head.php";
 ?>
-<!-- <body class="body bg-dark d-flex flex-column container"> -->
-    <div class="card m-3 d-flex flex-lg-row" >
-        <img src="../images/cinema.png" class="card-img-top" style="width: 12rem;">
-        <div class="card-body">
+<body class="body d-flex flex-column container">
+    <div class="m-3 d-flex flex-lg-row p-5" style="border: 1px grey solid;">
+        <img src="https://cdn1.vectorstock.com/i/1000x1000/90/05/movie-cinema-premiere-poster-design-template-vector-12329005.jpg"  width="25%" height="90%">
+        <div class="card-body ">
           <h4 class="card-title fw-bold">Cinema Ticket PNC</h4>
           <p class="card-text">Street 371, Sangkat Obek Kaorm, Khan Sen Sok Phnom Penh</p>
           <p>096 847 8385</p>
           <a href="#" class="btn btn-danger">Show Items</a>
         </div>
     </div>
-    <div class="card m-3 d-flex flex-lg-row">
-        <img src="../images/cinema.png" class="card-img-top" style="width: 12rem;">
-        <div class="card-body">
-          <h4 class="card-title fw-bold">Cinema Ticket AEON Sen Sok</h4>
-          <p class="card-text">Street 1003, Phnom Penh (Aeon Mall Sen Sok) Aeon Sen Sok</p>
-          <p>087 901 000</p>
+    <div class="m-3 d-flex flex-lg-row p-5" style="border: 1px grey solid;">
+        <img src="https://cdn1.vectorstock.com/i/1000x1000/90/05/movie-cinema-premiere-poster-design-template-vector-12329005.jpg"  width="25%" height="90%">
+        <div class="card-body ">
+          <h4 class="card-title fw-bold">Cinema Ticket PNC</h4>
+          <p class="card-text">Street 371, Sangkat Obek Kaorm, Khan Sen Sok Phnom Penh</p>
+          <p>096 847 8385</p>
           <a href="#" class="btn btn-danger">Show Items</a>
         </div>
     </div>
-    <div class="card m-3 d-flex flex-lg-row" >
-        <img src="../images/cinema.png" class="card-img-top" style="width: 12rem;">
-        <div class="card-body">
-          <h4 class="card-title fw-bold">Cinema Ticket SORYA</h4>
-          <p class="card-text">#13-61, Street 63, Sangkat Phsar Thmei 1,Khan Daun Penh Phnom Penh (Sorya Center Point)</p>
-          <p>087 666 210</p>
+    <div class="m-3 d-flex flex-lg-row p-5" style="border: 1px grey solid;">
+        <img src="https://cdn1.vectorstock.com/i/1000x1000/90/05/movie-cinema-premiere-poster-design-template-vector-12329005.jpg"  width="25%" height="90%">
+        <div class="card-body ">
+          <h4 class="card-title fw-bold">Cinema Ticket PNC</h4>
+          <p class="card-text">Street 371, Sangkat Obek Kaorm, Khan Sen Sok Phnom Penh</p>
+          <p>096 847 8385</p>
           <a href="#" class="btn btn-danger">Show Items</a>
         </div>
     </div>
+</div>
 <?php require "views/partials/footer.php"; ?>
