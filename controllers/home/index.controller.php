@@ -37,5 +37,10 @@ if (isset($_POST['input'])) {
     }
 }
 
+require "views/partials/head.php";
+require "views/partials/nav.php";
+
+
 require "views/home/index.view.php";
+require "views/partials/footer.php";
 

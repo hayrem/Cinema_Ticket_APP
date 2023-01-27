@@ -1,10 +1,10 @@
 <!-- insert home page -->
 <?php
-require "views/partials/head.php";
-require "views/partials/nav.php";
-require "views/partials/banner.php";
+// require "views/partials/head.php";
+// require "views/partials/nav.php";
+// require "views/partials/banner.php";
 
-require "models/list_show.model.php";
+// require "models/list_show.model.php";
 ?>
 <div class="container-fluid mb-4">
     <h2>Trending</h2>
@@ -26,4 +26,6 @@ require "models/list_show.model.php";
         </div>
 </div>
 
-<?php require "views/partials/footer.php" ?>
+<?php 
+// require "views/partials/footer.php" 
+?>

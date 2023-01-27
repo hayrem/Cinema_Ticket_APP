@@ -32,4 +32,6 @@
         </div>
     </div>
 </div>
-<?php require "views/partials/footer.php"; ?>
+<?php
+    require "views/partials/footer.php";
+?>
