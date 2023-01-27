@@ -39,7 +39,7 @@
             <h6 class="card-title"><?= $show['title']?></h6>
             <div class='d-flex justify-content-between align-items-center' >
                 <p class="card-text"> <?= $show['released'] . ' ' . $show ['duration'].'s'?></p>
-                <a href="#" class="btn btn-danger">Booking</a>  
+                <a  href="/detail?movie_id=<?php echo $show['movie_id']?>" class="btn btn-danger">Detail</a>  
             </div>
         </div>
     </div>
