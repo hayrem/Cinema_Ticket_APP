@@ -15,7 +15,7 @@ require "views/partials/banner.php";
 if (!empty($search) and !empty($shows)){ ?>
     
     
-    <div class="container  d-flex flex-wrap  justify-content-between container-card">
+    <div class="container  d-flex flex-wrap  container-card">
         <?php foreach ($shows as $show) : ?>
             <div class="card" style="width: 13.5rem;">
                 <img src=" <?php echo $show['image']; ?> " width="20%" height="70%" class="card-img-top">
