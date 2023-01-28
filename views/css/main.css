@@ -4,7 +4,7 @@ body{
   height: auto;
   /* background:#7E1616; */
   background: #330000;
-  position: relative;
+  /* position: relative; */
   /* position: absolute; */
 
 }
@@ -269,11 +269,12 @@ background: #000;
   animation: 50s slides-set-1 -0.1s infinite;
 }
 .slideshow--hero .slide2 {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk1qwaReS8ZujKoA7lFz4vK2NByZTjb1L0Ow&usqp=CAU);
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/933/464/845/movies-iron-man-2-iron-man-tony-stark-wallpaper-preview.jpg);
   animation: 20s slides-set-2 -0.1s infinite;
 }
 .slideshow--hero .slide3 {
-  background-image: url(https://www.themarysue.com/wp-content/uploads/2018/09/Dragon-Ball-Z-03152018.jpg?resize=1200%2C674);
+  /* 3 */
+  background-image: url(https://i.kym-cdn.com/photos/images/original/001/467/188/f5d.jpg_large);
   animation: 20s slides-set-3 -0.1s infinite;
 }
 @media (min-width: 600px) {
@@ -317,16 +318,16 @@ background: #000;
   animation: 14s slideshow-contrast -5s infinite;
 }
 .slideshow--contrast .slide1 {
-  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRXwCsabuxjlyD7nV6qL_IAE0pQhgo5FGQduqI1NxFypSnIpwLi);
+  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(https://static.vecteezy.com/system/resources/thumbnails/001/254/680/small_2x/cinema-background-concept.jpg);
   animation: 20s slides-set-1 -0.2s infinite;
 }
 .slideshow--contrast .slide2 {
-  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6Wuc0Uju6DOBzRElUnNqNW8SdFiNluxRO3pgeZ6oKeWTDyvLG);
+  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(https://wallpaperaccess.com/full/464872.jpg);
   animation: 20s slides-set-2 -0.2s infinite;
 }
 .slideshow--contrast .slide3 {
-  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTYe9MOC4OCV8tJuYy4qpcet9cKM2ZIpyMc3WS1WS-psE7cXfwd);
   animation: 20s slides-set-3 -0.2s infinite;
+  background-image: linear-gradient(to bottom, rgba(200, 200, 75, 0.25) 0, rgba(200, 75, 75, 0.5) 100%), url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6Wuc0Uju6DOBzRElUnNqNW8SdFiNluxRO3pgeZ6oKeWTDyvLG);
 }
 .slideshow--contrast--after {
   top: auto;

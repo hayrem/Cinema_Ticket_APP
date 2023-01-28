@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body p-0">
 
-                <div class="card-profile p-0">
+                <div class="card-profile p-0" >
                     <div class="card-body p-2">
                         <div class="d-flex flex-column align-items-center text-center ">
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">

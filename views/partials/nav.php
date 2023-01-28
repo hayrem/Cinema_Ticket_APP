@@ -1,8 +1,8 @@
-<div class="container-fluid text-white  p-0 position-sticky" style="top:0">
+<div class="container-fluid text-white  p-0 ">
 <nav class="navbar navbar-expand-md navbar-light  main-menu" style="background:#072f4e;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <h4 class="font-weight-bold">Logo</h4>
+        <a class="navbar-brand" href="/">
+            <img src="../../assets/phnom-penh-cinema-low-resolution-logo-color-on-transparent-background.png" alt="" width="60px">
         </a>
 
         <div class="collapse navbar-collapse p-0">
