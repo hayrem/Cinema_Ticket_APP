@@ -13,7 +13,9 @@ require "database/database.php";
 
 if (isset($_POST['search'])) {
     $search  = testInput($_POST['search']);
+    $shows=getMovie($search);
+    
 }else{
-    $search=' ';
+    $shows=showMovie();
 }
-$shows=getMovie($search);
+

@@ -1,11 +1,11 @@
 <div class="container-fluid d-flex flex-wrap mt-4">
     <?php foreach ($movies as $movie): 
     ?>
-    <div class="card mb-3 " style="height: 28rem">
+    <div class="card mb-3 " style="height: 35rem; width: 100%;">
         <div class="row g-0 p-5 " style="margin-top: -25px;">
             <div class="col-md-4">
             <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
-            <img src=" <?php  echo $movie['image'];?>"   width="100%" height="65%" class="rounded card-img-top">
+            <img src=" <?php  echo $movie['image'];?>"   width="100%" height="75%" class="rounded card-img-top">
             </div>
             <div class="col-md-8" >
                 <div class="card-body ms-4">
@@ -28,6 +28,7 @@
                 <div class="d-flex justify-content-between ms-3">
                     <a href="#" class="btn btn-outline-danger bg-danger text-white" style="margin-left: 20px;">BOOKING</a>
                 </div>
+                <a href="https://youtu.be/1esRrwrmWzA"></a>
             </div>
         </div>
     </div>

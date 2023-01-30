@@ -156,9 +156,18 @@ padding: 30px;
 /* card style */
 .card{
   /* background: #000; */
-  height: 70vh;
+  height: 58vh;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+}
+.card:hover{
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}
+.card-body{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
 }
 .container-card{
 gap: 23px;
