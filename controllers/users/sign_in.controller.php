@@ -37,13 +37,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
      
       if($emailUserLogin)
       {
-         // echo "have email user login";
+     
          $valueTrue += 1;
        
       }else
       {
-         // echo "don't have emailUser login";
-         $messageError["email"] = "Encorrect email";
+
+         $messageError["email"] = "Incorrect email";
+
       }
       // password
       $passwordLogin = passwordUserLogin();
@@ -53,16 +54,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       }
       if(password_verify($password,$orldPassword))
       {
-         echo "correct password";
-            $valueTrue += 1 ;
+ 
+         $valueTrue += 1 ;
       }
       else
       {
-         echo "incroorec password";
-         $messageError["password"] = 'Incorect password';
-               
+
+         $messageError["password"] = 'Incorect password';   
+
       }
-      echo $password;
+
    }
    if($valueTrue === 2){
       header("location: /");
@@ -73,8 +74,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
    }
-
-   echo $valueTrue;
 
 }
    
