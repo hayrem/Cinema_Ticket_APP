@@ -7,6 +7,7 @@ require "database/database.php";
 ?>
 
 <?php 
+
 $valueTrue = 0;
 
 $messageError = [];
@@ -52,16 +53,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       }
       if(password_verify($password,$orldPassword))
       {
-         // echo "correct password";
+         echo "correct password";
             $valueTrue += 1 ;
       }
       else
       {
-         // echo "incroorec password";
+         echo "incroorec password";
          $messageError["password"] = 'Incorect password';
                
       }
-      // echo $password;
+      echo $password;
    }
    if($valueTrue === 2){
       header("location: /");

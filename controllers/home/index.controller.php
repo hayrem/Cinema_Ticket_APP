@@ -9,7 +9,7 @@ require "controllers/search/search.controller.php";
 
 $heading = "Home page";
 
-require "models/post.model.php";
+require "models/users.model.php";
 require "views/home/index.view.php";
 
 
