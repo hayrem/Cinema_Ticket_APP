@@ -1,6 +1,14 @@
 <?php
 // require "views/partials/head.php";
+session_start();
+
+// $_COOKIE['firstName'] = "hello";
+// $_SESSION['firstName'] = "world";
+// $_SESSION['lastName'] = "hello world";
+// if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
 ?>
+    <?= isset($_SESSION['firstName'])? $_SESSION['firstName'] : "" ?>
+
 
 <div class="modal fade" id="manage_acc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -15,13 +23,17 @@
                         <div class="d-flex flex-column align-items-center text-center ">
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4 class="text-dark">John Doe</h4>
+                                <h4 class="text-dark"><?= isset($_COOKIE['firstName'])? $_COOKIE['firstName'] : "No user account" ?>
+                                <?= isset($_COOKIE['lastName'])? $_COOKIE['lastName'] : "" ?></h4>
                             </div>
                         </div>
                         <div class="card-icon shadow-none bg-light rounded p-4">
                             <div class="icon mb-2 mt-4 text-dark">
                                 <span class="material-symbols-outlined">change_circle</span>
-                                <a href="change-password.php" class="ms-4">Change Password</a><br>
+                                <!-- <a href="../../controllers/users/reset_password.controller.php" class="ms-4">Change Password</a><br> -->
+                          
+                                <a class="<?= urlIs('/reset')?> nav-link" href="/reset">Change Password</a>
+                                
                             </div>
                             <div class="icon1 mt-2 text-dark">
                                 <span class="material-symbols-outlined ">logout</span>

@@ -1,8 +1,12 @@
 <?php
 
 session_start();
+// $_SESSION ['firstName'];
 
-require "models/post.model.php";
+
+require "models/users.model.php";
+
+$emailTrue = false;
 
 $messageError = [];
 function validation($data): string
@@ -16,24 +20,45 @@ function validation($data): string
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     
-    $username = validation($_POST["username"]);
+    $firstName = validation($_POST["firstName"]);
+    $lastName = validation($_POST["lastName"]);
     $email = validation($_POST["email"]);
     $password = validation($_POST["password"]);
-    $comfirm_password = validation($_POST["comfirm-password"]);
+    $confirmPassword = validation($_POST["comfirm-password"]);
     
-    if(empty($username)){
-        $messageError["username"] = "please enter a username";
-    }elseif(!preg_match("/^[a-zA-Z\d]+$/",$username))
+    if(empty($firstName)){
+        $messageError["firstName"] = "please enter a first name";
+    }elseif(!preg_match("/^[a-zA-Z\d]+$/",$firstName))
+    {
+        $messageError["firstName"] = 'Username most more that 5 letters and least that 20 letters';
+    }
+    if(empty($lastName)){
+        $messageError["lastName"] = "please enter a last name";
+    }elseif(!preg_match("/^[a-zA-Z\d]+$/",$lastName))
     {
         $messageError["username"] = 'Username most more that 5 letters and least that 20 letters';
     }
     if(empty($email))
     {
         $messageError["email"] = " Please enter your email";
-    }
+    } 
     elseif (!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/",$email))
     {
         $messageError["email"] = "Invalid format and please re-enter valid email"; 
+    }
+
+    else{
+
+        // it will be returned number 1
+        $emailUser = getUserEmail($email);
+        
+        if($emailUser){
+            $messageError['email'] = 'email already taken!';
+            echo "have";
+        }else{
+            echo "don't have";
+            $emailTrue = true;
+        }
     }
     if(empty($password))
     {
@@ -43,23 +68,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $messageError["password"]  = "Please enter your password more that 8 cheraters";
     }
-    if (empty($comfirm_password)) 
+    if (empty($confirmPassword)) 
     {
         $messageError["comfirm-password"] = "Please enter you comfirm password";
     }
-    if ($password != $comfirm_password)
+    if ($password != $confirmPassword)
     {
         $messageError["password"] = "Password doesn't match";
         $messageError["comfirm-password"] = "Password doesn't match";
     }
-    if(empty($messageError))
+    if(empty($messageError) && $emailTrue = true)
     {
-
+// store user information in database
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $comfirm_password = password_hash($password, PASSWORD_DEFAULT);
-        createUser($username,$email,$password,$comfirm_password);
-
-        $_SESSION = $_POST['username'];$_SESSION = $_POST['email'];$_SESSION = $_POST['password'];
+        createUser($firstName,$lastName,$email,$password);
+//  store user information in cookie
+        $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
+        setcookie("email",$email,$remembering_timespan);
+        setcookie("firstName",$firstName,$remembering_timespan);
+        setcookie("lastName",$lastName,$remembering_timespan);
+// store user information in session 
+        $_SESSION = $_POST['firstName']; $_SESSION = $_POST['lastName']; $_SESSION = $_POST['email'];$_SESSION = $_POST['password'];
         header("location:/");
     }
     

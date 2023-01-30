@@ -8,6 +8,7 @@ $routes = [
     '/ticket' => 'controllers/ticket/ticket.controller.php',
     '/sign_up' => 'controllers/users/sign_up.controller.php',
     '/sign_in' => 'controllers/users/sign_in.controller.php',
+    '/reset' => 'controllers/users/reset_password.controller.php',
     '/manage_acc' => 'controllers/users/manage_acc.controller.php',
     '/detail' => 'controllers/movie/detail_movie.controller.php',
 
