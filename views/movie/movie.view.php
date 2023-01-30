@@ -1,26 +1,22 @@
-<div class="container-fluid mb-4">
-    <h2>Movies</h2>
+<?php 
+$country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+?>
+<div class="d-flex justify-content-end me-4">
+    <button class="border-0 m-1 p-2 d-flex justify-content-around bg-dark" style="width: 10rem; color:white; border-radius:5px;"> Short by  .<a href="">Title</a></button>
+    <select class='m-1 p-2 bg-dark'name="country" id="country" style="color:white; border-radius:5px; border:none;">
+        <option value="none" selected disabled hidden>Country</option>
+        <?php
+            foreach($country_list as $country){
+                echo "<option value='$country'>$country</option>";
+            }
+        ?>
+    </select> 
+    <select name='year' id='year' class='selectpicker p-2 m-1 bg-dark'  style="color:white; border-radius:5px;border:none;">;
+        <option value='none' selected disabled hidden>Year</option>
+            <?php 
+                for ($i = 1992; $i <= 2023; $i++) {
+                    echo "<option value='$i' >$i</option>";
+                } 
+            ?>
+    </select>
 </div>
-<?php if (!empty($search) and !empty($shows)){ ?>
-    <div class="container-fluid d-flex flex-wrap">
-
-        <?php foreach ($shows as $show): ?>
-
-        <div class="card me-3" style="width: 16rem; position: relative ;z-index: -1;">
-            <img src=" <?php  echo $show['image'];?> " width="100%" height="70%" class="card-img-top" >
-            <div class="card-body" height="30%">
-                <h6 class="card-title"><?= $show['title']?></h6>
-                <div class='d-flex justify-content-between align-items-center' >
-                    <p class="card-text"> <?= $show['released'] . ' ' . $show ['duration'].'s'?></p>
-                    <a  href="/detail?movie_id=<?php echo $show['movie_id']?>" class="btn btn-danger">Detail</a>  
-                </div>
-            </div>
-        </div>
-
-        <?php endforeach;?>
-    </div>
-    <?php } 
-else{
- echo "<h6 class='text-danger text-ceter mt-3 container-fluid mb-4'> No results found</h6>";   
-}?>
-<?php require "views/partials/footer.php"; ?>
