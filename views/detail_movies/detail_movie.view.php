@@ -1,37 +1,33 @@
 <div class="container-fluid d-flex flex-wrap mt-4">
     <?php foreach ($movies as $movie): 
-    ?>
-    <div class="card mb-3 " style="height: 35rem; width: 100%;">
-        <div class="row g-0 p-5 " style="margin-top: -25px;">
-            <div class="col-md-4">
-            <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
-            <img src=" <?php  echo $movie['image'];?>"   width="100%" height="75%" class="rounded card-img-top">
-            </div>
-            <div class="col-md-8" >
-                <div class="card-body ms-4">
-                    <h2 class="card-title " style="margin-top: -25px;"><?= $movie['title']?></h2>
-                    <div class="card-text d-flex ">
-                        <span class="card-text bg-danger p-1 rounded text-white">HD</span>
-                        <span class="card-text  p-1">⭐️</span>
-                        <span class="card-text  p-1"><?= $movie['released']?></span>
-                        <span class="card-text  p-1">Genre:  <?= $movie['genre']?></span>
-                    </div>
-
-                    <p class="card-text pt-4"><?= $movie['description']?></p>
-                    <p class="card-text">Country: <?= $movie['country']?></p>
-                    <p class="card-text">Genre: <?= $movie['genre']?></p>
-                    <p class="card-text">Release: <?= $movie['released']?></p>
-                    <p class="card-text">Date show: 12/02/2023 5:30</p>
-                    <p class="card-text">Cinema: XXXX</p>
-                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                </div>
-                <div class="d-flex justify-content-between ms-3">
-                    <a href="#" class="btn btn-outline-danger bg-danger text-white" style="margin-left: 20px;">BOOKING</a>
-                </div>
-                <a href="https://youtu.be/1esRrwrmWzA"></a>
-            </div>
-        </div>
+    ?> 
+    <div class="card-detail">
+    <div class="card-thumbnail">
+      <img src=" <?php  echo $movie['image'];?>">
     </div>
-    
+    <div class="card-body-detail">
+      <span class="card-title-detail"><?= $movie['title']?></span>
+      <p>
+        <span class="card-text bg-danger p-1 rounded text-white">HD</span>
+        <span class="card-text  p-1">⭐️</span>
+        <span class="card-text  p-1"><?= $movie['released']?></span>
+      </p>
+      <p class="card-text">Country: <?= $movie['country']?></p>
+      <p class="card-text">Genre: <?= $movie['genre']?></p>
+      <p class="card-text">Release: <?= $movie['released']?></p>
+      <p class="card-text">Date show: 12/02/2023 5:30</p>
+      <p class="card-text">Cinema: XXXX</p>
+      <div class="card-description">
+        <p><?= $movie['description']?></p>
+      </div>
+      <div class="d-flex justify-content-between ">
+        <a href="#" class="btn btn-outline-danger bg-danger text-white">BOOKING</a>
+    </div>
+    <a href="https://youtu.be/1esRrwrmWzA"></a>
+    </div>
+  </div>
     <?php endforeach;?>
 </div>
+
+
+
