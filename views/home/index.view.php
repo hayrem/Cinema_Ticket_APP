@@ -11,7 +11,7 @@
 
         <?php foreach ($shows as $show): ?>
 
-        <div class="card d-flex mx-2 my-2 " style="width: 11.5rem;">
+        <div class="card d-flex mx-1 my-2 " style="width: 12rem;">
             <img src=" <?php  echo $show['image'];?> " width="100%" height="70%" class="card-img-top" >
             <div class="card-body" height="30%">
                 <h6 class="card-title">
