@@ -1,5 +1,5 @@
 <div class="container-fluid text-white  p-0 ">
-<nav class="navbar navbar-expand-md navbar-light  main-menu" style="background:#072f4e;">
+<nav class="navbar navbar-expand-md navbar-light  main-menu p-0" style="background:#072f4e;">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="../../assets/phnom-penh-cinema-low-resolution-logo-color-on-transparent-background.png" alt="" width="60px">
@@ -31,7 +31,7 @@
 
     </div>
 </nav>
-<nav class="navbar navbar-expand-md text-white " style="background:#072f4e;">
+<nav class="navbar navbar-expand-md text-white p-0 m-0" style="background:#072f4e;">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mx-auto">
