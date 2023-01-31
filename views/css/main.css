@@ -1,12 +1,25 @@
 /* navbar style */
 /* @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap'); */
-body{
-  height: auto;
-  /* background:#7E1616; */
-  background: #0a0a0ad7;
-  /* position: relative; */
-  /* position: absolute; */
-
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: thin;
+  background: black;
+}
+body:after{
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  width: 200%;
+  height: 200%;
+  background: url('https://i.pinimg.com/736x/f1/2e/2a/f12e2a1c7e8393322f71358a79139436--jedi-sith-episode-vii.jpg');
+  background-size: contain;
+  background-position: 600px -200px;
+  
+  filter: blur(30px);
 }
 .btn .bx {
   vertical-align: inherit;
@@ -93,7 +106,7 @@ section {
   display: flex;
   overflow: hidden;
   border-radius: 10px;
-  background: #000;
+  background-color: #0000007a !important;
   box-shadow: -5px 5px 10px rgba(0,0,0,0.7),
               5px 5px 10px rgba(0,0,0,0.7);
   /* padding-bottom: 10px; */

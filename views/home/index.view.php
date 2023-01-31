@@ -2,8 +2,8 @@
 
 
 <!-- insert home page -->
-<div class="container-fluid mb-4 bg-dark p-1 ps-5 " style="color:white;">
-    <h1>Trending</h1>
+<div class="container-fluid mb-4 p-1 ps-5 " style="color:white;">
+    <h1>Movies</h1>
 </div>
 <!-- <h3>Show</h3> -->
 <?php if (!empty($shows)){ ?>
