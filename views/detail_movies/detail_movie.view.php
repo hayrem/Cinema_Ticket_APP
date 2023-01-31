@@ -1,11 +1,11 @@
 <div class="container-fluid d-flex flex-wrap mt-4">
     <?php foreach ($movies as $movie): 
     ?>
-    <div class="card mb-3 " style="height: 35rem; width: 100%;">
+    <div class="bg-light mb-3 " style="height: 33rem; width: 100%;">
         <div class="row g-0 p-5 " style="margin-top: -25px;">
             <div class="col-md-4">
             <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
-            <img src=" <?php  echo $movie['image'];?>"   width="100%" height="75%" class="rounded card-img-top">
+            <img src=" <?php  echo $movie['image'];?>"   width="100%" height="90%" class="rounded card-img-top">
             </div>
             <div class="col-md-8" >
                 <div class="card-body ms-4">

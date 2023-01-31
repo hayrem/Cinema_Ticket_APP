@@ -14,7 +14,7 @@ $country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
     <select name='year' id='year' class='selectpicker p-2 m-1 bg-dark'  style="color:white; border-radius:5px;border:none;">;
         <option value='none' selected disabled hidden>Year</option>
             <?php 
-                for ($i = 1992; $i <= 2023; $i++) {
+                for ($i = 2023; $i >= 1992; $i--) {
                     echo "<option value='$i' >$i</option>";
                 } 
             ?>
