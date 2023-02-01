@@ -1,7 +1,5 @@
 <?php
 require "views/partials/head.php";
-// require "views/partials/nav.php";
-
 ?>
 
 
@@ -17,6 +15,7 @@ require "views/partials/head.php";
 			type="email" 
 			class="form-control" 
 			name="email"
+			placeholder="Enter you email address" 
 			value="<?= (isset($_POST['email']))?$_POST['email']:"" ?>">
 			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		</div>
@@ -35,16 +34,15 @@ require "views/partials/head.php";
 				Remember me
 			</label>
 		</div>
-		<div class="d-flex">
-			<label class="form-label">Don't have an Account</label>
-			<a href="/sign_up" class="link-secondary ms-2 text-primary">Sign Up</a>
+		<div class="contain-btn mt-3 ">
+			<button type="submit" class="btn btn-danger p-2">Login</button>
+			<!-- <button type="submit" class="btn btn-danger mt-4 bg-primary " style="border: none;">
+				<a href="/" class="link-secondary ms-2 text-primary text-white " style="text-decoration: none;">Cencel</a>
+			</button> -->
 		</div>
-		<div class="contain-btn">
-			<button type="submit" class="btn btn-danger">Login</button>
+		<div class="d-flex mt-4">
+			<label class="form-label">Don't have an account</label>
+			<a href="/sign_up" class="link-secondary ms-2 text-primary">Sign Up</a>
 		</div>
 	</form>
 </div>
-
-<?php
-// require "views/partials/footer.php";
-?>

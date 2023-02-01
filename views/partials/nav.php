@@ -8,25 +8,42 @@
         <div class="collapse navbar-collapse p-0">
             <form class="form-inline mx-auto d-flex " method='post' name='fsearch'>
                 <input class="form-control " id="live_search" type="search" placeholder="Search for products..." aria-label="Search" name='search'>
-                <button class="btn btn-success " type="submit"><span class="material-symbols-outlined" value='search'>search</span></i></button>
+                <button style="border: solid white 1px;" class="btn btn-success "  type="submit"><span class="material-symbols-outlined" value='search'>search</span></i></button>
             </form>
 
             <ul class="navbar-nav">
-                <li class="nav-item ml-md-3">
-                    <div class="btn btn-primary">
-                        <!-- <login -->
-                        <a href="sign_in" class="<?= urlIs('/sign_in') ?>text-white"> Log In / </a>
-                      
-                        <!-- register  -->
-                        <a href="sign_up" class="<?= urlIs('/sign_up') ?>text-white"> Register</a>
-                        
-                    </li>
-                    <!--  manage account-->
+
+                    <?php
+
+                        if(empty($_COOKIE['firstName'])
+                        && empty ($_COOKIE['lastName'])
+                        && empty($_COOKIE['email']))
+                        {
+                            ?>
+                            
+                                <li class = 'navbar-item ml-md-3'>
+
+                                    <div class='btn btn-primary'>
+                                         <!-- sign in  -->
+                                        <a href='sign_in' class='<?= urlIs('/sign_in') ?>text-white'>Sign In/</a>
+                                        <!-- register  -->
+                                        <a href='sign_up' class='<?= urlIs('/sign_up') ?>text-white'>Register</a>
+                                    </div>
+
+                                </li>
+                            <?php
+                        }else{
+                            ?>
+                                <!--  manage account-->
+                                <span class="material-symbols-outlined mt-1 ms-4"  data-toggle="modal" data-target="#manage_acc">account_circle </span>
+                                <?php require "views/users/manage_acc.view.php"; ?>
+                            <?php
+
+                        }
+
+                    ?>
                   
-                        <span class="material-symbols-outlined mt-4 ms-4" data-toggle="modal" data-target="#manage_acc">account_circle </span>
-                        <?php require "views/users/manage_acc.view.php"; ?>
-                    <!-- </a> -->
-                </ul>
+            </ul>
         </div>
 
     </div>

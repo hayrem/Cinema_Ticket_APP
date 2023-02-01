@@ -21,6 +21,9 @@ body:after{
   
   filter: blur(30px);
 }
+/* .navbar {
+  padding: 2rem;
+} */
 .btn .bx {
   vertical-align: inherit;
   margin-top: -3px;
@@ -66,7 +69,14 @@ input[type="search"]{
 .active{
   border-radius: 10px;
 }
+.nav-item a{
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/* .nav-item a:hover{
 
+} */
 /* Extra large devices (large desktops, 1200px and up) */
  @media (min-width: 1200px) {
   .form-inline .form-control {
