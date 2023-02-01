@@ -20,12 +20,16 @@ require "views/partials/head.php";
 			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		</div>
 
-		<div class="mb-3">
+		<div class="sign mb-3">
 			<label class="form-label">Password</label>
-			<input type="password" 
-			class="form-control" 
-			name="password"
-			value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
+			<div class="input">
+				<input type="password" 
+				id="password"
+				class="form-control" 
+				name="password"
+				value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
+				<i class="bi bi-eye-slash" id="togglePassword"></i>
+			</div>
 			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		</div>
 		<div class="form-check mb-4">
@@ -45,4 +49,23 @@ require "views/partials/head.php";
 			<a href="/sign_up" class="link-secondary ms-2 text-primary">Sign Up</a>
 		</div>
 	</form>
+	<script>
+		const togglePassword = document.querySelector("#togglePassword");
+		const password = document.querySelector("#password");
+
+		togglePassword.addEventListener("click", function () {
+			// toggle the type attribute
+			const type = password.getAttribute("type") === "password" ? "text" : "password";
+			password.setAttribute("type", type);
+			
+			// toggle the icon
+			this.classList.toggle("bi-eye");
+		});
+
+		// prevent form submit
+		const form = document.querySelector(".sign");
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+		});
+	</script>
 </div>
