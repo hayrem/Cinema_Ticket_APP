@@ -1,7 +1,9 @@
 <?php
 require "views/partials/head.php";
 ?>
-
+<div>
+	<button style=" position:absolute; left:50px; top:10px; padding:10px; width:100px; border-radius:10px;"><a href="/">Back</a></button>
+</div>
 <div class="login d-flex justify-content-center align-items-center vh-100 text-white">
 	<!-- <div class="img  w-25">
 		<img src="../../assets/login.svg" width="100%" alt="">
