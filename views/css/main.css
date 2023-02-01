@@ -201,6 +201,7 @@ h3{
 
 footer{
   color:#caced1 !important;
+  width: 99% !important;
 }
 
 li{
@@ -321,7 +322,7 @@ background: #000;
 .wrapframe {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -397,7 +398,7 @@ background: #000;
   right: 0;
 }
 .slideshow--contrast--after .thirdslides {
-  width: 100vw;
+  width: 100%;
   left: auto;
   right: 0;
 }
