@@ -49,23 +49,5 @@ require "views/partials/head.php";
 			<a href="/sign_up" class="link-secondary ms-2 text-primary">Sign Up</a>
 		</div>
 	</form>
-	<script>
-		const togglePassword = document.querySelector("#togglePassword");
-		const password = document.querySelector("#password");
-
-		togglePassword.addEventListener("click", function () {
-			// toggle the type attribute
-			const type = password.getAttribute("type") === "password" ? "text" : "password";
-			password.setAttribute("type", type);
-			
-			// toggle the icon
-			this.classList.toggle("bi-eye");
-		});
-
-		// prevent form submit
-		const form = document.querySelector(".sign");
-		form.addEventListener('submit', function (e) {
-			e.preventDefault();
-		});
-	</script>
 </div>
+<script src="../../views/js/main.js"></script>

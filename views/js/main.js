@@ -1,27 +1,19 @@
-const myModal = new bootstap.Modal('#register');
+const togglePassword = document.querySelector("#togglePassword");
+const password = document.querySelector("#password");
 
-document.querySelector('.btn-close').addEventListener('click', ()=>{
-    myModal.hide();
+togglePassword.addEventListener("click", function () {
+    // toggle the type attribute
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    
+    // toggle the icon
+    this.classList.toggle("bi-eye");
 });
 
-
-$(document).ready(function(){
-    $('#live_search').keyup(function(){
-        let input = $(this).val();
-        // alert(input);//get data from jQuery input field
-        if(input != ''){
-            $.ajax({
-                url:"livesearch.php",
-                method:"POST",
-                data:{input:input},
-                success:function(data){
-                    $("#searchresult").html(data);
-                    $("#searchresult").css("display","block");
-                }
-            });
-           
-        }else{
-                $("#searchresult").css("display","none");
-            }
-    });
+// prevent sign submit
+const sign = document.querySelector(".sign");
+sign.addEventListener('submit', function (e) {
+    e.preventDefault();
 });
+
+// console.log("Hello")

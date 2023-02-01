@@ -53,13 +53,16 @@ require "views/partials/head.php";
 			value="<?= (isset($_POST['password'])) ? $_POST['password'] : "" ?>">
 			<span style="color:red;"><?= (isset($messageError['password'])) ? $messageError['password'] : "" ?></span>
 		</div>
-
-		<div class="mb-4">
+		<div class="sign mb-4">
 			<label class="form-label">Comfirm Password</label>
-			<input type="password"
-			class="form-control" 
-			name="comfirm-password" 
-			value="<?= (isset($_POST['comfirm-password'])) ? $_POST['comfirm-password'] : "" ?>">
+			<div class="input">
+				<input type="password"
+				id="password"
+				class="form-control" 
+				name="comfirm-password" 
+				value="<?= (isset($_POST['comfirm-password'])) ? $_POST['comfirm-password'] : "" ?>">
+				<i class="bi bi-eye-slash" id="togglePassword"></i>
+			</div>
 			<span style="color:red;"><?= (isset($messageError['comfirm-password'])) ? $messageError['comfirm-password'] : "" ?></span>
 		</div>
 		<div class="contain-btn mt-4">
@@ -74,3 +77,4 @@ require "views/partials/head.php";
 		</div>
 	</form>
 </div>
+<script src="../../views/js/main.js"></script>
