@@ -20,12 +20,16 @@ require "views/partials/head.php";
 			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
 		</div>
 
-		<div class="mb-3">
+		<div class="sign mb-3">
 			<label class="form-label">Password</label>
-			<input type="password" 
-			class="form-control" 
-			name="password"
-			value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
+			<div class="input">
+				<input type="password" 
+				id="password"
+				class="form-control" 
+				name="password"
+				value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
+				<i class="bi bi-eye-slash" id="togglePassword"></i>
+			</div>
 			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		</div>
 		<div class="form-check mb-4">
@@ -46,3 +50,4 @@ require "views/partials/head.php";
 		</div>
 	</form>
 </div>
+<script src="../../views/js/main.js"></script>
