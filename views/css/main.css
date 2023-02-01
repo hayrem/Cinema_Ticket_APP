@@ -574,4 +574,15 @@ background: #000;
     opacity: 0;
     transform: scale(1.05);
   }
-}/*# sourceMappingURL=sty.css.map */
+ 
+}
+.input {
+  display: flex;
+  align-items: center;
+}
+.sign i {
+  margin-left: -30px;
+  cursor: pointer;
+  color: black;
+}
+/*# sourceMappingURL=sty.css.map */
