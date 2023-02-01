@@ -28,6 +28,10 @@
   </div>
     <?php endforeach;?>
 </div>
+<div class="container-fluid " style="color:white;  padding:2% 0 0% 5.5%;">
+    <h1 style="padding-bottom:2%;">Trailer</h1>
+    <iframe width="95%" height="500px" src="https://www.youtube.com/embed/RqrXhwS33yc" style="border-radius:10px;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 
 

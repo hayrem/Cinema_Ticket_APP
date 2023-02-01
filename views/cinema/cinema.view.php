@@ -4,7 +4,7 @@
   <?php
     foreach ( $cinemas as $cinema):
   ?>
-  <div class="m-3 d-flex flex-lg-row rounded-3 shadow p-3 mb-5 bg-body rounded">
+  <div class="m-3 d-flex flex-lg-row rounded-3 shadow p-3  bg-body rounded">
         <img src="https://cdn1.vectorstock.com/i/1000x1000/90/05/movie-cinema-premiere-poster-design-template-vector-12329005.jpg" class="rounded" width="25%" height="90%">
         <div class="card-body ">
           <h4 class="card-title fw-bold"><?= $cinema['name'];?></h4>
