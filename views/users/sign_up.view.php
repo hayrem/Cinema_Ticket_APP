@@ -73,7 +73,7 @@ require "views/partials/head.php";
 		</div>
 		<div class="d-flex mt-3 ">
 			<label class="form-label">Have an account</label>
-			<a href="/sign_in" class="link-secondary ms-2 text-primary">Login</a>
+			<a href="/sign_in" class="link-secondary ms-2 text-primary">Sign in</a>
 		</div>
 	</form>
 </div>

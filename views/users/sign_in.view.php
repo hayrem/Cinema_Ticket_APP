@@ -7,7 +7,7 @@ require "views/partials/head.php";
 
 	<form class="shadow w-450" action="/sign_in" method="post">
 
-		<h4 class="display-4  fs-1">LOGIN</h4><br>
+		<h4 class="display-4  fs-1">Sign in</h4><br>
 
 		<div class="mb-3">
 			<label class="form-label">Email</label>
@@ -40,7 +40,7 @@ require "views/partials/head.php";
 			<label class="form-check-label" for="flexCheckChecked">Remember me</label>
 		</div>
 		<div class="contain-btn mt-3 ">
-			<button type="submit" class="btn btn-danger p-2">Login</button>
+			<button type="submit" class="btn btn-danger p-2">Sign in</button>
 			<!-- <button type="submit" class="btn btn-danger mt-4 bg-primary " style="border: none;">
 				<a href="/" class="link-secondary ms-2 text-primary text-white " style="text-decoration: none;">Cencel</a>
 			</button> -->
