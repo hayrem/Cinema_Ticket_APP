@@ -29,10 +29,11 @@ require "views/partials/head.php";
 			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
 		</div>
 		<div class="form-check mb-4">
-			<input class="form-check-input " type="checkbox" value="" id="remember-me" checked>
-			<label class="form-check-label" for="flexCheckChecked">
-				Remember me
-			</label>
+			<input class="form-check-input " type="checkbox" 
+			value="" 
+			id="remember" 
+			name="remember">
+			<label class="form-check-label" for="flexCheckChecked">Remember me</label>
 		</div>
 		<div class="contain-btn mt-3 ">
 			<button type="submit" class="btn btn-danger p-2">Login</button>

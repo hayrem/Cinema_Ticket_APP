@@ -74,7 +74,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
    }
-
+   
+  
 }
    
    

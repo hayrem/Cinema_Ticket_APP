@@ -1,8 +1,6 @@
 <?php
 
 session_start();
-// $_SESSION ['firstName'];
-
 
 require "models/users.model.php";
 
@@ -54,9 +52,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         
         if($emailUser){
             $messageError['email'] = 'email already taken!';
-            echo "have";
         }else{
-            echo "don't have";
             $emailTrue = true;
         }
     }
@@ -88,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         setcookie("firstName",$firstName,$remembering_timespan);
         setcookie("lastName",$lastName,$remembering_timespan);
 // store user information in session 
-        $_SESSION = $_POST['firstName']; $_SESSION = $_POST['lastName']; $_SESSION = $_POST['email'];$_SESSION = $_POST['password'];
+        $_SESSION ['firstNme'] = $_POST['firstName']; $_SESSION['lastName'] = $_POST['lastName']; $_SESSION['email'] = $_POST['email'];
         header("location:/");
     }
     
