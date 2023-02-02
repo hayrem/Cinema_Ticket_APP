@@ -41,4 +41,13 @@ function getDetaCinemas() : array
 
 // $cinemas = getDetaCinemas();
 // echo $cinemas;
+function notListShow(int $id) : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from movies where movie_id != :id");
+    $statement->execute([':id'=> $id]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+}
+
 ?>
