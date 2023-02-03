@@ -16,6 +16,6 @@ require "views/home/index.view.php";
 ?>
 
 <?php
-
+require "controllers/alert/alert.controller.php";
 require "database/database.php";
 require "views/partials/footer.php"?>

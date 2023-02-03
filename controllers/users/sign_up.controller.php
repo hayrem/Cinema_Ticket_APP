@@ -1,7 +1,9 @@
 <?php
 
+
 session_start();
 
+require "views/partials/head.php";
 require "models/users.model.php";
 
 $emailTrue = false;
