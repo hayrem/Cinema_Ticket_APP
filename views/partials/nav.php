@@ -64,6 +64,9 @@
                 <li class="nav-item me-4">
                     <a class="<?= urlIs('/ticket') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
                 </li>
+                <li class="nav-item me-4">
+                    <a class="<?= urlIs('/contact') ? 'active bg-dark text-white' : '' ?> nav-link" href="/contact">CONTACT US</a>
+                </li>
             </ul>
         </div>
     </div>
