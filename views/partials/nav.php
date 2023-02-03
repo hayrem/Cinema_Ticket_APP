@@ -35,7 +35,11 @@
                         }else{
                             ?>
                                 <!--  manage account-->
-                                <span class="material-symbols-outlined mt-1 ms-4"  data-toggle="modal" data-target="#manage_acc">account_circle </span>
+                                <div class="d-flex " style="width:100%;justify-content:center; align-items:center;">
+                                  <span class="material-symbols-outlined mx-2"  data-toggle="modal" data-target="#manage_acc">account_circle </span>
+                                  <h5 class='m-0 p-0'><?= isset($_COOKIE['firstName'])? $_COOKIE['firstName'] : "" ?></h5>  
+                                </div>
+                                
                                 <?php require "views/users/manage_acc.view.php"; ?>
                             <?php
 
