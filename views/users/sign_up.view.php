@@ -1,6 +1,4 @@
-<?php
-require "views/partials/head.php";
-?>
+
 <div>
 	<button style=" position:absolute; left:50px; top:10px; padding:10px; width:100px; border-radius:10px;"><a href="/">Back</a></button>
 </div>
