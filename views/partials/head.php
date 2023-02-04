@@ -13,11 +13,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- style css link -->
     <link rel="stylesheet" href="../../views/css/main.css">
-<<<<<<< HEAD
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../../views/css/hall.css">
-=======
->>>>>>> b25ab99d63157a267a870c5ee371f47bd2d31cf1
 </head>
 <body>
     
