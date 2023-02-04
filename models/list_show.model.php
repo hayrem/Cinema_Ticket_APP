@@ -30,10 +30,10 @@ function getDetailMovie(int $getID) : array
 }
 
 //cinema detail fuction 
-function getDetaCinemas() : array
+function getDetahall() : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from cinemas");
+    $statement = $connection->prepare("select * from cinema_halls");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
  

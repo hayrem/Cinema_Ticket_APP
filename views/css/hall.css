@@ -1,0 +1,37 @@
+.head {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .show {
+    width: 300%;
+    overflow: auto;
+    -webkit-animation: slide-show 32s linear infinite;
+    -moz-animation: slide-show 32s linear infinite;
+    animation: slide-show 32s linear infinite;
+  }
+  
+    .show img {
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        width: 11.11%;
+        float: left;
+        border: solid .5px
+    
+  }
+  
+  @keyframes slide-show {
+    0% {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+      -o-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+    100% {
+      -webkit-transform: translateX(-66.66%);
+      -moz-transform: translateX(-66.66%);
+      -o-transform: translateX(-66.66%);
+      transform: translateX(-66.66%);
+    }
+}
