@@ -14,6 +14,7 @@
     <!-- style css link -->
     <link rel="stylesheet" href="../../views/css/main.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../views/css/hall.css">
 </head>
 <body>
     

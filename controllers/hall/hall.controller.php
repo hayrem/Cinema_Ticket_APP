@@ -4,9 +4,9 @@
     require "views/partials/nav.php";
     require "controllers/alert/alert.controller.php";
     require ('models/list_show.model.php');
-    $cinemas = getDetaCinemas();
+    $halls = getDetahall();
 
-    require "views/cinema/cinema.view.php";
+    require "views/hall/hall.view.php";
 
 ?>
 
