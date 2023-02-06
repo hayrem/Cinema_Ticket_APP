@@ -50,5 +50,12 @@ function usernameByEmail($email): array
 	$stmt ->execute([':email' => $email]);
     return $stmt->fetch();
 }
-
+function userRole($email)
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email AND role = 'seller' ");
+    $statement->execute([':email' => $email]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+ 
+}
 
