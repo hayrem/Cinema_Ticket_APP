@@ -6,7 +6,7 @@
 
 <?php if (!empty($shows)){ ?>
 
-<section class="container-movecards">
+<div class="container-movecards">
 
     <?php foreach ($shows as $show): ?>
         <div class="movie-cards">
@@ -42,7 +42,7 @@
 
         </div>
         <?php endforeach;?>
-</section>
+</div>
 <?php } 
     else
     {
