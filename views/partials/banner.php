@@ -2,7 +2,6 @@
     require "head.php";
 ?>
 <section style='z-index:1; margin-bottom:6%;'>
-    <!-- <img src="https://www.bollywoodhungama.com/wp-content/uploads/2022/10/Black-Adam-English-1.jpg" alt="" width="100%"> -->
     <div class="wrapframe" style="height: 70vh;">
       <div class="slideshows">
         <div class="slideshow slideshow--hero">
