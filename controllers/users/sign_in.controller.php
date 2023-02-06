@@ -11,8 +11,6 @@ require "database/database.php";
 $valueTrue = 0;
 
 $messageError = [];
-
-
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 
@@ -66,13 +64,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
    }
    if($valueTrue === 2){
-      header("location: /");
       $firstName = usernameByEmail($email)['first_name'];
       $lastName = usernameByEmail($email)['last_name'];
       $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
       setcookie("email",$email,$remembering_timespan);
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
+      header("location: /");
+      
    }
    
   
