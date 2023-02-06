@@ -35,7 +35,7 @@
                       <a href="">BOOKING</a>  
                     </span>
                     <span class="mystery">
-                     <a href="/detail?movie_id=<?php echo $show['movie_id']?>">MORE INFO</a>   
+                        <a href="/detail?movie_id=<?php echo $show['movie_id']?>">MORE INFO</a>   
                     </span>
                 </div>
             </div>
