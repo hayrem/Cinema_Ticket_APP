@@ -6,7 +6,7 @@
 
 <?php if (!empty($shows)){ ?>
 
-<sectionm class="container-movecards">
+<section class="container-movecards">
 
     <?php foreach ($shows as $show): ?>
         <div class="movie-cards">
