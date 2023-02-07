@@ -427,7 +427,32 @@
                 value="<?= (isset($_POST['password'])) ? $_POST['password'] : "" ?>">
                 <span style="color:red;"><?= (isset($messageError['password'])) ? $messageError['password'] : "" ?></span>
             </div>
-            <button type="submit" class="btn btn-primary w-100 mt-4">PAYMENT</button>
+            <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
+            <button class="popup-button">PAYMENT</button>
         </form>
+        <div class="wrapper">
+        <div class="popup-box">
+            <h2>Credit/Debit Card</h2>
+            <div class="card_types">
+                <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" width="10%"/>
+                <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt=""  width="10%"/>
+                <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt=""  width="10%"/>
+                <img class="card_img" src="https://img.icons8.com/fluency/512/mastercard.png" alt=""  width="10%"/>
+              </div>
+            <a class="close-button popup-close" href="#">x</a>
+            <div class="form-group">
+                <form method="post">
+                    <input type="text" name="Name" required placeholder="Card Name">
+                    <input type="text" name="Name" required placeholder="Card Number">
+                    <div>
+                        <input type="text" name="Name" value="" placeholder="Expire" maxlength="4" />
+                        <input type="text" name="Name" value="" placeholder="CVC" maxlength="3" />
+                    </div>
+                    <button type="submit" id="subscribe">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
+<script src="../js/main.js"></script>
