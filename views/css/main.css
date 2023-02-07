@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: 'Raleway', sans-serif;
   font-weight: thin;
   background: black;
@@ -533,15 +536,16 @@ background: #000;
 
 .container-movecards{
   display: flex;
+  /* margin-left: 1.5%; */
   flex-wrap: wrap;
   gap: 10px;
-  /* padding: 50px; */
+  padding: 1.5%;
 }
 
 .movie-cards {
   transform: translate(-0%, -0%); 
-  width: 220px;
-  height: 370px;
+  width: 209px;
+  height: 300px;
   background: #000;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.5);

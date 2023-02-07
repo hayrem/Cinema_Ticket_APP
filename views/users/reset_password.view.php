@@ -16,10 +16,10 @@ require "views/partials/head.php";
 			<input 
 			type="password" 
 			class="form-control" 
-			name="oldPassword" 
+			name="oldpassword" 
 			placeholder="" 
-			value="<?= (isset($_POST['oldPassword'])) ? $_POST['oldPassword'] : "" ?>">
-			<span style="color:red;"><?= (isset($messageError['oldPassword'])) ? $messageError['oldPassword'] : "" ?></span>
+			value="<?= (isset($_POST['oldpassword'])) ? $_POST['oldpassword'] : "" ?>">
+			<span style="color:red;"><?= (isset($messageError['oldpassword'])) ? $messageError['oldpassword'] : " " ?></span>
 		</div>
 
 		<div class="mb-3">
@@ -28,7 +28,7 @@ require "views/partials/head.php";
 			class="form-control" 
 			name="newpassword" 
 			value="<?= (isset($_POST['newpassword'])) ? $_POST['newpassword'] : "" ?>">
-			<span style="color:red;"><?= (isset($messageError['newpassword'])) ? $messageError['newpassword'] : "" ?></span>
+			<span style="color:red;"><?= (isset($messageError['newpassword'])) ? $messageError['newpassword'] : " " ?></span>
 		</div>
 		<div class="mb-3">
 			<label class="form-label">Confirm New Password</label>
@@ -37,7 +37,7 @@ require "views/partials/head.php";
 			class="form-control" 
 			placeholder="Confirm New Password" 
 			value="<?= (isset($_POST['confirmnewpassword'])) ? $_POST['confirmnewpassword'] : "" ?>">
-			<span style="color:red;"><?= (isset($messageError['confirmnewpassword'])) ? $messageError['confirmnewpassword'] : "" ?></span>
+			<span style="color:red;"><?= (isset($messageError['confirmnewpassword'])) ? $messageError['confirmnewpassword'] : " " ?></span>
 		</div>
 		<div class="d-flex justify-content-end">
 			<button type="sumbit" class="btn btn-primary">Change</button>

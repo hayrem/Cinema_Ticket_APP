@@ -1,6 +1,6 @@
 <!-- insert home page -->
-<div class="container-fluid" style="color:white; padding:2% 0 2% 5.5%;">
-    <h1>Movies</h1>
+<div class="container-fluid d-flex" style="color:white;padding:0;">
+    <h1 class=" mx-3">Movies</h1>
 </div>
 <!-- <h3>Show</h3> -->
 
@@ -20,8 +20,8 @@
                     <h2>
                         <?php
                             $length=strlen($show['title']);
-                            if($length>15){
-                                echo substr ($show['title'], 0,15)."...";
+                            if($length>30){
+                                echo substr ($show['title'], 0,30)."...";
                             }else{
                                 echo $show['title'];
                             }
@@ -31,11 +31,11 @@
                 </div>
 
                 <div class="tags">
-                    <span class="fantasy">
-                      <a href="">BOOKING</a>  
+                    <span class="fantasy bg-danger" style='width:115px; display:flex; justify-content:center;'>
+                      <a href="" style='color:white;'>BOOKING</a>  
                     </span>
-                    <span class="mystery">
-                        <a href="/detail?movie_id=<?php echo $show['movie_id']?>">MORE INFO</a>   
+                    <span class="mystery bg-primary" style='width:115px; display:flex; justify-content:center;'>
+                        <a href="/detail?movie_id=<?php echo $show['movie_id']?>" style='color:white;'>MORE INFO</a>  
                     </span>
                 </div>
             </div>

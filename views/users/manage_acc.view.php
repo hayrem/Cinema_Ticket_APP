@@ -28,14 +28,14 @@ session_start();
                             </div>
                         </div>
                         <div class="card-icon shadow-none bg-light rounded p-4">
-                            <div class="icon mb-2 mt-4 text-dark">
+                            <div class="icon mb-2 text-dark d-flex align-item-center">
                                 <span class="material-symbols-outlined">change_circle</span>
                                 <!-- <a href="../../controllers/users/reset_password.controller.php" class="ms-4">Change Password</a><br> -->
                           
                                 <a class="<?= urlIs('/reset')?> nav-link" href="/reset">Change Password</a>
                                 
                             </div>
-                            <div class="icon1 mt-2 text-dark">
+                            <div class="icon1 mt-2 text-dark d-flex align-item-center">
                                 <span class="material-symbols-outlined ">logout</span>
                                 <a href="../../controllers/users/sign_out.controller.php" class="ms-4">Logout</a>
                             </div>

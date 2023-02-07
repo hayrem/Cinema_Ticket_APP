@@ -45,10 +45,22 @@ function passwordUserLogin():array
 function usernameByEmail($email): array
 {
     global $connection;
-    $sql = "SELECT first_name, last_name FROM users WHERE email = :email";
+    $sql = "SELECT first_name, last_name ,password FROM users WHERE email = :email";
 	$stmt = $connection->prepare($sql);
 	$stmt ->execute([':email' => $email]);
     return $stmt->fetch();
+}
+function changePassword( $email,$newPassword)
+{
+    global $connection;
+    $newPassword=password_hash($newPassword, PASSWORD_DEFAULT);
+    $sql = "UPDATE users SET password= :newPassword WHERE email= :email";
+	$stmt = $connection->prepare($sql);
+	$stmt ->execute(
+        [
+            ':email' => $email,
+            ':newPassword' => $newPassword
+        ]);
 }
 
 

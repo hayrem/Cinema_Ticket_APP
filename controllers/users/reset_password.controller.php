@@ -18,17 +18,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         return $data;
     }
  
-    $oldPassword = validate($_POST['oldPassword']);
+    $oldPassword = validate($_POST['oldpassword']);
     $newPassword = validate($_POST['newpassword']);
     $confirmNewPassword = validate($_POST['confirmnewpassword']);
 
     if(empty($oldPassword))
     {
-         $messageError["oldPassword"] = "Please enter your old password";
+         $messageError["oldpassword"] = "Please enter your old password";
     }   
     elseif(!preg_match("/^[a-zA-Z\d]{8,50}+$/" ,$oldPassword))
     {
-         $messageError["ordlpassword"]  = "Please enter your password more that 8 cheraters";
+         $messageError["oldpassword"]  = "Please enter your password more that 8 cheraters";
     }
     if(empty($newPassword))
     {
@@ -41,44 +41,40 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     if (empty($confirmNewPassword)) 
     {
          $messageError["confirmnewpassword"] = "Please enter you comfirm new password";
-    }
-    if ($newPassword != $confirmNewPassword)
+    }elseif ($newPassword != $confirmNewPassword)
     {
          $messageError["confirmnewpassword"] = "Password doesn't match";
     }
 
 
-    $passwordLogin = passwordUserLogin();
-    foreach ($passwordLogin as $users)
-    {
-         $oldPassword = $users['password'];
-         //old password for database
+    $passwordLogin = usernameByEmail($_COOKIE['email']);
+    if(!empty($oldPassword)){
+          if (password_verify($oldPassword,$passwordLogin['password'])){
+                    $valueTrue +=1;
+          }
+          else
+          {
+               // echo "incroorec password";
+               $messageError["oldpassword"] = 'Incorrect password';
+                         
+          }
     }
-    if(password_verify($newPassword,$oldPassword))
-    {
-         // echo "correct password";
-            $valueTrue += 1 ;
+    if (!empty($newPassword) or !empty($confirmNewPassword)){
+          if($newPassword === $confirmNewPassword)
+          {
+               $valueTrue += 1 ;
+          }
+     
     }
-    else
-    {
-         // echo "incroorec password";
-        $messageError["password"] = 'Incorect password';
-               
+    
+    if($valueTrue === 2 ){
+          changePassword($_COOKIE['email'],$newPassword);
+          header("location: /movie");
+    }else{
+      echo $oldPassword.'hello';
+      echo (password_verify($newPassword,$oldPassword));  
     }
-    if($valueTrue === 1 ){
-          $byeamil = usernameByEmail($email)['email'];
-          print_r($byeamil);
-          $sql_2 = "UPDATE users
-        	    SET password='$newPassword'
-        	    WHERE password='$oldPassword";
-          $stmt = $connection->prepare($sql);
-	     $stmt ->execute();
-
-        // header("location:/");
-    }
-
-    echo $oldPassword.'hello';
-    echo (password_verify($newPassword,$oldPassword));  
+   
 }
 
 

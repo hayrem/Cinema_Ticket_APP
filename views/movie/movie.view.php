@@ -4,7 +4,7 @@ $genre_list = ["Action","Adventure","Animation","Anime","Asian Dramas","Biograph
                 "Documentary","Drama","Family","Fantasy","History","Crime","Horror",
                 "Mystery","Romance","Sci-Fi","Sport","Thriller","War","Western","Music"];
 ?>
-<div class="d-flex me-4 p-2" style="margin-left:48% ;">
+<div class="d-flex me-4 pt-2" style="margin-left:53% ;">
     <button class="border-0 m-1 p-2 d-flex align-items-center justify-content-around bg-dark" style="width: 10rem; color:white; border-radius:5px;"> Sort by <span>.</span><a href="">Title</a></button>
     <select class='m-1 p-2 bg-dark'name="country" id="country" style="color:white; border-radius:5px; border:none;">
         <option value="none" selected disabled hidden>Country</option>
