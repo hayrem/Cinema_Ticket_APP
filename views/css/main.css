@@ -586,3 +586,28 @@ background: #000;
   color: black;
 }
 /*# sourceMappingURL=sty.css.map */
+
+
+.text{
+  /* font-size: 50px; */
+  background-size: cover;
+  height: 40vh;
+  background-image: linear-gradient(to bottom, rgba(94, 75, 75, 0.25) 0, rgba(79, 24, 24, 0.5) 100%), url(https://images.squarespace-cdn.com/content/v1/5d9e9960ff34916b5d5216f9/1571505099912-YO87A1KITSDEPW2PDF2N/theater-rental-banner.jpg?format=2500w);
+}
+.text h1{
+  font-size: 100px;
+  font-weight: bold;
+} 
+.head_contact form{
+  display: flex;
+  flex: 2;
+
+}
+.head_contact form .address{
+  flex: 0.9;
+
+}
+.head_contact form .inform{
+  flex: 1.1;
+
+}
