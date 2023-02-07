@@ -67,11 +67,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       $firstName = usernameByEmail($email)['first_name'];
       $lastName = usernameByEmail($email)['last_name'];
       $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
+      if (empty($_POST['remeber'])){
+         $remembering_timespan = time() + 60*60; // will store 1 hour
+      }
+
       setcookie("email",$email,$remembering_timespan);
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
       header("location: /");
-      
+
    }
    
   

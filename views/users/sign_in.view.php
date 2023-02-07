@@ -34,10 +34,10 @@ require "views/partials/head.php";
 		</div>
 		<div class="form-check mb-4">
 			<input class="form-check-input " type="checkbox" 
-			value="" 
+			value="remember" 
 			id="remember" 
 			name="remember">
-			<label class="form-check-label" for="flexCheckChecked">Remember me</label>
+			<label class="form-check-label" for="flexCheckChecked" >Remember me</label>
 		</div>
 		<div class="contain-btn mt-3 ">
 			<button type="submit" class="btn btn-danger p-2">Sign in</button>
