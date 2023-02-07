@@ -53,4 +53,26 @@ function notListShow(int $id) : array
 
 }
 
+
+// function get hallShows
+function hallShow(int $ID) : array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM cinema_halls 
+    INNER JOIN shows ON shows.cinema_hall_id = cinema_halls.cinema_hall_id  
+    INNER JOIN movies ON shows.show_id = movies.movie_id
+    WHERE cinema_halls.cinema_hall_id = :cinema_hall_id");
+    $statement->execute([':cinema_hall_id'=> $ID]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+};
+// function get name hall
+
+function getNameHall(int $ID) : array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM cinema_halls 
+    WHERE cinema_halls.cinema_hall_id = :cinema_hall_id");
+    $statement->execute([':cinema_hall_id'=> $ID]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+};
 ?>

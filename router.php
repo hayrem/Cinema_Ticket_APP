@@ -11,6 +11,8 @@ $routes = [
     '/reset' => 'controllers/users/reset_password.controller.php',
     '/manage_acc' => 'controllers/users/manage_acc.controller.php',
     '/detail' => 'controllers/movie/detail_movie.controller.php',
+    '/hallShow' => 'controllers/hall/show.controller.php',
+
 
 ];
 
