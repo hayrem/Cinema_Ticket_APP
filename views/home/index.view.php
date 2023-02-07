@@ -32,7 +32,7 @@
 
                 <div class="tags">
                     <span class="fantasy">
-                      <a href="">BOOKING</a>  
+                      <a href="/booking">BOOKING</a>  
                     </span>
                     <span class="mystery">
                         <a href="/detail?movie_id=<?php echo $show['movie_id']?>">MORE INFO</a>   
