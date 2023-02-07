@@ -11,7 +11,9 @@ $routes = [
     '/reset' => 'controllers/users/reset_password.controller.php',
     '/manage_acc' => 'controllers/users/manage_acc.controller.php',
     '/detail' => 'controllers/movie/detail_movie.controller.php',
-
+    '/seller' => 'controllers/seller/home_movie.controller.php',
+    '/create' => 'controllers/seller/create_movie.controller.php',
+    '/setting' => 'controllers/seller/setting_movie.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
