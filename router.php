@@ -14,6 +14,7 @@ $routes = [
     '/seller' => 'controllers/seller/home_movie.controller.php',
     '/create' => 'controllers/seller/create_movie.controller.php',
     '/setting' => 'controllers/seller/setting_movie.controller.php',
+    '/show' => 'controllers/seller/show_movie.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
