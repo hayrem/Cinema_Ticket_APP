@@ -1,5 +1,6 @@
 <?php
 require("database/database.php");
+
 function read_seller_edit(){
     global $connection;
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -23,8 +24,19 @@ function read_seller_edit(){
     
             ]);
     
-            header('location: /seller');
+            // header('location: /seller');
         }
     } 
 }
-$seller = read_seller_edit();
+
+function getMovie(){
+    global $connection;
+    $statement = $connection->prepare("select * from movies");
+    $statement->execute();
+    return $statement->fetchAll();
+
+}
+
+
+
+
