@@ -53,4 +53,29 @@ function notListShow(int $id) : array
 
 }
 
+
+function addNewMovie(string $title,string $genre, string $mv_country, string $mv_duration,string $mv_language,string $mv_released,string $mv_image, /* string $show_date,string $show_time_start,string $show_time_end,string $hallName, string $total_seat,  */string $mv_description, string $mv_trailer) : array
+{
+    global $connection;
+    $statement = $connection->prepare("INSERT INTO movies (title, genre, country, duration, released, language, description, image, trailer) VALUES (:title, :genre, :country, :duration, :released, :language, :description, :image, :trailer)");
+    $statement->execute([
+        ':title' => $title,
+        ':genre' => $genre,
+        ':country' => $mv_country,
+        ':duration' => $mv_duration,
+        ':language' => $mv_language,
+        ':released' => $mv_released,
+        ':image' => $mv_image,
+        // ':date' => $show_date,
+        // ':time_start' => $show_time_start,
+        // ':time_end' => $show_time_end,
+        // ':name' => $hallName,
+        // ':total_seat' => $total_seat,
+        ':description' => $mv_description,
+        ':trailer' => $mv_trailer,
+    ]);
+    // return $statement->rowCount() > 0;
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
 ?>
