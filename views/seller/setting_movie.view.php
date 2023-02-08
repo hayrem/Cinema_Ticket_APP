@@ -1,5 +1,5 @@
 <?php
-require "../partials/head.php";
+require "views/partials/head.php";
 ?>
 <div class="app-container">
     <div class="sidebar">
@@ -10,7 +10,7 @@ require "../partials/head.php";
         </div>
         <ul class="sidebar-list">
             <li class="sidebar-list-item ">
-                <a href="home.view.seller.php">
+                <a href="/seller">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         <polyline points="9 22 9 12 15 12 15 22" />
@@ -29,7 +29,7 @@ require "../partials/head.php";
                 </a>
             </li>
             <li class="sidebar-list-item ">
-                <a href="create_movie.view.php">
+                <a href="/create">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -53,34 +53,41 @@ require "../partials/head.php";
         </div>
 
         <!--  -->
-        <div class="container-movecards">
             <div class="container-fluid d-flex flex-wrap mt-4">
-                    <div class="card-detail">
-                        <div class="card-thumbnail">
-                            <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfG25a8pd0SlJcC8qcLX1pdeCZDouIYMd09i4llRlU8d4iRVqeedz4dOtcI4N0ThHLi2A&usqp=CAU">
-                        </div>
-                        <div class="card-body-detail">
-                            <span class="card-title-detail"></span>
-                            <p>
+            <?php foreach ($posts as $post): 
+            ?>
+            <div class="card mb-3 " style="height: 35rem; width: 100%;">
+                <div class="row g-0 p-5 " style="margin-top: -25px;">
+                    <div class="col-md-4">
+                    <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
+                    <img src=" <?php  echo $post['image'];?>"   width="100%" height="75%" class="rounded card-img-top">
+                    </div>
+                    <div class="col-md-8" >
+                        <div class="card-body ms-4">
+                            <h2 class="card-title " style="margin-top: -25px;"><?= $post['title']?></h2>
+                            <div class="card-text d-flex ">
                                 <span class="card-text bg-danger p-1 rounded text-white">HD</span>
                                 <span class="card-text  p-1">⭐️</span>
-                                <span class="card-text  p-1"></span>
-                            </p>
-                            <p class="card-text">Country:</p>
-                            <p class="card-text">Genre: </p>
-                            <p class="card-text">Release: </p>
-                            <p class="card-text">Date show:</p>
-                            <p class="card-text"></p>
-                            <div class="card-description">
-                                <p></p>
+                                <span class="card-text  p-1"><?= $post['released']?></span>
+                                <span class="card-text  p-1">Genre:  <?= $post['genre']?></span>
                             </div>
-                            <div class="d-flex justify-content-between ">
-                                <a href="#" class="btn btn-outline-danger bg-danger text-white">BOOKING</a>
+
+                            <p class="card-text pt-4"><?= $post['description']?></p>
+                            <p class="card-text">Country: <?= $post['country']?></p>
+                            <p class="card-text">Genre: <?= $post['genre']?></p>
+                            <p class="card-text">Release: <?= $post['released']?></p>
+                            <p class="card-text">Date show: 12/02/2023 5:30</p>
+                            <p class="card-text">Cinema: XXXX</p>
+                            <div class="d-flex justify-content-center ">
+                                <a href="../../controllers/seller/edit_movie.controller.php?movie_id=<?= $post['movie_id'] ?>" class="btn btn-outline-danger bg-danger text-white"style="margin-right: 10px;">Edit</a>
+                                <a href="../../controllers/seller/delete_movie.controller.php?movie_id=<?= $post['movie_id'] ?>" class="btn btn-outline-danger bg-danger text-white" >Delete</a>
+                                <!-- <a href="#" class="btn btn-outline-danger bg-danger text-white">BOOKING</a> -->
                             </div>
                             <a href="https://youtu.be/1esRrwrmWzA"></a>
                         </div>
                     </div>
             </div>
+            <?php endforeach;?>
         </div>
 
     </div>

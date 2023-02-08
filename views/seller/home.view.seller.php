@@ -1,5 +1,5 @@
 <?php
-    require "../partials/head.php";
+    require "views/partials/head.php";
 ?>
   <div class="app-container">
     <div class="sidebar">
@@ -19,7 +19,7 @@
           </a>
         </li>
         <li class="sidebar-list-item ">
-          <a href="setting_movie.view.php">
+          <a href="/setting">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
               <line x1="3" y1="6" x2="21" y2="6" />
@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="sidebar-list-item">
-                <a href="create_movie.view.php">
+                <a href="/create">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -53,112 +53,43 @@
     </div>
 
         <!--  -->
-    <div class="container-movecards">
-        <div class="movie-cards">
-          <div class="poster">
-            <img src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
-          </div>
-          <div class="details">
-            <h2>Star Wars: Episode V (1980)
-              <br><span>Directed by Irvin Kershner</span>
-            </h2>
-            <div class="rating">
-              <span>4/5</span>
-            </div>
-            <div class="tags">
-              <span class="fantasy">BOOKING</span>
-              <span class="mystery">MOEW INFOE</span>
-            </div>
-          </div>
-        </div>
-        <div class="movie-cards">
-          <div class="poster">
-            <img src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
-          </div>
-          <div class="details">
-            <h2>Star Wars: Episode V (1980)
-              <br><span>Directed by Irvin Kershner</span>
-            </h2>
-            <div class="rating">
-              <span>4/5</span>
-            </div>
-            <div class="tags">
-              <span class="fantasy">BOOKING</span>
-              <span class="mystery">MOEW INFOE</span>
-            </div>
-          </div>
-        </div>
-        <div class="movie-cards">
-          <div class="poster">
-            <img src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
-          </div>
-          <div class="details">
-            <h2>Star Wars: Episode V (1980)
-              <br><span>Directed by Irvin Kershner</span>
-            </h2>
-            <div class="rating">
-              <span>4/5</span>
-            </div>
-            <div class="tags">
-              <span class="fantasy">BOOKING</span>
-              <span class="mystery">MOEW INFOE</span>
-            </div>
-          </div>
-        </div>
-        <div class="movie-cards">
-          <div class="poster">
-            <img src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
-          </div>
-          <div class="details">
-            <h2>Star Wars: Episode V (1980)
-              <br><span>Directed by Irvin Kershner</span>
-            </h2>
-            <div class="rating">
-              <span>4/5</span>
-            </div>
-            <div class="tags">
-              <span class="fantasy">BOOKING</span>
-              <span class="mystery">MOEW INFOE</span>
-            </div>
-          </div>
-        </div>
-        <div class="movie-cards">
-          <div class="poster">
-            <img src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
-          </div>
-          <div class="details">
-            <h2>Star Wars: Episode V (1980)
-              <br><span>Directed by Irvin Kershner</span>
-            </h2>
-            <div class="rating">
-              <span>4/5</span>
-            </div>
-            <div class="tags">
-              <span class="fantasy">BOOKING</span>
-              <span class="mystery">MOEW INFOE</span>
-            </div>
-          </div>
-        </div>
-        <div class="movie-cards">
-          <div class="poster">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_4ha5Xbh2zqx8jV-X8TDPdFU-KjvNQMNGlSivG21GLbwLhljeSQ7ccAQEFOOdFSivd84&usqp=CAU">
-          </div>
-          <div class="details">
-            <h2>Star Wars: Episode V (1980)
-              <br><span>Directed by Irvin Kershner</span>
-            </h2>
-            <div class="rating">
-              <span>4/5</span>
-            </div>
-            <div class="tags">
-              <span class="fantasy">BOOKING</span>
-              <span class="mystery">MOEW INFOE</span>
-            </div>
-          </div>
-        </div>
-    </div>
 
-  </div>
+    <div class="container-movecards">
+      <?php foreach ($shows as $show): ?>
+          <div class="movie-cards">
+            <div class="poster">
+            <img src="<?php  echo $show['image'];?> ">
+            </div>
+            <div class="details">
+                <div class="title">
+                    <h2>
+                        <?php
+                            $length=strlen($show['title']);
+                            if($length>15){
+                                echo substr ($show['title'], 0,15)."...";
+                            }else{
+                                echo $show['title'];
+                            }
+                        ?>
+                    </h2>
+                    <span><?= $show['released'] . ' ' . $show ['duration'].'s'?></span>
+                </div>
+
+                <div class="tags">
+                    <span class="fantasy">
+                      <a href="">BOOKING</a>  
+                    </span>
+                    <span class="mystery">
+                     <a href="/setting?movie_id=<?php echo $show['movie_id']?>">MORE INFO</a>   
+                    </span>
+                </div>
+            </div>
+          </div>
+      </div>
+      <?php endforeach;?>
+
+    </div>
+ 
 
 </body>
 </html>
