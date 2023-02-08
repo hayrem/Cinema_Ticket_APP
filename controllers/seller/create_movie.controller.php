@@ -1,6 +1,7 @@
 <?php
+// echo "Wellcome bii";
+// require "views/partials/head.php";
 // require ('models/list_show.model.php');
-echo "Wellcome bii";
 require("views/seller/create_movie.view.php");
 if (isset($_POST['submit']))
 {

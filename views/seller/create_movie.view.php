@@ -1,5 +1,5 @@
 <?php
-require "views/partials/head.php";
+require "../partials/head.php";
 ?>
 <div class="app-container">
     <div class="sidebar">
@@ -10,7 +10,7 @@ require "views/partials/head.php";
         </div>
         <ul class="sidebar-list">
             <li class="sidebar-list-item ">
-                <a href="/seller">
+                <a href="home.view.seller.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         <polyline points="9 22 9 12 15 12 15 22" />
@@ -19,7 +19,7 @@ require "views/partials/head.php";
                 </a>
             </li>
             <li class="sidebar-list-item ">
-                <a href="/setting">
+                <a href="setting_movie.view.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -29,7 +29,7 @@ require "views/partials/head.php";
                 </a>
             </li>
             <li class="sidebar-list-item active">
-                <a href="/create">
+                <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -100,7 +100,6 @@ require "views/partials/head.php";
                             <label for="exampleInputEmail1" class="form-label">Time end</label>
                             <input type="text" name="time_end" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div> 
-
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
                             <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" col="10"></textarea>
@@ -111,12 +110,12 @@ require "views/partials/head.php";
                         </div>
                     </div>
                 </div> 
-
-                    <div class="d-flex justify-content-end">
-                       <button type="submit" name="submit" class="btn btn-primary w-100">Create</button> 
-                    </div>
-                <!-- </div> -->
+                <div class="btn" style="display: flex; justify-content:center; gap:20px">
+                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                </div>
             </form>
         </div>
-    </body>
-    </html>
+
+        </body>
+
+        </html>
