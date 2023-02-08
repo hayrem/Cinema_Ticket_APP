@@ -1,5 +1,5 @@
 <?php
-require("database/database.php");
+require("../../database/database.php");
 echo "hi";
 function sellerShowMovie() : array
 {
@@ -10,14 +10,13 @@ function sellerShowMovie() : array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-$sellerShows=sellerShowMovie();
 
 
 
-function deleteShow(int $id) : array
+
+function deleteShow(int $id)
 {
     global $connection;
-    $statement = $connection->prepare("DELETE FROM movies WHERE movies.movie_id = :movie_id");
+    $statement = $connection->prepare("DELETE FROM movies WHERE movie_id = :id");
     $statement->execute([':movie_id'=> $id]);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
