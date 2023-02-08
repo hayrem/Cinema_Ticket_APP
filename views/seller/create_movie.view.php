@@ -54,52 +54,68 @@ require "views/partials/head.php";
 
         <!--  -->
         <div class="form-createmovie p-4">
-            <form class="bg-white  p-4 shadow-lg " style="width: 70%;border-radius:10px;">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Title of movie</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <label for="exampleInputEmail1" class="form-label">Chosse type screen</label>
-                <select class="form-select form-select mb-3 " style="padding:10px;" aria-label=".form-select-lg example">
-                    <option selected>Chosse type screen</option>
-                    <option value="1">2D</option>
-                    <option value="2">3D</option>
-                    <option value="3">HD</option>
-                    <option value="4">Screen X</option>
-                </select>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Genre</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Release Date</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Date show</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="formFileSm" class="form-label">Upload poster</label>
-                    <input class="form-control form-control-lg" id="formFileLg" type="file">
-                </div>
-                <div class="mb-3">
-                    <label for="formFileSm" class="form-label">Upload trailer</label>
-                    <input class="form-control form-control-lg" id="formFileLg" type="file">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" col="10"></textarea>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary w-100">Create</button>
+            <form class="bg-white  p-4 shadow-lg " style="width: 90%;border-radius:10px;" method="post">
+                <div class="content" style="display: flex; justify-content:space-between">
+                    <div class="" style="width: 46%;">    
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Title of movie</label>
+                            <input type="text"  name='title' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Genre</label>
+                            <input type="text" name="genre" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Country</label>
+                            <input type="text" name="country" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Duration</label>
+                            <input type="text" name="duration" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Language</label>
+                            <input type="text" name="language" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileSm" class="form-label">Upload poster</label>
+                            <input type="file" name="image" class="form-control form-control-lg"  id="formFileLg" >
+                        </div>
+                    </div>
+
+                    <div class="" style="width: 46%;">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Release Date</label>
+                            <input type="year" name="released" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Date show</label>
+                            <input type="text" name="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Time start</label>
+                            <input type="text" name="time_start" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div> 
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Time end</label>
+                            <input type="text" name="time_end" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div> 
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="5" col="10"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileSm" class="form-label">Upload trailer</label>
+                            <input type="file" name="trailer" class="form-control form-control-lg" id="formFileLg" >
+                        </div>
+                    </div>
+                </div> 
+                <div class="btn" style="display: flex; justify-content:center; gap:20px">
+                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
                 </div>
             </form>
         </div>
+
         </body>
 
         </html>

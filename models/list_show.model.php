@@ -80,35 +80,32 @@ function notListShow(int $id) : array
 // }
 // $post = read_post_create();
 
-function read_seller_edit(){
-    global $connection;
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        if (!empty($_POST['movie_id']) and !empty($_POST['title']) and !empty($_POST['genre'])
-            and !empty($_POST['country']) and !empty($_POST['duration']) and !empty($_POST['released']) 
-            and !empty($_POST['language']) and !empty($_POST['description'])) 
-        {
-            $statement = $connection->prepare("update movies set title = :title, genre = :genre, country = :country, duration = :duration, released = :released, language = :language,  description = :description, image = :image where movie_id = :movie_id");
-            $statement->execute([
-                ':title' => $_POST['title'],
-                ':movie_id' => $_POST['movie_id'],
-                ':genre' =>  $_POST['genre'],
-                ':country' =>  $_POST['country'],
-                ':duration' =>  $_POST['duration'],
-                ':released' =>  $_POST['released'],
-                ':language' =>  $_POST['language'],
-                ':description' =>  $_POST['description'],
-                ':image' =>  $_POST['image']
-            
-    
-            ]);
-    
-            header('location: /seller');
-        }
-    } 
-}
-$seller = read_seller_edit();
 
 // $cinemas = getDetaCinemas();
 // echo $cinemas;
+function addNewMovie(string $title,string $genre, string $mv_country, string $mv_duration,string $mv_language,string $mv_released,string $mv_image, /* string $show_date,string $show_time_start,string $show_time_end,string $hallName, string $total_seat,  */string $mv_description, string $mv_trailer) : array
+{
+    global $connection;
+    $statement = $connection->prepare("INSERT INTO movies (title, genre, country, duration, released, language, description, image, trailer) VALUES (:title, :genre, :country, :duration, :released, :language, :description, :image, :trailer)");
+    $statement->execute([
+        ':title' => $title,
+        ':genre' => $genre,
+        ':country' => $mv_country,
+        ':duration' => $mv_duration,
+        ':language' => $mv_language,
+        ':released' => $mv_released,
+        ':image' => $mv_image,
+        // ':date' => $show_date,
+        // ':time_start' => $show_time_start,
+        // ':time_end' => $show_time_end,
+        // ':name' => $hallName,
+        // ':total_seat' => $total_seat,
+        ':description' => $mv_description,
+        ':trailer' => $mv_trailer,
+    ]);
+    // return $statement->rowCount() > 0;
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
 ?>
