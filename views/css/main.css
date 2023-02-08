@@ -52,7 +52,9 @@ body:after{
   background-position: 600px -200px;
   filter: blur(30px);
 }
-
+.error-message span{
+  color: #000;
+}
 .btn .bx {
   vertical-align: inherit;
   margin-top: -3px;

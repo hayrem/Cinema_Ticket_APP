@@ -58,6 +58,7 @@ require "views/partials/head.php";
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Title of movie</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="error-message" style="color:red;"><?= (isset($messageError['comfirm-password'])) ? $messageError['comfirm-password'] : "<span>.</span>" ?></span>
                 </div>
                 <label for="exampleInputEmail1" class="form-label">Chosse type screen</label>
                 <select class="form-select form-select mb-3 " style="padding:10px;" aria-label=".form-select-lg example">
