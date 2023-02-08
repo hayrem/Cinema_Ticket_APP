@@ -1,9 +1,5 @@
 <?php
-// echo "Wellcome bii";
-// require "views/partials/head.php";
 
-
-require("views/seller/create_movie.view.php");
 if (isset($_POST['submit']))
 {
     $mv_title = $_POST['title'];
