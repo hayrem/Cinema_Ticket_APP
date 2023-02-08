@@ -1,4 +1,6 @@
 <?php
+// echo "Wellcome bii";
+// require "views/partials/head.php";
 // require ('models/list_show.model.php');
 if (isset($_POST['submit']))
 {
@@ -34,6 +36,7 @@ if (isset($_POST['submit']))
 // form validation $emailTrue = false;
 
 $messageError = [];
+
 function validation($data): string
 {
     $data = trim($data);
@@ -45,73 +48,37 @@ function validation($data): string
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     
-    $title = validation($_POST["$title"]);
-    $lastName = validation($_POST["lastName"]);
-    $email = validation($_POST["email"]);
-    $password = validation($_POST["password"]);
-    $confirmPassword = validation($_POST["comfirm-password"]);
+    $title = validation($_POST["title"]);
+    $genre = validation($_POST["genre"]);
+    $duration = validation($_POST["duration"]);
+    $released = validation($_POST["released"]);
+    // $confirmPassword = validation($_POST["comfirm-password"]);
     
     if(empty($title)){ 
-        $messageError["$title"] = "please enter a first name";
-    }elseif(!preg_match("/^[a-zA-Z\d]+$/",$title))
+        $messageError["title"] = "please enter a first name";
+    }elseif(strlen($title) > 20)
     {
-        $messageError["$title"] = 'Username most more that 5 letters and least that 20 letters';
+        $messageError["title"] = 'Username most more that 5 letters and least that 20 letters';
     }
-    if(empty($lastName)){
-        $messageError["lastName"] = "please enter a last name";
-    }elseif(!preg_match("/^[a-zA-Z\d]+$/",$lastName))
+    if(empty($genre)){
+        $messageError["genre"] = "please enter a  genre of movie";
+    }elseif(($genre))
     {
-        $messageError["username"] = 'Username most more that 5 letters and least that 20 letters';
+        $messageError["genre"] = 'Username most more that 5 letters and least that 20 letters';
     }
-    if(empty($email))
+    if(empty($duration ))
     {
-        $messageError["email"] = " Please enter your email";
+        $messageError["duration"] = " Please enter duration";
     } 
-    elseif (!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/",$email))
+  
+    if(empty($released))
     {
-        $messageError["email"] = "Invalid format and please re-enter valid email"; 
-    }
-
-    else{
-
-        // it will be returned number 1
-        $emailUser = getUserEmail($email);
-        
-        if($emailUser){
-            $messageError['email'] = 'email already taken!';
-        }else{
-            $emailTrue = true;
-        }
-    }
-    if(empty($password))
-    {
-        $messageError["password"] = "Please enter your password";
+        $messageError["released"] = "Please enter released ";
     }   
-    elseif(!preg_match("/^[a-zA-Z\d]{8,50}+$/" ,$password))
+   
+ 
+    if(empty($messageError))
     {
-        $messageError["password"]  = "Please enter your password more that 8 cheraters";
-    }
-    if (empty($confirmPassword)) 
-    {
-        $messageError["comfirm-password"] = "Please enter you comfirm password";
-    }
-    if ($password != $confirmPassword)
-    {
-        $messageError["password"] = "Password doesn't match";
-        $messageError["comfirm-password"] = "Password doesn't match";
-    }
-    if(empty($messageError) && $emailTrue = true)
-    {
-// store user information in database
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        createUser($title,$lastName,$email,$password);
-//  store user information in cookie
-        $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
-        setcookie("email",$email,$remembering_timespan);
-        setcookie("$title",$title,$remembering_timespan);
-        setcookie("lastName",$lastName,$remembering_timespan);
-// store user information in session 
-        $_SESSION ['firstNme'] = $_POST['$title']; $_SESSION['lastName'] = $_POST['lastName']; $_SESSION['email'] = $_POST['email'];
         header("location:/");
     }
     

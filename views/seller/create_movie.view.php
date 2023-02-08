@@ -18,7 +18,7 @@ require "views/partials/head.php";
         <!--  -->
         <div class="form-createmovie p-4">
             <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
                         <input type="text" name='title' class="form-control" value="<?= (isset($_POST['title'])) ? $_POST['title'] : "" ?>">
@@ -27,18 +27,20 @@ require "views/partials/head.php";
 
                     <div class="col">
                         <label for="exampleInputPassword1" class="form-label">Genre</label>
-                        <input type="text" name="genre" class="form-control">
-                        <span style="color:red;"><?= (isset($messageError['title'])) ? $messageError['title'] : "<span>.</span>" ?></span>
+                        <input type="text" name="genre" class="form-control" value="<?= (isset($_POST['genre'])) ? $_POST['genre'] : "" ?>">
+                        <span style="color:red;"><?= (isset($messageError['genre'])) ? $messageError['genre'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Duration</label>
-                    <input type="text" name="duration" class="form-control">
+                    <input type="text" name="duration" class="form-control" value="<?= (isset($_POST['duration'])) ? $_POST['duration'] : "" ?>">
+                    <span style="color:red;"><?= (isset($messageError['duration'])) ? $messageError['duration'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Release Date</label>
-                    <input type="year" name="released" class="form-control">
+                    <input type="year" name="released" class="form-control" value="<?= (isset($_POST['released'])) ? $_POST['released'] : "" ?>">
+                    <span style="color:red;"><?= (isset($messageError['released'])) ? $messageError['released'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
