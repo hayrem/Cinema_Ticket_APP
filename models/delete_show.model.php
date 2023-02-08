@@ -1,5 +1,5 @@
 <?php
-require("../../database/database.php");
+require("database/database.php");
 echo "hi";
 function sellerShowMovie() : array
 {
