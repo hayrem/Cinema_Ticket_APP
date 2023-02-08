@@ -6,7 +6,7 @@
         </a>
 
         <div class="collapse navbar-collapse p-0">
-            <form class="form-inline mx-auto d-flex " method='post' name='fsearch'>
+            <form class="form-inline mx-auto d-flex " method='post'>
                 <input class="form-control " 
                 id="live_search" 
                 type="search" 

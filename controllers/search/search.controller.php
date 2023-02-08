@@ -1,6 +1,5 @@
 <?php
-
-
+require "database/database.php";
 function testInput($data): string
 {
     $data = trim($data);
@@ -9,8 +8,6 @@ function testInput($data): string
     return $data;
     
 }
-require "database/database.php";
-
 if (isset($_POST['search'])) {
     $search  = testInput($_POST['search']);
     $shows=getMovie($search);
@@ -18,4 +15,6 @@ if (isset($_POST['search'])) {
 }else{
     $shows=showMovie();
 }
+
+
 
