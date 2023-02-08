@@ -42,8 +42,7 @@ function getDetahall() : array
  
 }
 
-// $cinemas = getDetaCinemas();
-// echo $cinemas;
+// function remove movie card that already descripe in detial 
 function notListShow(int $id) : array
 {
     global $connection;
@@ -96,15 +95,24 @@ function addNewMovie(string $title,string $genre, string $mv_country, string $mv
         ':language' => $mv_language,
         ':released' => $mv_released,
         ':image' => $mv_image,
-        // ':date' => $show_date,
-        // ':time_start' => $show_time_start,
-        // ':time_end' => $show_time_end,
-        // ':name' => $hallName,
-        // ':total_seat' => $total_seat,
         ':description' => $mv_description,
         ':trailer' => $mv_trailer,
     ]);
-    // return $statement->rowCount() > 0;
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+//  Function add new show
+function addNewShows(string $show_date,string $show_time_start, string $show_time_end, string $movie_id,string $hall_id) : array
+{
+    global $connection;
+    $statement = $connection->prepare("INSERT INTO shows (date,  time_start,  time_end,  movie_id,  cinema_hall_id) VALUES (:date,  :time_start,  :time_end,  :movie_id,  :cinema_hall_id)");
+    $statement->execute([
+        ':date' => $show_date,
+        ':time_start' => $show_time_start,
+        ':time_end' => $show_time_end,
+        ':movie_id' => $movie_id,
+        ':cinema_hall_id' => $hall_id,
+    ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
