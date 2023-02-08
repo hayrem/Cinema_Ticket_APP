@@ -27,7 +27,7 @@ require "views/partials/head.php";
                             <img src=" <?php echo $show["image"]; ?>">
                         </div>
                         <div class="card-body-detail">
-                            <span class="card-title-detail"></span>
+                            <span class="card-title-detail"><?php echo $show["title"];?></span>
                             <p>
                                 <span class="card-text bg-danger p-1 rounded text-white">HD</span>
                                 <span class="card-text  p-1">⭐️</span>
@@ -36,8 +36,9 @@ require "views/partials/head.php";
                             <p class="card-text">Country: <?php echo $show["country"];?></p>
                             <p class="card-text">Genre: <?php echo $show["genre"]; ?> </p>
                             <p class="card-text">Release: <?php echo $show["released"]; ?> </p>
-                            <p class="card-text">Date show: <?php echo $show["duration"]; ?></p>
-                            <p class="card-text">Date show: <?php echo $show["name"]; ?></p>
+                            <p class="card-text">Date show: <?php echo $show["date"]; ?></p>
+                            <p class="card-text"> <?php echo $show["name"]; ?></p>
+                            <p class="card-text"><?php echo $show["description"]; ?></p>
                             <p class="card-text"></p>
                             <div class="card-description">
                                 <p></p>
