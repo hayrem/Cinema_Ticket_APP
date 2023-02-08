@@ -52,7 +52,9 @@ body:after{
   background-position: 600px -200px;
   filter: blur(30px);
 }
-
+.error-message span{
+  color: #000;
+}
 .btn .bx {
   vertical-align: inherit;
   margin-top: -3px;
@@ -700,8 +702,8 @@ body {
 .app-container {
   border-radius: 4px;
   width: 100%;
-  height:auto !important;
-  max-height: 100%;
+  /* height:auto !important; */
+  /* height:100vh; */
   max-width: 1280px;
   display: flex;
   overflow: hidden;
@@ -771,13 +773,12 @@ body {
 }
 
 .app-content {
-  padding: 16px;
-  background-color: var(--app-bg);
-  height: 100%;
-  flex: 1;
-  max-height: 100%;
+  /* padding: 16px; */
+  /* background-color: var(--app-bg); */
+  flex: 3;
   display: flex;
   flex-direction: column;
+  background: #e00808;
 }
 .app-content-header {
   display: flex;
@@ -996,9 +997,11 @@ body {
 
 /*form create movie ______________________________________________ */
 .form-createmovie{
-  /* background: #dbb4b4; */
+  background: #dbb4b4;
   display: flex;
   justify-content: center; 
   align-items: center;
-  
+  height: auto;
+  /* margin-top: 30px; */
+  /* width: 100%; */
 }

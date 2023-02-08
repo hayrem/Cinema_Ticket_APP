@@ -12,6 +12,8 @@ function sellerShowMovie() : array
 }
 $sellerShows=sellerShowMovie();
 
+
+
 function deleteShow(int $id) : array
 {
     global $connection;
