@@ -1,7 +1,8 @@
 <?php
 // echo "Wellcome bii";
 // require "views/partials/head.php";
-// require ('models/list_show.model.php');
+
+
 require("views/seller/create_movie.view.php");
 if (isset($_POST['submit']))
 {
@@ -30,7 +31,7 @@ if (isset($_POST['submit']))
     echo "<h3>".$mv_description."</h3>";
     echo "<h3>".$mv_trailer."</h3>";
 }
-
-// addNewMovie( $title, $genre,  $mv_country, $mv_duration, $mv_language, $mv_released, $mv_image, $mv_description,  $mv_trailer) ;
+require ('models/list_show.model.php');
+addNewMovie( $mv_title, $mv_genre,  $mv_country, $mv_duration, $mv_language, $mv_released, $mv_image, $mv_description,  $mv_trailer) ;
 ?>
 
