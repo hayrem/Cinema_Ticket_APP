@@ -4,6 +4,7 @@
             <img src="../../assets/logo.png" width="70%" alt="">
         </div>
     </div>
+    <?php $active = "active"; ?>
     <ul class="sidebar-list">
         <li class="sidebar-list-item ">
             <a href="/seller">
@@ -14,7 +15,7 @@
                 <span>Movie list</span>
             </a>
         </li>
-        <li class="sidebar-list-item ">
+        <li class="sidebar-list-item <?= urlIs('/setting') ? 'active' : '' ?>">
             <a href="/setting">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
@@ -24,7 +25,8 @@
                 <span>Theater sitting</span>
             </a>
         </li>
-        <li class="sidebar-list-item active">
+       
+        <li class="sidebar-list-item <?= urlIs('/create') ? 'active' : '' ?>">
             <a href="/create">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
@@ -34,7 +36,7 @@
                 <span>Add new movie</span>
             </a>
         </li>
-        <li class="sidebar-list-item ">
+        <li class="sidebar-list-item <?= urlIs('/show') ? 'active' : '' ?>">
             <a href="/show">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag">
                     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
