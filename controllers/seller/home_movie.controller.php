@@ -1,6 +1,6 @@
 <?php
-require "./models/list_show.model.php";
-require "./controllers/search/search.controller.php";
+require "models/list_show.model.php";
+require "controllers/search/search.controller.php";
 
 
 

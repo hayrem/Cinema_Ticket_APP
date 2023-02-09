@@ -1,19 +1,16 @@
 <?php
 
-require "models/seller_list_show.model.php";
 
-read_seller_edit($connection);
+$movie_id = $_GET["movie_id"] ? $_GET["movie_id"] : null;
 
-    $movie_id = $_GET["movie_id"] ? $_GET["movie_id"] : null;
-
-    if (isset($movie_id)){
-        $statement = $connection->prepare('select * from movies where movie_id = :movie_id');
-        $statement->execute([':movie_id' => $movie_id]);
-        $seller = $statement->fetch();
+if (isset($movie_id)){
+        require "models/seller_list_show.model.php";
+        $editMovie = getMovieId($movie_id);
+        require "views/seller/edit_movie.view.php";
     }
 
+    print_r($editMovie);
        
        
-require "views/seller/edit_movie.view.php";
 
 ?>

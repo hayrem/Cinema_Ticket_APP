@@ -1,6 +1,6 @@
 <?php
 require("database/database.php");
-echo "hi";
+
 function sellerShowMovie() : array
 {
     global $connection;
