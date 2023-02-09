@@ -1,6 +1,5 @@
 <?php
 require("database/database.php");
-echo "hi";
 function sellerShowMovie() : array
 {
     global $connection;
@@ -11,12 +10,11 @@ function sellerShowMovie() : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-
-
+$id = isset($_GET["movie_id"]) ? $_GET["movie_id"] :null;
 function deleteShow(int $id)
 {
     global $connection;
     $statement = $connection->prepare("DELETE FROM movies WHERE movie_id = :id");
-    $statement->execute([':movie_id'=> $id]);
+    $statement->execute([':id'=> $id]);
+    
 }
