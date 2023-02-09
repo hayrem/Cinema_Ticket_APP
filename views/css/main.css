@@ -44,7 +44,9 @@ input[type="search"]{
   line-height: 1.5;
   border-radius: 0.25rem;
 }
-
+.message-eroor span {
+  color: #000;
+}
 .bx.icon-single {
   font-size: 1.5rem;
   border-radius: 10px;
