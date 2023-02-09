@@ -14,5 +14,5 @@ function deleteShow(int $id)
     global $connection;
     $statement = $connection->prepare("DELETE FROM movies WHERE movie_id = :id");
     $statement->execute([':id'=> $id]);
-    
+    header("Location:/delete");
 }
