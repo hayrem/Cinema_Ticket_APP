@@ -4,7 +4,6 @@ require "models/seller_list_show.model.php";
 
 read_seller_edit($connection);
 
-
     $movie_id = $_GET["movie_id"] ? $_GET["movie_id"] : null;
 
     if (isset($movie_id)){

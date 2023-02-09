@@ -44,7 +44,7 @@ require "views/partials/head.php";
                                 <p></p>
                             </div>
                             <div class="d-flex justify-content-between ">
-                                <a href="/edit" class="btn btn-outline-danger bg-danger text-white">Edit</a>
+                                <a href="/edit?movie_id=<?= $show['movie_id'] ?>" class="btn btn-outline-danger bg-danger text-white">Edit</a>
                                 <a type="submit" href="setting?movie_id=<?php echo $show['movie_id']?>"> DELETE</a>  
                             </div>
                             <a href="https://youtu.be/1esRrwrmWzA"></a>
