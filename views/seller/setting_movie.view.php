@@ -22,7 +22,7 @@ require "views/partials/head.php";
         <div class="container-movecards">
             <div class="container-fluid d-flex flex-wrap mt-4">
                 <?php
-                $sellerShows=sellerShowMovie();
+                // $sellerShows=sellerShowMovie();
                  foreach ($sellerShows as $show): ?>
                     <div class="card-detail">
                         <div class="card-thumbnail">
@@ -46,7 +46,7 @@ require "views/partials/head.php";
                                 <p></p>
                             </div>
                             <div class="d-flex justify-content-between ">
-                                <a href="#" class="btn btn-outline-danger bg-danger text-white">BOOKING</a>
+                                <a href="/edit?id=<?php echo $show["movie_id"]; ?>" class="btn btn-outline-danger bg-danger text-white">Edit</a>
                                 <a type="submit" href="controllers/seller/setting_movie.controller.php?id=<?php echo $show['movie_id']?>"> DELETE</a>  
                             </div>
                             <a href="https://youtu.be/1esRrwrmWzA"></a>

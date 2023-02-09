@@ -1,5 +1,4 @@
 <?php
-
 require "views/partials/head.php";
 require "models/delete_show.model.php";
 $sellerShows = sellerShowMovie() ;
