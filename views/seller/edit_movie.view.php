@@ -2,10 +2,8 @@
 require "views/partials/head.php";
 ?>
 <div class="app-container">
-    <?php
-    require "views/partials/sidebar.php";
 
-    ?>
+    <?php require "views/partials/sidebar.php";?>
 
     <div class="app-content">
         <div class="app-content-actions">
@@ -16,9 +14,9 @@ require "views/partials/head.php";
                 <h3>Edit movie</h3>
             </div>
         </div>
-        <div class="form-createmovie p-4">
-            <input type="hidden" value="<?= $editMovie['movie_id'] ?>" name="movie_id">
-            <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
+        <div class="d-flex justify-content-center align-items-center p-4">
+            <input type="hidden" name="movie_id" value="<?= $editMovie['movie_id'] ?>">
+            <form action="/seller/edit" class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
@@ -79,7 +77,7 @@ require "views/partials/head.php";
                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="15" col="200"></textarea>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100">Update</button>
                 </div>
             </form>
         </div>
