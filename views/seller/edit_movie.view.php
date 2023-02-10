@@ -17,30 +17,30 @@ require "views/partials/head.php";
             </div>
         </div>
         <div class="form-createmovie p-4">
-            <input type="hidden" value="<?= $seller['movie_id'] ?>" name="movie_id">
+            <input type="hidden" value="<?= $editMovie['movie_id'] ?>" name="movie_id">
             <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
-                        <input type="text" name='title' class="form-control" value="<?= $seller['title'] ?>">
+                        <input type="text" name='title' class="form-control" value="<?=$editMovie['title'] ?>">
                         <span style="color:red;"><?= (isset($messageError['title'])) ? $messageError['title'] : "<span>.</span>" ?></span>
                     </div>
 
                     <div class="col">
                         <label for="exampleInputPassword1" class="form-label">Genre</label>
-                        <input type="text" name="genre" class="form-control" value="<?= $seller['genre'] ?>">
+                        <input type="text" name="genre" class="form-control" value="<?= $editMovie['genre'] ?>">
                         <span style="color:red;"><?= (isset($messageError['genre'])) ? $messageError['genre'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Duration</label>
-                    <input type="text" name="duration" class="form-control" value="<?= $seller['duration']?>">
+                    <input type="text" name="duration" class="form-control" value="<?= $editMovie['duration']?>">
                     <span style="color:red;"><?= (isset($messageError['duration'])) ? $messageError['duration'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Release Date</label>
-                    <input type="year" name="released" class="form-control" value="<?= $seller['released']?>">
+                    <input type="year" name="released" class="form-control" value="<?= $editMovie['released']?>">
                     <span style="color:red;"><?= (isset($messageError['released'])) ? $messageError['released'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="row">

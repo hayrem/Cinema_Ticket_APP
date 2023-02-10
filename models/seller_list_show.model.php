@@ -23,8 +23,6 @@ function read_seller_edit(){
             
     
             ]);
-    
-            header('location: /setting');
         }
     } 
 }
@@ -39,5 +37,10 @@ function getMovie(){
 }
 
 
-
+function getMovieId($movie_id){
+    global $connection;
+    $statement = $connection->prepare('select * from movies where movie_id = :movie_id');
+    $statement->execute([':movie_id' => $movie_id]);
+    return  $statement->fetch();
+};
 

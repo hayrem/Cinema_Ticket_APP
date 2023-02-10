@@ -1,5 +1,6 @@
 <?php
 require("database/database.php");
+
 function sellerShowMovie() : array
 {
     global $connection;
