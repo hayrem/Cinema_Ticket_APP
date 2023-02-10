@@ -21,8 +21,8 @@ require "views/partials/head.php";
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
-                        <input type="text" name='title' class="form-control" value="<?= (isset($_POST['title'])) ? $_POST['title'] : "" ?>">
-                        <span style="color:red;"><?= (isset($messageError['title'])) ? $messageError['title'] : "<span>.</span>" ?></span>
+                        <input type="text" name='title' class="form-control" value="<?= isset($_POST['title']) ? $_POST['title'] : "" ?>">
+                        <span style="color:red;"><?= isset($messageError['title']) ? $messageError['title'] : "<span>.</span>" ?></span>
                     </div>
 
                     <div class="col">
@@ -45,37 +45,49 @@ require "views/partials/head.php";
                 <div class="row">
                     <div class="col mb-3">
                         <label for="exampleInputEmail1" class="form-label">Choose Country</label>
-                        <select class="form-select p-2" aria-label="Default select example">
+                        <select name="country" class="form-select p-2" aria-label="Default select example">
                             <option selected>Choose country</option>
                             <option value="english">English</option>
                             <option value="france">France</option>
                             <option value="khmer">Khmer</option>
                         </select>
+                     <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
+                        
+
                     </div>
 
                     <div class="col mb-3">
                         <label for="exampleInputEmail1" class="form-label">Choose language</label>
-                        <select class="form-select p-2" aria-label="Default select example">
+                        <select name="language" class="form-select p-2" aria-label="Default select example">
                             <option selected>Choose language</option>
                             <option value="english">English</option>
                             <option value="france">France</option>
                             <option value="khmer">Khmer</option>
                         </select>
+                        <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
+
+
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload poster</label>
                         <input type="file" name="image" class="form-control form-control-lg">
+                        <span><?= (isset($messageError['image']))?$messageError['image']:"" ?></span>
                     </div>
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload trailer</label>
                         <input type="file" name="trailer" class="form-control form-control-lg">
+                        <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
+
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
                     <textarea  class="form-control" name="description" id="exampleFormControlTextarea1" rows="15" col="200"></textarea>
+                    <span style="color:red;"><?= (isset($messageError['description'])) ? $messageError['description'] : "<span>.</span>" ?></span>
+
+
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
