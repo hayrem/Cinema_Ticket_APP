@@ -16,7 +16,7 @@ require "views/partials/head.php";
         </div>
         <div class="d-flex justify-content-center align-items-center p-4">
             <input type="hidden" name="movie_id" value="<?= $editMovie['movie_id'] ?>">
-            <form action="/seller/edit" class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
+            <form action="/seller/update" class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
