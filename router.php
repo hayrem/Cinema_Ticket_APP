@@ -20,13 +20,14 @@ $routes = [
     // '/delete' => 'controllers/seller/delete_movie.controller.php',
     '/show' => 'controllers/seller/create_show_movie.controller.php',
 ];
-
-// $userRole = userRole($email);
-
-if(true) {
-    $routes['/seller'] = 'controllers/seller/home_movie.controller.php';
-    $routes['/seller/setting'] = 'controllers/seller/setting_movie.controller.php';
+if (isset($_COOKIE['email'])){
+    $userRole=$_COOKIE['userrole'];
+    if($userRole === 'seller') {
+        // $routes['/seller'] = 'controllers/seller/home_movie.controller.php';
+        $routes['/seller/setting'] = 'controllers/seller/setting_movie.controller.php';
+    };
 }
+
 if (array_key_exists($uri, $routes)) {
     require $routes[$uri];
 } else {
