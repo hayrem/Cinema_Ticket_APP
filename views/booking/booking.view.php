@@ -1,6 +1,22 @@
 <?php 
     $seatLetter=['A','B','C','D','E','F','G','H','J'];
 ?>
+<script>
+ function function1() {
+    let arr = [];
+    let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+    for (let i = 0; i < checkboxes.length; i++) {
+    arr.push(checkboxes[i].value)
+    }
+    let result = document.querySelector('#seat');
+    result.textContent = arr;
+    let price = document.querySelector('#total_price')
+    let totalPrice = arr.length;
+    console.log(totalPrice);
+    price.textContent = totalPrice*5 + '$';
+
+}
+</script>
 <div class="seat-container">
     <div class="container-form-seat">
     <form action="index.php" method="POST" class="">
@@ -23,8 +39,8 @@
                                 global $value;
                                 echo 
                                 "<li class='seat'>
-                                    <input type='checkbox' name='seat' value='$i$value' id='$i$value'/>
-                                    <label for='$i$value'>$i$value</label>
+                                    <input type='checkbox' name='seat' value='$value$i' id='$value$i' onclick='function1();' class='box'/>
+                                    <label for='$value$i'>$value$i</label>
                                 </li>";
                             };
                         echo 
@@ -51,7 +67,7 @@
 		    </div>
             <div class="mb-2">
                 <label class="form-label fs-5">Seat :</label>
-                <span style="color:red;"></span>
+                <span style="color:red;" id='seat'></span>
 		    </div>
             <div class="mb-2">
                 <label class="form-label fs-5">Date show :</label>
@@ -59,7 +75,7 @@
 		    </div>
             <div class="mb-2">
                 <label class="form-label fs-5">Total price :</label>
-                <span style="color:red;"></span>
+                <span style="color:red;" id='total_price'></span>
 		    </div>
             <span class="fs-4 mb-4">Customer info</span>
             <div class="row g-3 mb-3 mt-3">
@@ -93,58 +109,32 @@
                 value="<?= (isset($_POST['password'])) ? $_POST['password'] : "" ?>">
                 <span style="color:red;"><?= (isset($messageError['password'])) ? $messageError['password'] : "" ?></span>
             </div class="mb-3">
-            <div>
-                <label class="form-label">Seat</label>
-                <div id="result"></div>  
-                <script>  
-                    $(document).ready(function(){  
-                        $('#submit').click(function(){  
-                            var languages = [];  
-                            $('.get_value').each(function(){  
-                                    if($(this).is(":checked"))  
-                                    {  
-                                        languages.push($(this).val());  
-                                    }  
-                            });  
-                            languages = languages.toString();  
-                            $.ajax({  
-                                    url:"insert.php",  
-                                    method:"POST",  
-                                    data:{languages:languages},  
-                                    success:function(data){  
-                                        $('#result').html(data);  
-                                    }  
-                            });  
-                        });  
-                    });  
-                </script>  
-            </div>
             <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
             <button class="popup-button">PAYMENT</button>
         </form>
         <div class="wrapper">
-        <div class="popup-box">
-            <h2>Credit/Debit Card</h2>
-            <div class="card_types">
-                <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" width="10%"/>
-                <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt=""  width="10%"/>
-                <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt=""  width="10%"/>
-                <img class="card_img" src="https://img.icons8.com/fluency/512/mastercard.png" alt=""  width="10%"/>
-              </div>
-            <a class="close-button popup-close" href="#">x</a>
-            <div class="form-group">
-                <form method="post">
-                    <input type="text" name="Name" required placeholder="Card Name">
-                    <input type="text" name="Name" required placeholder="Card Number">
-                    <div>
-                        <input type="text" name="Name" value="" placeholder="Expire" maxlength="4" />
-                        <input type="text" name="Name" value="" placeholder="CVC" maxlength="3" />
-                    </div>
-                    <button type="submit" id="subscribe">SUBSCRIBE</button>
-                </form>
+            <div class="popup-box">
+                <h2>Credit/Debit Card</h2>
+                <div class="card_types">
+                    <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" width="10%"/>
+                    <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt=""  width="10%"/>
+                    <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt=""  width="10%"/>
+                    <img class="card_img" src="https://img.icons8.com/fluency/512/mastercard.png" alt=""  width="10%"/>
+                </div>
+                <a class="close-button popup-close" href="#">x</a>
+                <div class="form-group">
+                    <form method="post">
+                        <input type="text" name="Name" required placeholder="Card Name">
+                        <input type="text" name="Name" required placeholder="Card Number">
+                        <div>
+                            <input type="text" name="Name" value="" placeholder="Expire" maxlength="4" />
+                            <input type="text" name="Name" value="" placeholder="CVC" maxlength="3" />
+                        </div>
+                        <button type="submit" id="subscribe">SUBSCRIBE</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    </div>
 </div>
-<script src="../js/main.js"></script>
+<script src="views/js/main.js"></script>
