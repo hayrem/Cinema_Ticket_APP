@@ -16,8 +16,8 @@ $routes = [
     // '/seller' => 'controllers/seller/home_movie.controller.php',
     '/create' => 'controllers/seller/create_movie.controller.php',
     // '/setting' => 'controllers/seller/setting_movie.controller.php',
-    // '/edit' => 'controllers/seller/edit_movie.controller.php',
-    // '/delete' => 'controllers/seller/delete_movie.controller.php',
+    '/edit' => 'controllers/seller/edit_movie.controller.php',
+    '/delete' => 'controllers/seller/delete_movie.controller.php',
     '/show' => 'controllers/seller/create_show_movie.controller.php',
 ];
 

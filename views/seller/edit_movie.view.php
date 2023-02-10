@@ -17,8 +17,8 @@ require "views/partials/head.php";
             </div>
         </div>
         <div class="form-createmovie p-4">
-            <input type="hidden" value="<?= $editMovie['movie_id'] ?>" name="movie_id">
-            <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
+            <!-- <input type="hidden" value="" name="movie_id"> -->
+            <form action="/setting" class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
@@ -76,10 +76,10 @@ require "views/partials/head.php";
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="15" col="200"></textarea>
+                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="15" col="200"><?= $editMovie['description']?></textarea>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                    <button class="btn btn-primary w-100">Create</button>
                 </div>
             </form>
         </div>

@@ -5,21 +5,22 @@ function read_seller_edit(){
     global $connection;
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        if (!empty($_POST['movie_id']) and !empty($_POST['title']) and !empty($_POST['genre'])
+        if (!empty($_POST['title']) and !empty($_POST['genre'])
             and !empty($_POST['country']) and !empty($_POST['duration']) and !empty($_POST['released']) 
             and !empty($_POST['language']) and !empty($_POST['description'])) 
         {
-            $statement = $connection->prepare("update movies set title = :title, genre = :genre, country = :country, duration = :duration, released = :released, language = :language,  description = :description, image = :image where movie_id = :movie_id");
+            $statement = $connection->prepare("update movies set title = :title, genre = :genre, country = :country, duration = :duration, released = :released, language = :language, image = :image, trailer = :trailer,  description = :description where movie_id = :movie_id");
             $statement->execute([
                 ':title' => $_POST['title'],
                 ':movie_id' => $_POST['movie_id'],
                 ':genre' =>  $_POST['genre'],
-                ':country' =>  $_POST['country'],
                 ':duration' =>  $_POST['duration'],
                 ':released' =>  $_POST['released'],
+                ':country' =>  $_POST['country'],
                 ':language' =>  $_POST['language'],
-                ':description' =>  $_POST['description'],
-                ':image' =>  $_POST['image']
+                ':image' =>  $_POST['image'],
+                ':trailer' =>  $_POST['trailer'],
+                ':description' =>  $_POST['description']
             
     
             ]);
