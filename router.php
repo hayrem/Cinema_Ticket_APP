@@ -22,6 +22,7 @@ if (isset($_COOKIE['email'])){
         $routes['/seller/create_show'] =  'controllers/seller/create_show_movie.controller.php';
         $routes['/seller/create_movie'] =  'controllers/seller/create_movie.controller.php';
     };
+    
 }
 
 if (array_key_exists($uri, $routes)) {
