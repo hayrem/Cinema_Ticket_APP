@@ -415,17 +415,16 @@
                 name="email"
                 placeholder="Enter you email address" 
                 value="<?= (isset($_POST['email'])) ? $_POST['email'] : "" ?>">
-                <span style="color:red;"><?= (isset($messageError['email'])) ?
-                $messageError['email'] : "" ?></span>
+                <span style="color:red;"><?= (isset($messageError['email'])) ?$messageError['email'] : "" ?></span>
 		    </div>
             <div class="mb-3">
                 <label class="form-label">Phone number</label>
                 <input type="number"
                 class="form-control" 
-                name="number" 
+                name="phoneNumber" 
                 placeholder="Enter your phone number"
-                value="<?= (isset($_POST['password'])) ? $_POST['password'] : "" ?>">
-                <span style="color:red;"><?= (isset($messageError['password'])) ? $messageError['password'] : "" ?></span>
+                value="<?= (isset($_POST['phoneNumber'])) ? $_POST['phoneNumber'] : "" ?>">
+                <span style="color:red;"><?= (isset($messageError['phoneNumber'])) ? $messageError['phoneNumber'] : "" ?></span>
             </div>
             <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
             <button class="popup-button">PAYMENT</button>
