@@ -6,10 +6,5 @@ require "models/seller_list_show.model.php";
 
 $sellerShows = sellerShowMovie();
 
-if (isset($_GET['submit'])){
-    $id = $_POST['movie_id'];
-    $delete = deleteShow($id);
-}
-
 
 require("views/seller/setting_movie.view.php");

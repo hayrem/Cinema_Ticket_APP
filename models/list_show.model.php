@@ -75,4 +75,5 @@ function getNameHall(int $ID) : array
     $statement->execute([':cinema_hall_id'=> $ID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 };
+
 ?>
