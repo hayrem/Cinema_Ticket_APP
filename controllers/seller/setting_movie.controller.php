@@ -4,7 +4,7 @@ require "models/delete_show.model.php";
 require "models/seller_list_show.model.php";
 
 
-$sellerShows = getMovie();
+$sellerShows = sellerShowMovie();
 
 if (isset($_GET['submit'])){
     $id = $_POST['movie_id'];

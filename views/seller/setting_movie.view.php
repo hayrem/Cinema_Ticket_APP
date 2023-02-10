@@ -46,7 +46,7 @@ require "views/partials/head.php";
                                         </div>
                                         <div class="d-flex flex-column mt-4">
                                             <button class="btn btn-primary btn-sm" type="button"> <a href="/edit?movie_id=<?= $show['movie_id'] ?>" class="text-white">Edit</a></button>
-                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="controllers/seller/setting_movie.controller.php?id=<?= $show['movie_id'] ?>"> DELETE</a> </button>
+                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/delete?id=<?= $show['movie_id'] ?>"> DELETE</a> </button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="controllers/seller/setting_movie.controller.php?id=<?= $show['movie_id'] ?>">Add show</a> </button>
                                         </div>
                                     </div>

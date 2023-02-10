@@ -74,10 +74,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       setcookie("email",$email,$remembering_timespan);
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
-
+      setcookie ("userrole",$sellerRole, $remembering_timespan);
       if (!empty(userRole($email))){
-         setcookie("userRole", $sellerRole, $remembering_timespan);
-         header('location: /seller');
+         header('location: /seller/setting');
       }else{
          header("location: /");
       }
