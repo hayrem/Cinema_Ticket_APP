@@ -6,17 +6,10 @@ require "views/partials/head.php";
     <?php require "views/partials/sidebar.php" ?>
 
     <div class="app-content">
-        <div class="app-content-actions">
-            <input class="search-bar" placeholder="Search..." type="text">
-        </div>
-        <div class="products-area-wrapper tableView">
-            <div class="products-header">
-                <h3>Add new movie</h3>
-            </div>
-        </div>
+    <?php require "views/partials/header.php" ?>
 
         <!--  -->
-        <div class="form-createmovie p-4">
+        <div class=" p-4 d-flex justify-content-center align-items-center;">
             <form class="bg-white  p-4 shadow-lg " style="width: 80%;border-radius:10px;" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Date show</label>
