@@ -11,11 +11,19 @@ $routes = [
     '/reset' => 'controllers/users/reset_password.controller.php',
     '/manage_acc' => 'controllers/users/manage_acc.controller.php',
     '/detail' => 'controllers/movie/detail_movie.controller.php',
-    '/seller' => 'controllers/seller/home_movie.controller.php',
-    '/create' => 'controllers/seller/create_movie.controller.php',
-    '/setting' => 'controllers/seller/setting_movie.controller.php',
-    '/show' => 'controllers/seller/show_movie.controller.php',
 ];
+if (isset($_COOKIE['email'])){
+    $userRole=$_COOKIE['userrole'];
+    if($userRole === 'seller') {
+        $routes['/seller'] = 'controllers/seller/home_movie.controller.php';
+        $routes['/seller/setting'] = 'controllers/seller/setting_movie.controller.php';
+        $routes['/seller/delete'] =  'controllers/seller/delete_movie.controller.php';
+        $routes['/seller/edit'] =  'controllers/seller/edit_movie.controller.php';
+        $routes['/seller/create_show'] =  'controllers/seller/create_show_movie.controller.php';
+        $routes['/seller/create_movie'] =  'controllers/seller/create_movie.controller.php';
+    };
+    
+}
 
 if (array_key_exists($uri, $routes)) {
     require $routes[$uri];

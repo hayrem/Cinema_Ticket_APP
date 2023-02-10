@@ -14,8 +14,11 @@
     <?php
       foreach ( $halls as $hall):
     ?>
-    <div class="m-3 d-flex flex-lg-row rounded-3 shadow p-3  bg-body rounded">
-          <img src="https://cdn1.vectorstock.com/i/1000x1000/90/05/movie-cinema-premiere-poster-design-template-vector-12329005.jpg" class="rounded" width="25%" height="90%">
+    <div class="m-3 d-flex flex-lg-row rounded-3 shadow p-0  bg-body rounded">
+      <div class="w-25 bg-image hover-zoom ripple rounded ripple-surface">
+        <!-- <img src="https://cdn1.vectorstock.com/i/1000x1000/90/05/movie-cinema-premiere-poster-design-template-vector-12329005.jpg" class="rounded w-100"> -->
+        <img src="https://www.hollywoodreporter.com/wp-content/uploads/2022/11/01_Exterior_1-copy.jpg?w=1296" class="rounded w-100">
+      </div>
           <div class="card-body ">
             <h4 class="card-title fw-bold"><?= $hall['name'];?></h4>
             <p class="card-text">Total seat: <?= $hall['total_seat'];?></p>

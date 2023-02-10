@@ -42,7 +42,8 @@ function getDetahall() : array
  
 }
 
-// function remove movie card that already descripe in detial 
+// $cinemas = getDetaCinemas();
+// echo $cinemas;
 function notListShow(int $id) : array
 {
     global $connection;
@@ -53,8 +54,29 @@ function notListShow(int $id) : array
 }
 
 
-//  Function add new movie
-function addNewMovie(string $title,string $genre, string $mv_country, string $mv_duration,string $mv_language,string $mv_released,string $mv_image, string $mv_description, string $mv_trailer) : array
+// function get hallShows
+function hallShow(int $ID) : array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM cinema_halls 
+    INNER JOIN shows ON shows.cinema_hall_id = cinema_halls.cinema_hall_id  
+    INNER JOIN movies ON shows.show_id = movies.movie_id
+    WHERE cinema_halls.cinema_hall_id = :cinema_hall_id");
+    $statement->execute([':cinema_hall_id'=> $ID]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+};
+// function get name hall
+
+function getNameHall(int $ID) : array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM cinema_halls 
+    WHERE cinema_halls.cinema_hall_id = :cinema_hall_id");
+    $statement->execute([':cinema_hall_id'=> $ID]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+};
+
+function addNewMovie(string $title,string $genre, string $mv_country, string $mv_duration,string $mv_language,string $mv_released,string $mv_image, /* string $show_date,string $show_time_start,string $show_time_end,string $hallName, string $total_seat,  */string $mv_description, string $mv_trailer) : array
 {
     global $connection;
     $statement = $connection->prepare("INSERT INTO movies (title, genre, country, duration, released, language, description, image, trailer) VALUES (:title, :genre, :country, :duration, :released, :language, :description, :image, :trailer)");
@@ -73,7 +95,7 @@ function addNewMovie(string $title,string $genre, string $mv_country, string $mv
 }
 
 //  Function add new show
-function addNewShow(string $show_date,string $show_time_start, string $show_time_end, int $movie_id,int $hall_id) : array
+function addNewShow(string $show_date,string $show_time_start, string $show_time_end, string $movie_id,string $hall_id) : array
 {
     global $connection;
     $statement = $connection->prepare("INSERT INTO shows (date,  time_start,  time_end,  movie_id,  cinema_hall_id) VALUES (:date,  :time_start,  :time_end,  :movie_id,  :cinema_hall_id)");
