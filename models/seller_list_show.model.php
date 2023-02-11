@@ -1,7 +1,5 @@
 <?php
-require("database/database.php");
-
-
+// require("database/database.php");
 function updateMovies(string $title, string $description,string $genre,string $country,string $duration,string $released,string $language, int $movieId) : bool
 {
             global $connection;

@@ -10,5 +10,10 @@ if (isset($movieId)){
 }
 
 
+// print_r($editMovie);
+// foreach($editMovie as $movie){
+//     echo $movie['title'];
+// }
+
 
 ?>

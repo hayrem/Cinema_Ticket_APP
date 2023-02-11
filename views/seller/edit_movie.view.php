@@ -56,25 +56,24 @@ require "views/partials/head.php";
                 </div>
                 <div class="row">
                     <div class="col mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Choose Country</label>
-                        <select name="country" class="form-select p-2" aria-label="Default select example">
+                        <label for="exampleInputEmail1" class="form-label">Choose language</label>
+                        <select name="language" class="form-select p-2" aria-label="Default select example">
                             <option selected>Choose country</option>
-                            <option value="english">English</option>
-                            <option value="france">France</option>
-                            <option value="khmer">Khmer</option>
+                            <option value="<?= $editMovie['language']=='English'?'selected':'' ?>">English</option>
+                            <option value="<?=  $editMovie['language']=='Cambodia'?'selected':''?>">Cambodia</option>
                         </select>
-                        <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
+                        <span style="color:red;"><?= (isset($messageError['language'])) ? $messageError['country'] : "<span>.</span>" ?></span>
 
 
                     </div>
 
                     <div class="col mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Choose language</label>
-                        <select name="language" class="form-select p-2" aria-label="Default select example">
+                        <label for="exampleInputEmail1" class="form-label">Choose Country</label>
+                        <select name="country" class="form-select p-2" aria-label="Default select example">
                             <option selected>Choose language</option>
-                            <option value="english">English</option>
-                            <option value="france">France</option>
-                            <option value="khmer">Khmer</option>
+                            <option value="<?= $editMovie['country'] ?>">English</option>
+                            <option value="<?= $editMovie['country'] ?>">France</option>
+                            <option value="<?= $editMovie['country'] ?>">Khmer</option>
                         </select>
                         <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
 
@@ -96,14 +95,13 @@ require "views/partials/head.php";
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="15" col="200"></textarea>
+                    <textarea class="form-control" name="description"  id="exampleFormControlTextarea1" style="height: 100px">
+                        <?= $editMovie['description'] ?> 
+                    </textarea>
                     <span style="color:red;"><?= (isset($messageError['description'])) ? $messageError['description'] : "<span>.</span>" ?></span>
-
-
-                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200"></textarea>
                 </div>
                 <div class="d-flex justify-content-end ">
-                    <button type="submit" name="submit" class="btn btn-primary w-100 me-2"><a href="/seller/setting">Cencel</a></button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100 me-2 "><a class="text-white" style="text-decoration: none;" href="/seller/setting">Cencel</a></button>
                     <button type="submit" name="submit" class="btn btn-primary w-100 ">Update</button>
                 </div>
             </form>

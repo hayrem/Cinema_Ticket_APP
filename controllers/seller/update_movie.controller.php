@@ -8,11 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      and !empty(['movie_id']))) 
     { 
         require "models/seller_list_show.model.php";
-        read_seller_edit($_POST['title'],$_POST['description'],$_POST['movie_id']);
+        $update = read_seller_edit($_POST['title'],$_POST['description'],$_POST['movie_id']);
 
     }
     header('location:/seller/setting');
 }
+
+// print_r($update);
 
 
 
