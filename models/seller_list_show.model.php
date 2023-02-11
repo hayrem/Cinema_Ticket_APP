@@ -1,18 +1,6 @@
 <?php
 require("database/database.php");
 
-function read_seller_edit(string $title): bool
-{
-            global $connection;
-
-            $statement = $connection->prepare("update movies set title = :title, where movie_id = :movie_id");
-            $statement->execute([
-                ':title' => $title,
-    
-            ]);
-            return $statement->rowCount() > 0;
-    } 
-// $seller = read_seller_edit();
 
 function updateMovies(string $title, string $description,string $genre,string $country,string $duration,string $released,string $language, int $movieId) : bool
 {
@@ -53,3 +41,17 @@ function getMovieId(int $movieId):array
     return  $statement->fetch();
 };
 
+
+function read_seller_edit(string $title, string $description, int $id) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update movies set title = :title, description = :description where movie_id = :movie_id");
+    $statement->execute([
+        ':title' => $title,
+        ':description' => $description,
+        ':movie_id' => $id
+
+    ]);
+
+    return $statement->rowCount() > 0;
+}

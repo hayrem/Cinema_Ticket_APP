@@ -16,7 +16,7 @@
 
         <!--  -->
 
-    <div class="container-movecards">
+    <div class="d-flex justify-content-center align-items-center p-4">
       
       <?php foreach ($shows as $show): ?>
           <div class="movie-cards">
@@ -56,3 +56,5 @@
 
 </body>
 </html>
+
+

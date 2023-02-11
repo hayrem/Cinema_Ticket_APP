@@ -5,4 +5,4 @@ require "controllers/search/search.controller.php";
 
 
 
-// require("views/seller/home.view.seller.php");
+require("views/seller/home.view.seller.php");
