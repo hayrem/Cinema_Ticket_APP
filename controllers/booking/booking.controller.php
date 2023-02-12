@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         $messageError["email"] = "Invalid format and please re-enter valid email"; 
     }
     if (empty($phoneNumber)){
-        $messageError['number'] = 'Please enter your phone number';
+        $messageError['phoneNumber'] = 'Please enter your phone number';
     }
     elseif (!preg_match("/^[0].[0-9]{7,8}+$/",$phoneNumber)){
         $messageError['phoneNumber'] = 'Zero mush in the front and Number mush be 9 or 10 number';
