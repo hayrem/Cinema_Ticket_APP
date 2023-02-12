@@ -19,7 +19,7 @@
                         echo
                         "<li class='row row--$count'>
                             <ol class='cinema-seat mt-0' type='$value'>";
-                            for ($i = 1; $i <=9; $i++){
+                            for ($i = 1; $i <=8; $i++){
                                 global $value;
                                 echo 
                                 "<li class='seat'>
