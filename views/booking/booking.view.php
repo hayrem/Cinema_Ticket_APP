@@ -19,7 +19,7 @@
                         echo
                         "<li class='row row--$count'>
                             <ol class='cinema-seat mt-0' type='$value'>";
-                            for ($i = 1; $i <=9; $i++){
+                            for ($i = 1; $i <=8; $i++){
                                 global $value;
                                 echo 
                                 "<li class='seat'>
@@ -93,7 +93,7 @@
                 <span style="color:red;"><?= (isset($messageError['phoneNumber'])) ? $messageError['phoneNumber'] : "" ?></span>
             </div>
             <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
-            <input class="popup-button" type="submit" name="payment" value="PAYMENT" href=""/>
+            <input class="btn btn-primary popup-button w-100 mt-4 p-2" type="submit" name="payment" value="PAYMENT" href=""/>
             
         </form>
         
