@@ -94,7 +94,7 @@
                 <span style="color:red;"><?= (isset($messageError['number'])) ? $messageError['number'] : "" ?></span>
             </div class="mb-3">
             <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
-            <input class="popup-button" type="submit" name="payment" value="PAYMENT" href=""/>
+            <input class="btn btn-primary popup-button w-100 mt-4 p-2" type="submit" name="payment" value="PAYMENT" href=""/>
             
         </form>
         
