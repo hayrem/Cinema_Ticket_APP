@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
  
     if(empty($messageError))
     {
-        header("location:/");
+        header("location:/seller/setting");
     }
     
 }

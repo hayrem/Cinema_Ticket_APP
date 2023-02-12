@@ -24,10 +24,12 @@ function read_seller_edit(){
             
     
             ]);
+            header('location: /seller/setting');
         }
     } 
 }
-$seller = read_seller_edit();
+$seller = read_seller_edit($connection);
+print_r($seller);
 
 function getMovie(){
     global $connection;

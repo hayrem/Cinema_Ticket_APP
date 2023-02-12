@@ -9,7 +9,7 @@ require "views/partials/head.php";
     <?php require "views/partials/header.php" ?>
 
         <!--  -->
-        <div class=" p-4 d-flex justify-content-center align-items-center;">
+        <div class="d-flex justify-content-center align-items-center p-4" style="height: auto;">
             <form class="bg-white  p-4 shadow-lg " style="width: 80%;border-radius:10px;" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Date show</label>
