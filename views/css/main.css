@@ -720,7 +720,9 @@ ol {
   justify-content: flex-start;
   /* background: #000; */
   padding: 0px;
-  margin-top: -4rem;
+  margin-bottom: -3rem;
+  /* background: #c84848; */
+
 }
 .seat {
   display: flex;
