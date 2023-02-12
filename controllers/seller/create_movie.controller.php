@@ -1,34 +1,5 @@
 <?php
-
-if (isset($_POST['submit']))
-{
-    $mv_title = $_POST['title'];
-    $mv_genre = $_POST['genre'];
-    $mv_country = $_POST['country'];
-    $mv_duration = $_POST['duration'];
-    $mv_language = $_POST['language'];
-    $mv_released = $_POST['released'];
-    $mv_image = $_POST['image'];
-    $mv_description =$_POST['description'];
-    $mv_trailer = $_POST['trailer'];
-    // $show_date =$_POST['date'];
-    // $show_time_start = $_POST['time_start'];
-    // $show_time_end =$_POST['time_end'];
-    // $hallName = $_POST['name'];
-    // $total_seat = $mv_title_POST['total_seat'];
-    
-    echo "<h3>".$mv_title."</h3>";
-    echo "<h3>".$mv_genre."</h3>";
-    echo "<h3>".$mv_country."</h3>";
-    echo "<h3>".$mv_duration."</h3>";
-    echo "<h3>".$mv_language."</h3>";
-    echo "<h3>".$mv_released."</h3>";
-    echo "<h3>".$mv_image."</h3>";
-    echo "<h3>".$mv_description."</h3>";
-    echo "<h3>".$mv_trailer."</h3>";
-}
-
-// addNewMovie( $title, $genre,  $mv_country, $mv_duration, $mv_language, $mv_released, $mv_image, $mv_description,  $mv_trailer) ;
+require "models/list_show.model.php";
 
 
 // form validation $emailTrue = false;
@@ -40,48 +11,85 @@ function validation($data): string
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
-    return $data;
-    
-}
+    return $data; 
+};
+
+
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-    
-    $title = validation($_POST["title"]);
-    $genre = validation($_POST["genre"]);
-    $duration = validation($_POST["duration"]);
-    $released = validation($_POST["released"]);
+    $mvTitle = validation($_POST['title']);
+    $mvGenre = validation($_POST['genre']);
+    $mvCountry = ($_POST['country']);
+    $mvDuration = validation($_POST['duration']);
+    // $mvLanguage = validation($_POST['language']);
+    if(isset($_POST['submit'])){  
+        if(!empty($_POST['language'])) {  
+            $mvLanguage = $_POST['language'];  
+            echo 'You have chosen: ' . $mvLanguage;  
+        } else {  
+            echo 'Please select the value.';  
+        }  
+    };  
+ 
+    if(isset($_POST['submit'])){  
+        if(!empty($_POST['country'])) {  
+            $selected = $_POST['country'];  
+            echo 'You have chosen: ' . $selected;  
+        } else {  
+            echo 'Please select the value.';  
+        }  
+    };  
+
+    $mvReleased = validation($_POST['released']);
+    $mvImage = validation($_POST['image']);
+    $mvDescription = validation($_POST['description']);
+    $mvTrailer = validation($_POST['trailer']);
+
     // $confirmPassword = validation($_POST["comfirm-password"]);
     
-    if(empty($title)){ 
-        $messageError["title"] = "please enter a first name";
-    }elseif(strlen($title) > 20)
-    {
-        $messageError["title"] = 'Username most more that 5 letters and least that 20 letters';
+    if(empty($mvTitle)){ 
+        $messageError["title"] = "please enter the title of movie";
     }
-    if(empty($genre)){
-        $messageError["genre"] = "please enter a  genre of movie";
-    }elseif(($genre))
-    {
-        $messageError["genre"] = 'Username most more that 5 letters and least that 20 letters';
+    if(empty($mvGenre)){
+        $messageError["genre"] = "please enter genre of movie";
     }
-    if(empty($duration ))
+    if(empty($selected)){
+        $messageError["country"] = "please enter country source of movie";
+    }
+    if(empty($mvDuration ))
     {
-        $messageError["duration"] = " Please enter duration";
+        $messageError["duration"] = " Please enter duration of movie";
     } 
-  
-    if(empty($released))
+
+    if(empty($mvReleased))
     {
-        $messageError["released"] = "Please enter released ";
+        $messageError["released"] = "Please enter released date of movie";
     }   
-   
- 
+    if(empty($mvImage))
+    {
+        $messageError["image"] = "Please enter image of movie";
+    }   
+    if(empty($mvDescription))
+    {
+        $messageError["description"] = "Please enter description  of movie";
+    }   
+    if(empty($mvTrailer))
+    {
+        $messageError["trailer"] = "Please enter trailer of movie";
+    }   
+
     if(empty($messageError))
     {
-        header("location:/seller/setting");
+        addNewMovie( $mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $mvImage, $mvDescription, $mvTrailer) ;
+        header('location: /seller');
+    }else{
+        header('location: /');
+
     }
-    
-}
+};
 require("views/seller/create_movie.view.php");
+
+
 ?>
 
 
