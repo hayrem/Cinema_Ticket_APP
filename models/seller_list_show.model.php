@@ -1,26 +1,4 @@
 <?php
-// require("database/database.php");
-function updateMovies(string $title, string $description,string $genre,string $country,string $duration,string $released,string $language, int $movieId) : bool
-{
-            global $connection;
-            $statement = $connection->prepare("update movies set title = :title, genre = :genre, country = :country, duration = :duration, released = :released, language = :language,  description = :description, where movie_id = :movie_id");
-            $statement->execute([
-                ':title' => $title,
-                ':genre' =>  $genre,
-                ':movie_id' => $movieId,
-                ':country' =>  $country,
-                ':duration' =>  $duration,
-                ':released' =>  $released,
-                ':language' =>  $language,
-                ':description' =>  $description,
-                // ':image' =>  $_POST['image']
-            
-    
-            ]);
-
-    return $statement->rowCount() > 0;
-}
-
 
 function getMovie(){
     global $connection;
@@ -29,7 +7,6 @@ function getMovie(){
     return $statement->fetchAll();
 
 }
-
 
 function getMovieId(int $movieId):array
 {
@@ -40,13 +17,18 @@ function getMovieId(int $movieId):array
 };
 
 
-function read_seller_edit(string $title, string $description, int $id) : bool
+function read_seller_edit(string $title, string $description,string $released,string $language,string $genre,string $country, int $id) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update movies set title = :title, description = :description where movie_id = :movie_id");
+    $statement = $connection->prepare("update movies set title = :title, description = :description,released = :released ,language = :language ,genre =:genre,country =:country where movie_id = :movie_id");
     $statement->execute([
         ':title' => $title,
         ':description' => $description,
+        ':released' => $released,
+        ':released' => $released,
+        'language' => $language,
+        'country' => $country,
+        'genre' => $genre,
         ':movie_id' => $id
 
     ]);

@@ -26,19 +26,21 @@ require "views/partials/head.php";
 
                     <div class="col">
                         <label for="exampleInputPassword1" class="form-label">Genre</label>
-                        <select class="form-select p-2" aria-label="Default select example">
-                            <option selected>Please select genre of movie</option>
-                            <option value="Action">Action</option>
-                            <option value="Adventure">Adventure</option>
-                            <option value="Comedy">Comedy</option>
-                            <option value="Crime and mystery">Crime and mystery</option>
-                            <option value="Fantasy">Fantasy</option>
-                            <option value="Historical">Historical</option>
-                            <option value="Historical fiction">Historical fiction</option>
-                            <option value="Horror">Horror</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Animation">Animation</option>
-                            <option value="Strategy">Strategy</option>
+                        <select name="genre" class="form-select p-2" aria-label="Default select example">
+                          <option selected><?= $editMovie['genre'] ?></option>
+                            
+                            <?php   
+                            $array = ['Action', 'Adventure', 'Comedy','Crime and mystery','Fantasy','Horror','Romance','Animation','Strategy'];
+                            foreach ($array as $show):
+                                if($editMovie['genre'] == $show){
+                                    echo " ";
+                                }else{
+                                    echo "<option>".$show."</option>";
+                                }
+                            ?>
+                            <?php
+                                endforeach; 
+                            ?>
                         </select>
                     </div>
                 </div>
@@ -50,7 +52,7 @@ require "views/partials/head.php";
                     </div>
                     <div class="col mb-3">
                         <label for="exampleInputPassword1" class="form-label">Release Date</label>
-                        <input type="date" name="released" class="form-control" value="<?= $editMovie['released'] ?>">
+                        <input type="date" name="released" class="form-control" min="2018-01-01" max="2023-01-31" value="<?= $editMovie['released'] ?>">
                         <span style="color:red;"><?= (isset($messageError['released'])) ? $messageError['released'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
@@ -58,9 +60,20 @@ require "views/partials/head.php";
                     <div class="col mb-3">
                         <label for="exampleInputEmail1" class="form-label">Choose language</label>
                         <select name="language" class="form-select p-2" aria-label="Default select example">
-                            <option selected>Choose country</option>
-                            <option value="<?= $editMovie['language']=='English'?'selected':'' ?>">English</option>
-                            <option value="<?=  $editMovie['language']=='Cambodia'?'selected':''?>">Cambodia</option>
+                        <option selected><?= $editMovie['language'] ?></option>
+
+                            <?php   
+                              $languages = ['English', 'France', 'Khmer', 'Poland', 'Portuguese'];
+                              foreach ($languages as $language):
+                                if($editMovie['language'] == $language){
+                                    echo " ";
+                                }else{
+                                    echo "<option>".$language."</option>";
+                                }
+                              ?>
+                              <?php
+                                  endforeach; 
+                              ?>
                         </select>
                         <span style="color:red;"><?= (isset($messageError['language'])) ? $messageError['country'] : "<span>.</span>" ?></span>
 
@@ -70,10 +83,19 @@ require "views/partials/head.php";
                     <div class="col mb-3">
                         <label for="exampleInputEmail1" class="form-label">Choose Country</label>
                         <select name="country" class="form-select p-2" aria-label="Default select example">
-                            <option selected>Choose language</option>
-                            <option value="<?= $editMovie['country'] ?>">English</option>
-                            <option value="<?= $editMovie['country'] ?>">France</option>
-                            <option value="<?= $editMovie['country'] ?>">Khmer</option>
+                        <option selected><?= $editMovie['country'] ?></option>
+                            <?php   
+                            $coutries = ['England', 'France', 'Khmer', 'Poland', 'Portuguese','Russian','Switzerland','Hungary','American', 'Canada','Australia','Germany','China', 'Japan'];
+                            foreach ($coutries as $country):
+                                if($editMovie['country'] == $country){
+                                    echo " ";
+                                }else{
+                                    echo "<option>".$country."</option>";
+                                }
+                            ?>
+                            <?php
+                                endforeach; 
+                            ?>
                         </select>
                         <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
 

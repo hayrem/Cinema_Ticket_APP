@@ -33,6 +33,7 @@ require "views/partials/head.php";
                                         <div class="col mt-1 mb-0  ">
                                             <h5 class="row"><?php echo $show["title"]; ?></h5>
                                             <span class="row mt-2"> Country: <?php echo $show["country"]; ?></span>
+                                            <span class="row mt-2"> Language: <?php echo $show["language"]; ?></span>
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
                                             <span class="row mt-2">Release: <?php echo $show["released"]; ?> </span>
                                         </div>
