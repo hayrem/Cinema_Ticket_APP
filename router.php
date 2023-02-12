@@ -13,7 +13,7 @@ $routes = [
     '/detail' => 'controllers/movie/detail_movie.controller.php',
     '/hallShow' => 'controllers/hall/show.controller.php',
     '/booking' => 'controllers/booking/booking.controller.php',
-
+    '/payment' => 'controllers/booking/payment.controller.php',
 
 ];
 
