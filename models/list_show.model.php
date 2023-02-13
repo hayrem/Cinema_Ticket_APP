@@ -76,20 +76,20 @@ function getNameHall(int $ID) : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 };
 
-function addNewMovie(string $title,string $genre, string $mv_country, string $mv_duration,string $mv_language,string $mv_released,string $mv_image, /* string $show_date,string $show_time_start,string $show_time_end,string $hallName, string $total_seat,  */string $mv_description, string $mv_trailer) : array
+function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string $mvDuration,string $mvLanguage,string $mvReleased,string $newMvPoster, string $mvDescription, string $mvTrailer) : array
 {
     global $connection;
     $statement = $connection->prepare("INSERT INTO movies (title, genre, country, duration, released, language, description, image, trailer) VALUES (:title, :genre, :country, :duration, :released, :language, :description, :image, :trailer)");
     $statement->execute([
-        ':title' => $title,
-        ':genre' => $genre,
-        ':country' => $mv_country,
-        ':duration' => $mv_duration,
-        ':language' => $mv_language,
-        ':released' => $mv_released,
-        ':image' => $mv_image,
-        ':description' => $mv_description,
-        ':trailer' => $mv_trailer,
+        ':title' => $mvTitle,
+        ':genre' => $mvGenre,
+        ':country' => $mvCountry,
+        ':duration' => $mvDuration,
+        ':language' => $mvLanguage,
+        ':released' => $mvReleased,
+        ':image' => $newMvPoster,
+        ':description' => $mvDescription,
+        ':trailer' => $mvTrailer,
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
