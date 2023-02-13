@@ -52,7 +52,7 @@ require "views/partials/head.php";
                     </div>
                     <div class="col mb-3">
                         <label for="exampleInputPassword1" class="form-label">Release Date</label>
-                        <input type="date" name="released" class="form-control" min="2018-01-01" max="2023-01-31" value="<?= $editMovie['released'] ?>">
+                        <input type="text" name="released" class="form-control" value="<?= $editMovie['released'] ?>">
                         <span style="color:red;"><?= (isset($messageError['released'])) ? $messageError['released'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ require "views/partials/head.php";
                     </div>
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload trailer</label>
-                        <input type="file" name="trailer" class="form-control form-control-lg">
+                        <input type="text" name="trailer" placeholder="URL trailer" class="form-control form-control-lg">
                         <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
 
                     </div>
