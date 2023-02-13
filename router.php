@@ -12,7 +12,7 @@ $routes = [
     '/manage_acc' => 'controllers/users/manage_acc.controller.php',
     '/detail' => 'controllers/movie/detail_movie.controller.php',
     '/hallShow' => 'controllers/hall/show.controller.php',
-
+    '/contact' => 'controllers/contact_us/contact_us.controller.php',
 
 ];
 if (isset($_COOKIE['email'])){
