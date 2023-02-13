@@ -6,7 +6,7 @@
         </a>
 
         <div class="collapse navbar-collapse p-0">
-            <form class="form-inline mx-auto d-flex " method='post' name='fsearch'>
+            <form class="form-inline mx-auto d-flex " method='post'>
                 <input class="form-control " 
                 id="live_search" 
                 type="search" 
@@ -73,6 +73,9 @@
                 </li>
                 <li class="nav-item me-4">
                     <a class="<?= urlIs('/ticket') ? 'active bg-dark text-white' : '' ?> nav-link" href="/ticket">TICKET</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="<?= urlIs('/contact') ? 'active bg-dark text-white' : '' ?> nav-link" href="/contact">CONTACT US</a>
                 </li>
             </ul>
         </div>

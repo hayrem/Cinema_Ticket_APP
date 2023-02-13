@@ -17,7 +17,7 @@ require "views/partials/head.php";
 			name="email"
 			placeholder="Enter you email address" 
 			value="<?= (isset($_POST['email']))?$_POST['email']:"" ?>">
-			<span style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"" ?></span>
+			<span class="message-eroor" style="color:red;"><?= (isset($messageError['email']))?$messageError['email']:"<span>.</span>" ?></span>
 		</div>
 
 		<div class="sign mb-3">
@@ -30,7 +30,7 @@ require "views/partials/head.php";
 				value="<?= (isset($_POST['password']))?$_POST['password']:"" ?>">
 				<i class="bi bi-eye-slash" id="togglePassword"></i>
 			</div>
-			<span style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"" ?></span>
+			<span class="message-eroor" style="color:red;"><?= (isset($messageError['password']))?$messageError['password']:"<span>.</span>"?></span>
 		</div>
 		<div class="form-check mb-4">
 			<input class="form-check-input " type="checkbox" 

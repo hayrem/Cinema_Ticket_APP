@@ -66,6 +66,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
    if($valueTrue === 2){
       $firstName = usernameByEmail($email)['first_name'];
       $lastName = usernameByEmail($email)['last_name'];
+      $sellerRole = usernameByEmail($email)['role'];
+      print_r($sellerRole);
       $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
       if (empty($_POST['remeber'])){
          $remembering_timespan = time() + 60*60; // will store 1 hour
@@ -74,8 +76,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       setcookie("email",$email,$remembering_timespan);
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
-      header("location: /");
-
+      setcookie ("userrole",$sellerRole, $remembering_timespan);
+      if (!empty(userRole($email))){
+         header('location: /seller');
+      }else{
+         header("location: /");
+      }
    }
    
   

@@ -10,7 +10,7 @@
 
 		<h4 class="display-4  fs-1">Create Account</h4><br>
 		<!-- <label for=""></label> -->
-		<div class="mb-3">
+		<div class="mb-2">
 			<div class="row g-3">
 				<div class="col">
 					<label class="form-label">First name</label>
@@ -20,7 +20,7 @@
 					aria-label="First name"
 					name="firstName"
 					value="<?= (isset($_POST['firstName'])) ? $_POST['firstName'] : "" ?>">
-					<span style="color:red;"><?= (isset($messageError['firstName'])) ? $messageError['firstName'] : "" ?></span>
+					<span class="message-eroor" style="color:red;"><?= (isset($messageError['firstName'])) ? $messageError['firstName'] : "<span>.</span>" ?></span>
 				</div>
 				<div class="col">
 					<label class="form-label">Last name</label>
@@ -31,39 +31,39 @@
 					aria-label="Last name"
 					name="lastName"
 					value="<?= (isset($_POST['lastName'])) ? $_POST['lastName'] : "" ?>">
-					<span style="color:red;"><?= (isset($messageError['lastName'])) ? $messageError['lastName'] : "" ?></span>
+					<span class="message-eroor" style="color:red;"><?= (isset($messageError['lastName'])) ? $messageError['lastName'] : "<span>.</span>" ?></span>
 				</div>
 			</div>
 		</div>
 
-		<div class="mb-3">
+		<div class="mb-2">
 			<label class="form-label">Email</label>
 			<input type="email" 
 			class="form-control"
 			name="email"
 			placeholder="Enter you email address" 
 			value="<?= (isset($_POST['email'])) ? $_POST['email'] : "" ?>">
-			<span style="color:red;"><?= (isset($messageError['email'])) ? $messageError['email'] : "" ?></span>
+			<span class="message-eroor" style="color:red;"><?= (isset($messageError['email'])) ? $messageError['email'] : "<span>.</span>" ?></span>
 		</div>
-		<div class="mb-3">
+		<div class="mb-2">
 			<label class="form-label">Password</label>
 			<input type="password"
 			class="form-control" 
 			name="password" 
 			value="<?= (isset($_POST['password'])) ? $_POST['password'] : "" ?>">
-			<span style="color:red;"><?= (isset($messageError['password'])) ? $messageError['password'] : "" ?></span>
+			<span class="message-eroor" style="color:red;"><?= (isset($messageError['password'])) ? $messageError['password'] : "<span>.</span>" ?></span>
 		</div>
-		<div class="sign mb-4">
+		<div class="sign mb-2">
 			<label class="form-label">Comfirm Password</label>
 			<div class="input">
 				<input type="password"
-				id="password"
+				id="password" 
 				class="form-control" 
 				name="comfirm-password" 
 				value="<?= (isset($_POST['comfirm-password'])) ? $_POST['comfirm-password'] : "" ?>">
 				<i class="bi bi-eye-slash" id="togglePassword"></i>
 			</div>
-			<span style="color:red;"><?= (isset($messageError['comfirm-password'])) ? $messageError['comfirm-password'] : "" ?></span>
+			<span class="message-eroor" style="color:red;"><?= (isset($messageError['comfirm-password'])) ? $messageError['comfirm-password'] : "<span>.</span>" ?></span>
 		</div>
 		<div class="contain-btn mt-4">
 			<button type="submit" class="btn btn-danger ">Sign Up</button>

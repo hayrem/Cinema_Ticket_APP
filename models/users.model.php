@@ -45,7 +45,7 @@ function passwordUserLogin():array
 function usernameByEmail($email): array
 {
     global $connection;
-    $sql = "SELECT first_name, last_name ,password FROM users WHERE email = :email";
+    $sql = "SELECT* FROM users WHERE email = :email";
 	$stmt = $connection->prepare($sql);
 	$stmt ->execute([':email' => $email]);
     return $stmt->fetch();
@@ -59,8 +59,16 @@ function changePassword( $email,$newPassword)
 	$stmt ->execute(
         [
             ':email' => $email,
-            ':newPassword' => $newPassword
+            ':newPassword' => $newPassword,
         ]);
 }
 
+function userRole($email)
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email AND role = 'seller' ");
+    $statement->execute([':email' => $email]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+ 
+}
 
