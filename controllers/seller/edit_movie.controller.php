@@ -1,16 +1,17 @@
+
 <?php
 
 
-$movie_id = $_GET["movie_id"] ? $_GET["movie_id"] : null;
+require "models/seller_list_show.model.php";
 
-if (isset($movie_id)){
-        require "models/seller_list_show.model.php";
-        $editMovie = getMovieId($movie_id);
-        require "views/seller/edit_movie.view.php";
-    }
+$shows = getMovie();
 
-    print_r($editMovie);
-       
-       
+$movieId = $_GET["movie_id"] ? $_GET["movie_id"] : null;
+
+if (isset($movieId)){
+    $editMovie = getMovieId($movieId);
+    require "views/seller/edit_movie.view.php";
+}
+
 
 ?>

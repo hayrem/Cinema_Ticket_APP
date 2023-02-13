@@ -33,6 +33,7 @@ require "views/partials/head.php";
                                         <div class="col mt-1 mb-0  ">
                                             <h5 class="row"><?php echo $show["title"]; ?></h5>
                                             <span class="row mt-2"> Country: <?php echo $show["country"]; ?></span>
+                                            <span class="row mt-2"> Language: <?php echo $show["language"]; ?></span>
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
                                             <span class="row mt-2">Release: <?php echo $show["released"]; ?> </span>
                                         </div>
@@ -45,7 +46,7 @@ require "views/partials/head.php";
                                             <h4 class="mb-1 me-1">$13.99</h4>
                                         </div>
                                         <div class="d-flex flex-column mt-4">
-                                            <button class="btn btn-primary btn-sm" type="button"> <a href="/edit?movie_id=<?= $show['movie_id'] ?>" class="text-white">Edit</a></button>
+                                            <button class="btn btn-primary btn-sm" type="button"> <a href="/seller/edit?movie_id=<?= $show['movie_id'] ?>" class="text-white">Edit</a></button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/delete?movie_id=<?= $show['movie_id'] ?>"> DELETE</a> </button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="controllers/seller/setting_movie.controller.php?id=<?= $show['movie_id'] ?>">Add show</a> </button>
                                         </div>
