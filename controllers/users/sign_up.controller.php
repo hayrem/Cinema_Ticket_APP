@@ -85,6 +85,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         setcookie("email",$email,$remembering_timespan);
         setcookie("firstName",$firstName,$remembering_timespan);
         setcookie("lastName",$lastName,$remembering_timespan);
+        setcookie ("userrole",$sellerRole, $remembering_timespan);
 // store user information in session 
         $_SESSION ['firstNme'] = $_POST['firstName']; $_SESSION['lastName'] = $_POST['lastName']; $_SESSION['email'] = $_POST['email'];
         header("location:/");

@@ -46,9 +46,9 @@ require "views/partials/head.php";
                                             <h4 class="mb-1 me-1">$13.99</h4>
                                         </div>
                                         <div class="d-flex flex-column mt-4">
-                                            <button class="btn btn-primary btn-sm" type="button"> <a href="/seller/edit?movie_id=<?= $show['movie_id'] ?>" class="text-white">Edit</a></button>
-                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/delete?movie_id=<?= $show['movie_id'] ?>"> DELETE</a> </button>
-                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/create_show?movie_id=<?= $show['movie_id'] ?>">Add show</a> </button>
+                                            <button class="btn btn-primary btn-sm" type="button"> <a href="/seller/edit?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit</a></button>
+                                            <button class="btn btn-danger btn-sm mt-2" type="button" id="<?=$show['movie_id'] ?>" onclick='deleteShow("<?=$show["movie_id"] ?>");'>Delete </button>
+                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/create_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Add show</a> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -61,6 +61,28 @@ require "views/partials/head.php";
     </div>
 
 </div>
+<script>
+    function deleteShow(movieID){
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '<a href="/seller/delete?movie_id='+movieID + '" style="color:white; text-decoration: none;">Yes, delete it!</a>'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+            }
+        })
+    }
+ 
+</script>
 </body>
 
 </html>
