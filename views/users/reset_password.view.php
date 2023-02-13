@@ -17,7 +17,7 @@ require "views/partials/head.php";
 			type="password" 
 			class="form-control" 
 			name="oldpassword" 
-			placeholder="" 
+			placeholder="Enter your old password" 
 			value="<?= (isset($_POST['oldpassword'])) ? $_POST['oldpassword'] : "" ?>">
 			<span style="color:red;"><?= (isset($messageError['oldpassword'])) ? $messageError['oldpassword'] : " " ?></span>
 		</div>
@@ -27,6 +27,7 @@ require "views/partials/head.php";
 			<input type="password" 
 			class="form-control" 
 			name="newpassword" 
+			placeholder='Enter your new password'
 			value="<?= (isset($_POST['newpassword'])) ? $_POST['newpassword'] : "" ?>">
 			<span style="color:red;"><?= (isset($messageError['newpassword'])) ? $messageError['newpassword'] : " " ?></span>
 		</div>
@@ -48,8 +49,4 @@ require "views/partials/head.php";
 
 
 <?php
-// }else{
-//      header("Location:/");
-//      exit();
-// }
 ?>

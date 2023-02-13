@@ -69,16 +69,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     
     if($valueTrue === 2 ){
           changePassword($_COOKIE['email'],$newPassword);
-          header("location: /movie");
-    }else{
-      echo $oldPassword.'hello';
-      echo (password_verify($newPassword,$oldPassword));  
-    }
-   
+          header("location: /");
+    }  
 }
 
-
-// require "../../views/partials/head.php";
-// require "../../views/users/reset_password.view.php";
 require "views/users/reset_password.view.php";
-// require "../../views/partials/nav.php";
