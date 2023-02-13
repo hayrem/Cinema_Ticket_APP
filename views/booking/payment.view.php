@@ -1,7 +1,7 @@
 
 <div class="d-flex justify-content-center align-items-center text-white"  >
     <div class="payment-container" style="width:100%;height:100%;background-color: #000000b7;" >
-       <form class="payment-form p-3 " style="border-radius: 30px; background-color:white;" method="post" action="/payment" >
+       <form class="payment-form p-3 " style="border-radius: 30px; background-color:white;" method="post" action="" >
             <h2 class="d-flex justify-content-center">Credit/Debit Card</h2>
             <div class="card_types d-flex justify-content-center" style="width: 30rem;">
                 <img class="card_img m-2" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" width="10%"/>
@@ -34,8 +34,9 @@
                         value="<?= (isset($_POST['cvv'])) ? $_POST['cvv'] : "" ?>">
                     </div>
                 </div>
-                <div class="contain-btn mt-4">
-                    <button type="submit" class="btn-payment btn btn-danger p-2" style="width:100%; border-radius:10px;" >Payment</button>
+                <div class="contain-btn mt-4 d-flex justify-content-between">
+                    <button type="submit" class="btn-payment btn btn-danger p-2" style="width:48%; border-radius:10px;" name='payment-btn'>Payment</button>
+                    <button type="submit" class="btn-payment btn btn-primary p-2" style="width:48%; border-radius:10px;" name='cancel'>Cancel</button>
                 </div>
             </div>
 	    </form> 
@@ -75,3 +76,4 @@ event.target.value = event.target.value.replace(
                         }
                         
 </script>
+<?php

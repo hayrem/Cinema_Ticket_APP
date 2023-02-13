@@ -32,17 +32,3 @@
 //       e.preventDefault();
 //     });
 //   });
-
-// const form_payment = document.querySelector('.payment-container');
-// const button_payment = document.querySelector('.popup-button');
-// const payment = document.querySelector('.btn-payment');
-  
-// function show() {
-//   form_payment.style.display = "block";
-// }
-  
-// function hide() {
-//   form_payment.style.display = "none";
-// }
-// button_payment.addEventListener("click", show);
-// payment.addEventListener("click", hide);

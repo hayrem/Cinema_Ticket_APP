@@ -14,7 +14,8 @@ function validation($data): string
     return $data;
     
 }
-if($_SERVER['REQUEST_METHOD'] === 'POST')
+if (isset($_POST['payment']))
+{if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $firstName = validation($_POST["firstName"]);
     $lastName = validation($_POST["lastName"]);
@@ -46,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     elseif (!preg_match("/^[0].[0-9]{7,8}+$/",$phoneNumber)){
         $messageError['number'] = 'Zero mush in the front and Number mush be 9 or 10 number';
     }
-}
+}}
 
 require "views/booking/booking.view.php";
 require "views/partials/footer.php";
