@@ -1,7 +1,6 @@
 <?php
 require "models/list_show.model.php";
 
-
 // form validation $emailTrue = false;
 
 $messageError = [];
@@ -14,18 +13,22 @@ function validation($data): string
     return $data; 
 };
 
-
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $mvTitle = validation($_POST['title']);
-    $mvGenre = validation($_POST['genre']);
-    $mvCountry = ($_POST['country']);
     $mvDuration = validation($_POST['duration']);
-    // $mvLanguage = validation($_POST['language']);
+
+    if(isset($_POST['submit'])){  
+        if(!empty($_POST['genre'])) {  
+            $mvGenre = $_POST['genre'];  
+        } else {  
+            echo 'Please select the value.';  
+        }  
+    }; 
+
     if(isset($_POST['submit'])){  
         if(!empty($_POST['language'])) {  
             $mvLanguage = $_POST['language'];  
-            echo 'You have chosen: ' . $mvLanguage;  
         } else {  
             echo 'Please select the value.';  
         }  
@@ -33,19 +36,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
  
     if(isset($_POST['submit'])){  
         if(!empty($_POST['country'])) {  
-            $selected = $_POST['country'];  
-            echo 'You have chosen: ' . $selected;  
+            $mvCountry = $_POST['country'];   
         } else {  
             echo 'Please select the value.';  
         }  
     };  
 
     $mvReleased = validation($_POST['released']);
-    $mvImage = validation($_POST['image']);
     $mvDescription = validation($_POST['description']);
     $mvTrailer = validation($_POST['trailer']);
-
-    // $confirmPassword = validation($_POST["comfirm-password"]);
     
     if(empty($mvTitle)){ 
         $messageError["title"] = "please enter the title of movie";
@@ -60,15 +59,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $messageError["duration"] = " Please enter duration of movie";
     } 
-
     if(empty($mvReleased))
     {
         $messageError["released"] = "Please enter released date of movie";
-    }   
-    if(empty($mvImage))
-    {
-        $messageError["image"] = "Please enter image of movie";
-    }   
+    }     
     if(empty($mvDescription))
     {
         $messageError["description"] = "Please enter description  of movie";
@@ -78,15 +72,36 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         $messageError["trailer"] = "Please enter trailer of movie";
     }   
 
-    if(empty($messageError))
-    {
-        addNewMovie( $mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $mvImage, $mvDescription, $mvTrailer) ;
-        header('location: /seller');
-    }else{
-        header('location: /');
+    if (isset($_POST['submit']) && isset($_FILES['image'])) 
+    {     
+        $imgName = $_FILES['image']['name'];
+        $img_size = $_FILES['image']['size'];
+        $tmp_name = $_FILES['image']['tmp_name'];
+        $error = $_FILES['image']['error'];
+        $img_ex = pathinfo($imgName, PATHINFO_EXTENSION);
+        $img_ex_lc = strtolower($img_ex);
+        $allowed_exs = array("jpg", "jpeg", "png"); 
 
-    }
-};
+        if(empty($imgName))
+        { 
+            $messageError["image"] = "Please uploads poster of movie";
+        }elseif(in_array($img_ex_lc, $allowed_exs))
+        {
+            $newMvPoster = uniqid("IMG-", true).'.'.$img_ex_lc;
+            $img_upload_path = 'uploads/'.$newMvPoster;
+            move_uploaded_file($tmp_name, $img_upload_path);
+
+            if(empty($newMvPoster))
+            {
+                header('location: /seller/create_movie');
+            }  else{
+                addNewMovie( $mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $newMvPoster, $mvDescription, $mvTrailer) ;
+                header('location: /seller/setting');
+            }
+    }}
+
+}
+
 require("views/seller/create_movie.view.php");
 
 
