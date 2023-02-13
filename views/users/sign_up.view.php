@@ -57,7 +57,7 @@
 			<label class="form-label">Comfirm Password</label>
 			<div class="input">
 				<input type="password"
-				id="password"
+				id="password" 
 				class="form-control" 
 				name="comfirm-password" 
 				value="<?= (isset($_POST['comfirm-password'])) ? $_POST['comfirm-password'] : "" ?>">

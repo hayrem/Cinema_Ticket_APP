@@ -75,4 +75,38 @@ function getNameHall(int $ID) : array
     $statement->execute([':cinema_hall_id'=> $ID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 };
+
+function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string $mvDuration,string $mvLanguage,string $mvReleased,string $newMvPoster, string $mvDescription, string $mvTrailer) : array
+{
+    global $connection;
+    $statement = $connection->prepare("INSERT INTO movies (title, genre, country, duration, released, language, description, image, trailer) VALUES (:title, :genre, :country, :duration, :released, :language, :description, :image, :trailer)");
+    $statement->execute([
+        ':title' => $mvTitle,
+        ':genre' => $mvGenre,
+        ':country' => $mvCountry,
+        ':duration' => $mvDuration,
+        ':language' => $mvLanguage,
+        ':released' => $mvReleased,
+        ':image' => $newMvPoster,
+        ':description' => $mvDescription,
+        ':trailer' => $mvTrailer,
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+//  Function add new show
+function addNewShow(string $show_date,string $show_time_start, string $show_time_end, string $movie_id,string $hall_id) : array
+{
+    global $connection;
+    $statement = $connection->prepare("INSERT INTO shows (date,  time_start,  time_end,  movie_id,  cinema_hall_id) VALUES (:date,  :time_start,  :time_end,  :movie_id,  :cinema_hall_id)");
+    $statement->execute([
+        ':date' => $show_date,
+        ':time_start' => $show_time_start,
+        ':time_end' => $show_time_end,
+        ':movie_id' => $movie_id,
+        ':cinema_hall_id' => $hall_id,
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
 ?>

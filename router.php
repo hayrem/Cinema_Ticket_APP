@@ -15,6 +15,19 @@ $routes = [
 
 
 ];
+if (isset($_COOKIE['email'])){
+    $userRole=$_COOKIE['userrole'];
+    if($userRole === 'seller') {
+        $routes['/seller'] = 'controllers/seller/home_movie.controller.php';
+        $routes['/seller/setting'] = 'controllers/seller/setting_movie.controller.php';
+        $routes['/seller/delete'] =  'controllers/seller/delete_movie.controller.php';
+        $routes['/seller/edit'] =  'controllers/seller/edit_movie.controller.php';
+        $routes['/seller/update'] =  'controllers/seller/update_movie.controller.php';
+        $routes['/seller/create_show'] =  'controllers/seller/create_show_movie.controller.php';
+        $routes['/seller/create_movie'] =  'controllers/seller/create_movie.controller.php';
+    };
+    
+}
 
 if (array_key_exists($uri, $routes)) {
     require $routes[$uri];
