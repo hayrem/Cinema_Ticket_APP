@@ -75,4 +75,18 @@ function getNameHall(int $ID) : array
     $statement->execute([':hall_id'=> $ID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 };
+
+function showHall(): array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM halls");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+};
+
+$hallssss = showHall();
+
+print_r($hallssss);
+
 ?>
+

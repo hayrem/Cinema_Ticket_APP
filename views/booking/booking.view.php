@@ -1,6 +1,8 @@
 <?php 
     $seatLetter=['A','B','C','D','E','F','G','H','J'];
 ?>
+<?php foreach ($halls as $movie): 
+?> 
 <div class="seat-container">
     <div class="container-form-seat">
     <form action="index.php" method="POST" class="">
@@ -43,10 +45,11 @@
     </div>
 
     <div class="info-form">
+        
         <form action="" class="w-75" method='POST'>
             <span class="fs-4 mb-4">Show time detail</span>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5">Hall :</label>
+                <label class="form-label fs-5">Hall :<?php echo $movie["hall_name"]; ?></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
@@ -96,10 +99,10 @@
             <input class="btn btn-primary popup-button w-100 mt-4 p-2" type="submit" name="payment" value="PAYMENT" href=""/>
             
         </form>
-        
     </div>
 </div>
 <script>
+<?php endforeach ?>
 let seatPrice=5  
 function function1() {
 let arr = [];
