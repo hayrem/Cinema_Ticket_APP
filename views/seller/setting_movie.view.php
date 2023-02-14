@@ -16,20 +16,14 @@ require "views/partials/head.php";
         <div class="container-movecards mt-4">
 
             <?php foreach ($sellerShows as $show) : ?>
-                <div class="row justify-content-center mb-3" style="width: 100%;">
+                <div class="row justify-content-center mb-3" style="width: 120%;">
                     <div class="col-md-12 col-xl-10">
                         <div class="card shadow-0 border rounded-3">
                             <div class="card-body p-0">
                                 <div class="row">
                                     <div class="col-md-3 col-lg-3 col-xl-2 mb-4 mb-lg-0">
                                         <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                            <img src="/uploads/<?=$show['image'] ?>" class="w-100" />
-
-                                            <a href="#!">
-                                                <div class="hover-overlay">
-                                                    <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                                                </div>
-                                            </a>
+                                            <img src="../uploads/<?=$show['image'] ?>" class="w-100" />
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6 p-3" style="width:65%;">
