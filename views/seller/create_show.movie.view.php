@@ -8,7 +8,7 @@ require "views/partials/head.php";
     <div class="app-content">
     <?php require "views/partials/header.php" ?>
 
-        <!--  -->
+        
         <div class="d-flex justify-content-center align-items-center p-4" style="height: auto;">
             <form class="bg-white  p-4 shadow-lg " style="width: 80%;border-radius:10px;" method="post">
                 <div class="mb-3">

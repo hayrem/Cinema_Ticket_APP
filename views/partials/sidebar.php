@@ -1,7 +1,7 @@
 <div class="sidebar" style="min-height: 100vh;">
     <div class="sidebar-header">
-        <div class="app-icon">
-            <img src="../../assets/logo.png" width="70%" alt="">
+        <div class="app-icon d-flex " style="justify-content: center;">
+            <img src="../../assets/phnom-penh-cinema-low-resolution-logo-color-on-transparent-background.png" class="mt-1" width="37%" alt="">
         </div>
     </div>
     <?php $active = "active"; ?>
@@ -22,7 +22,7 @@
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
-                <span>Theater sitting</span>
+                <span>Movie sitting</span>
             </a>
         </li>
        

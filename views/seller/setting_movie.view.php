@@ -10,7 +10,9 @@ require "views/partials/head.php";
         <?php require "views/partials/header.php" ?>
 
         <!--  -->
-
+    <div class="d-flex mt-4 me-4 p-1 " style="justify-content: end;">
+        <a class="btn btn-primary" style="margin-right: 6rem;">Create new movie</a>
+    </div>
         <div class="container-movecards mt-4">
 
             <?php foreach ($sellerShows as $show) : ?>
