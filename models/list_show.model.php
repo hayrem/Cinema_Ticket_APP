@@ -23,13 +23,10 @@ $shows=showMovie();
 function getDetailMovie(int $getID) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM movies 
-    INNER JOIN shows ON movies.movie_id = shows.show_id 
-    INNER JOIN halls ON shows.hall_id = halls.hall_id
-    WHERE movies.movie_id = :movie_id");
+    $statement = $connection->prepare("SELECT * FROM hall_shows 
+    WHERE movie_id = :movie_id");
     $statement->execute([':movie_id'=> $getID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
- 
 }
 
 
@@ -39,7 +36,7 @@ function getDetailMovie(int $getID) : array
 function notListShow(int $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM movies WHERE movie_id != :id");
+    $statement = $connection->prepare("SELECT * FROM hall_shows WHERE movie_id != :id");
     $statement->execute([':id'=> $id]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 

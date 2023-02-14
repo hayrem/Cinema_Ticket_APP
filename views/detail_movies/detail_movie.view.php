@@ -3,7 +3,7 @@
     ?> 
     <div class="card-detail">
     <div class="card-thumbnail">
-      <img src="../../uploads/ <?php  echo $movie['image'];?>">
+      <img src="../../uploads/<?php  echo $movie['image'];?>">
     </div>
     <div class="card-body-detail">
       <span class="card-title-detail"><?= $movie['title']?></span>
@@ -15,8 +15,8 @@
       <p class="card-text">Country: <?= $movie['country']?></p>
       <p class="card-text">Genre: <?= $movie['genre']?></p>
       <p class="card-text">Release: <?= $movie['released']?></p>
-      <p class="card-text">Date show: <?= $movie['date']?></p>
-      <p class="card-text"><?= $movie['name']?></p>
+      <p class="card-text">Date show: <?= $movie['date_show']?></p>
+      <p class="card-text">Hall: <?= $movie['hall_name']?></p>
       <div class="card-description">
         <p><?= $movie['description']?></p>
       </div>
