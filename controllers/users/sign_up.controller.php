@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     $email = validation($_POST["email"]);
     $password = validation($_POST["password"]);
     $confirmPassword = validation($_POST["comfirm-password"]);
-    
+    $sellerRole = 'customer';
     if(empty($firstName)){
         $messageError["firstName"] = "please enter a first name";
     }elseif(!preg_match("/^[a-zA-Z\d]+$/",$firstName))
