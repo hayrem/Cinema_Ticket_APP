@@ -32,6 +32,7 @@ function getDetailMovie(int $getID) : array
  
 }
 
+
 //cinema detail fuction 
 function getDetahall() : array
 {
@@ -95,7 +96,7 @@ function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string 
 }
 
 //  Function add new show
-function addNewShow(string $show_date,string $show_time_start, string $show_time_end, string $movie_id,string $hall_id) : array
+function addNewShow(string $show_date,string $show_time_start, string $show_time_end,int $movie_id,int $hall_id) : array
 {
     global $connection;
     $statement = $connection->prepare("INSERT INTO shows (date,  time_start,  time_end,  movie_id,  hall_id) VALUES (:date,  :time_start,  :time_end,  :movie_id,  :hall_id)");

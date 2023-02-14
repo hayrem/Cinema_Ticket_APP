@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             {
                 header('location: /seller/create_movie');
             }  else{
-                addNewMovie( $mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $newMvPoster, $mvDescription, $mvTrailer) ;
+                addNewMovie($mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $newMvPoster, $mvDescription, $mvTrailer) ;
                 header('location: /seller/setting');
             }
     }}

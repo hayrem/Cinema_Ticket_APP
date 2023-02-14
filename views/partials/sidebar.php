@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" style="min-height: 100vh;">
     <div class="sidebar-header">
         <div class="app-icon">
             <img src="../../assets/logo.png" width="70%" alt="">

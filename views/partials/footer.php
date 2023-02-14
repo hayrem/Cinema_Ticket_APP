@@ -1,7 +1,7 @@
 <?php
     require "head.php";
 ?>
-    <footer class="mt-4 ">
+    <footer class="mt-0">
         <div class="container-footer row justify-content-center mb-0 pt-5 pb-0 row-2 px-3" style="background:#072f4e;">
             <div class="col-12">
                 <div class="row row-2">

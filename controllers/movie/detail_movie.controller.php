@@ -8,6 +8,8 @@ require "controllers/search/search.controller.php";
 $getID = ($_GET['movie_id']);
 $movies = getDetailMovie($getID);
 $shows = notListShow($getID);
+
+print_r($shows);
 require("views/detail_movies/detail_movie.view.php");
 
 require("views/home/index.view.php");
