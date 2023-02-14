@@ -16,14 +16,14 @@ require "views/partials/head.php";
         <div class="container-movecards mt-4">
 
             <?php foreach ($sellerShows as $show) : ?>
-                <div class="row justify-content-center mb-3">
+                <div class="row justify-content-center mb-3" style="width: 100%;">
                     <div class="col-md-12 col-xl-10">
                         <div class="card shadow-0 border rounded-3">
                             <div class="card-body p-0">
                                 <div class="row">
                                     <div class="col-md-3 col-lg-3 col-xl-2 mb-4 mb-lg-0">
                                         <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                            <img src="/uploads/<?=$show['image'] ?>" class="w-100" />
+                                            <img src="uploads/<?=$show['image'] ?>" class="w-100" />
 
                                             <a href="#!">
                                                 <div class="hover-overlay">
@@ -39,9 +39,6 @@ require "views/partials/head.php";
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
                                             <span class="row mt-2">Release: <?php echo $show["released"]; ?> </span>
                                         </div>
-                                        <p class="row  mb-4 mb-md-0 mt-2">
-                                            <?php echo $show["description"]; ?>
-                                        </p>
                                     </div>
                                     <div class="col-md-6 col-lg-2 col-xl-0 border-sm-start-none border-start p-3">
                                         <div class="d-flex flex-row align-items-center mb-1">

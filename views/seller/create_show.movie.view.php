@@ -46,7 +46,7 @@ require "views/partials/head.php";
                         <?php   
                         foreach ($halls as $hall):
                         ?>
-                        <option value="<?=$hall['hall_id'];?>"><?=$hall['name'];?></option>
+                        <option value="<?=$hall['hall_id'];?>"><?=$hall['hall_name'];?></option>
                         <?php
                             endforeach; 
                         ?>

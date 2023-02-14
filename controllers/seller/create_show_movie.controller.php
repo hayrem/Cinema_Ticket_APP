@@ -1,6 +1,7 @@
 
 <?php 
     require ('models/list_show.model.php');
+    require ('models/hall_show.model.php');
 
     $halls = getDetahall();
 
