@@ -23,7 +23,7 @@ require "views/partials/head.php";
                                 <div class="row">
                                     <div class="col-md-3 col-lg-3 col-xl-2 mb-4 mb-lg-0">
                                         <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                            <img src="uploads/<?=$show['image'] ?>" class="w-100" />
+                                            <img src="/uploads/<?=$show['image'] ?>" class="w-100" />
 
                                             <a href="#!">
                                                 <div class="hover-overlay">

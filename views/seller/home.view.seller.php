@@ -14,7 +14,7 @@ require "views/partials/head.php";
         <div class="movie-cards">
 
           <div class="poster">
-            <img src="<?php echo $show['image']; ?> ">
+            <img src="../../uploads/<?php echo $show['image']; ?> ">
           </div>
 
           <div class="details">

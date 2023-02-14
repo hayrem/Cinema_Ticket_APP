@@ -3,7 +3,7 @@
     ?> 
     <div class="card-detail">
     <div class="card-thumbnail">
-      <img src=" <?php  echo $movie['image'];?>">
+      <img src="../../uploads/ <?php  echo $movie['image'];?>">
     </div>
     <div class="card-body-detail">
       <span class="card-title-detail"><?= $movie['title']?></span>
