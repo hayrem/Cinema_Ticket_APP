@@ -2,7 +2,7 @@
     require "views/partials/head.php";
     require "views/partials/nav.php";
     require ('models/list_show.model.php');
-    $ID = ($_GET['cinema_hall_id']);
+    $ID = ($_GET['hall_id']);
     $hallShows = hallShow($ID);
     $nameHalls = getNameHall($ID);
 
