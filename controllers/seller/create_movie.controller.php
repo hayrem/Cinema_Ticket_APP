@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     $mvReleased = validation($_POST['released']);
     $mvDescription = validation($_POST['description']);
     $mvTrailer = validation($_POST['trailer']);
-    
+    $mvLanguage = validation($_POST['language']);
     if(empty($mvTitle)){ 
         $messageError["title"] = "please enter the title of movie";
     }
@@ -70,7 +70,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     if(empty($mvTrailer))
     {
         $messageError["trailer"] = "Please enter trailer of movie";
-    }   
+    }  
+    if (empty($mvLanguage))
+    {
+        $messageError["language"] = "Please enter language of movie";
+    } 
 
     if (isset($_POST['submit']) && isset($_FILES['image'])) 
     {     

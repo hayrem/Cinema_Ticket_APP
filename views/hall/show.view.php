@@ -13,7 +13,7 @@ Wellcome to
 
     <div class="d-flex m-4">
         <div class="card-thumbnail ">
-            <img src=" <?php  echo $hallShow['image'];?>">
+            <img src="../../uploads/<?php  echo $hallShow['image'];?>">
         </div>
         <div class="card-body-detail" style="margin-top: -25px;">
             <h2 class="card-text" style="font-weight: bold"><?= $hallShow['title']?></h2>
