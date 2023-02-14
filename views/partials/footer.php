@@ -57,10 +57,10 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 
 <!-- <script src="../../views/js/main.js"></script> -->
-
+<script src="../../views/js/print_ticket.js"></script>
+<script src="../../views/js/canvas2image.js"></script>
+<script src="../../views/js/hrml2canvas.main.js"></script>
 <!-- cdn js link print image -->
 <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
-<script src="../../views/js/print_image.js"></script>
 </html>

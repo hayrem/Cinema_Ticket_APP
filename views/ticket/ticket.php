@@ -1,12 +1,11 @@
 <h1 class="text-white " style="margin:40px; border-radius:10px 10px 10px 10px ; background:#DC2026;; width:18%; text-align: center;" >View ticket</h1>
 <div id="print-area-3" class="print-area">
-	
-	<div class="container bg-danger p-4">
+<div class="specific">
+<div class="container bg-danger p-4">
 		
-		<div class="ticket">
+		<div class="ticket" id="printing-css">
 			<div class="left">
 				<div class="image card-ticket ">
-					<img src="https://www.businessdestinations.com/wp-content/uploads/2017/08/D031_rt.jpg " alt="" srcset="">
 				</div>
 			<div class="ticket-info">
 				<p class="date">
@@ -14,7 +13,7 @@
 				</p>
 				<div class="show-name">
 					<h1> </h1>
-					<h2>  </h2>
+					<h2></h2>
 				</div>
 				<div class="time">
 					<p>  <span>TO</span></p>
@@ -39,23 +38,7 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		<div class="print d-flex justify-content-between">
-			<div style="text-align:right;"><a class="no-print" id="printing-css"  href="javascript:printDiv('print-area-3');">Print</a></div>
-		</div>
-		<iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
-		<script>
-	function printDiv(elementId) {
-    var a = document.getElementById('printing-css').value;
-    var b = document.getElementById(elementId).innerHTML;
-    window.frames["print_frame"].document.title = document.title;
-    window.frames["print_frame"].document.body.innerHTML = '<style>' + a + '</style>' + b;
-    window.frames["print_frame"].window.focus();
-    window.frames["print_frame"].window.print();
-}</script>
-	</div>
+	<button type="button" class="btn btn-default">Print</button>
 </div>
 <?php
 require "views/partials/footer.php";

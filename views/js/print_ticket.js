@@ -1,11 +1,8 @@
-let canvas = document.querySelector('.btn-save').addEventListener('click', function() {
-    
-    html2canvas(document.querySelector('.ticket'),{
+document.querySelector('button').addEventListener('click', function() {
+    html2canvas(document.querySelector('.specific'), {
         onrendered: function(canvas) {
-            document.body.appendChild(canvas);
+            // document.body.appendChild(canvas);
           return Canvas2Image.saveAsPNG(canvas);
         }
     });
 });
-
-console.log(canvas);
