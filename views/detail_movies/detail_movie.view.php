@@ -15,8 +15,8 @@
       <p class="card-text">Country: <?= $movie['country']?></p>
       <p class="card-text">Genre: <?= $movie['genre']?></p>
       <p class="card-text">Release: <?= $movie['released']?></p>
-      <p class="card-text">Date show: <?= $movie['date']?></p>
-      <p class="card-text"><?= $movie['name']?></p>
+      <p class="card-text">Date show: <?= $movie['date_show']?></p>
+      <p class="card-text">Hall: <?= $movie['hall_name']?></p>
       <div class="card-description">
         <p><?= $movie['description']?></p>
       </div>
