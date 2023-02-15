@@ -805,7 +805,7 @@ background: #000;
   gap: 10px;
   padding-left: 14px;
 }
-/* .movie-cards {
+.movie-cards {
   transform: translate(-0%, -0%); 
   width: 210px;
   height: 370px;
@@ -933,4 +933,4 @@ background: #000;
 .head_contact form .inform{
   flex: 1.1;
 
-} */ 
+} 
