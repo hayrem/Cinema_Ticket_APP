@@ -16,9 +16,6 @@
       <div class="card-description">
         <p class="fs-5"><?= $movies[0]['description'] ?></p>
       </div>
-      <div class="d-flex justify-content-between ">
-        <a href="/booking?movie_id" class="btn btn-outline-danger bg-danger text-white">BOOKING</a>
-      </div>
     </div>
   </div>
 </div>
@@ -29,17 +26,18 @@
 <div class="container-fluid mt-4">
     <div class="card p-2 fs-5" style="border:solid 2px;">SELECT SHOWTIME</div>
 </div>
-<div class="container-fluid ">
+<div class="container-fluid mb-4">
 
   <?php
   foreach ($movies as $movie) :
   ?>
-    <div class="bg-dark text-white mt-4 rounded-3">
+    <div class="bg-dark text-white mt-4 rounded-3 shadow p-3 mb-5rounded">
+      <!-- <label for=""><?= $movie['hall_id'] ?></label> -->
       <h5 class="card-header">Hall: <?= $movie['hall_name'] ?></h5>
       <div class="card-body">
         <h5 class="card-title">Date show: <?= $movie['date_show'] ?></h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/booking?movie_id=<?= $movie['movie_id']?>" class="btn btn-primary " style="width: 10%;">2:30</a>
+        <a href="/booking?movie_id=<?=$movie['movie_id']?> &hall_id=<?=$movie['hall_name'] ?>" class="btn btn-primary " style="width: 10%;">2:30</a>
       </div>
     </div>
     <?php endforeach; ?>

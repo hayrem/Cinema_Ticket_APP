@@ -46,7 +46,9 @@
         <form action="" class="w-75" method='POST' onsubmit='return false'>
             <span class="fs-4 mb-4">Show time detail</span>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5">Hall : <?php echo $movie["hall_name"]; ?></label>
+                    <?php $hallName = $_GET['hall_id'];
+                     ?>
+                <label class="form-label fs-5">Hall : <?=$hallName;?></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
