@@ -25,7 +25,6 @@ function read_seller_edit(string $title, string $description,string $released,st
         ':title' => $title,
         ':description' => $description,
         ':released' => $released,
-        ':released' => $released,
         'language' => $language,
         'country' => $country,
         'genre' => $genre,

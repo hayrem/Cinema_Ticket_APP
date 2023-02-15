@@ -21,7 +21,7 @@ require "views/partials/head.php";
                     <div class="col">
                         <label for="exampleInputPassword1" class="form-label">Genre</label>
                         <select name="genre" class="form-select p-2" aria-label="Default select example">
-                            <option selected>Please select genre of movie</option>
+                            <option>Please select genre of movie</option>
                             <?php   
                             $array = ['Action', 'Adventure', 'Comedy','Crime and mystery','Fantasy','Horror','Romance','Animation','Strategy'];
                             foreach ($array as $show):
@@ -79,15 +79,20 @@ require "views/partials/head.php";
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload poster</label>
                         <input type="file" name="image" multiple class="form-control form-control-lg">
+                        <span style="color:red;"><?= (isset($messageError['image'])) ? $messageError['image'] : "<span>.</span>" ?></span>
                     </div>
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload trailer</label>
-                        <input type="text" placeholder="Upload URL" name="trailer" class="form-control form-control-lg">
+                        <input type="text" placeholder="Upload URL" name="trailer" class="form-control form-control-lg" value="<?= (isset($_POST['trailer'])) ? $_POST['trailer'] : "" ?>">
+                        <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea  class="form-control" placeholder="Enter description" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200"></textarea>
+                    <textarea  class="form-control" placeholder="Enter description" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200">
+                        <?= (isset($_POST['description'])) ? $_POST['description'] : "" ?>
+                    </textarea>
+                    <span style="color:red;"><?= (isset($messageError['description'])) ? $messageError['description'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>

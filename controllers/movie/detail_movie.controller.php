@@ -10,6 +10,7 @@ $movies = getDetailMovie($getID);
 $shows = notListShow($getID);
 
 print_r($movies);
+print_r($shows);
 require("views/detail_movies/detail_movie.view.php");
 
 require("views/home/index.view.php");

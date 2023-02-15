@@ -12,7 +12,7 @@
   </div>
   <div class="body d-flex flex-column container ">
     <?php
-      foreach ( $halls as $hall):
+      foreach ($halls as $hall):
     ?>
     <div class="m-3 d-flex flex-lg-row rounded-3 shadow p-0  bg-body rounded">
       <div class="w-25 bg-image hover-zoom ripple rounded ripple-surface">
@@ -20,12 +20,12 @@
         <img src="https://www.hollywoodreporter.com/wp-content/uploads/2022/11/01_Exterior_1-copy.jpg?w=1296" class="rounded w-100">
       </div>
           <div class="card-body ">
-            <h4 class="card-title fw-bold"><?= $hall['name'];?></h4>
+            <h4 class="card-title fw-bold"><?= $hall['hall_name'];?></h4>
             <p class="card-text">Total seat: <?= $hall['total_seat'];?></p>
           </div>
           <div class="container-btn d-flex align-items-end p-4">
             <!-- <a href="#" class="btn btn-danger">Show Items</a> -->
-            <a  href="/hallShow?cinema_hall_id=<?php echo $hall['cinema_hall_id']?>" class="btn btn-danger" >Show Items</a>  
+            <a  href="/hallShow?cinema_hall_id=<?php echo $hall['hall_id']?>" class="btn btn-danger" >Show Items</a>  
           </div>
         </div>
       <?php endforeach ?>

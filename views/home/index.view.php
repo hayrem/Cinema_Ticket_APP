@@ -12,7 +12,7 @@
         <div class="movie-cards">
 
             <div class="poster">
-                <img src="<?php  echo $show['image'];?> ">
+                <img src="../../uploads/<?php  echo $show['image'];?> ">
             </div>
 
             <div class="details">
@@ -32,10 +32,10 @@
 
                 <div class="tags">
                     <span class="fantasy bg-danger" style='width:115px; display:flex; justify-content:center;'>
-                      <a href="" style='color:white;'>BOOKING</a>  
+                      <a href="" style='color:white;text-decoration: none;'>BOOKING</a>  
                     </span>
                     <span class="mystery bg-primary" style='width:115px; display:flex; justify-content:center;'>
-                        <a href="/detail?movie_id=<?php echo $show['movie_id']?>" style='color:white;'>MORE INFO</a>  
+                        <a href="/detail?movie_id=<?php echo $show['movie_id']?>" style='color:white;text-decoration: none;'>MORE INFO</a>  
                     </span>
                 </div>
             </div>

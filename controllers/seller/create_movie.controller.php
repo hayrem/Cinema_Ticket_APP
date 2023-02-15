@@ -55,14 +55,33 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     if(empty($selected)){
         $messageError["country"] = "please enter country source of movie";
     }
-    if(empty($mvDuration ))
+    if(empty($mvDuration))
     {
         $messageError["duration"] = " Please enter duration of movie";
     } 
+    elseif(!is_numeric($mvDuration))
+    {
+        $messageError["duration"] = "Input must be a number";
+    } 
+    elseif(!preg_match('/^(?:[01][0-9]|2[0-3]):[0-5][0-9]$/',$mvDuration))
+    {
+        $messageError["duration"] = "Incorrect duration format must be a h:m:s";
+    } 
+    // elseif(preg_match("/^(?:1[012]|0[0-9]):[0-5][0-9]$/", $mvDuration)){
+        //     $messageError["duration"] = " Please enter duration of movie";
+        // }
     if(empty($mvReleased))
     {
         $messageError["released"] = "Please enter released date of movie";
+    } 
+    elseif(!is_numeric($mvReleased))
+    {
+        $messageError["released"] = "Input must be a number";
     }     
+    elseif(strlen($mvReleased) >4)
+    {
+        $messageError["released"] = "Input only years";
+    } 
     if(empty($mvDescription))
     {
         $messageError["description"] = "Please enter description  of movie";
@@ -95,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             {
                 header('location: /seller/create_movie');
             }  else{
-                addNewMovie( $mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $newMvPoster, $mvDescription, $mvTrailer) ;
+                addNewMovie($mvTitle, $mvGenre, $mvCountry, $mvDuration, $mvLanguage, $mvReleased, $newMvPoster, $mvDescription, $mvTrailer) ;
                 header('location: /seller/setting');
             }
     }}
