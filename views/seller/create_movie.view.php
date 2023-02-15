@@ -83,13 +83,16 @@ require "views/partials/head.php";
                     </div>
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload trailer</label>
-                        <input type="text" placeholder="Upload URL" name="trailer" class="form-control form-control-lg">
+                        <input type="text" placeholder="Upload URL" name="trailer" class="form-control form-control-lg" value="<?= (isset($_POST['trailer'])) ? $_POST['trailer'] : "" ?>">
                         <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea  class="form-control" placeholder="Enter description" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200"></textarea>
+                    <textarea  class="form-control" placeholder="Enter description" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200">
+                        <?= (isset($_POST['description'])) ? $_POST['description'] : "" ?>
+                    </textarea>
+                    <span style="color:red;"><?= (isset($messageError['description'])) ? $messageError['description'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>

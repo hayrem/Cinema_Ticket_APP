@@ -3,18 +3,10 @@ require "views/partials/head.php";
 ?>
 <div class="app-container">
   <?php require "views/partials/sidebar.php" ?>
-
+  
   <div class="app-content">
-    <div class="app-content-actions">
-      <input class="search-bar" placeholder="Search..." type="text">
-    </div>
-    <div class="products-area-wrapper tableView">
-      <div class="products-header">
-        <h3><?= $deading ?></h3>
-      </div>
-    </div>
-
-    <!--  -->
+    <?php require "views/partials/header.php" ?>
+  
 
     <div class="container-movecards d-flex justify-content-center">
 
@@ -22,7 +14,7 @@ require "views/partials/head.php";
         <div class="movie-cards">
 
           <div class="poster">
-            <img src="<?php echo $show['image']; ?> ">
+            <img src="../../uploads/<?php echo $show['image']; ?> ">
           </div>
 
           <div class="details">

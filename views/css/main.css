@@ -718,12 +718,18 @@ background: #000;
   background-color: var(--sidebar);
   display: flex;
   flex-direction: column;
+  /* padding-top: 30px; */
+}
+.header{
+  background-color: var(--sidebar);
+  /* align-items: center; */
 }
 .sidebar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
+  /* background-color: var(--sidebar); */
 }
 .sidebar-list {
   list-style-type: none;
@@ -776,7 +782,7 @@ background: #000;
   flex: 3;
   display: flex;
   flex-direction: column;
-  background: #e00808;
+  /* background: #e00808; */
 }
 .app-content-header {
   display: flex;
@@ -904,9 +910,9 @@ background: #000;
 }
 .title span {
   color: orange;
-}
+} 
 .text{
-  /* font-size: 50px; */
+  font-size: 50px; 
   background-size: cover;
   height: 40vh;
   background-image: linear-gradient(to bottom, rgba(94, 75, 75, 0.25) 0, rgba(79, 24, 24, 0.5) 100%), url(https://images.squarespace-cdn.com/content/v1/5d9e9960ff34916b5d5216f9/1571505099912-YO87A1KITSDEPW2PDF2N/theater-rental-banner.jpg?format=2500w);

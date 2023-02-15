@@ -23,59 +23,26 @@ $shows=showMovie();
 function getDetailMovie(int $getID) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM movies 
-    INNER JOIN shows ON movies.movie_id = shows.show_id 
-    INNER JOIN cinema_halls ON shows.cinema_hall_id = cinema_halls.cinema_hall_id
-    WHERE movies.movie_id = :movie_id");
+    $statement = $connection->prepare("SELECT * FROM hall_shows 
+    WHERE movie_id = :movie_id");
     $statement->execute([':movie_id'=> $getID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
- 
 }
 
 
-//cinema detail fuction 
-function getDetahall() : array
-{
-    global $connection;
-    $statement = $connection->prepare("SELECT * FROM cinema_halls");
-    $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
- 
-}
 
 // $cinemas = getDetaCinemas();
 // echo $cinemas;
 function notListShow(int $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM movies WHERE movie_id != :id");
+    $statement = $connection->prepare("SELECT * FROM hall_shows WHERE movie_id != :id");
     $statement->execute([':id'=> $id]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 
 }
 
 
-// function get hallShows
-function hallShow(int $ID) : array
-{
-    global $connection;
-    $statement = $connection->prepare("SELECT * FROM cinema_halls 
-    INNER JOIN shows ON shows.cinema_hall_id = cinema_halls.cinema_hall_id  
-    INNER JOIN movies ON shows.show_id = movies.movie_id
-    WHERE cinema_halls.cinema_hall_id = :cinema_hall_id");
-    $statement->execute([':cinema_hall_id'=> $ID]);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-};
-// function get name hall
-
-function getNameHall(int $ID) : array
-{
-    global $connection;
-    $statement = $connection->prepare("SELECT * FROM cinema_halls 
-    WHERE cinema_halls.cinema_hall_id = :cinema_hall_id");
-    $statement->execute([':cinema_hall_id'=> $ID]);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-};
 
 function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string $mvDuration,string $mvLanguage,string $mvReleased,string $newMvPoster, string $mvDescription, string $mvTrailer) : array
 {
@@ -99,13 +66,13 @@ function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string 
 function addNewShow(string $show_date,string $show_time_start, string $show_time_end,int $movie_id,int $hall_id) : array
 {
     global $connection;
-    $statement = $connection->prepare("INSERT INTO shows (date,  time_start,  time_end,  movie_id,  cinema_hall_id) VALUES (:date,  :time_start,  :time_end,  :movie_id,  :cinema_hall_id)");
+    $statement = $connection->prepare("INSERT INTO shows (date_show,  time_start,  time_end,  movie_id,  hall_id) VALUES (:date_show,  :time_start,  :time_end,  :movie_id,  :hall_id)");
     $statement->execute([
-        ':date' => $show_date,
+        ':date_show' => $show_date,
         ':time_start' => $show_time_start,
         ':time_end' => $show_time_end,
         ':movie_id' => $movie_id,
-        ':cinema_hall_id' => $hall_id,
+        ':hall_id' => $hall_id,
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
