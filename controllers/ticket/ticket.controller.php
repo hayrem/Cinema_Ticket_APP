@@ -8,6 +8,6 @@
     
     print_r ($tickets);
 
-    require "views/ticket/ticket.php";
+    require "views/ticket/ticket.view.php";
 
 ?>
