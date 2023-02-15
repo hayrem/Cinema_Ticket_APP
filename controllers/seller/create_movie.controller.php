@@ -52,21 +52,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     if(empty($mvGenre)){
         $messageError["genre"] = "please enter genre of movie";
     }
-    if(empty($selected)){
+    if(empty($mvCountry)){
         $messageError["country"] = "please enter country source of movie";
     }
     if(empty($mvDuration))
     {
         $messageError["duration"] = " Please enter duration of movie";
     } 
-    elseif(!is_numeric($mvDuration))
-    {
-        $messageError["duration"] = "Input must be a number";
-    } 
-    elseif(!preg_match('/^(?:[01][0-9]|2[0-3]):[0-5][0-9]$/',$mvDuration))
-    {
-        $messageError["duration"] = "Incorrect duration format must be a h:m:s";
-    } 
+    // elseif(!is_numeric($mvDuration))
+    // {
+    //     $messageError["duration"] = "Input must be a number";
+    // } 
+    // elseif(!preg_match('/^(?:[01][0-9]|2[0-3]):[0-5][0-9]$/',$mvDuration))
+    // {
+    //     $messageError["duration"] = "Incorrect duration format must be a h:m:s";
+    // } 
     // elseif(preg_match("/^(?:1[012]|0[0-9]):[0-5][0-9]$/", $mvDuration)){
         //     $messageError["duration"] = " Please enter duration of movie";
         // }
