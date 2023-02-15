@@ -110,7 +110,7 @@ require "views/partials/head.php";
                     </div>
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload trailer</label>
-                        <input type="text" name="trailer" placeholder="URL trailer" class="form-control form-control-lg">
+                        <input type="text" name="trailer" placeholder="URL trailer" class="form-control form-control-lg"  value="<?= $editMovie['trailer'] ?>">
                         <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
 
                     </div>

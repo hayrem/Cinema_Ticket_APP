@@ -13,6 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $language = $_POST['language'];
     $country = $_POST['country'];
     $genre = $_POST['genre'];
+    $image = $_POST['image'];
 
 
     if(! empty($title) 
@@ -21,9 +22,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     and ! empty($released)
     and ! empty($language)
     and ! empty($genre)
+    and ! empty($image)
     and ! empty($country)){
         require "models/seller_list_show.model.php";
-        $update = read_seller_edit($title,$description,$released,$language,$genre,$country,$movieId);
+        $update = read_seller_edit($title,$description,$released,$language,$genre,$country,$image,$movieId);
 
     }
     header('location:/seller/setting');
