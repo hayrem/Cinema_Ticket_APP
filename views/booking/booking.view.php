@@ -46,7 +46,7 @@
         <form action="" class="w-75" method='POST' onsubmit='return false'>
             <span class="fs-4 mb-4">Show time detail</span>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5">Hall :</label>
+                <label class="form-label fs-5">Hall : <?php echo $movie["hall_name"]; ?></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
@@ -54,7 +54,7 @@
                 <span style="color:red;" id='seat'></span>
 		    </div>
             <div class="mb-2">
-                <label class="form-label fs-5">Date show :</label>
+                <label class="form-label fs-5">Date show : <?php echo $movie["date_show"]; ?></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
@@ -93,8 +93,8 @@
             <input class="btn btn-primary popup-button w-100 mt-4 p-2" id='button-payment' type="submit" name="payment" value="PAYMENT" href=""/>
             
         </form>
-        
     </div>
+    
     <div class="d-flex justify-content-center align-items-center text-white">
     <div class="payment-container" style="width:100%;height:100%;background-color: #000000b7;">
        <form class="payment-form p-3 "   style="border-radius: 30px; background-color:white;"   method='POST' onsubmit='return false' >
