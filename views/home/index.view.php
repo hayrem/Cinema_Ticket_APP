@@ -32,7 +32,7 @@
 
                 <div class="tags">
                     <span class="fantasy bg-danger" style='width:115px; display:flex; justify-content:center;'>
-                      <a href="" style='color:white;text-decoration: none;'>BOOKING</a>  
+                      <a href="/booking?movie_id=<?php echo $show['movie_id']?>" style='color:white;text-decoration: none;'>BOOKING</a>  
                     </span>
                     <span class="mystery bg-primary" style='width:115px; display:flex; justify-content:center;'>
                         <a href="/detail?movie_id=<?php echo $show['movie_id']?>" style='color:white;text-decoration: none;'>MORE INFO</a>  
