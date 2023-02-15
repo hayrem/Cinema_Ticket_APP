@@ -94,9 +94,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     if (isset($_POST['submit']) && isset($_FILES['image'])) 
     {     
         $imgName = $_FILES['image']['name'];
-        $img_size = $_FILES['image']['size'];
         $tmp_name = $_FILES['image']['tmp_name'];
-        $error = $_FILES['image']['error'];
         $img_ex = pathinfo($imgName, PATHINFO_EXTENSION);
         $img_ex_lc = strtolower($img_ex);
         $allowed_exs = array("jpg", "jpeg", "png"); 
