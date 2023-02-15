@@ -25,7 +25,7 @@
           </div>
           <div class="container-btn d-flex align-items-end p-4">
             <!-- <a href="#" class="btn btn-danger">Show Items</a> -->
-            <a  href="/hallShow?cinema_hall_id=<?php echo $hall['hall_id']?>" class="btn btn-danger" >Show Items</a>  
+            <a  href="/hallShow?hall_id=<?php echo $hall['hall_id']?>" class="btn btn-danger" >Show Items</a>  
           </div>
         </div>
       <?php endforeach ?>

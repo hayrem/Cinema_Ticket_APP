@@ -9,7 +9,7 @@
 
     require "views/hall/hall.view.php";
 
-    print_r($halls);
+    // print_r($halls);
 
 ?>
 
