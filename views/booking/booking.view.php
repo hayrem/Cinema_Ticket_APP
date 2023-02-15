@@ -44,8 +44,7 @@
     </div>
 
     <div class="info-form">
-        
-        <form action="" class="w-75" method='POST'>
+        <form action="" class="w-75" method='POST' onsubmit='return false'>
             <span class="fs-4 mb-4">Show time detail</span>
             <div class="mb-3 mt-4">
                 <label class="form-label fs-5">Hall : </label>
@@ -65,109 +64,76 @@
 		    </div>
             <span class="fs-4 mb-4">Customer info</span>
             <div class="row g-3 mb-3 mt-3">
-                <div class="col">
+                <div class="col" id='input-firstname'>
                     <label class="form-label">First name</label>
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstName" value="<?= (isset($_POST['firstName'])) ? $_POST['firstName'] : "" ?>">
-                    <span style="color:red;"><?= (isset($messageError['firstName'])) ? $messageError['firstName'] : "" ?></span>
+                    <input type="text" class="form-control " id= 'inputfirstname'placeholder="First name" aria-label="First name" name="firstName" >
+                    <span style="color:red;" id="firstname"> </span>
                 </div>
-                <div class="col">
+                <div class="col" id='input-lastname'>
                     <label class="form-label">Last name</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="lastName" value="<?= (isset($_POST['lastName'])) ? $_POST['lastName'] : "" ?>">
-                    <span style="color:red;"><?= (isset($messageError['lastName'])) ? $messageError['lastName'] : "" ?></span>
+                    <input type="text" class="form-control " id= 'inputlastname' placeholder="Last name" aria-label="Last name" name="lastName" >
+                    <span style="color:red;" id="lastname"> </span>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3" id='input-email'>
                 <label class="form-label">Email</label>
                 <input type="email" 
                 class="form-control"
                 name="email"
                 placeholder="Enter you email address" 
-                value="<?= (isset($_POST['email'])) ? $_POST['email'] : "" ?>">
-                <span style="color:red;"><?= (isset($messageError['email'])) ?$messageError['email'] : "" ?></span>
+                id= 'inputemail'
+                >
+                <span style="color:red;" id="email"> </span>
 		    </div>
-            <div class="mb-3">
-                <label class="form-label">Phone number</label>
-                <input type="number"
-                class="form-control" 
-                name="phoneNumber" 
-                placeholder="Enter your phone number"
-                value="<?= (isset($_POST['phoneNumber'])) ? $_POST['phoneNumber'] : "" ?>">
-                <span style="color:red;"><?= (isset($messageError['phoneNumber'])) ? $messageError['phoneNumber'] : "" ?></span>
-            </div>
+            <div class="mb-3" id='input-phonenumber'>
+                <label class="form-label ">Phone number</label>
+                <input type="number" class="form-control input-phonenumber" name="number"  id= 'inputphonenumber' placeholder="Enter your phone number">
+                <span style="color:red;" id="phonenumber"> </span>
+            </div class="mb-3">
             <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
-            <input class="btn btn-primary popup-button w-100 mt-4 p-2" type="submit" name="payment" value="PAYMENT" href=""/>
+            <input class="btn btn-primary popup-button w-100 mt-4 p-2" id='button-payment' type="submit" name="payment" value="PAYMENT" href=""/>
             
         </form>
     </div>
+    <div class="d-flex justify-content-center align-items-center text-white">
+    <div class="payment-container" style="width:100%;height:100%;background-color: #000000b7;">
+       <form class="payment-form p-3 "   style="border-radius: 30px; background-color:white;"   method='POST' onsubmit='return false' >
+            <h2 class="d-flex justify-content-center">Credit/Debit Card</h2>
+            <div class="card_types d-flex justify-content-center" style="width: 30rem;">
+                <img class="card_img m-2" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" width="10%"/>
+                <img class="card_img m-2" src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt=""  width="10%"/>
+                <img class="card_img m-2" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt=""  width="10%"/>
+                <img class="card_img m-2" src="https://img.icons8.com/fluency/512/mastercard.png" alt=""  width="10%"/>
+            </div>
+                <div class="mb-3 card-name-form">
+                    <label class="form-label">Card Name</label>
+                    <input type="text" class="form-control" id='card-name' placeholder="Enter your card name" name="card-name" >
+                    <span style="color:red;" id="cardname"> </span>
+                </div>
+                <div class="mb-3 card-number-form">
+                    <label class="form-label ">Card Number</label>
+                    <input id="card-number" class="form-control"  maxlength="19" placeholder="1111-2222-3333-4444"  name="card-number" placeholder="Enter your card number">
+                    <span style="color:red;" id="cardnumber"> </span>
+                </div>
+            <div class="mb-3">
+                <div class="row g-3">
+                    <div class="col expired-form">
+                        <label class="form-label">Expired</label>
+                        <input class="form-control"  id ='expired-input'maxlength='5' placeholder="MM/YY" type="text" onkeyup="formatString(event);" name="expired">
+                        <span style="color:red;" id="expried"> </span>
+                    </div>
+                    <div class="col cvv-form">
+                        <label class="form-label">CVV</label>
+                        <input type="text" class="form-control" id='cvv-input' placeholder="123" maxlength="3"  name="cvv"  ?>
+                        <span style="color:red;" id="CVV"> </span>
+                    </div>
+                </div>
+                <div class="contain-btn mt-4 d-flex justify-content-between">
+                    <button type="button" class="btn-payment btn btn-danger p-2" style="width:48%; border-radius:10px;" id='payment-btn'>Payment</button>
+                    <button type="button" class="btn-payment btn btn-primary p-2" style="width:48%; border-radius:10px;" id='cancel'>Cancel</button>
+                </div>
+            </div>
+	    </form> 
+    </div>
 </div>
-<script>
-let seatPrice=5  
-function function1() {
-let arr = [];
-let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
-for (let i = 0; i < checkboxes.length; i++) {
-arr.push(checkboxes[i].value)
-}
-let result = document.querySelector('#seat');
-result.textContent = arr;
-let price = document.querySelector('#total_price')
-let totalPrice = arr.length;
-console.log(totalPrice);
-price.textContent = totalPrice*seatPrice + '$';
-
-}
-</script>
-<?php
-    if (isset($_POST['payment']))
-    {{if (isset($messageError)){
-        if (empty($messageError)){
-            require 'views/booking/payment.view.php';
-            
-$messageError = [];
-// function validation($data): string
-// {
-//     $data = trim($data);
-//     $data = stripslashes($data);
-//     $data = htmlspecialchars($data);
-//     return $data;
-    
-// }
-if (isset($_POST['payment-btn']))
-{if($_SERVER['REQUEST_METHOD'] === 'POST')
-{
-    
-    $cardName = validation($_POST["card-name"]);
-    $cardNumber = validation($_POST["card-number"]);
-    $expired = validation($_POST["expired"]);
-    $cvv = validation($_POST["cvv"]);
-    if(empty($cardName)){
-        $messageError["firstName"] = "Please enter your card name";
-    }elseif(!preg_match("/^[a-zA-Z\d]+$/",$cardName))
-    {
-        $messageError["card-name"] = 'Card name most more that 5 letters and least that 20 letters';
-    }
-    if(empty($cardNumber)){
-        $messageError["card-number"] = "Please enter your card number";
-    }elseif(!preg_match("/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/",$cardNumber))
-    {
-        $messageError["card-number"] = 'Card number must be 16 digits';
-    }
-    if(empty($expired))
-    {
-        $messageError["expired"] = "Please enter your expired";
-    } 
-    elseif (!preg_match("/^(0?[1-9]|1[0-2])([0-9]{2})$/",$expired))
-    {
-        $messageError["expired"] = "Expired must be only 4 digits"; 
-    }
-    if (empty($cvv)){
-        $messageError['cvv'] = 'Please enter your cvv';
-    }
-    elseif (!preg_match("/^([1-9]\/|[2-9])$/",$cvv)){
-        $messageError['cvv'] = 'CVV must be 3 digits';
-    }
-}}
-
-        }
-    }};};
-?>
+</div>
