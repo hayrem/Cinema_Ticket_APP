@@ -108,13 +108,15 @@ require "views/partials/head.php";
                         <label for="formFileSm" class="form-label">Upload poster</label>
                         <input type="file" name="image" class="form-control form-control-lg "  value="<?= (isset($_POST['image'])) ? $_POST['image'] : "" ?>" >                        
                         <span><?= (isset($messageError['image'])) ? $messageError['image'] : "" ?></span>
-                        <img src="/uploads/<?=$editMovie['image']?>" alt="" style="width:40px;" >
                     </div>
                     <div class="col mb-3">
-                        <label for="formFileSm" class="form-label">Upload trailer</label>
+                        <img class="ms-4" src="/uploads/<?=$editMovie['image']?>" alt="" style="width:80px;" >
+                    </div>
+                </div>
+                <div>
+                <label for="formFileSm" class="form-label">Upload trailer</label>
                         <input type="text" name="trailer" placeholder="URL trailer" value="<?= $editMovie['trailer'] ?>" class="form-control form-control-lg">
                         <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
-                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
