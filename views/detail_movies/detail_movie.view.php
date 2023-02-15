@@ -21,7 +21,7 @@
         <p><?= $movie['description']?></p>
       </div>
       <div class="d-flex justify-content-between ">
-        <a href="#" class="btn btn-outline-danger bg-danger text-white">BOOKING</a>
+        <a href="/booking" class="btn btn-outline-danger bg-danger text-white">BOOKING</a>
     </div>
     <a href="https://youtu.be/1esRrwrmWzA"></a>
     </div>
