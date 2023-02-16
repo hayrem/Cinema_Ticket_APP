@@ -1,13 +1,13 @@
 <?php
 require("database/database.php");
 
-// function getMovie(){
-//     global $connection;
-//     $statement = $connection->prepare("select * from movies");
-//     $statement->execute();
-//     return $statement->fetchAll();
+function getMovie(){
+    global $connection;
+    $statement = $connection->prepare("select * from movies");
+    $statement->execute();
+    return $statement->fetchAll();
 
-// }
+}
 
 function getMovieId(int $movieId):array
 {
@@ -44,4 +44,18 @@ function getDataTimeShow():array
     $statement = $connection->prepare('select time_start from shows');
     $statement->execute();
     return  $statement->fetch();
+}
+
+//  Function add new show
+function addNewShow(string $show_date,string $show_time_start,int $movie_id,int $hall_id) : array
+{
+    global $connection;
+    $statement = $connection->prepare("INSERT INTO shows (date_show,  time_start, movie_id,  hall_id) VALUES (:date_show,  :time_start, :movie_id,  :hall_id)");
+    $statement->execute([
+        ':date_show' => $show_date,
+        ':time_start' => $show_time_start,
+        ':movie_id' => $movie_id,
+        ':hall_id' => $hall_id,
+    ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
