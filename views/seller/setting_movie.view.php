@@ -31,7 +31,10 @@ require "views/partials/head.php";
                                             <h5 class="row"><?php echo $show["title"]; ?></h5>
                                             <span class="row mt-2"> Country: <?php echo $show["country"]; ?></span>
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
-                                            <span class="row mt-2">Release: <?php echo $show["released"]; ?> </span>
+                                            <span class="row mt-2">Release: <?php echo $show["released"]; ?> </span><br><br>
+                                            <!-- <div class="d-flex flex-column mt-4"> -->
+                                            <button class="btn btn-danger btn-sm mt-2" type="button" id="<?=$show['movie_id'] ?>"style="width: 20%;" onclick='PostShow("<?=$show["movie_id"] ?>");'>Post </button>
+                                            <!-- </div> -->
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-2 col-xl-0 border-sm-start-none border-start p-3">
@@ -69,6 +72,22 @@ require "views/partials/head.php";
         cancelButtonColor: '#d33',
         confirmButtonText: '<a href="/seller/delete?movie_id='+movieID + '" style="color:white; text-decoration: none;">Yes, delete it!</a>'
         })
+    }
+ 
+</script>
+<script>
+    function PostShow(movieID){
+        Swal.fire({
+        title: 'Your work has been success',
+        // text: "You won't be able to revert this!",
+        icon: 'success',
+        // showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '<a href="/seller?movie_id='+movieID + '" style="color:white; text-decoration: none;">OK</a>'
+        });if(empty($messageError)) {
+            header("location:/");
+        };
     }
  
 </script>
