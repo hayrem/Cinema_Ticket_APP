@@ -16,16 +16,6 @@ require "views/partials/head.php";
                     <input type="date" name="date" value="2023-01-01" min="2023-01-01" max="2023-12-31" class="form-control" id="exampleInputEmail1">
                     <span style="color:red;"><?= (isset($messageError['trip-start'])) ? $messageError['trip-start'] : "<span>.</span>" ?></span>
                 </div>
-                <div class="row">
-                    <div class="col mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Time start</label>
-                        <input  class="form-control" type="time" value="00:00" id="time_start" name="time_start" min="12:00" max="18:00"  required>
-                    </div>
-                    <div class="col mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Time end</label>
-                        <input  class="form-control" type="time" value="00:00" id="time_end" name="time_end" min="12:00" max="18:00" required>
-                    </div>
-                </div>
                 <div class="col mb-3">
                     <label for="exampleInputEmail1" class="form-label">Movie name</label>
                     <select name="title-movie" class="form-select p-2" aria-label="Default select example">
@@ -51,6 +41,20 @@ require "views/partials/head.php";
                             endforeach; 
                         ?>
                     </select>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label class="form-label">Time start</label>
+                        <!-- <input  type="time" value="00:00"   min="12:00" max="18:00"  > -->
+                        <select name="time_start" id="time_start" class="form-select p-2" aria-label="Default select example"" >
+                            <option selected >Select Time Start</option>
+                            <option value="A11">11:00 AM</option>
+                            <option value="A1">1:00 PM</option>
+                            <option value="A3">3:00 PM</option>
+                            <option value="A5">5:00 PM</option>
+                            <option value="A7">7:00 PM</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>

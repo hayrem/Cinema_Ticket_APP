@@ -1,12 +1,13 @@
 <?php
+require("database/database.php");
 
-function getMovie(){
-    global $connection;
-    $statement = $connection->prepare("select * from movies");
-    $statement->execute();
-    return $statement->fetchAll();
+// function getMovie(){
+//     global $connection;
+//     $statement = $connection->prepare("select * from movies");
+//     $statement->execute();
+//     return $statement->fetchAll();
 
-}
+// }
 
 function getMovieId(int $movieId):array
 {
@@ -35,4 +36,15 @@ string $country, int $id, string $image, string $trailer) : bool
         ':trailer' => $trailer,
     ]);
     return $statement->rowCount() > 0;
+}
+
+
+// get data from table show 
+
+function getDataTimeShow():array
+{
+    global $connection;
+    $statement = $connection->prepare('select time_start from shows');
+    $statement->execute();
+    return  $statement->fetch();
 }

@@ -23,7 +23,7 @@ $shows=showMovie();
 function getDetailMovie(int $getID) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT DISTINCT * FROM hall_shows 
+    $statement = $connection->prepare("SELECT DISTINCT * FROM shows 
     WHERE movie_id = :movie_id");
     $statement->execute([':movie_id'=> $getID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -62,14 +62,13 @@ function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string 
 }
 
 //  Function add new show
-function addNewShow(string $show_date,string $show_time_start, string $show_time_end,int $movie_id,int $hall_id) : array
+function addNewShow(string $show_date,string $show_time_start,int $movie_id,int $hall_id) : array
 {
     global $connection;
-    $statement = $connection->prepare("INSERT INTO shows (date_show,  time_start,  time_end,  movie_id,  hall_id) VALUES (:date_show,  :time_start,  :time_end,  :movie_id,  :hall_id)");
+    $statement = $connection->prepare("INSERT INTO shows (date_show,  time_start, movie_id,  hall_id) VALUES (:date_show,  :time_start, :movie_id,  :hall_id)");
     $statement->execute([
         ':date_show' => $show_date,
         ':time_start' => $show_time_start,
-        ':time_end' => $show_time_end,
         ':movie_id' => $movie_id,
         ':hall_id' => $hall_id,
     ]);
