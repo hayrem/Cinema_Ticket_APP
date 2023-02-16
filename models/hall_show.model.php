@@ -14,7 +14,7 @@ function getDetahall() : array
 function hallShow(int $ID) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT movies.title, movies.description, movies.image, shows.time_start, shows.show_id, shows.date_show,shows.time_end, halls.hall_name, halls.total_seat  FROM shows 
+    $statement = $connection->prepare("SELECT movies.title, movies.description, movies.image, shows.time_start, shows.show_id, shows.date_show, halls.hall_name, halls.total_seat  FROM shows 
     INNER JOIN halls ON shows.hall_id = halls.hall_id 
     INNER JOIN movies ON shows.movie_id = movies.movie_id
     WHERE halls.hall_id = :hall_id");

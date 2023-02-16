@@ -26,6 +26,7 @@ if (isset($_COOKIE['email'])){
         $routes['/seller/edit'] =  'controllers/seller/edit_movie.controller.php';
         $routes['/seller/update'] =  'controllers/seller/update_movie.controller.php';
         $routes['/seller/create_show'] =  'controllers/seller/create_show_movie.controller.php';
+        $routes['/seller/edit_show'] =  'controllers/seller/edit_show_movie.controller.php';
         $routes['/seller/create_movie'] =  'controllers/seller/create_movie.controller.php';
     };
     

@@ -35,13 +35,15 @@ require "views/partials/head.php";
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-2 col-xl-0 border-sm-start-none border-start p-3">
-                                        <div class="d-flex flex-row align-items-center mb-1">
+                                        <!-- <div class="d-flex flex-row align-items-center mb-1">
                                             <h4 class="mb-1 me-1">$13.99</h4>
-                                        </div>
-                                        <div class="d-flex flex-column mt-4">
+                                        </div> -->
+                                        <div class="d-flex flex-column mt-0">
+
                                             <button class="btn btn-primary btn-sm" type="button"> <a href="/seller/edit?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit</a></button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button" id="<?=$show['movie_id'] ?>" onclick='deleteShow("<?=$show["movie_id"] ?>");'>Delete </button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/create_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Add show</a> </button>
+                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/create_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit show</a> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +56,9 @@ require "views/partials/head.php";
     </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
+
     function deleteShow(movieID){
         Swal.fire({
         title: 'Are you sure?',
