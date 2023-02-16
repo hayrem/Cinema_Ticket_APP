@@ -680,25 +680,6 @@ background: #000;
 	background-size: contain;
 	opacity: 0.85;
 }
-
-.admit-one {
-	position: absolute;
-	color: darkgray;
-	height: 250px;
-	padding: 0 10px;
-	letter-spacing: 0.15em;
-	display: flex;
-	text-align: center;
-	justify-content: space-around;
-	writing-mode: vertical-rl;
-	transform: rotate(-180deg);
-}
-
-.admit-one span:nth-child(2) {
-	color: white;
-	font-weight: 700;
-}
-
 .left .ticket-number {
 	height: 250px;
 	width: 360px;
@@ -719,7 +700,7 @@ background: #000;
   width: 60%;
 }
 
-.date {
+.title {
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	padding: 10px;
@@ -727,22 +708,17 @@ background: #000;
 	font-weight: 900;
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 }
-
-.date span {
-	width: 200px;
-}
-
-.date span:first-child {
+.title span:first-child {
 	text-align: left;
 }
 
-.date span:last-child {
+.title span:last-child {
 	text-align: right;
 }
 
-.date .june-29 {
+.title .june-29 {
 	color: #d83565;
 	font-size: 20px;
 }
@@ -760,7 +736,7 @@ background: #000;
 	color: #4a437e;
 }
 
-.time {
+.date-time, .seat-number {
 	padding: 10px 0;
 	color: #4a437e;
 	text-align: center;
@@ -770,7 +746,7 @@ background: #000;
 	font-weight: 700;
 }
 
-.time span {
+.date-time span {
 	font-weight: 400;
 	color: gray;
 }
@@ -834,9 +810,8 @@ background: #000;
 
 .card-ticket img{
   position: absolute;
-  height: 45%;
+  height: 40%;
   width: 20%;
-  margin-top: -16px;
   object-fit: cover;
 }
 
