@@ -1,7 +1,7 @@
 <?php
 require("database/database.php");
 // seach fucntion 
-function searchMovie(string $search) : array
+function getMovie(string $search) : array
 {
     global $connection;
     $statement = $connection->prepare("SELECT title,released,image,duration,movie_id FROM movies WHERE title LIKE '%{$search}%' OR released LIKE '%{$search}%'");
@@ -17,7 +17,7 @@ function showMovie() : array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-$shows=showMovie(); 
+$shows=showMovie();
 
 // get id movie
 function getDetailMovie(int $getID) : array
@@ -35,7 +35,7 @@ function getDetailMovie(int $getID) : array
 function notListShow(int $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM hall_shows WHERE movie_id != :id");
+    $statement = $connection->prepare("SELECT * FROM movies WHERE movie_id != :id");
     $statement->execute([':id'=> $id]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -60,6 +60,5 @@ function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string 
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-
 
 ?>
