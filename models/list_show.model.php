@@ -23,7 +23,7 @@ $shows=showMovie();
 function getDetailMovie(int $getID) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT DISTINCT * FROM shows 
+    $statement = $connection->prepare("SELECT DISTINCT * FROM hall_shows 
     WHERE movie_id = :movie_id");
     $statement->execute([':movie_id'=> $getID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);

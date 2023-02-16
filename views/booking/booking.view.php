@@ -46,9 +46,7 @@
         <form action="" class="w-75" method='POST' onsubmit='return false'>
             <span class="fs-4 mb-4">Show time detail</span>
             <div class="mb-3 mt-4">
-                    <?php $hallName = $_GET['hall_id'];
-                     ?>
-                <label class="form-label fs-5">Hall : <?=$hallName;?></label>
+                <label class="form-label fs-5">Hall : <?=$show["hall_name"];?></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
@@ -56,7 +54,7 @@
                 <span style="color:red;" id='seat'></span>
 		    </div>
             <div class="mb-2">
-                <label class="form-label fs-5">Date show : <?php echo $movie["date_show"]; ?></label>
+                <label class="form-label fs-5">Date show : <?=$show["date_show"]; ?></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">

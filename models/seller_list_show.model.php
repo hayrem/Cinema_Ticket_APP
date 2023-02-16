@@ -1,13 +1,13 @@
 <?php
 require("database/database.php");
 
-// function getMovie(){
-//     global $connection;
-//     $statement = $connection->prepare("select * from movies");
-//     $statement->execute();
-//     return $statement->fetchAll();
+function getMovie(){
+    global $connection;
+    $statement = $connection->prepare("select * from movies");
+    $statement->execute();
+    return $statement->fetchAll();
 
-// }
+}
 
 function getMovieId(int $movieId):array
 {
