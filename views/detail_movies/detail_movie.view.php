@@ -29,16 +29,35 @@
 <div class="container-fluid mb-4">
 
   <?php
-  foreach ($movies as $movie) :
+  $hall = [];
+  foreach ($movies as $show){
+    array_push($hall ,$show['hall_name'] );
+  }
+  $detail = $movies[0];
+  $show_date =  $movies[0]['date_show'];
+  $hall = array_unique($hall);
+  $index=0;
+  for ($i = 0 ; $i<count($hall) ; $i++) :
   ?>
     <div class="bg-dark text-white mt-4 rounded-3 shadow p-3 mb-5rounded">
-      <!-- <label for=""><?= $movie['hall_id'] ?></label> -->
-      <h5 class="card-header">Hall: <?= $movie['hall_name'] ?></h5>
+      <!-- <label for=""><?= $detail['hall_id'] ?></label> -->
+      <h5 class="card-header">Hall: <?= $hall[$index] ?></h5>
       <div class="card-body">
-        <h5 class="card-title">Date show: <?= $movie['date_show'] ?></h5>
+        <h5 class="card-title">Date show: <?=  $show_date?></h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/booking?movie_id=<?=$movie['movie_id']?> &hall_id=<?=$movie['hall_name'] ?>" class="btn btn-primary " style="width: 10%;">2:30</a>
+        <?php 
+          foreach ($movies as $show){
+            if ($show['hall_name'] === $hall[$index]){
+              ?>
+                <a href="/booking?movie_id=<?=$show['movie_id']?> &hall_id=<?=$show['hall_name'] ?>" class="btn btn-primary " style="width: 10%;">2:30</a>
+              <?php
+            }
+          }
+          
+        ?>
       </div>
     </div>
-    <?php endforeach; ?>
+  <?php
+  $index +=1; 
+  endfor;?>
 </div>
