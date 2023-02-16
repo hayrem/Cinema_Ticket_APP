@@ -1,5 +1,4 @@
 <?php
-require("database/database.php");
 
 function getMovie(){
     global $connection;
@@ -34,6 +33,8 @@ function read_seller_edit(string $title, string $description,string $released,st
     ]);
     return $statement->rowCount() > 0;
 }
+<<<<<<< HEAD
+=======
 
 
 // get data from table show 
@@ -59,3 +60,4 @@ function addNewShow(string $show_date,string $show_time_start,int $movie_id,int 
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+>>>>>>> 4e1611b43767964dd052f81ec9543805263bf6c1
