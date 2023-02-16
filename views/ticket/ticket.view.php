@@ -37,7 +37,7 @@
 		<span class="mb-4">
 			<button onclick="changeToImg()" class="btn btn-primary text-white" >Print Ticket <i class="fas fa-print"></i></button>
 			<a id="download" class="font-lg download mr-3 text-white ms-3">
-          		<i class="fas fa-download"></i>
+          		<i class="fas fa-download" onclick="resetTheImageArea()"></i>
         	</a>
 		</span>
 		<div id="sreenshot" class="card-body sreenshot mt-4" style="width:90%;">
