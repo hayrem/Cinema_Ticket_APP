@@ -1,7 +1,7 @@
 <?php
 require("database/database.php");
 // seach fucntion 
-function getMovie(string $search) : array
+function searchMovie(string $search) : array
 {
     global $connection;
     $statement = $connection->prepare("SELECT title,released,image,duration,movie_id FROM movies WHERE title LIKE '%{$search}%' OR released LIKE '%{$search}%'");
@@ -17,13 +17,13 @@ function showMovie() : array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-$shows=showMovie();
+$shows=showMovie(); 
 
 // get id movie
 function getDetailMovie(int $getID) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT DISTINCT * FROM shows 
+    $statement = $connection->prepare("SELECT DISTINCT * FROM hall_shows 
     WHERE movie_id = :movie_id");
     $statement->execute([':movie_id'=> $getID]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -61,18 +61,5 @@ function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string 
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-//  Function add new show
-function addNewShow(string $show_date,string $show_time_start,int $movie_id,int $hall_id) : array
-{
-    global $connection;
-    $statement = $connection->prepare("INSERT INTO shows (date_show,  time_start, movie_id,  hall_id) VALUES (:date_show,  :time_start, :movie_id,  :hall_id)");
-    $statement->execute([
-        ':date_show' => $show_date,
-        ':time_start' => $show_time_start,
-        ':movie_id' => $movie_id,
-        ':hall_id' => $hall_id,
-    ]);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
 
 ?>

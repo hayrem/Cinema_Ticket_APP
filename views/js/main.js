@@ -77,7 +77,7 @@ let messageErrorList=[
     ['Please enter your phone number','Zero mush in the front and Number mush be 9 or 10 number']
 ]
 function validationInput(value,index,regex){
-    console.log(value)
+    console.log(value);
     if (value != ""){
         let test = regex[index].test(value)
         if (test){
@@ -86,7 +86,7 @@ function validationInput(value,index,regex){
             return false;
         }
     }else if (value === ''){
-        return 'empty'
+        return 'empty';// return is value empty
     }
     
 }
@@ -157,6 +157,7 @@ function validationCreditCard(){
     let regexindex = 0
     let counterror = 0
     for (let value in CardListInput ){
+        // let key = validationInput(listInput[value],regexindex,regex)
         let key = validationInput(CardListInput[value],regexindex,regexcard)
         console.log(key);
         if (key === 'empty'){

@@ -1,7 +1,13 @@
 <?php 
     require "views/partials/head.php";
-    require "controllers/alert/alert.controller.php";
-    require "views/ticket/ticket.php";
+    require "views/partials/nav.php";
+    require "models/ticket.model.php";
     
     $deading = "cinema";
+    $tickets = showTicket();
+    
+    print_r ($tickets);
+
+    require "views/ticket/ticket.view.php";
+
 ?>
