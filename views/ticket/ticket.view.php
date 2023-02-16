@@ -4,7 +4,7 @@
 			<img src="../../assets/PNC cinema.png" alt="" srcset="">
 		</div>
 		<div class="ticket-info">
-			<p class="title">
+			<p class="title-ticket">
 				<span>Harry Potter</span>
 			</p>
 			<div class="show-name">
