@@ -15,8 +15,8 @@ require "views/partials/head.php";
 
         <!--  -->
         <div class="d-flex justify-content-center align-items-center p-4" style="height: auto;">
-            <form action="/seller/update" class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
-            <input type="hidden" value="<?= $editMovie['movie_id'] ?>" name="movie_id">
+            <form action="/seller/update" class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="<?= $editMovie['movie_id'] ?>" name="movie_id">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
@@ -102,18 +102,21 @@ require "views/partials/head.php";
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col mb-3">
+                <div class="row"> 
+                    <div class="col mb-3 "  >
+                        
                         <label for="formFileSm" class="form-label">Upload poster</label>
-                        <input type="file" name="image" class="form-control form-control-lg">
+                        <input type="file" name="image" class="form-control form-control-lg "  value="<?= (isset($_POST['image'])) ? $_POST['image'] : "" ?>" >                        
                         <span><?= (isset($messageError['image'])) ? $messageError['image'] : "" ?></span>
                     </div>
                     <div class="col mb-3">
-                        <label for="formFileSm" class="form-label">Upload trailer</label>
-                        <input type="text" name="trailer" placeholder="URL trailer" class="form-control form-control-lg"  value="<?= $editMovie['trailer'] ?>">
-                        <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
-
+                        <img class="ms-4" src="/uploads/<?=$editMovie['image']?>" alt="" style="width:80px;" >
                     </div>
+                </div>
+                <div>
+                <label for="formFileSm" class="form-label">Upload trailer</label>
+                        <input type="text" name="trailer" placeholder="URL trailer" value="<?= $editMovie['trailer'] ?>" class="form-control form-control-lg">
+                        <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
@@ -126,6 +129,7 @@ require "views/partials/head.php";
                     <button type="submit" name="submit" class="btn btn-primary w-100 me-2 "><a class="text-white" style="text-decoration: none;" href="/seller/setting">Cencel</a></button>
                     <button type="submit" name="submit" class="btn btn-primary w-100 ">Update</button>
                 </div>
+            
             </form>
         </div>
 

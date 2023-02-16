@@ -17,10 +17,10 @@ function getMovieId(int $movieId):array
 };
 
 
-function read_seller_edit(string $title, string $description,string $released,string $language,string $genre,string $country,string $image, int $id) : bool
+function read_seller_edit(string $title, string $description,string $released,string $language,string $genre,string $country, int $id) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update movies set title = :title, description = :description,released = :released ,language = :language ,genre =:genre,country =:country,image = :image where movie_id = :movie_id");
+    $statement = $connection->prepare("update movies set title = :title, description = :description,released = :released ,language = :language ,genre =:genre,country =:country where movie_id = :movie_id");
     $statement->execute([
         ':title' => $title,
         ':description' => $description,
@@ -28,10 +28,8 @@ function read_seller_edit(string $title, string $description,string $released,st
         'language' => $language,
         'country' => $country,
         'genre' => $genre,
-        'image' => $image,
         ':movie_id' => $id
 
     ]);
-
     return $statement->rowCount() > 0;
 }

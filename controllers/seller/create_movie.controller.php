@@ -45,28 +45,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     $mvReleased = validation($_POST['released']);
     $mvDescription = validation($_POST['description']);
     $mvTrailer = validation($_POST['trailer']);
-    
+    $mvLanguage = validation($_POST['language']);
     if(empty($mvTitle)){ 
         $messageError["title"] = "please enter the title of movie";
     }
     if(empty($mvGenre)){
         $messageError["genre"] = "please enter genre of movie";
     }
-    if(empty($selected)){
+    if(empty($mvCountry)){
         $messageError["country"] = "please enter country source of movie";
     }
     if(empty($mvDuration))
     {
         $messageError["duration"] = " Please enter duration of movie";
     } 
-    elseif(!is_numeric($mvDuration))
-    {
-        $messageError["duration"] = "Input must be a number";
-    } 
-    elseif(!preg_match('/^(?:[01][0-9]|2[0-3]):[0-5][0-9]$/',$mvDuration))
-    {
-        $messageError["duration"] = "Incorrect duration format must be a h:m:s";
-    } 
+    // elseif(!is_numeric($mvDuration))
+    // {
+    //     $messageError["duration"] = "Input must be a number";
+    // } 
+    // elseif(!preg_match('/^(?:[01][0-9]|2[0-3]):[0-5][0-9]$/',$mvDuration))
+    // {
+    //     $messageError["duration"] = "Incorrect duration format must be a h:m:s";
+    // } 
     // elseif(preg_match("/^(?:1[012]|0[0-9]):[0-5][0-9]$/", $mvDuration)){
         //     $messageError["duration"] = " Please enter duration of movie";
         // }
@@ -89,14 +89,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     if(empty($mvTrailer))
     {
         $messageError["trailer"] = "Please enter trailer of movie";
-    }   
+    }  
+    if (empty($mvLanguage))
+    {
+        $messageError["language"] = "Please enter language of movie";
+    } 
 
     if (isset($_POST['submit']) && isset($_FILES['image'])) 
     {     
         $imgName = $_FILES['image']['name'];
-        $img_size = $_FILES['image']['size'];
         $tmp_name = $_FILES['image']['tmp_name'];
-        $error = $_FILES['image']['error'];
         $img_ex = pathinfo($imgName, PATHINFO_EXTENSION);
         $img_ex_lc = strtolower($img_ex);
         $allowed_exs = array("jpg", "jpeg", "png"); 

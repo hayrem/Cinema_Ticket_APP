@@ -10,7 +10,7 @@ require "views/partials/head.php";
 
         <!--  -->
         <div class="d-flex justify-content-center align-items-center p-4" style="height: auto;">
-            <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post" enctype="multipart/form-data">
+            <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
@@ -59,6 +59,9 @@ require "views/partials/head.php";
                                 }
                         ?>
                         </select>
+                     <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
+                        
+
                     </div>
 
                     <div class="col mb-3">
@@ -73,6 +76,9 @@ require "views/partials/head.php";
                                 }
                         ?>
                         </select>
+                        <span style="color:red;"><?= (isset($messageError['language']))?$messageError['language'] : "<span>.</span>" ?></span>
+
+
                     </div>
                 </div>
                 <div class="row">
