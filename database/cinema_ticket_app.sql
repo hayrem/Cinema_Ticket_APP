@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2023 at 08:42 AM
+-- Generation Time: Feb 14, 2023 at 09:07 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,49 +29,38 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking` (
   `booking_id` int(11) NOT NULL,
-  `number_of_seat` int(11) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `hall_seat_id` int(11) NOT NULL,
   `show_id` int(11) NOT NULL,
-  `show_seat_id` int(11) NOT NULL
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `phone` int(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cinemas`
+-- Table structure for table `halls`
 --
 
-CREATE TABLE `cinemas` (
-  `cinema_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `total_cinema_hall` int(11) NOT NULL
+CREATE TABLE `halls` (
+  `hall_id` int(11) NOT NULL,
+  `hall_name` varchar(100) NOT NULL,
+  `total_seat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cinema_halls`
+-- Table structure for table `hall_seats`
 --
 
-CREATE TABLE `cinema_halls` (
-  `cinema_hall_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `total_seat` int(11) NOT NULL,
-  `cinema_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cinema_seats`
---
-
-CREATE TABLE `cinema_seats` (
-  `cinema_seat_id` int(11) NOT NULL,
-  `seat_number` int(11) NOT NULL,
-  `type` char(10) NOT NULL,
-  `cinema_hall_id` int(11) NOT NULL
+CREATE TABLE `hall_seats` (
+  `hall_seat_id` int(11) NOT NULL,
+  `seat_number` varchar(50) NOT NULL,
+  `booking_id` int(11) NOT NULL,
+  `hall_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -82,67 +71,42 @@ CREATE TABLE `cinema_seats` (
 
 CREATE TABLE `movies` (
   `movie_id` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `genre` varchar(50) NOT NULL,
-  `country` varchar(50) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `genre` varchar(100) NOT NULL,
   `duration` time NOT NULL,
   `released` year(4) NOT NULL,
-  `language` varchar(50) NOT NULL,
-  `description` varchar(225) NOT NULL,
-  `image` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `movies`
---
-
-INSERT INTO `movies` (`movie_id`, `title`, `genre`, `country`, `duration`, `released`, `language`, `description`, `image`) VALUES
-(1, 'Streets of Blood', 'Zamboniari', 'Cambodia', '01:33:00', 2022, 'Tetum', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
-(2, 'Wild Oranges', 'Born', 'Cambodia', '11:01:00', 2020, 'Guaraní', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sap', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
-(3, 'We Own the Night', 'Occleshaw', 'Cambodia', '08:39:00', 2022, 'Kyrgyz', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
-(4, 'Films to Keep You Awake: The Baby\'s Room (Película', 'Lynde', 'Cambodia', '12:23:00', 2022, 'Northern Sotho', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', 'https://res.cloudinary.com/demo/image/upload/sample.jpg'),
-(5, 'Dragon Ball Z the Movie: The Tree of Might (Dorago', 'Ney', 'Cambodia', '10:40:00', 2022, 'Bislama', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipis', 'https://res.cloudinary.com/demo/image/upload/sample.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `payments`
---
-
-CREATE TABLE `payments` (
-  `card_id` int(11) NOT NULL,
-  `card_number` int(11) NOT NULL,
-  `cvv` int(11) NOT NULL,
-  `expired` date NOT NULL,
-  `booking_id` int(11) NOT NULL
+  ` language` varchar(100) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `trailer` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `show`
+-- Table structure for table `shows`
 --
 
-CREATE TABLE `show` (
+CREATE TABLE `shows` (
   `show_id` int(11) NOT NULL,
-  `date` date NOT NULL,
   `time_start` time NOT NULL,
   `time_end` time NOT NULL,
-  `movie_id` int(11) NOT NULL
+  `movie_id` int(11) NOT NULL,
+  `hall_id` int(11) NOT NULL,
+  `date_show` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `show_seats`
+-- Dumping data for table `shows`
 --
 
-CREATE TABLE `show_seats` (
-  `show_seat_id` int(11) NOT NULL,
-  `price` varchar(100) NOT NULL,
-  `cinema_seat_id` int(11) NOT NULL,
-  `show_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `shows` (`show_id`, `time_start`, `time_end`, `movie_id`, `hall_id`, `date_show`) VALUES
+(1, '01:30:00', '09:17:00', 1, 1, '2023-02-15'),
+(2, '05:51:00', '03:04:00', 2, 2, '2023-02-22'),
+(3, '08:23:00', '01:17:00', 3, 3, '2023-02-25'),
+(4, '09:44:00', '01:47:00', 4, 4, '2023-02-28'),
+(5, '03:39:00', '07:02:00', 5, 5, '2023-02-24');
 
 -- --------------------------------------------------------
 
@@ -152,27 +116,23 @@ CREATE TABLE `show_seats` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `confirm_password` varchar(50) NOT NULL
+  `password` varchar(150) NOT NULL,
+  `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `confirm_password`) VALUES
-(1, 'lhaine0', 'ssmorthit0@statcounter.com', 'bjUtCIJCPos', 'd3QA8iqbm'),
-(2, 'jcatterill1', 'dminall1@seesaa.net', 'hUVqSOa', 'CsKT8wMycK'),
-(3, 'lmcfarlan2', 'gplayhill2@people.com.cn', 'gYzzwhI1OU', 'UorbHB'),
-(4, 'tmertsching3', 'gelleyne3@auda.org.au', 'AlORxy', 'd9oyOWDzecq'),
-(5, 'dibberson4', 'vperrie4@flickr.com', 'QLyrHzt9X6V1', 'qGio4hS'),
-(6, 'acorben5', 'jcaudwell5@nbcnews.com', 'JWkpJJfL', 'hVUUowCeJOOH'),
-(7, 'spinson6', 'jbrewis6@google.com.au', 'DKA8MdPG', 'IpXRpUx'),
-(8, 'cmoneti7', 'fleades7@digg.com', 'n2feuD5', 'EbvF1jw33yjH'),
-(9, 'pmanuello8', 'jclipson8@tamu.edu', 'SLqIorHRu3p', 'qHNsQAEPf5'),
-(10, 'llafferty9', 'dmarchi9@indiatimes.com', 'lNCUoJO', 'al3pFclIus');
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `role`) VALUES
+(1, 'Marilin', 'Kienzle', 'mkienzle0@spiegel.de', 'Gl0IlA5xqYtD', 'customer'),
+(2, 'Aldwin', 'Baddiley', 'abaddiley1@berkeley.edu', 'YOwdt8SbH', 'customer'),
+(3, 'Lelah', 'Millership', 'lmillership2@skyrock.com', 'M60z3TUzTg9C', 'seller'),
+(4, 'Wildon', 'Jemmison', 'wjemmison3@drupal.org', 'vVpuk9ggXD3g', 'seller'),
+(5, 'Boigie', 'Peacham', 'bpeacham4@nifty.com', 'w2prwz7gUe', 'customer');
 
 --
 -- Indexes for dumped tables
@@ -183,29 +143,23 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `confirm_passw
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `users` (`user_id`),
-  ADD KEY `show` (`show_id`),
-  ADD KEY `show_seats` (`show_seat_id`);
+  ADD KEY `hall_seats` (`hall_seat_id`),
+  ADD KEY `shows` (`show_id`),
+  ADD KEY `users` (`user_id`);
 
 --
--- Indexes for table `cinemas`
+-- Indexes for table `halls`
 --
-ALTER TABLE `cinemas`
-  ADD PRIMARY KEY (`cinema_id`);
+ALTER TABLE `halls`
+  ADD PRIMARY KEY (`hall_id`);
 
 --
--- Indexes for table `cinema_halls`
+-- Indexes for table `hall_seats`
 --
-ALTER TABLE `cinema_halls`
-  ADD PRIMARY KEY (`cinema_hall_id`),
-  ADD KEY `cinemas` (`cinema_id`);
-
---
--- Indexes for table `cinema_seats`
---
-ALTER TABLE `cinema_seats`
-  ADD PRIMARY KEY (`cinema_seat_id`),
-  ADD KEY `cinema_halls` (`cinema_hall_id`);
+ALTER TABLE `hall_seats`
+  ADD PRIMARY KEY (`hall_seat_id`),
+  ADD KEY `booking` (`booking_id`),
+  ADD KEY `halls` (`hall_id`);
 
 --
 -- Indexes for table `movies`
@@ -214,26 +168,12 @@ ALTER TABLE `movies`
   ADD PRIMARY KEY (`movie_id`);
 
 --
--- Indexes for table `payments`
+-- Indexes for table `shows`
 --
-ALTER TABLE `payments`
-  ADD PRIMARY KEY (`card_id`),
-  ADD KEY `booking` (`booking_id`);
-
---
--- Indexes for table `show`
---
-ALTER TABLE `show`
+ALTER TABLE `shows`
   ADD PRIMARY KEY (`show_id`),
-  ADD KEY `movies` (`movie_id`);
-
---
--- Indexes for table `show_seats`
---
-ALTER TABLE `show_seats`
-  ADD PRIMARY KEY (`show_seat_id`),
-  ADD KEY `cinema_seats` (`cinema_seat_id`),
-  ADD KEY `show` (`show_id`);
+  ADD KEY `movies` (`movie_id`),
+  ADD KEY `halls` (`hall_id`);
 
 --
 -- Indexes for table `users`
@@ -252,52 +192,34 @@ ALTER TABLE `booking`
   MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cinemas`
+-- AUTO_INCREMENT for table `halls`
 --
-ALTER TABLE `cinemas`
-  MODIFY `cinema_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `halls`
+  MODIFY `hall_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cinema_halls`
+-- AUTO_INCREMENT for table `hall_seats`
 --
-ALTER TABLE `cinema_halls`
-  MODIFY `cinema_hall_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `cinema_seats`
---
-ALTER TABLE `cinema_seats`
-  MODIFY `cinema_seat_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `hall_seats`
+  MODIFY `hall_seat_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `payments`
+-- AUTO_INCREMENT for table `shows`
 --
-ALTER TABLE `payments`
-  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `show`
---
-ALTER TABLE `show`
-  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `show_seats`
---
-ALTER TABLE `show_seats`
-  MODIFY `show_seat_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `shows`
+  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

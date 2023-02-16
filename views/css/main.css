@@ -32,6 +32,9 @@
   --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+@page {
+  size: 8*5;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -680,16 +683,6 @@ background: #000;
   background: mediumturquoise;
 }
 
-.title{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.title span {
-  color: orange;
-}
-
 
 
 
@@ -1162,4 +1155,85 @@ ol {
 }
 .payment-container{
   display: none;
+}
+
+
+
+/* -----------------ticket-------------------------------------- */
+.ticket {
+	margin: auto;
+	display: flex;
+	background: white;
+  margin-top: 20px;
+  width: 75%;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.ticket-left {
+	display: flex;
+  width: 75%;
+  align-items: center;
+
+}
+
+.ticket-left .ticket-number {
+	height: 250px;
+	width: 360px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding: 5px;
+  
+}
+
+.ticket-info {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+  background: #af5c5c;
+}
+
+
+
+.show-name {
+	font-size: 32px;
+	font-family: "Nanum Pen Script", cursive;
+	color: #d83565;
+}
+
+.show-name h1 {
+	font-size: 40px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	color: #4a437e;
+}
+
+.date-time, .seat-number {
+	padding: 10px 0;
+	color: #4a437e;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-weight: 700;
+}
+
+
+/* 
+.location {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 140%;
+	border-top: 1px solid gray;
+} */
+
+.right {
+	width: 280px;
+	border-left: 1px dashed #404040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
 }

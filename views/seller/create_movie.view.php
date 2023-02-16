@@ -10,7 +10,7 @@ require "views/partials/head.php";
 
         <!--  -->
         <div class="d-flex justify-content-center align-items-center p-4" style="height: auto;">
-            <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post">
+            <form class="bg-white  p-4 shadow-lg" style="width: 80%;border-radius:10px;" method="post" enctype="multipart/form-data">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">Title of movie</label>
@@ -21,7 +21,7 @@ require "views/partials/head.php";
                     <div class="col">
                         <label for="exampleInputPassword1" class="form-label">Genre</label>
                         <select name="genre" class="form-select p-2" aria-label="Default select example">
-                            <option>Please select genre of movie</option>
+                            <option selected>Please select genre of movie</option>
                             <?php   
                             $array = ['Action', 'Adventure', 'Comedy','Crime and mystery','Fantasy','Horror','Romance','Animation','Strategy'];
                             foreach ($array as $show):
@@ -59,9 +59,6 @@ require "views/partials/head.php";
                                 }
                         ?>
                         </select>
-                     <span style="color:red;"><?= (isset($messageError['country'])) ? $messageError['country'] : "<span>.</span>" ?></span>
-                        
-
                     </div>
 
                     <div class="col mb-3">
@@ -76,29 +73,21 @@ require "views/partials/head.php";
                                 }
                         ?>
                         </select>
-                        <span style="color:red;"><?= (isset($messageError['language']))?$messageError['language'] : "<span>.</span>" ?></span>
-
-
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload poster</label>
                         <input type="file" name="image" multiple class="form-control form-control-lg">
-                        <span style="color:red;"><?= (isset($messageError['image'])) ? $messageError['image'] : "<span>.</span>" ?></span>
                     </div>
                     <div class="col mb-3">
                         <label for="formFileSm" class="form-label">Upload trailer</label>
-                        <input type="text" placeholder="Upload URL" name="trailer" class="form-control form-control-lg" value="<?= (isset($_POST['trailer'])) ? $_POST['trailer'] : "" ?>">
-                        <span style="color:red;"><?= (isset($messageError['trailer'])) ? $messageError['trailer'] : "<span>.</span>" ?></span>
+                        <input type="text" placeholder="Upload URL" name="trailer" class="form-control form-control-lg">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea  class="form-control" placeholder="Enter description" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200">
-                        <?= (isset($_POST['description'])) ? $_POST['description'] : "" ?>
-                    </textarea>
-                    <span style="color:red;"><?= (isset($messageError['description'])) ? $messageError['description'] : "<span>.</span>" ?></span>
+                    <textarea  class="form-control" placeholder="Enter description" name="description" id="exampleFormControlTextarea1" style="height: 100px" rows="15" col="200"></textarea>
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>

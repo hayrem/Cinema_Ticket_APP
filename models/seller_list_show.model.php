@@ -1,5 +1,4 @@
 <?php
-require("database/database.php");
 
 // function getMovie(){
 //     global $connection;
