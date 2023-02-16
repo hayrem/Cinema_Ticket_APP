@@ -1169,19 +1169,14 @@ ol {
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.left {
+.ticket-left {
 	display: flex;
   width: 75%;
   align-items: center;
+
 }
 
-.image {
-	height: 250px;
-	width: 250px;
-	background-size: contain;
-	opacity: 0.85;
-}
-.left .ticket-number {
+.ticket-left .ticket-number {
 	height: 250px;
 	width: 360px;
 	display: flex;
@@ -1192,37 +1187,14 @@ ol {
 }
 
 .ticket-info {
-	padding: 10px 30px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	justify-content: space-between;
 	align-items: center;
-  width: 60%;
+  background: #af5c5c;
 }
 
-.title-ticket {
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	padding: 10px;
-  width: 50%;
-	font-weight: 900;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.title-ticket span:first-child {
-	text-align: left;
-}
 
-.title-ticket span:last-child {
-	text-align: right;
-}
-
-.title-ticket .june-29 {
-	color: #d83565;
-	font-size: 20px;
-}
 
 .show-name {
 	font-size: 32px;
@@ -1247,93 +1219,21 @@ ol {
 	font-weight: 700;
 }
 
-.date-time span {
-	font-weight: 400;
-	color: gray;
-}
 
-.left .time {
-	font-size: 16px;
-}
-
-
+/* 
 .location {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 100%;
-	padding-top: 8px;
+	width: 140%;
 	border-top: 1px solid gray;
-}
-
-.location span {
-	font-size: 13px;
-}
+} */
 
 .right {
 	width: 280px;
 	border-left: 1px dashed #404040;
-}
-
-.right .admit-one {
-	color: darkgray;
-}
-
-.right .admit-one span:nth-child(2) {
-	color: gray;
-}
-
-.right .right-info-container {
-	height: 250px;
-	padding: 10px 10px 10px 35px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.right .show-name h1 {
-	font-size: 18px;
-}
-
-.barcode {
-	height: 100px;
-}
-
-.barcode img {
-	height: 100%;
-}
-
-.right .ticket-number {
-	color: gray;
-}
-
-
-.card-ticket img{
-  position: absolute;
-  height: 15.6rem;
-  width: 20%;
-  object-fit: cover;
-}
-
-.btn-save {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
 }

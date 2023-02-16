@@ -1,9 +1,9 @@
-<div class="ticket mb-4" id="imgItem">
-	<div class="left">
-		<div class="image card-ticket ">
-			<img src="../../assets/PNC cinema.png" alt="" srcset="">
+<div style="width: 60%;" class="ticket mb-4 " id="imgItem">
+	<div class="ticket-left">
+		<div class="image-tikcet p-0 w-50">
+			<img style="width: 90%;" src="../../assets/phnom-penh-cinema-low-resolution-logo-color-on-transparent-background.png" alt="" srcset="">
 		</div>
-		<div class="ticket-info">
+		<div class="ticket-info w-100 p-3">
 			<p class="title-ticket">
 				<span>Harry Potter</span>
 			</p>
@@ -21,13 +21,12 @@
 	<div class="right">
 		<div class="right-info-container">
 			<div class="show-name">
-				<h1>Harry Potter</h1>
+				<h1 class="fs-4">Harry Potter</h1>
 				<h2>Rem Hay</h2>
 			</div>
 			<div class="date-time">
 				<p>16 Feb 2023 / 6:00 PM</p>
 			</div>
-			
 			<p class="seat-number">SEAT: A1</p>
 		</div>
 	</div>
@@ -40,10 +39,12 @@
           		<i class="fas fa-download" onclick="resetTheImageArea()"></i>
         	</a>
 		</span>
-		<div id="sreenshot" class="card-body sreenshot mt-4" style="width:90%;">
-			<!-- !--  --> 
-		</div>
 	</div>
+</div>
+<div class="container d-flex justify-content-center;align-items-center;" style="width:62%">
+	<div id="sreenshot" class="card-body sreenshot mt-4" style="width:40%;">
+</div>
+	<!-- !--  --> 
 </div>
 <?php
 require "views/partials/footer.php";
