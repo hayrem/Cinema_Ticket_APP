@@ -12,4 +12,3 @@ foreach ($movies as $movie);
 // print_r ( $showId);
 
 require("views/seller/edit_show.view.php");
-
