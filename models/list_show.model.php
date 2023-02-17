@@ -1,7 +1,7 @@
 <?php
 require("database/database.php");
 // seach fucntion 
-function getMovie(string $search) : array
+function searchMovie(string $search) : array
 {
     global $connection;
     $statement = $connection->prepare("SELECT title,released,image,duration,movie_id FROM movies WHERE title LIKE '%{$search}%' OR released LIKE '%{$search}%'");
@@ -42,7 +42,7 @@ function notListShow(int $id) : array
 }
 
 
-
+/// fuction for add new movie
 function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string $mvDuration,string $mvLanguage,string $mvReleased,string $newMvPoster, string $mvDescription, string $mvTrailer) : array
 {
     global $connection;
@@ -58,6 +58,15 @@ function addNewMovie(string $mvTitle,string $mvGenre, string $mvCountry, string 
         ':description' => $mvDescription,
         ':trailer' => $mvTrailer,
     ]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+//value display in card movie 
+function postMovies():array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM `movies` WHERE post=1");
+    $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 

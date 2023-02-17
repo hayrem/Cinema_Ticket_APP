@@ -10,7 +10,7 @@ require "views/partials/head.php";
 
     <div class="container-movecards d-flex justify-content-center">
 
-      <?php foreach ($shows as $show) : ?>
+      <?php foreach ($posts as $show) : ?>
         <div class="movie-cards">
 
           <div class="poster">

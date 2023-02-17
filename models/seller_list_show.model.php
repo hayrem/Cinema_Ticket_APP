@@ -86,3 +86,15 @@ function editShow($dateShow,string $title,string $hallName, string $timeStart, i
     ]);
     return $statement->rowCount() > 0;
 }
+
+
+function updatePost(string $post,int $id) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("UPDATE movies SET post=:post WHERE movie_id = :movie_id");
+    $statement->execute([
+        ':post' => $post,
+        ':movie_id' => $id
+    ]);
+    return $statement->rowCount() > 0;
+}

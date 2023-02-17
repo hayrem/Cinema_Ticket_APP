@@ -27,14 +27,16 @@ require "views/partials/head.php";
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6 p-3" style="width:65%;">
-                                        <div class="col mt-1 mb-0  ">
+                                        <div class="col mt-1 mb-0">
                                             <h5 class="row"><?php echo $show["title"]; ?></h5>
                                             <span class="row mt-2"> Country: <?php echo $show["country"]; ?></span>
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
-                                            <span class="row mt-2">Release: <?php echo $show["released"]; ?> </span><br><br>
-                                            <!-- <div class="d-flex flex-column mt-4"> -->
-                                            <button class="btn btn-danger btn-sm mt-2" type="button" id="<?=$show['movie_id'] ?>"style="width: 20%;" onclick='PostShow("<?=$show["movie_id"] ?>");'>Post </button>
-                                            <!-- </div> -->
+                                            <span class="row mt-2 mb-0">Release: <?php echo $show["released"]; ?> </span><br><br>
+                                            <!-- submit post movie -->
+                                            <form method="post" class="table_content_form" action="/seller/setting?movie_id=<?= $show['movie_id'] ?>">
+                                                <input type="hidden" name="postnow" value="1"/>
+                                                <button class="btn btn-danger btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" onclick='postShow("<?=$show["movie_id"] ?>");'>Post</button> 
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-2 col-xl-0 border-sm-start-none border-start p-3">
@@ -75,18 +77,16 @@ require "views/partials/head.php";
  
 </script>
 <script>
-    function PostShow(movieID){
+    function postShow(movieID){
         Swal.fire({
-        title: 'Your work has been success',
+        title: 'Your post has been success',
         // text: "You won't be able to revert this!",
         icon: 'success',
         // showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: '<a href="/seller?movie_id='+movieID + '" style="color:white; text-decoration: none;">OK</a>'
-        });if(empty($messageError)) {
-            header("location:/");
-        };
+        });
     }
  
 </script>
