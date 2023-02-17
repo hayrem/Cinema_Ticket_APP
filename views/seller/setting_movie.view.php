@@ -35,7 +35,7 @@ require "views/partials/head.php";
                                             <!-- submit post movie -->
                                             <form method="post" class="table_content_form" action="/seller/setting?movie_id=<?= $show['movie_id'] ?>">
                                                 <input type="hidden" name="postnow" value="1"/>
-                                                <button class="btn btn-danger btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" onclick='postShow("<?=$show["movie_id"] ?>");'>Post</button> 
+                                                <button class="btn btn-danger btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" onclick='myFunction("<?=$show["movie_id"] ?>");'>Post</button> 
                                             </form>
                                         </div>
                                     </div>
@@ -77,12 +77,10 @@ require "views/partials/head.php";
  
 </script>
 <script>
-    function postShow(movieID){
+    function myFunction(movieID){
         Swal.fire({
         title: 'Your post has been success',
-        // text: "You won't be able to revert this!",
         icon: 'success',
-        // showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: '<a href="/seller?movie_id='+movieID + '" style="color:white; text-decoration: none;">OK</a>'

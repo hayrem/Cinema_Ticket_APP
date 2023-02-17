@@ -14,7 +14,7 @@
                 aria-label="Search" 
                 name='search'
                 value="<?= (isset($_POST['search'])) ? $_POST['search'] : "" ?>">
-                <button style="border: solid white 1px;" class="btn btn-success "  type="submit"><span class="material-symbols-outlined" value='search'>search</span></i></button>
+                <button style="border: solid white 1px;" class="btn btn-search "  type="submit"><span class="material-symbols-outlined" value='search'>search</span></i></button>
             </form>
 
             <ul class="navbar-nav">

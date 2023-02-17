@@ -1,3 +1,4 @@
+<?php foreach($tickets as $ticket): ?>
 <div style="width: 60%;" class="ticket mb-4 " id="imgItem">
 	<div class="ticket-left">
 		<div class="image-tikcet p-0 w-50">
@@ -8,10 +9,10 @@
 				<span>Harry Potter</span>
 			</p>
 			<div class="show-name">
-				<h2> Rem Hay</h2>
+				<h3><?=$ticket['first_name'] ?> <span class="ms-2"><?=$ticket['last_name'] ?></span> </h3>
 			</div>
 			<div class="date-time">
-				<p> Thursday 16 Feb 2023 / 6:00 PM</p>
+				<p><?=$ticket['date_show'] ," / ".$ticket['time_start'] ?> PM</p>
 			</div>
 			<p class="location">
 				<span>Street 371, Sangkat Obek Kaorm, Khan Sen Sok Phnom Penh</span>
@@ -22,15 +23,16 @@
 		<div class="right-info-container">
 			<div class="show-name">
 				<h1 class="fs-4">Harry Potter</h1>
-				<h2>Rem Hay</h2>
+				<h3><?=$ticket['first_name'] ?> <span class="ms-2"><?=$ticket['last_name'] ?></span> </h3>
 			</div>
 			<div class="date-time">
-				<p>16 Feb 2023 / 6:00 PM</p>
+			<p><?=$ticket['date_show'] ," / ".$ticket['time_start'] ?> PM</p>
 			</div>
 			<p class="seat-number">SEAT: A1</p>
 		</div>
 	</div>
 </div>
+<?php endforeach; ?>
 <div class="container" style="margin-left:9.9rem;">
 	<div class="print" >
 		<span class="mb-4">

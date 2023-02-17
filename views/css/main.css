@@ -95,7 +95,7 @@ input[type="search"]{
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-success{
+.btn-search{
   background: #000;
   height: 46px;
   border-radius: 10px;
@@ -146,6 +146,7 @@ section {
 .material-symbols-outlined {
   font-size: 30px;
   cursor: pointer;
+  color: white;
 
 }
 /* card detail_________________________________ */
