@@ -83,9 +83,4 @@ require "views/partials/head.php";
         </div>
 
         </body>
-        <style>
-            h1{
-                text:white;
-            }
-        </style>
  </html>

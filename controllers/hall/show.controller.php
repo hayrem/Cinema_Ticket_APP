@@ -7,7 +7,7 @@
     $ID = ($_GET['hall_id']);
     $hallShows = hallShow($ID);
 
-    print_r($hallShows);
+    // print_r($hallShows);
     $nameHalls = getNameHall($ID);
     
 

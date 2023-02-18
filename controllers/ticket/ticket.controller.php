@@ -6,7 +6,7 @@
     $deading = "cinema";
     $tickets = showTicket();
     
-    print_r ($tickets);
+    // print_r ($tickets);
 
     require "views/ticket/ticket.view.php";
 
