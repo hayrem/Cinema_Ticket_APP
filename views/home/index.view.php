@@ -8,7 +8,7 @@
 
 <div class="container-movecards">
 
-    <?php foreach ($posts as $show): ?>
+    <?php foreach ($posts  as $show): ?>
         <div class="movie-cards">
 
             <div class="poster">
@@ -32,7 +32,7 @@
 
                 <div class="tags">
                     <span class="fantasy bg-danger" style='width:115px; display:flex; justify-content:center;'>
-                      <a href="/booking?movie_id=<?php echo $show['movie_id']?>" style='color:white;text-decoration: none;'>BOOKING</a>  
+                      <a href="/select_show_time?movie_id=<?php echo $show['movie_id']?>" style='color:white;text-decoration: none;'>BOOKING</a>  
                     </span>
                     <span class="mystery bg-primary" style='width:115px; display:flex; justify-content:center;'>
                         <a href="/detail?movie_id=<?php echo $show['movie_id']?>" style='color:white;text-decoration: none;'>MORE INFO</a>  

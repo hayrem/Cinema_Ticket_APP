@@ -19,9 +19,21 @@ session_start();
             <div class="modal-body p-0">
 
                 <div class="card-profile p-0" >
-                    <div class="card-body p-2">
+                <div class="card-body p-2">
                         <div class="d-flex flex-column align-items-center text-center ">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                            <?php if (empty($_COOKIE['image'])){
+                                ?>
+                                    <!-- <span class="material-symbols-outlined mx-2"  data-toggle="modal" data-target="#manage_acc">account_circle </span> -->
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                <?php }else{
+                                ?>
+                                <!-- <img src="uploads/<?=($_COOKIE['image'])?>" class="rounded-circle" width="50"  data-toggle="modal" data-target="#manage_acc"> -->
+                                <!-- <img src="uploads/<?=($_COOKIE['image'])?>" alt="Admin" class="rounded-circle" width="150"> -->
+                                <img src="uploads/<?=($_COOKIE['image'])?>" class="rounded-circle" width="150" height="150" data-toggle="modal" data-target="#manage_acc">
+
+                                <?php
+                            }
+                            ?> 
                             <div class="mt-3">
                                 <h4 class="text-dark"><?= isset($_COOKIE['firstName'])? $_COOKIE['firstName'] : "No user account" ?>
                                 <?= isset($_COOKIE['lastName'])? $_COOKIE['lastName'] : "" ?></h4>
@@ -30,11 +42,13 @@ session_start();
                         <div class="card-icon shadow-none bg-light rounded p-4">
                             <div class="icon mb-2 text-dark d-flex align-item-center">
                                 <span class="material-symbols-outlined">change_circle</span>
-                                <!-- <a href="../../controllers/users/reset_password.controller.php" class="ms-4">Change Password</a><br> -->
-                          
                                 <a class="<?= urlIs('/reset')?> nav-link" href="/reset">Change Password</a>
-                                
                             </div>
+                            <!-- <div class="icon mb-2 text-dark d-flex align-item-center">
+                                <span class="material-symbols-outlined">change_circle</span>
+                                <a class="<?= urlIs('/editPf')?> nav-link" href="/editPf">Edit Profile</a>
+                            </div> -->
+
                             <div class="icon1 mt-2 text-dark d-flex align-item-center">
                                 <span class="material-symbols-outlined ">logout</span>
                                 <a href="../../controllers/users/sign_out.controller.php" class="ms-4">Logout</a>

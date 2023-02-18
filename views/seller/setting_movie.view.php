@@ -10,8 +10,10 @@ require "views/partials/head.php";
         <?php require "views/partials/header.php" ?>
 
         <!--  -->
-    <div class="d-flex mt-4 me-4 p-1 " style="justify-content: end;">
-        <a class="btn btn-primary" style="margin-right: 6rem;">Create new movie</a>
+        
+    <div class="d-flex mt-4 me-4 p-1" style="margin:auto;width:40%;justify-content:flex-end">
+        <button class="btn btn-danger btn-sm mt-2 " style="margin-right:10%;" type="button"><a href="/seller/create_show" style=" text-decoration: none;color:white;">Add show</a> </button>
+        <button class="btn btn-danger btn-sm mt-2 " style="margin-right:20%; width:100%"  type="button"><a href="/seller/create_movie" style=" text-decoration: none;color:white;">Create movie</a></button> 
     </div>
         <div class="container-movecards mt-4">
 
@@ -33,6 +35,7 @@ require "views/partials/head.php";
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
                                             <span class="row mt-2 mb-0">Release: <?php echo $show["released"]; ?> </span><br><br>
                                             <!-- submit post movie -->
+                                            
                                             <form method="post" class="table_content_form" action="/seller/setting?movie_id=<?= $show['movie_id'] ?>">
                                                 <input type="hidden" name="postnow" value="1"/>
                                                 <button class="btn btn-danger btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" onclick='myFunction("<?=$show["movie_id"] ?>");'>Post</button> 
@@ -46,7 +49,6 @@ require "views/partials/head.php";
                                         <div class="d-flex flex-column mt-0">
                                             <button class="btn btn-primary btn-sm" type="button"> <a href="/seller/edit?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit</a></button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button" id="<?=$show['movie_id'] ?>" onclick='deleteShow("<?=$show["movie_id"] ?>");'>Delete </button>
-                                            <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/create_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Add show</a> </button>
                                             <button class="btn btn-danger btn-sm mt-2" type="button"><a type="submit" href="/seller/edit_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit show</a> </button>
                                         </div>
                                     </div>

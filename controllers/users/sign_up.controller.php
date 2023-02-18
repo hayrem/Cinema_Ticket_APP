@@ -75,19 +75,37 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         $messageError["password"] = "Password doesn't match";
         $messageError["comfirm-password"] = "Password doesn't match";
     }
+    $profileImage = "";
+    if (isset($_POST['submit']) && isset($_FILES['image'])) 
+    {     
+        $imgName = $_FILES['image']['name'];
+        $tmp_name = $_FILES['image']['tmp_name'];
+        $img_ex = pathinfo($imgName, PATHINFO_EXTENSION);
+        $img_ex_lc = strtolower($img_ex);
+        $allowed_exs = array("jpg", "jpeg", "png"); 
+
+        if(in_array($img_ex_lc, $allowed_exs))
+        {
+            $profileImage = uniqid("IMG-", true).'.'.$img_ex_lc;
+            $img_upload_path = 'uploads/'.$profileImage;
+            move_uploaded_file($tmp_name, $img_upload_path);
+        }   
+    } 
     if(empty($messageError) && $emailTrue = true)
     {
 // store user information in database
         $password = password_hash($password, PASSWORD_DEFAULT);
-        createUser($firstName,$lastName,$email,$password);
+        createUser($firstName,$lastName,$email,$password,$profileImage);
 //  store user information in cookie
         $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
         setcookie("email",$email,$remembering_timespan);
         setcookie("firstName",$firstName,$remembering_timespan);
         setcookie("lastName",$lastName,$remembering_timespan);
         setcookie ("userrole",$sellerRole, $remembering_timespan);
+        setcookie("image",$profileImage,$remembering_timespan);
+
 // store user information in session 
-        $_SESSION ['firstNme'] = $_POST['firstName']; $_SESSION['lastName'] = $_POST['lastName']; $_SESSION['email'] = $_POST['email'];
+        $_SESSION ['firstNme'] = $_POST['firstName']; $_SESSION['lastName'] = $_POST['lastName']; $_SESSION['email'] = $_POST['email'];$_SESSION['image'] = $profileImage;
         header("location:/");
     }
     

@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         $messageError["title"] = "please enter the title of movie";
     }
     if(empty($hall)){
-        $messageError["hall"] = "please enter country source of movie";
+        $messageError["hall"] = "Please enter  hall show  movie";
     }   
     if(empty($dateShow))
     {
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     }   
     if(empty($showTimeStart))
     {
-        $messageError["description"] = "Please enter description  of movie";
+        $messageError["time_start"] = "Please enter time start  of movie";
     }   
 
 

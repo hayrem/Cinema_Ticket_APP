@@ -6,7 +6,7 @@
 	<!-- <div class="img  w-25">
 		<img src="../../assets/login.svg" width="100%" alt="">
 	</div> -->
-	<form class="shadow w-450" action="/sign_up" method="post">
+	<form class="shadow w-450" action="/sign_up" method="post" enctype="multipart/form-data">
 
 		<h4 class="display-4  fs-1">Create Account</h4><br>
 		<!-- <label for=""></label> -->
@@ -65,16 +65,15 @@
 			</div>
 			<span class="message-eroor" style="color:red;"><?= (isset($messageError['comfirm-password'])) ? $messageError['comfirm-password'] : "<span>.</span>" ?></span>
 		</div>
+		<input type="file" name="image" class="form-control form-control-lg">
 		<div class="contain-btn mt-4">
-			<button type="submit" class="btn btn-danger ">Sign Up</button>
-			<!-- <button type="submit" class="btn btn-danger mt-4 bg-primary " style="border: none;">
-				<a href="/" class="link-secondary ms-2 text-primary text-white " style="text-decoration: none;">Cencel</a>
-			</button> -->
+			<button type="submit" name="submit" class="btn btn-danger ">Sign Up</button>
 		</div>
+
 		<div class="d-flex mt-3 ">
 			<label class="form-label">Have an account</label>
 			<a href="/sign_in" class="link-secondary ms-2 text-primary">Sign in</a>
 		</div>
 	</form>
 </div>
-<script src="../../views/js/main.js"></script>
+<script src="../../views/js/password.js"></script>

@@ -8,10 +8,8 @@ require "controllers/search/search.controller.php";
 $getID = ($_GET['movie_id']);
 $movies = getDetailMovie($getID);
 $shows = notListShow($getID);
-$date_show = ($_GET['date_show']);
-$hall = ($_GET['hall_id']);
+require("views/detail_movies/detail_movie.view.php");
+// require "views/booking/booking.view.php";
+require "views/booking/select_show_time.view.php";
 
-
-// require("views/detail_movies/detail_movie.view.php");
-require "views/booking/booking.view.php";
 require "views/partials/footer.php";

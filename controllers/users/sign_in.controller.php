@@ -11,15 +11,30 @@ require "database/database.php";
 $valueTrue = 0;
 
 $messageError = [];
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 
-    $email = $_POST['email'];
- 
-    $password = $_POST['password'];
+   $email = $_POST['email'];
 
-    $data = "email=".$email;
-    
+   $password = $_POST['password'];
+
+   $data = "email=".$email;
+   if (isset($_POST['submit']) && isset($_FILES['image'])) 
+   {     
+      $imgName = $_FILES['image']['name'];
+      $tmp_name = $_FILES['image']['tmp_name'];
+      $img_ex = pathinfo($imgName, PATHINFO_EXTENSION);
+      $img_ex_lc = strtolower($img_ex);
+      $allowed_exs = array("jpg", "jpeg", "png"); 
+
+      if(in_array($img_ex_lc, $allowed_exs))
+      {
+         $profileImage = uniqid("IMG-", true).'.'.$img_ex_lc;
+         $img_upload_path = 'uploads/'.$profileImage;
+         move_uploaded_file($tmp_name, $img_upload_path);
+      }   
+   }  
    if(empty($email))
    {
       $messageError["email"] = "Please enter your email address";
@@ -66,6 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
    if($valueTrue === 2){
       $firstName = usernameByEmail($email)['first_name'];
       $lastName = usernameByEmail($email)['last_name'];
+      $profileImage = usernameByEmail($email)['image'];
       $sellerRole = usernameByEmail($email)['role'];
       print_r($sellerRole);
       $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
@@ -77,6 +93,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       setcookie("firstName", $firstName, $remembering_timespan);
       setcookie("lastName", $lastName, $remembering_timespan);
       setcookie ("userrole",$sellerRole, $remembering_timespan);
+      setcookie ("image",$profileImage, $remembering_timespan);
       if (!empty(userRole($email))){
          header('location: /seller');
       }else{

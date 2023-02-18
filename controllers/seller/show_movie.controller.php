@@ -18,7 +18,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     
     $show_date = validation($_POST["date"]);
     $show_time_start = validation($_POST["time_start"]);
-    $show_time_end = validation($_POST["time_end"]);
     $movie_id = validation($_POST["movie_id"]);
     $hall_id = validation($_POST["cinema_hall_id"]);
 
@@ -30,11 +29,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     if(empty($show_time_start))
     {
         $messageError["time_start"] = " Please enter the time that movie start";
-    } 
-    if(empty($show_time_end))
-    {
-        $messageError["time_end"] = "Please enter the time that movie start";
-    }   
+    }    
     if(empty($movie_id))
     {
         $messageError["movie_id"] = "Please enter your movie ID ";

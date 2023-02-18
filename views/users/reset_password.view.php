@@ -50,3 +50,4 @@ require "views/partials/head.php";
 
 <?php
 ?>
+<script src="../../views/js/password.js"></script>

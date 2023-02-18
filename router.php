@@ -15,6 +15,7 @@ $routes = [
     '/contact' => 'controllers/contact_us/contact_us.controller.php',
     '/booking' => 'controllers/booking/booking.controller.php',
     '/payment' => 'controllers/booking/payment.controller.php',
+    '/select_show_time' => 'controllers/booking/select_show_time.controller.php',
 
 ];
 if (isset($_COOKIE['email'])){
