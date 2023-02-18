@@ -9,7 +9,10 @@ Wellcome to Hall
 </h1>
 
 <div class="container-fluid d-flex flex-wrap mt-4">
-<?php foreach ($hallShows as $hallShow): 
+<?php foreach ($hallShows as $hallShow):
+  if($hallShow['post']!=1){
+    echo "";
+  }else{
     ?> 
   <div class="card-detail mt-4" style="height: 40vh;">
     <div class="card-thumbnail" style="width: 15%;">
@@ -22,14 +25,15 @@ Wellcome to Hall
         <span class="card-text  p-1">⭐️</span>
         <!-- <span class="fs-5 card-text  p-1"><?= $hallShow['released'] ?></span> -->
       </p>
-      <!-- <p class="fs-5 card-text">Country: <?= $hallShow['country'] ?></p>
+      <!-- <p class="fs-5 card-text">Country: <?= $hallShow['country'] ?></p> 
       <p class="card-text fs-5">Genre: <?= $hallShow['genre'] ?></p>
-      <p class="card-text fs-5">Release: <?= $hallShow['released'] ?></p> -->
+      <p class="card-text fs-5">Release: <?= $hallShow['released'] ?></p>  -->
       <div class="card-description">
         <p class="fs-5"><?=$hallShow['description'] ?></p>
       </div>
-        <a href="/detail?movie_id" class="btn btn-primary mb-4">SHOW ITEMS</a>
+        <a href="/detail?movie_id=<?=$hallShow['movie_id']?>" class="btn btn-primary mb-4">SHOW ITEMS</a>
     </div>
   </div>
+  <?php }?>
   <?php endforeach;?>
 </div>

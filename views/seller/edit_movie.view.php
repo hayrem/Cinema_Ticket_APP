@@ -110,7 +110,7 @@ require "views/partials/head.php";
                         <span><?= (isset($messageError['image'])) ? $messageError['image'] : "" ?></span>
                     </div>
                     <div class="col mb-3">
-                        <img class="ms-4" src="/uploads/<?=$editMovie['image']?>" alt="" style="width:80px;" >
+                        <img class="ms-4" src="../uploads/<?=$editMovie['image']?>" alt="" style="width:80px;" >
                     </div>
                 </div>
                 <div>
