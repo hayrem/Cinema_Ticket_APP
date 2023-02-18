@@ -15,7 +15,7 @@ require "views/partials/head.php";
     </div>
         <div class="container-movecards mt-4">
 
-            <?php foreach ($sellerShows as $show) : ?>
+            <?php foreach ($listmovies as $show) : ?>
                 <div class="row justify-content-center mb-3" style="width: 120%;">
                     <div class="col-md-12 col-xl-10">
                         <div class="card shadow-0 border rounded-3">
@@ -33,9 +33,19 @@ require "views/partials/head.php";
                                             <span class="row mt-2">Genre: <?php echo $show["genre"]; ?></span>
                                             <span class="row mt-2 mb-0">Release: <?php echo $show["released"]; ?> </span><br><br>
                                             <!-- submit post movie -->
-                                            <form method="post" class="table_content_form" action="/seller/setting?movie_id=<?= $show['movie_id'] ?>">
-                                                <input type="hidden" name="postnow" value="1"/>
-                                                <button class="btn btn-danger btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" onclick='myFunction("<?=$show["movie_id"] ?>");'>Post</button> 
+                                            <form method="post" class="table_content_form" action="" onsubmit='return false'>
+                                                <!-- <input type="hidden" name="postnow" value="1"/> -->
+                                                <?php
+                                                    if ($show['post'] === 0){
+                                                    ?> 
+                                                        <button class="btn btn-danger btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" onclick='myFunction("<?=$show["movie_id"] ?>");'>Post</button>    
+                                                    <?php
+                                                    }else{
+                                                    ?>
+                                                        <button class="btn btn-primary btn-sm mt-2" style="width: 20%;" type="submit" id="<?=$show['movie_id'] ?>" >Areadly Post</button>    
+                                                    <?php
+                                                    }
+                                                ?>
                                             </form>
                                         </div>
                                     </div>
@@ -74,17 +84,15 @@ require "views/partials/head.php";
         confirmButtonText: '<a href="/seller/delete?movie_id='+movieID + '" style="color:white; text-decoration: none;">Yes, delete it!</a>'
         })
     }
- 
-</script>
-<script>
+
     function myFunction(movieID){
         Swal.fire({
         title: 'Your post has been success',
         icon: 'success',
         confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: '<a href="/seller?movie_id='+movieID + '" style="color:white; text-decoration: none;">OK</a>'
+        confirmButtonText: '<a href="/seller/setting?movie_id='+movieID +'&postnow=1" style="color:white; text-decoration: none;">OK</a>'
         });
+        
     }
  
 </script>

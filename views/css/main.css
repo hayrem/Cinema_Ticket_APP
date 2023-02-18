@@ -1147,7 +1147,7 @@ ol {
 }
  .payment-form{
   position: fixed;
-  top: 15%;
+  top: 6%;
   left: 30%;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); 
