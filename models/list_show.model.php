@@ -20,7 +20,7 @@ function showMovie() : array
 $shows=showMovie();
 
 // get id movie
-function getDetailMovie(int $getID) : array
+function getDetailMovieFromHall(int $getID) : array
 {
     global $connection;
     $statement = $connection->prepare("SELECT DISTINCT * FROM hall_shows 
@@ -29,6 +29,14 @@ function getDetailMovie(int $getID) : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getDetailMovie(int $getID) : array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT DISTINCT * FROM movies 
+    WHERE movie_id = :movie_id");
+    $statement->execute([':movie_id'=> $getID]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
 /// not show again when show details already
 function notListShow(int $id) : array
 {
