@@ -1,5 +1,6 @@
 <?php
-// $heading = "Home page";
+$heading = "Home page";
+
 require "models/users.model.php";
 require "models/list_show.model.php";
 if (isset($_COOKIE['email'])){
@@ -19,9 +20,6 @@ if(empty(isset($_COOKIE['email'])) or (empty(userRole($_COOKIE['email'])))){
 
     
     require "controllers/search/search.controller.php";
-
-    $heading = "Home page";
-
     require "views/home/index.view.php";
 
 }

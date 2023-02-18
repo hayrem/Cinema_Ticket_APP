@@ -29,9 +29,7 @@ function getDetailMovie(int $getID) : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-// $cinemas = getDetaCinemas();
-// echo $cinemas;
+/// not show again when show details already
 function notListShow(int $id) : array
 {
     global $connection;
