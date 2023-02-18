@@ -14,6 +14,18 @@ result.textContent = arr;
 let price = document.querySelector('#total_price')
 let totalPrice = arr.length;
 console.log(totalPrice);
+if(totalPrice > 10){
+    Swal.fire({
+        title: 'NOTICE',
+        text: 'Seat limit exceeded, a maximum of 10 seats per transaction.',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+}
 price.textContent = totalPrice*seatPrice + '$';
 
 }
