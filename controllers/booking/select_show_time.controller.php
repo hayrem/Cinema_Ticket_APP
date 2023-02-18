@@ -7,13 +7,15 @@ require "controllers/search/search.controller.php";
 
 $getID = ($_GET['movie_id']);
 $movies = getDetailMovieFromHall($getID);
+$movie = TRUE;
 if (empty($movies)){
     $movies = getDetailMovie($getID);
+    $movie = FALSE;
 }
 $shows = notListShow($getID);
 require("views/detail_movies/detail_movie.view.php");
 // require "views/booking/booking.view.php";
-if (!empty($movies)){
+if ($movie){
     require "views/booking/select_show_time.view.php";
 }
 

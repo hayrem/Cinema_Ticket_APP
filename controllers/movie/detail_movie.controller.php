@@ -1,5 +1,5 @@
 <?php
-// require '../../utils/url.php';
+
 require "views/partials/head.php";
 require "views/partials/nav.php";
 require ('models/list_show.model.php');
@@ -11,9 +11,8 @@ if (empty($movies)){
     $movies = getDetailMovie($getID);
 }
 $shows = notListShow($getID);
-$posts = postMovies();
+$posts = $shows;
 require("views/detail_movies/detail_movie.view.php");
-
 require("views/home/index.view.php");
 require "views/partials/footer.php";
 

@@ -11,9 +11,10 @@ function testInput($data): string
 if (isset($_POST['search'])) {
     $search  = testInput($_POST['search']);
     $shows=searchMovie($search);
-    
+    $posts = $shows;
 }else{
     $shows=showMovie();
+    $posts = postMovies();
 }
 
 
