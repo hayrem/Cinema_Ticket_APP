@@ -8,7 +8,7 @@
 
 <div class="container-movecards">
 
-    <?php foreach ($posts as $show): ?>
+    <?php foreach ($posts  as $show): ?>
         <div class="movie-cards">
 
             <div class="poster">
