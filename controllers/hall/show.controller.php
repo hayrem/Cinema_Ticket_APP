@@ -6,8 +6,18 @@
     
     $ID = ($_GET['hall_id']);
     $hallShows = hallShow($ID);
-
-    print_r($hallShows);
+    
+    if (!empty ($hallShows)){
+        $halls = [$hallShows[0]];
+        foreach ($hallShows as $show){
+            for ($i = 0 ; $i<count($halls); $i++){
+                if ($halls[$i]['movie_id'] != $show['movie_id']){
+                    array_push($halls, $show);
+                }
+            }
+        }
+        $hallShows = $halls;
+    }
     $nameHalls = getNameHall($ID);
     
 
