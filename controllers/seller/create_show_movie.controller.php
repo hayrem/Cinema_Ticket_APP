@@ -6,7 +6,7 @@
 
     $halls = getDetahall();
 
-    // $shows = showMovie();
+    $shows = showMovie();
 
     // print_r($shows);
 

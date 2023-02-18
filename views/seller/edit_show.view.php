@@ -35,6 +35,7 @@ require "views/partials/head.php";
 
         <?php
         $hall = [];
+
         foreach ($movies as $show){
             array_push($hall ,$show['hall_name'] );
         }
@@ -52,32 +53,33 @@ require "views/partials/head.php";
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <?php 
                 foreach ($movies as $show){
+                    // print_r($show);
                     if ($show['hall_name'] === $hall[$index])
                     {
-                        if ($movie["time_start"] == "A11")
+                        if ($show["time_start"] == "A11")
                         {
-                            $movie["time_start"] = "11:00 AM";
+                            $show["time_start"] = "11:00 AM";
                         }
-                        elseif ($movie["time_start"] == "A1")
+                        elseif ($show["time_start"] == "A1")
                         {
-                            $movie["time_start"] = "1:00 PM";
+                            $show["time_start"] = "1:00 PM";
                         }
-                        elseif ($movie["time_start"] == "A3")
+                        elseif ($show["time_start"] == "A3")
                         {
-                            $movie["time_start"] = "3:00 PM";
+                            $show["time_start"] = "3:00 PM";
                         }
-                        elseif ($movie["time_start"] == "A5")
+                        elseif ($show["time_start"] == "A5")
                         {
-                            $movie["time_start"] = "5:00 PM";
+                            $show["time_start"] = "5:00 PM";
                         }
                         elseif ($movie["time_start"] == "A7")
                         {
-                            $movie["time_start"] = "7:00 PM";
+                            $show["time_start"] = "7:00 PM";
                         }
                         ?>
                             <div style= "display: flex; width:100%; justify-content: space-between; "> 
 
-                                <a href=""class="btn btn-primary " style="width: 10%;"><?= $movie["time_start"]?></a>
+                                <a href=""class="btn btn-primary " style="width: 10%;"><?= $show["time_start"]?></a>
                                 <a href="/seller/seller_show_edit?show_id=<?=$show['show_id']?> "  class="btn btn-primary " style="width: 15%;background-color: red; border : none;">Update show</a>
                             </div>
                         <?php

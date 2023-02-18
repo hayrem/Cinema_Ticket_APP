@@ -6,9 +6,13 @@ require "models/list_show.model.php";
 $showId = $_GET["movie_id"] ? $_GET["movie_id"] : null;
 
 $getID = ($_GET['movie_id']);
-$movies = getDetailMovie($getID);
+$movies = getDetailMovieFromHall($getID);
+$movie = TRUE;
+if (empty($movies)){
+    $movies = getDetailMovie($getID);
+    $movie = FALSE;
+}
 $shows = notListShow($getID);
-foreach ($movies as $movie);
 
 require("views/seller/edit_show.view.php");
 
