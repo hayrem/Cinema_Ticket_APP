@@ -68,25 +68,24 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
                 <div class="col" id='input-firstname'>
                     <label class="form-label text-white">First name</label>
                     <input type="text" class="form-control " id='inputfirstname' placeholder="First name" aria-label="First name" name="firstName">
-                    <span style="color:red;" id="firstname">.</span>
+                    <span style="color:red;" id="firstname"><span class="error">.</span></span>
                 </div>
                 <div class="col" id='input-lastname'>
                     <label class="form-label text-white">Last name</label>
                     <input type="text" class="form-control " id='inputlastname' placeholder="Last name" aria-label="Last name" name="lastName">
-                    <span style="color:red;" id="lastname">.</span>
+                    <span style="color:red;" id="lastname"><span class="error">.</span></span>
                 </div>
             </div>
             <div class="mb-3" id='input-email'>
                 <label class="form-label text-white">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter you email address" id='inputemail'>
-                <span style="color:red;" id="email">.</span>
+                <span style="color:red;" id="email"><span class="error">.</span></span>
             </div>
             <div class="mb-3" id='input-phonenumber'>
                 <label class="form-label text-white">Phone number</label>
                 <input type="number" class="form-control input-phonenumber" name="number" id='inputphonenumber' placeholder="Enter your phone number">
-                <span style="color:red;" class="p-2" id="phonenumber">.</span>
+                <span style="color:red;" class="p-2" id="phonenumber"><span class="error">.</span></span>
             </div class="mb-3">
-            <!-- <button class="popup-button btn btn-primary w-100 mt-4">PAYMENT</button> -->
             <input class="btn btn-primary popup-button w-100 mt-4 p-2" id='button-payment' type="submit" name="payment" value="PAYMENT" href="" />
 
         </form>

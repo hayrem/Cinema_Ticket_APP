@@ -19,7 +19,7 @@ $index=0;
 for ($i = 0 ; $i<count($show_date) ; $i++) :
 ?>
 <div class=" text-white mt-4 rounded-3 shadow p-3 ">
-    <h5 class="card-title">Date show: <?=  $show_date[$i]?></h5>
+    <h5 class="card-title">Date show: <?= $show_date[$i]?></h5>
 
     <?php
     for ($index = 0 ; $index<count($hall) ; $index++) :
@@ -33,7 +33,7 @@ for ($i = 0 ; $i<count($show_date) ; $i++) :
                 foreach ($movies as $show){
                     if ($show['hall_name'] === $hall[$index]){
                     ?>
-                        <a href="/booking?movie_id=<?=$show['movie_id']?> &hall_id=<?=$show['hall_name']?> &date_show=<?=$show_date[$i]?>&title=<?=$show['title']?>" class="btn btn-primary " style="width: 10%;">2:30</a>
+                        <a href="/booking?movie_id=<?=$show['movie_id']?> &hall_id=<?=$show['hall_name']?> &date_show=<?=$show_date[$i]?>&title=<?=$show['title']?>" class="btn btn-primary " style="width: 10%;"> <?= $show['time_start']?></a>
                     <?php
                     }
                 }

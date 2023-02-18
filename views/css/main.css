@@ -957,11 +957,11 @@ background: #000;
   width: 100%;
   max-width: 510px;
   border-radius: 5px;
-  /* background-color: #fff; */
-  /* background-color: var(--sidebar); */
   background-color: var(--app-bg);
   padding: 20px 30px;
-  /* box-shadow: 0px 0px 17px -4px #e7dbdb; */
+}
+.error{
+  color:var(--app-bg) ;
 }
 .screen-side {
   text-align: center;
@@ -1227,16 +1227,6 @@ ol {
 	font-weight: 700;
 }
 
-
-/* 
-.location {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 140%;
-	border-top: 1px solid gray;
-} */
-
 .right {
 	width: 280px;
 	border-left: 1px dashed #404040;
@@ -1244,4 +1234,9 @@ ol {
   justify-content: center;
   align-items: center;
   background: #000;
+}
+
+.delete{
+  display: flex;
+  align-items: center;
 }

@@ -84,3 +84,6 @@ require "views/partials/head.php";
 
         </body>
  </html>
+
+
+<a type="button" id="<?= $show['movie_id'] ?>" onclick='deleteShow("<?= $show["movie_id"] ?>");'>Delete movie</a>
