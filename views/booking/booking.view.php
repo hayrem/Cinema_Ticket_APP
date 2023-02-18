@@ -3,7 +3,7 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
 ?>
 <div class="seat-container">
     <div class="container-form-seat">
-        <form action="index.php" method="POST" class="">
+        <form action="index.php" method="POST" class="seat-container">
             <div class="theatre">
                 <div class="screen-side">
                     <div class="screen">Screen</div>
@@ -42,43 +42,47 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
 
     <div class="info-form">
         <form action="" class="w-75" method='POST' onsubmit='return false'>
-            <span class="fs-4 mb-4">Show time detail</span>
+            <span class="fs-4 mb-4 text-white">Show time detail :</span>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5">Hall : <?= $hall?></label>
+                <label class="form-label fs-5 text-white">Hall : <span style="color:red;"><?= $hall ?></span></label></label>
+                <span style="color:red;"></span>
+            </div>
+            <div class="mb-3 mt-4">
+                <label class="form-label fs-5 text-white">Movie title : <span style="color:red;"><?= $getTitle ?></span></label>
                 <span style="color:red;"></span>
             </div>
             <div class="mb-2">
-                <label class="form-label fs-5">Seat :</label>
-                <span style="color:red;" id='seat'></span>
+                <label class="form-label fs-5 text-white">Seat :</label>
+                <span style="color:red; " class="fs-5" id='seat'></span>
             </div>
             <div class="mb-2">
-                <label class="form-label fs-5">Date show : <?=  $date_show; ?></label>
+                <label class="form-label fs-5 text-white">Date show : <span style="color:red;"><?= $date_show ?></span></label></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
-                <label class="form-label fs-5">Total price :</label>
-                <span style="color:red;" id='total_price'></span>
+                <label class="form-label fs-5 text-white">Total price :</label>
+                <span style="color:red;" class="fs-5" id='total_price'></span>
             </div>
-            <span class="fs-4 mb-4">Customer info</span>
+            <span class="fs-4 mb-4 text-white">Customer info :</span>
             <div class="row g-3 mb-3 mt-3">
                 <div class="col" id='input-firstname'>
-                    <label class="form-label">First name</label>
+                    <label class="form-label text-white">First name</label>
                     <input type="text" class="form-control " id='inputfirstname' placeholder="First name" aria-label="First name" name="firstName">
                     <span style="color:red;" id="firstname">.</span>
                 </div>
                 <div class="col" id='input-lastname'>
-                    <label class="form-label">Last name</label>
+                    <label class="form-label text-white">Last name</label>
                     <input type="text" class="form-control " id='inputlastname' placeholder="Last name" aria-label="Last name" name="lastName">
                     <span style="color:red;" id="lastname">.</span>
                 </div>
             </div>
             <div class="mb-3" id='input-email'>
-                <label class="form-label">Email</label>
+                <label class="form-label text-white">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter you email address" id='inputemail'>
                 <span style="color:red;" id="email">.</span>
             </div>
             <div class="mb-3" id='input-phonenumber'>
-                <label class="form-label ">Phone number</label>
+                <label class="form-label text-white">Phone number</label>
                 <input type="number" class="form-control input-phonenumber" name="number" id='inputphonenumber' placeholder="Enter your phone number">
                 <span style="color:red;" class="p-2" id="phonenumber">.</span>
             </div class="mb-3">

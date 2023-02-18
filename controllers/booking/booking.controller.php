@@ -6,6 +6,7 @@ require ('models/list_show.model.php');
 require "controllers/search/search.controller.php";
 
 $getID = ($_GET['movie_id']);
+$getTitle = ($_GET['title']);
 $movies = getDetailMovie($getID);
 $shows = notListShow($getID);
 $date_show = ($_GET['date_show']);
