@@ -4,7 +4,8 @@
 </div>
 <!-- <h3>Show</h3> -->
 
-<?php if (!empty($shows)){ ?>
+<?php 
+if (!empty($shows)){ ?>
 
 <div class="container-movecards">
 

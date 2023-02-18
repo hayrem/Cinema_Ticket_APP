@@ -4,7 +4,7 @@ require("database/database.php");
 function searchMovie(string $search) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT title,released,image,duration,movie_id FROM movies WHERE title LIKE '%{$search}%' OR released LIKE '%{$search}%'");
+    $statement = $connection->prepare("SELECT title,released,image,duration,movie_id,post FROM movies WHERE post=1 and (title LIKE '%{$search}%' OR released LIKE '%{$search}%')");
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -17,10 +17,9 @@ function showMovie() : array
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-$shows=showMovie();
 
 // get id movie
-function getDetailMovie(int $getID) : array
+function getDetailMovieFromHall(int $getID) : array
 {
     global $connection;
     $statement = $connection->prepare("SELECT DISTINCT * FROM hall_shows 
@@ -29,11 +28,19 @@ function getDetailMovie(int $getID) : array
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getDetailMovie(int $getID) : array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT DISTINCT * FROM movies 
+    WHERE movie_id = :movie_id");
+    $statement->execute([':movie_id'=> $getID]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
 /// not show again when show details already
 function notListShow(int $id) : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM movies WHERE movie_id != :id");
+    $statement = $connection->prepare("SELECT * FROM movies WHERE movie_id != :id and post=1");
     $statement->execute([':id'=> $id]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 
