@@ -77,7 +77,7 @@ require "views/partials/head.php";
                         ?>
                             <div style= "display: flex; width:100%; justify-content: space-between; "> 
 
-                                <a href="" class="btn btn-primary " style="width: 10%;"><?= $movie["time_start"]?></a>
+                                <a href=""class="btn btn-primary " style="width: 10%;"><?= $movie["time_start"]?></a>
                                 <a href="/seller/seller_show_edit?show_id=<?=$show['show_id']?> "  class="btn btn-primary " style="width: 15%;background-color: red; border : none;">Update show</a>
                             </div>
                         <?php
