@@ -3,12 +3,30 @@ require "models/seller_list_show.model.php";
 require "models/list_show.model.php";
 
 
-$showId = $_GET["movie_id"] ? $_GET["movie_id"] : null;
-$showId = getShow ();
-$getID = ($_GET['movie_id']);
-$movies = getDetailMovie($getID);
-$shows = notListShow($getID);
-foreach ($movies as $movie);
-// print_r ( $showId);
+$showId = $_GET["show_id"] ? $_GET["show_id"] : null; //get id from quẻry to ínert to fuction get id show 
 
-require("views/seller/edit_show.view.php");
+$showEdit = getShowIdToEdit($showId);
+print_r ($showEdit);
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $dateShow = $_POST["date_show"];
+    $timeStart = $_POST["time_start"];
+    $hall = $_POST["hall"];
+    $show_id = $_POST["show_id"];
+
+    echo $dateShow;
+    echo $timeStart;
+    echo $hall;
+    echo $show_id;
+    
+    if(!empty($dateShow) and !empty($timeStart) and !empty($hall) and !empty($dateShow)){
+        editShow($dateShow, $timeStart,$hall,$dateShow, $show_id);
+        header("location:/seller/setting");
+    }
+    
+    
+}
+require("views/seller/seller_show_edit.view.php");
+

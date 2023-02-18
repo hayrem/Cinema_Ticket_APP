@@ -63,31 +63,29 @@ function addNewShow(string $show_date,string $show_time_start,int $movie_id,int 
 // Function edit show----------------------------------------------------------------
 
 
-
-function getShow ():array
+function getShowIdToEdit(int $showId):array
 {
     global $connection;
-    $statement = $connection->prepare('SELECT * FROM hall_shows');
-    $statement->execute();
-    return  $statement->fetchAll();
-}
+    $statement = $connection->prepare('SELECT * FROM shows WHERE show_id = :show_id');
+    $statement->execute([':show_id' => $showId]);
+    return  $statement->fetch();
+};
 
 
-function editShow($dateShow,string $title,string $hallName, string $timeStart, int $id) : bool
+function editShow(string $dateShow,string $hallName, string $timeStart, int $id) : bool
 {
     global $connection;
-    $statement = $connection->prepare('UPDATE hall_shows SET title = :title, date_show = :date_show, hall_name = :hall_name ,time_start = :time_start WHERE movie_id = :movie_id');
+    $statement = $connection->prepare('UPDATE hall_shows SET date_show = :date_show, hall_name = :hall_name ,time_start = :time_start WHERE show_id = :show_id');
     $statement->execute([
-        ':title' => $title,
         ':date_show' => $dateShow,
         ':hall_name' => $hallName,
         ':time_start' => $timeStart,
-        ':movie_id' => $id
+        ':show_id' => $id
     ]);
     return $statement->rowCount() > 0;
 }
 
-
+///updat póst fuction 
 function updatePost(string $post,int $id) : bool
 {
     global $connection;
