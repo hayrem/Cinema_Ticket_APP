@@ -40,10 +40,20 @@
                             <?php
                         }else{
                             ?>
-                                <!--  manage account-->
-                                <div class="d-flex " style="width:100%;justify-content:center; align-items:center;">
-                                  <span class="material-symbols-outlined mx-2"  data-toggle="modal" data-target="#manage_acc">account_circle </span>
-                                  <h5 class='m-0 p-0'><?= isset($_COOKIE['firstName'])? $_COOKIE['firstName'] : "" ?></h5>  
+                                <div class="d-flex " style="width:100%;justify-content:center; align-items:center; gap:10px">
+                                <?php if (empty($_COOKIE['image'])){
+                                    ?>
+                                     <span class="material-symbols-outlined mx-2"  data-toggle="modal" data-target="#manage_acc">account_circle </span>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <img src="uploads/<?=($_COOKIE['image'])?>" class="rounded-circle" width="40" height="40" data-toggle="modal" data-target="#manage_acc">
+
+
+                                    <?php
+                                }
+                                ?> 
+                                    <h5 class='m-0 p-0' style="padding-right: 10px;"><?= isset($_COOKIE['firstName'])? $_COOKIE['firstName'] : "" ?></h5>  
                                 </div>
                                 
                                 <?php require "views/users/manage_acc.view.php"; ?>

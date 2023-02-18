@@ -1,15 +1,17 @@
 <?php
 require "database/database.php";
 
-function createUser(string $firstName,string $lastName, string $email,string $password) : bool
+function createUser(string $firstName,string $lastName, string $email,string $password, string $profileImage) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (first_name,last_name, email,password) values (:first_name,:last_name, :email,:password)");
+    $statement = $connection->prepare("insert into users (first_name,last_name, email,password,image) values (:first_name,:last_name, :email,:password, :image)");
     $statement->execute([
         ':first_name' => $firstName,
         ':last_name' => $lastName,
         ':email' => $email,
-        ':password' => $password
+        ':password' => $password,
+        ':image' => $profileImage,
+
     ]);
     return $statement->rowCount() > 0;
 }
