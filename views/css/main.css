@@ -114,9 +114,10 @@ input[type="search"]{
   font-weight: bold;
   letter-spacing: 2px;
 }
-/* .nav-item a:hover{
+.nav-item a:hover{
+  color: red;
 
-} */
+}
 /* Extra large devices (large desktops, 1200px and up) */
  @media (min-width: 1200px) {
   .form-inline .form-control {
