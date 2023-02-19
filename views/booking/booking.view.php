@@ -44,24 +44,24 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I','J'];
         <form action="" class="w-75" method='POST' onsubmit='return false' id ='customer-booking-info'>
             <span class="fs-4 mb-4 text-white">Show time detail :</span>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5 text-white">Hall : <span style="color:blue;"><?= $hall ?></span></label></label>
+                <label class="form-label fs-5 text-white">Hall : <span style="color:white;"><?= $hall ?></span></label></label>
                 <span style="color:red;"></span>
             </div>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5 text-white">Movie title : <span style="color:blue;"><?= $getTitle ?></span></label>
+                <label class="form-label fs-5 text-white">Movie title : <span style="color:white;"><?= $getTitle ?></span></label>
                 <span style="color:red;"></span>
             </div>
             <div class="mb-2">
                 <label class="form-label fs-5 text-white">Seat :</label>
-                <span style="color:blue; " class="fs-5" id='seat'></span>
+                <span style="color:white; " class="fs-5" id='seat'></span>
             </div>
             <div class="mb-2">
-                <label class="form-label fs-5 text-white">Date show : <span style="color:red;"><?= $date_show ?></span></label></label>
+                <label class="form-label fs-5 text-white">Date show : <span style="color:white;"><?= $date_show ?></span></label></label>
                 <span style="color:red;"></span>
 		    </div>
             <div class="mb-2">
                 <label class="form-label fs-5 text-white">Total price :</label>
-                <span style="color:red;" class="fs-5" id='total_price'></span>
+                <span style="color:white;" class="fs-5" id='total_price'></span>
             </div>
             <span class="fs-4 mb-4 text-white">Customer info :</span>
             <div class="row g-3 mb-3 mt-3">
