@@ -17,20 +17,6 @@ require "views/partials/head.php";
                     <span style="color:red;"><?= (isset($messageError['date'])) ? $messageError['date'] : "<span>.</span>" ?></span>
                 </div>
                 <div class="col mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Movie name</label>
-                    <select name="title-movie" class="form-select p-2" aria-label="Default select example">
-                        <option value="">Open this select movie title</option>
-                        <?php   
-                        foreach ($shows as $show):
-                        ?>
-                        <option value="<?=$show['movie_id'];?>"><?=$show['title'];?></option>
-                        <?php
-                            endforeach; 
-                        ?>
-                    </select>
-                    <span style="color:red;"><?= (isset($messageError['title-movie'])) ? $messageError['title-movie'] : "<span>.</span>" ?></span>
-                </div>
-                <div class="col mb-3">
                     <label for="exampleInputEmail1" class="form-label">Hall name</label>
                     <select name="hall" class="form-select p-2" aria-label="Default select example">
                         <option value="">Open this select hall name</option>
@@ -49,17 +35,18 @@ require "views/partials/head.php";
                         <label class="form-label">Time start</label>
                         <select name="time_start" id="time_start" class="form-select p-2" aria-label="Default select example" >
                             <option value="" >Select Time Start</option>
-                            <option value="A11">11:00 AM</option>
-                            <option value="A1">1:00 PM</option>
-                            <option value="A3">3:00 PM</option>
-                            <option value="A5">5:00 PM</option>
-                            <option value="A7">7:00 PM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
                         </select>
                         <span style="color:red;"><?= (isset($messageError['time_start'])) ? $messageError['time_start'] : "<span>.</span>" ?></span>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100"><a class="text-white" href="/seller/setting" style="text-decoration: none;">Cancel</a></button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100 ms-2">Create</button>
                 </div>
             </form>
         </div>

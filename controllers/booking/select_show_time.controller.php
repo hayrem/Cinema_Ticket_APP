@@ -7,6 +7,7 @@ require "controllers/search/search.controller.php";
 
 $getID = ($_GET['movie_id']);
 $movies = getDetailMovieFromHall($getID);
+// print_r($movies);
 $movie = TRUE;
 if (empty($movies)){
     $movies = getDetailMovie($getID);

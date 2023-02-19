@@ -25,15 +25,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
      
     $dateShow = $_POST['date'];
     $showTimeStart = $_POST['time_start'];
-;
 
-    if(isset($_POST['submit'])){  
-        if(!empty($_POST['title-movie'])) {  
-            $movieTitle = $_POST['title-movie'];  
-        } else {  
-            $messageError["title-movie"] = "Please select genre";
-        }  
-    };
+    $movieTitle = $_GET['movie_id'];
 
     if(isset($_POST['submit'])){  
         if(!empty($_POST['hall'])) {  
@@ -43,10 +36,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         }  
     };  
 
-    
-    if(empty($movieTitle)){ 
-        $messageError["title"] = "please enter the title of movie";
-    }
     if(empty($hall)){
         $messageError["hall"] = "Please enter  hall show  movie";
     }   

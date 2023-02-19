@@ -72,15 +72,15 @@ require "views/partials/head.php";
                         {
                             $show["time_start"] = "5:00 PM";
                         }
-                        elseif ($movie["time_start"] == "A7")
+                        elseif ($show["time_start"] == "A7")
                         {
                             $show["time_start"] = "7:00 PM";
                         }
                         ?>
-                            <div style= "display: flex; width:100%; justify-content: space-between; "> 
+                            <div class="mt-4" style= "display: flex; width:100%; justify-content: space-between; "> 
 
                                 <a href=""class="btn btn-primary " style="width: 10%;"><?= $show["time_start"]?></a>
-                                <a href="/seller/seller_show_edit?show_id=<?=$show['show_id']?> "  class="btn btn-primary " style="width: 15%;background-color: red; border : none;">Update show</a>
+                                <a href="/seller/seller_show_edit?show_id=<?=$show['show_id']?> "  class="btn btn-primary" style="width: 15%;background-color: red; border : none;">Update show</a>
                             </div>
                         <?php
                     }
