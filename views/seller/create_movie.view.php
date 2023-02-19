@@ -98,7 +98,9 @@ require "views/partials/head.php";
                 </div>
                 <span style="color:red;"><?= (isset($messageError['description'])) ? $messageError['description'] : "<span>.</span>" ?></span>
                 <div class="d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-100 mt-4">Create</button>
+
+                    <button type="submit" name="submit" class="btn btn-danger w-100 mt-4 bg-danger"><a href="/seller/setting" class="text-white" style="text-decoration: none;">Cancel</a></button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100 mt-4 ms-2">Create</button>
                 </div>
             </form>
         </div>

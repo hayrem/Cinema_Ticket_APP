@@ -17,10 +17,10 @@ require "views/partials/head.php";
             </div>
             <?php foreach ($listmovies as $show) : ?>
                 <div class="card-detail mt-4" style="height: 20vh;">
-                    <div class="card-thumbnail" style="width: 8%; ">
+                    <div class="card-thumbnail" style="width: 15%; ">
                         <img style="background-image: url(pic1x.png);" src="../uploads/<?= $show['image'] ?>" />
                     </div>
-                    <div class="card-body-detail p-4 w-25">
+                    <div class="card-body-detail p-4 w-50">
                         <h5 class="row ms-1"><?= $show["title"]; ?></h5>
                         <div class="card-description">
                             <!-- <p class="fs-5"><?= $hallShow['description'] ?></p> -->
@@ -40,7 +40,7 @@ require "views/partials/head.php";
                         </form>
                     </div>
 
-                    <div class="d-flex flex-column mt-0 w-50 p-4 mt-4">
+                    <div class="d-flex flex-column mt-0 w-50 p-4 mt-2">
                         <div class="delete mb-3">
                             <span class="material-symbols-outlined me-2">edit</span>
                             <a type="submit" href="/seller/edit_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit show</a> 
@@ -50,7 +50,7 @@ require "views/partials/head.php";
                             <a href="/seller/create_show?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;"> Create show</a>
                         </div>
                     </div>
-                    <div class="w-40 p-4 d-flex flex-column mt-4">
+                    <div class="w-50 p-4 d-flex flex-column mt-2 ">
                         <div class="delete mb-3">
                             <span class="material-symbols-outlined me-2">edit</span>
                             <a href="/seller/edit?movie_id=<?= $show['movie_id'] ?>" style=" text-decoration: none;color:white;">Edit movie</a>

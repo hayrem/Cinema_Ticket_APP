@@ -45,7 +45,8 @@ require "views/partials/head.php";
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-100">Create</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100"><a class="text-white" href="/seller/setting" style="text-decoration: none;">Cancel</a></button>
+                    <button type="submit" name="submit" class="btn btn-primary w-100 ms-2">Create</button>
                 </div>
             </form>
         </div>
