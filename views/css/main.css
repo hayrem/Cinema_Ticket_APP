@@ -590,7 +590,7 @@ background: #000;
 .movie-cards {
   transform: translate(-0%, -0%); 
   width: 209px;
-  height: 300px;
+  height: 310px !important;
   background: #000;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
