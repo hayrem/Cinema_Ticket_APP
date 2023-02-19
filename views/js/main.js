@@ -193,8 +193,8 @@ buttonPayment.addEventListener('click', validationCustomerInfo);
 btnPayment.addEventListener('click', validationCreditCard);
 btnCancel.addEventListener('click', function(){
     for (let i = 0; i < 4; i++){
-        CardListInput[i].textContent = '';
-        spanError[i].textContent = ' ';
+        CardListInput[i].textContent = '.';
+        spanError[i].textContent = '.';
     }
     formPayment.style.display = "none";
 });

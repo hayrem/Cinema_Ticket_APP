@@ -31,7 +31,7 @@ Wellcome to Hall
       <div class="card-description">
         <p class="fs-5"><?=$hallShow['description'] ?></p>
       </div>
-        <a href="/select_show_time?movie_id=<?=$hallShow['movie_id']?>" class="btn btn-primary mb-4">SHOW ITEMS</a>
+        <a href="/select_show_time?movie_id=<?=$hallShow['movie_id']?>&hall_name=<?=$show['hall_name']?>" class="btn btn-primary mb-4">SHOW ITEMS</a>
     </div>
   </div>
   <?php }?>

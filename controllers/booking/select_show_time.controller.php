@@ -13,6 +13,7 @@ if (empty($movies)){
     $movie = FALSE;
 }
 $shows = notListShow($getID);
+
 require("views/detail_movies/detail_movie.view.php");
 // require "views/booking/booking.view.php";
 if ($movie){
