@@ -20,7 +20,7 @@
         <img src="https://www.hollywoodreporter.com/wp-content/uploads/2022/11/01_Exterior_1-copy.jpg?w=1296" class="rounded w-100">
       </div>
           <div class="card-body p-4">
-            <h4 class="card-title fw-bold"><?= $hall['hall_name'];?></h4>
+            <h4 class="card-title fw-bold">Hall: <?= $hall['hall_name'];?></h4>
             <p class="card-text mt-4 fs-5">Total seat: <?= $hall['total_seat'];?></p>
           </div>
           <div class="container-btn d-flex align-items-end p-4">
