@@ -3,6 +3,7 @@
 require "views/partials/head.php";
 require "views/partials/nav.php";
 require ('models/list_show.model.php');
+require ('models/booking.model.php');
 require "controllers/search/search.controller.php";
 
 $getID = ($_GET['movie_id']);
