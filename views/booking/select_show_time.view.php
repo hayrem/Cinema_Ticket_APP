@@ -50,7 +50,7 @@ for ($i = 0 ; $i<count($show_date) ; $i++) :
                         foreach ($movies as $show){
                             if ($show['hall_name'] === $hall[$index] and $show['date_show'] === $show_date[$i]){
                             ?>
-                                <a href="/booking?movie_id=<?=$show['movie_id']?> &hall_id=<?=$show['hall_name']?> &date_show=<?=$show_date[$i]?>" class="btn btn-primary " style="width: 10%;">2:30</a>
+                                <a href="/booking?movie_id=<?=$show['movie_id']?> &hall_id=<?=$show['hall_name']?> &date_show=<?=$show_date[$i]?>&title=<?=$show['title']?>" class="btn btn-primary " style="width: 10%;">2:30</a>
                             <?php
                             }
                         }

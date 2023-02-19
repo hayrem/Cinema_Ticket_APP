@@ -955,7 +955,7 @@ background: #000;
 .theatre {
   margin: 20px auto;
   width: 100%;
-  max-width: 510px;
+  max-width: 600px;
   border-radius: 5px;
   background-color: var(--app-bg);
   padding: 20px 30px;
@@ -1017,13 +1017,13 @@ ol {
 }
 .seat {
   display: flex;
-  flex: 0 0 11%;
+  flex: 0 0 9%;
   padding: 5px;
   position: relative;
 
 }
 /* devide seat 6 culumn */
-.seat:nth-child(4) {
+.seat:nth-child(5) {
   margin-right: 12.28571%;
 }
 .seat input[type="checkbox"] {

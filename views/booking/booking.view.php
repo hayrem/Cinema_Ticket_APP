@@ -1,9 +1,9 @@
 <?php
-$seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
+$seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I','J'];
 ?>
 <div class="seat-container">
-    <div class="container-form-seat">
-        <form action="index.php" method="POST" class="seat-container">
+    <div class="container-form-seat m-0 p-0"  style="background-color: var(--app-bg);" >
+        <form action="index.php" method="POST" class="seat-container m-0 p-0" >
             <div class="theatre">
                 <div class="screen-side">
                     <div class="screen">Screen</div>
@@ -18,7 +18,7 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
                         echo
                         "<li class='row row--$count'>
                             <ol class='cinema-seat mt-0' type='$value'>";
-                        for ($i = 1; $i <= 8; $i++) {
+                        for ($i = 1; $i <= 10; $i++) {
                             global $value;
                             echo
                             "<li class='seat'>
@@ -41,19 +41,19 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
     </div>
 
     <div class="info-form">
-        <form action="" class="w-75" method='POST' onsubmit='return false'>
+        <form action="" class="w-75" method='POST' onsubmit='return false' id ='customer-booking-info'>
             <span class="fs-4 mb-4 text-white">Show time detail :</span>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5 text-white">Hall : <span style="color:red;"><?= $hall ?></span></label></label>
+                <label class="form-label fs-5 text-white">Hall : <span style="color:blue;"><?= $hall ?></span></label></label>
                 <span style="color:red;"></span>
             </div>
             <div class="mb-3 mt-4">
-                <label class="form-label fs-5 text-white">Movie title : <span style="color:red;"><?= $getTitle ?></span></label>
+                <label class="form-label fs-5 text-white">Movie title : <span style="color:blue;"><?= $getTitle ?></span></label>
                 <span style="color:red;"></span>
             </div>
             <div class="mb-2">
                 <label class="form-label fs-5 text-white">Seat :</label>
-                <span style="color:red; " class="fs-5" id='seat'></span>
+                <span style="color:blue; " class="fs-5" id='seat'></span>
             </div>
             <div class="mb-2">
                 <label class="form-label fs-5 text-white">Date show : <span style="color:red;"><?= $date_show ?></span></label></label>
@@ -104,24 +104,24 @@ $seatLetter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J'];
                 <div class="mb-3 card-name-form">
                     <label class="form-label">Card Name</label>
                     <input type="text" class="form-control" id='card-name' placeholder="Enter your card name" name="card-name">
-                    <span style="color:red;" id="cardname">.</span>
+                    <span style="color:red;" id="cardname"><span class="error">.</span></span>
                 </div>
                 <div class="mb-3 card-number-form">
                     <label class="form-label ">Card Number</label>
                     <input id="card-number" class="form-control" maxlength="19" placeholder="1111-2222-3333-4444" name="card-number" placeholder="Enter your card number">
-                    <span style="color:red;" id="cardnumber">.</span>
+                    <span style="color:red;" id="cardnumber"><span class="error">.</span></span>
                 </div>
                 <div class="mb-3">
                     <div class="row g-3">
                         <div class="col expired-form">
                             <label class="form-label">Expired</label>
                             <input class="form-control" id='expired-input' maxlength='5' placeholder="MM/YY" type="text" onkeyup="formatString(event);" name="expired">
-                            <span style="color:red;" id="expried">.</span>
+                            <span style="color:red;" id="expried"><span class="error">.</span></span>
                         </div>
                         <div class="col cvv-form">
                             <label class="form-label">CVV</label>
                             <input type="text" class="form-control" id='cvv-input' placeholder="123" maxlength="3" name="cvv" ?>
-                            <span style="color:red;" id="CVV">.</span>
+                            <span style="color:red;" id="CVV"><span class="error">.</span></span>
                         </div>
                     </div>
                     <div class="contain-btn mt-4 d-flex justify-content-between">

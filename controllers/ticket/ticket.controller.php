@@ -11,3 +11,4 @@
     require "views/ticket/ticket.view.php";
 
 ?>
+<script src="../../views/js/print_ticket.js"></script>
