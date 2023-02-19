@@ -42,7 +42,7 @@ session_start();
                         <div class="card-icon shadow-none bg-light rounded p-4" >
                             <div class="icon mb-2 text-dark d-flex align-item-center "style ="width:100%;height:100%;">
                                 <span class="material-symbols-outlined text-dark">change_circle</span>
-                                <a class="<?= urlIs('/reset')?> nav-link" href="/reset">Change Password</a>
+                                <a class="<?= urlIs('/reset')?> nav-link" href="/reset" style="color: blue;" >Change Password</a>
                             </div>
                             <!-- <div class="icon mb-2 text-dark d-flex align-item-center">
                                 <span class="material-symbols-outlined">change_circle</span>
@@ -51,7 +51,7 @@ session_start();
 
                             <div class="icon1 mt-2 text-dark d-flex align-item-center" style ="width:100%;height:100%;">
                                 <span class="material-symbols-outlined text-dark">logout</span>
-                                <a href="../../controllers/users/sign_out.controller.php" class="ms-4">Logout</a>
+                                <a href="../../controllers/users/sign_out.controller.php" class="ms-2" style="text-decoration: none;">Logout</a>
                             </div>
                         </div>
                     </div>

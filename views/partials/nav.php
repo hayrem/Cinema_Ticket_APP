@@ -47,7 +47,7 @@
                                     <?php
                                 }else{
                                     ?>
-                                    <img src="uploads/<?=($_COOKIE['image'])?>" class="rounded-circle" width="40" height="40" data-toggle="modal" data-target="#manage_acc">
+                                    <img src="uploads/<?=($_COOKIE['image'])?>" style="border: solid 1px white;" class="rounded-circle" width="40" height="40" data-toggle="modal" data-target="#manage_acc">
 
 
                                     <?php
