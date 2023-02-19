@@ -1,13 +1,5 @@
 <?php
 
-// function getMovie(){
-//     global $connection;
-//     $statement = $connection->prepare("select * from movies");
-//     $statement->execute();
-//     return $statement->fetchAll();
-
-// }
-
 function getMovieId(int $movieId):array
 {
     global $connection;
@@ -39,8 +31,6 @@ string $country, int $id, string $image, string $trailer) : bool
 }
 
 
-// get data from table show 
-
 function getDataTimeShow():array
 {
     global $connection;
@@ -49,22 +39,21 @@ function getDataTimeShow():array
     return  $statement->fetch();
 }
 
-//  Function add new show
-function addNewShow(string $show_date,string $show_time_start,int $movie_id,int $hall_id) : array
+
+function addNewShow(string $showDate,string $showTimeStart,int $movieId,int $hallId) : array
 {
     global $connection;
     $statement = $connection->prepare("INSERT INTO shows (date_show,  time_start, movie_id,  hall_id) VALUES (:date_show,  :time_start, :movie_id,  :hall_id)");
     $statement->execute([
-        ':date_show' => $show_date,
-        ':time_start' => $show_time_start,
-        ':movie_id' => $movie_id,
-        ':hall_id' => $hall_id,
+        ':date_show' => $showDate,
+        ':time_start' => $showTimeStart,
+        ':movie_id' => $movieId,
+        ':hall_id' => $hallId,
     ]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
-// Function edit show----------------------------------------------------------------
 
 
 function getShowIdToEdit(int $showId):array
@@ -89,7 +78,6 @@ function editShow(string $dateShow,string $hallName, string $timeStart, int $id)
     return $statement->rowCount() > 0;
 }
 
-///updat póst fuction 
 function updatePost(string $post,int $id) : bool
 {
     global $connection;
