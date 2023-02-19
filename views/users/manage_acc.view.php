@@ -11,7 +11,7 @@ session_start();
 
 
 <div class="modal fade" id="manage_acc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="top:8%;">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title text-dark" id="exampleModalLabel">Manage your Account</h4>
@@ -39,9 +39,9 @@ session_start();
                                 <?= isset($_COOKIE['lastName'])? $_COOKIE['lastName'] : "" ?></h4>
                             </div>
                         </div>
-                        <div class="card-icon shadow-none bg-light rounded p-4">
-                            <div class="icon mb-2 text-dark d-flex align-item-center">
-                                <span class="material-symbols-outlined">change_circle</span>
+                        <div class="card-icon shadow-none bg-light rounded p-4" >
+                            <div class="icon mb-2 text-dark d-flex align-item-center "style ="width:100%;height:100%;">
+                                <span class="material-symbols-outlined text-dark">change_circle</span>
                                 <a class="<?= urlIs('/reset')?> nav-link" href="/reset">Change Password</a>
                             </div>
                             <!-- <div class="icon mb-2 text-dark d-flex align-item-center">
@@ -49,8 +49,8 @@ session_start();
                                 <a class="<?= urlIs('/editPf')?> nav-link" href="/editPf">Edit Profile</a>
                             </div> -->
 
-                            <div class="icon1 mt-2 text-dark d-flex align-item-center">
-                                <span class="material-symbols-outlined ">logout</span>
+                            <div class="icon1 mt-2 text-dark d-flex align-item-center" style ="width:100%;height:100%;">
+                                <span class="material-symbols-outlined text-dark">logout</span>
                                 <a href="../../controllers/users/sign_out.controller.php" class="ms-4">Logout</a>
                             </div>
                         </div>

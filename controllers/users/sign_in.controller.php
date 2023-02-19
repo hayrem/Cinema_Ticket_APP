@@ -83,9 +83,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       $lastName = usernameByEmail($email)['last_name'];
       $profileImage = usernameByEmail($email)['image'];
       $sellerRole = usernameByEmail($email)['role'];
-      print_r($sellerRole);
       $remembering_timespan = time() + 7 * 24 * 60 * 60;// will store 1 week
-      if (empty($_POST['remeber'])){
+      if (empty($_POST['remember'])){
          $remembering_timespan = time() + 60*60; // will store 1 hour
       }
 
