@@ -23,7 +23,7 @@ let result = document.querySelector('#seat');
 result.textContent = arr;
 let price = document.querySelector('#total_price')
 let totalPrice = arr.length;
-if(totalPrice > 10){
+if(totalPrice == 10){
     Swal.fire({
         title: 'NOTICE',
         text: 'Seat limit exceeded, a maximum of 10 seats per transaction.',

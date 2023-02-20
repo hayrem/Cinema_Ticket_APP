@@ -65,7 +65,11 @@
 			</div>
 			<span class="message-eroor" style="color:red;"><?= (isset($messageError['comfirm-password'])) ? $messageError['comfirm-password'] : "<span>.</span>" ?></span>
 		</div>
-		<input type="file" name="image" class="form-control form-control-lg">
+		<div>
+			<label class="form-label">Upload profile</label>
+			<input type="file" name="image" class="form-control form-control-lg">
+		</div>
+		<span class="message-eroor" style="color:red;"><?= (isset($messageError['profile'])) ? $messageError['profile'] : "<span>.</span>" ?></span>
 		<div class="contain-btn mt-4">
 			<button type="submit" name="submit" class="btn btn-danger ">Sign Up</button>
 		</div>
