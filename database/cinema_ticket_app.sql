@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 17, 2023 at 03:31 PM
+-- Generation Time: Feb 20, 2023 at 06:05 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,7 +43,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `hall_seat_id`, `show_id`, `first_name`, `last_name`, `phone`, `email`, `user_id`) VALUES
-(3, 1, 1, 'Nong', 'Phloeut', 99887766, 'nong@gmail.com', 1);
+(3, 23, 23, 'Nong', 'Phloeut', 99887766, 'nong@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,8 @@ CREATE TABLE `hall_seats` (
 -- (See below for the actual view)
 --
 CREATE TABLE `hall_shows` (
-`movie_id` int(11)
+`show_id` int(11)
+,`movie_id` int(11)
 ,`title` varchar(100)
 ,`genre` varchar(100)
 ,`country` varchar(100)
@@ -127,10 +128,11 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`movie_id`, `title`, `country`, `genre`, `duration`, `released`, `language`, `description`, `image`, `trailer`, `post`) VALUES
-(28, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', 'the king', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 1),
-(29, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', 'the king', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 0),
-(30, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', 'the king', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 0),
-(31, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', '                        the king \r\n                    ', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 0);
+(34, 'The Hello', 'France', 'Action', '10:40:00', 2011, 'English', '                                                                        sdfsfsf \r\n                     \r\n                     \r\n                    ', 'IMG-63f1a59b9c01d5.68210446.jpg', 'https://youtu.be/zOceeeWDTag', 1),
+(35, 'Castlevania', 'English', 'Horror', '10:40:00', 2011, 'English', '                                                Castlevania is an American adult animated dark fantasy action horror television series made for the streaming service Netflix and is produced by Frederator \r\n                     \r\n                    ', 'IMG-63f103a8d01980.33338607.jpg', 'https://www.youtube.com/embed/m3jNb7IdJHQ', 1),
+(36, 'The King', 'Khmer', 'Action', '10:40:00', 2011, 'France', 'the kinh', 'IMG-63f09baa074321.10179266.jpg', 'www.youtube.com/embed/ByXuk9QqQkk&quot;', 1),
+(37, 'The string', 'France', 'Action', '01:11:00', 2023, 'France', 'hellllo123', 'IMG-63f124cc41f587.64437961.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 1),
+(38, 'The king kill', 'Khmer', 'Romance', '01:11:00', 2023, 'Poland', 'the hello', 'IMG-63f126b23ad7e7.91425328.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +153,13 @@ CREATE TABLE `shows` (
 --
 
 INSERT INTO `shows` (`show_id`, `movie_id`, `time_start`, `hall_id`, `date_show`) VALUES
-(1, 29, '2:00', 2, '2023-02-08');
+(33, 36, '2:30 AM', 1, '2023-01-01'),
+(34, 36, '9:00 AM', 1, '2023-01-01'),
+(36, 35, '11:00 AM', 1, '2023-01-01'),
+(37, 34, '11:00 AM', 2, '2023-01-12'),
+(38, 34, '11:00 AM', 3, '2023-01-31'),
+(39, 38, '1:00 PM', 3, '2023-01-01'),
+(40, 34, '1:00 PM', 2, '2023-01-01');
 
 -- --------------------------------------------------------
 
@@ -184,22 +192,26 @@ CREATE TABLE `users` (
   `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `role` varchar(50) NOT NULL DEFAULT 'customer'
+  `role` varchar(50) NOT NULL DEFAULT 'customer',
+  `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `role`) VALUES
-(1, 'Marilin', 'Kienzle', 'mkienzle0@spiegel.de', 'Gl0IlA5xqYtD', 'customer'),
-(2, 'Aldwin', 'Baddiley', 'abaddiley1@berkeley.edu', 'YOwdt8SbH', 'customer'),
-(3, 'Lelah', 'Millership', 'lmillership2@skyrock.com', 'M60z3TUzTg9C', 'seller'),
-(4, 'Wildon', 'Jemmison', 'wjemmison3@drupal.org', 'vVpuk9ggXD3g', 'seller'),
-(5, 'Boigie', 'Peacham', 'bpeacham4@nifty.com', 'w2prwz7gUe', 'customer'),
-(9, 'Ni', 'Ka', 'sreyrea.han@student.pasedfghjresnumerquies.org', '$2y$10$p.nsEQfGbH5iuLEZlDZDB.zUIzdOZ/ss9bx.KOQRUCKZYiDqthgg6', 'seller'),
-(10, 'lak', 'na', 'dd@gmail.com', '$2y$10$yM9BVamKEfeDDBuVEGMzWe4.VOTSugOK/zXuATKws89ux1ZDYbsZu', 'customer'),
-(11, 'ma', 'na', '09dd@gmail.com', '$2y$10$NLMjN0E9W3dllp308qB66OLAlD5Au/c1KOKa64jqnOBxJ5OMGEtby', 'customer');
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `role`, `image`) VALUES
+(1, 'Marilin', 'Kienzle', 'mkienzle0@spiegel.de', 'Gl0IlA5xqYtD', 'customer', ''),
+(2, 'Aldwin', 'Baddiley', 'abaddiley1@berkeley.edu', 'YOwdt8SbH', 'customer', ''),
+(3, 'Lelah', 'Millership', 'lmillership2@skyrock.com', 'M60z3TUzTg9C', 'seller', ''),
+(4, 'Wildon', 'Jemmison', 'wjemmison3@drupal.org', 'vVpuk9ggXD3g', 'seller', ''),
+(5, 'Boigie', 'Peacham', 'bpeacham4@nifty.com', 'w2prwz7gUe', 'customer', ''),
+(9, 'Ni', 'Ka', 'sreyrea.han@student.pasedfghjresnumerquies.org', '$2y$10$p.nsEQfGbH5iuLEZlDZDB.zUIzdOZ/ss9bx.KOQRUCKZYiDqthgg6', 'seller', ''),
+(10, 'lak', 'na', 'dd@gmail.com', '$2y$10$yM9BVamKEfeDDBuVEGMzWe4.VOTSugOK/zXuATKws89ux1ZDYbsZu', 'seller', ''),
+(11, 'ma', 'na', '09dd@gmail.com', '$2y$10$NLMjN0E9W3dllp308qB66OLAlD5Au/c1KOKa64jqnOBxJ5OMGEtby', 'customer', ''),
+(12, 'nong2', 'name', 'nono@gmail.come', '$2y$10$7CsVvoOUsnVjy224i7mCsefNIRHPotEqrX1u2Oe1r1k0fNzyghv.u', 'customer', 'IMG-63f23779f1fde4.00349967.jpg'),
+(13, 'Nong', 'Phloeut', 'hiandhello@gmail.com', '$2y$10$nkq6X.f.QJyOOvVStmsnvOOxZHh2iW5mCEGxfTL8KyYIawfqj6COO', 'customer', 'IMG-63f237e5efcbb0.23797904.jpg'),
+(14, 'Nong', 'Phloeut', 'baba0e1234@gmail.com', '$2y$10$EYPUg.YUEbhELsqJmk9qkuhnf6TIr.etBMi2ZEY3dPTaPkkdNfKGG', 'customer', 'IMG-63f23b27e0a870.75466559.jpg');
 
 -- --------------------------------------------------------
 
@@ -208,7 +220,7 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 --
 DROP TABLE IF EXISTS `hall_shows`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `hall_shows`  AS SELECT `movies`.`movie_id` AS `movie_id`, `movies`.`title` AS `title`, `movies`.`genre` AS `genre`, `movies`.`country` AS `country`, `movies`.`duration` AS `duration`, `movies`.`released` AS `released`, `movies`.`language` AS `language`, `movies`.`description` AS `description`, `movies`.`image` AS `image`, `movies`.`trailer` AS `trailer`, `shows`.`date_show` AS `date_show`, `shows`.`time_start` AS `time_start`, `halls`.`hall_name` AS `hall_name` FROM ((`shows` join `movies` on(`shows`.`movie_id` = `movies`.`movie_id`)) join `halls` on(`shows`.`hall_id` = `halls`.`hall_id`))  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `hall_shows`  AS SELECT `shows`.`show_id` AS `show_id`, `movies`.`movie_id` AS `movie_id`, `movies`.`title` AS `title`, `movies`.`genre` AS `genre`, `movies`.`country` AS `country`, `movies`.`duration` AS `duration`, `movies`.`released` AS `released`, `movies`.`language` AS `language`, `movies`.`description` AS `description`, `movies`.`image` AS `image`, `movies`.`trailer` AS `trailer`, `shows`.`date_show` AS `date_show`, `shows`.`time_start` AS `time_start`, `halls`.`hall_name` AS `hall_name` FROM ((`shows` join `movies` on(`shows`.`movie_id` = `movies`.`movie_id`)) join `halls` on(`shows`.`hall_id` = `halls`.`hall_id`))  ;
 
 -- --------------------------------------------------------
 
@@ -292,19 +304,19 @@ ALTER TABLE `hall_seats`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
