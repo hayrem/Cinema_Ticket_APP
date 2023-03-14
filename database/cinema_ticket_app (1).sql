@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 19, 2023 at 01:31 PM
+-- Host: localhost
+-- Generation Time: Mar 04, 2023 at 06:18 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `hall_seat_id`, `show_id`, `first_name`, `last_name`, `phone`, `email`, `user_id`) VALUES
-(3, 1, 1, 'Nong', 'Phloeut', 99887766, 'nong@gmail.com', 1);
+(3, 23, 23, 'Nong', 'Phloeut', 99887766, 'nong@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,7 @@ CREATE TABLE `hall_shows` (
 ,`language` varchar(100)
 ,`description` varchar(255)
 ,`image` varchar(255)
-,`trailer` varchar(255)
+,`trailer` varchar(400)
 ,`date_show` date
 ,`time_start` varchar(11)
 ,`hall_name` varchar(100)
@@ -119,7 +119,7 @@ CREATE TABLE `movies` (
   `language` varchar(100) NOT NULL,
   `description` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `trailer` varchar(255) NOT NULL,
+  `trailer` varchar(400) NOT NULL,
   `post` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -128,11 +128,15 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`movie_id`, `title`, `country`, `genre`, `duration`, `released`, `language`, `description`, `image`, `trailer`, `post`) VALUES
-(32, 'cxvcb', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
-(33, 'asdf', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
-(34, 'niv', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
-(35, 'the', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
-(36, 'x cv', 'France', 'Adventure', '02:00:07', 2023, 'Poland', 'adsfdgfhgj ASDSFDGHGHMJ sadfsdgf', 'IMG-63f0aafff33515.45391044.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1);
+(39, 'Morbius', 'English', 'Action', '01:44:00', 2022, 'English', 'Watch out for the thrilling moments, gravity-defying stunts and special effects that compensate for what’s missing in making it the action-adventure extravaganza it was expected to be.', 'IMG-63fb4db4c1b7e2.24942822.png', 'https://www.youtube.com/embed/oZ6iiRrz1SY', 1),
+(40, 'Spider Man No Way Home', 'English', 'Adventure', '02:30:00', 2021, 'English', 'Spider-Man seeks the help of Doctor Strange to forget his exposed secret identity as Peter Parker. However, Strange\'s spell goes horribly wrong, leading to unwanted guests entering their universe. \r\n         \r\n                    ', 'IMG-63fb50c0b3b1f9.10369985.png', 'https://www.youtube.com/embed/JfVOs4VSpmA\" ', 1),
+(41, 'Black Miror', 'English', 'Adventure', '02:00:00', 2011, 'English', 'In an abstrusely dystopian future, several individuals grapple with the manipulative effects of cutting edge technology in their personal lives and behaviours.', 'IMG-63fb519aeb0ef2.19583613.jpg', 'https://www.youtube.com/embed/yef_HfQoBd8&quot', 1),
+(42, 'Avatar The Way Of Water', 'France', 'Adventure', '03:00:00', 2022, 'English', 'humans want to use the planet as a colony of Earth, which has become uninhabitable because of the climate crisis.', 'IMG-63fb524ab50569.62137925.png', 'www.youtube.com/embed/YXtWPVFk5TQ&quot;', 1),
+(43, 'Harry Potter', 'English', 'Action', '01:30:00', 2001, 'English', 'his father&#039;s perpetually untidy black hair, his mother&#039;s bright green eyes, and a lightning bolt-shaped scar on his forehead.', 'IMG-63fb52d987be98.88241069.png', 'https://www.youtube.com/embed/7XqgEU60skY&quot; ', 1),
+(44, 'Black Panther', 'English', 'Adventure', '02:15:00', 2018, 'English', '                        After his father\'s death, T\'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation. \r\n                    ', 'IMG-63fb53a4ecc0e2.21299693.png', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xjDjIWPwcPU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', 1),
+(45, 'Ant Man', 'English', 'Adventure', '02:00:00', 2023, 'English', 'Ant-Man and the Wasp find themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that pushes them beyond the limits of what they thought was possible.', 'IMG-63fb54940e75b0.87398430.jpg', '&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/5WfTEZJnv_8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;', 1),
+(47, 'Parker', 'English', 'Action', '02:00:00', 2011, 'English', 'Parker, a thief, is double-crossed by his crew members, who leave him to die. However, he survives and decides to settle scores with them, with the help of an unlikely ally.', 'IMG-63fb5a84defd42.87542619.png', '&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/QGu6InUcdUY&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;', 1),
+(48, 'Morbius', 'English', 'Action', '01:20:30', 2011, 'English', ': Watch out for the thrilling moments, gravity-defying stunts and special effects that compensate for what’s missing in making it the action-adventure extravaganza it was expected to be.', 'IMG-63fb6a3f47dbb4.14100292.jpg', '&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oZ6iiRrz1SY&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;', 0);
 
 -- --------------------------------------------------------
 
@@ -153,15 +157,17 @@ CREATE TABLE `shows` (
 --
 
 INSERT INTO `shows` (`show_id`, `movie_id`, `time_start`, `hall_id`, `date_show`) VALUES
-(1, 29, '2:00', 2, '2023-02-08'),
-(22, 32, 'A1', 1, '2023-01-01'),
-(23, 34, 'A1', 2, '2023-01-25'),
-(24, 35, 'A7', 4, '2023-01-01'),
-(25, 33, 'A1', 3, '2023-01-01'),
-(26, 36, 'A5', 3, '2023-01-01'),
-(27, 32, 'A1', 1, '2023-01-01'),
-(28, 36, '7:00 PM', 1, '2023-01-18'),
-(29, 32, '7:00 PM', 4, '2023-01-31');
+(33, 39, '2:30 AM', 1, '2023-01-01'),
+(34, 40, '9:00 AM', 1, '2023-01-01'),
+(36, 41, '11:00 AM', 1, '2023-01-01'),
+(37, 42, '11:00 AM', 2, '2023-01-12'),
+(38, 43, '11:00 AM', 3, '2023-01-31'),
+(39, 44, '1:00 PM', 3, '2023-01-01'),
+(40, 45, '1:00 PM', 2, '2023-01-01'),
+(41, 43, '11:00 AM', 3, '2023-01-31'),
+(42, 44, '1:00 PM', 3, '2023-01-01'),
+(43, 45, '1:00 PM', 2, '2023-01-01'),
+(44, 47, '3:00 PM', 2, '2023-01-01');
 
 -- --------------------------------------------------------
 
@@ -194,22 +200,21 @@ CREATE TABLE `users` (
   `last_name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `role` varchar(50) NOT NULL DEFAULT 'customer'
+  `role` varchar(50) NOT NULL DEFAULT 'customer',
+  `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `role`) VALUES
-(1, 'Marilin', 'Kienzle', 'mkienzle0@spiegel.de', 'Gl0IlA5xqYtD', 'customer'),
-(2, 'Aldwin', 'Baddiley', 'abaddiley1@berkeley.edu', 'YOwdt8SbH', 'customer'),
-(3, 'Lelah', 'Millership', 'lmillership2@skyrock.com', 'M60z3TUzTg9C', 'seller'),
-(4, 'Wildon', 'Jemmison', 'wjemmison3@drupal.org', 'vVpuk9ggXD3g', 'seller'),
-(5, 'Boigie', 'Peacham', 'bpeacham4@nifty.com', 'w2prwz7gUe', 'customer'),
-(9, 'Ni', 'Ka', 'sreyrea.han@student.pasedfghjresnumerquies.org', '$2y$10$p.nsEQfGbH5iuLEZlDZDB.zUIzdOZ/ss9bx.KOQRUCKZYiDqthgg6', 'seller'),
-(10, 'lak', 'na', 'dd@gmail.com', '$2y$10$yM9BVamKEfeDDBuVEGMzWe4.VOTSugOK/zXuATKws89ux1ZDYbsZu', 'customer'),
-(11, 'ma', 'na', '09dd@gmail.com', '$2y$10$NLMjN0E9W3dllp308qB66OLAlD5Au/c1KOKa64jqnOBxJ5OMGEtby', 'customer');
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `role`, `image`) VALUES
+(17, 'Nong', 'Phloeut', 'nongphloeut123@gmail.com', '$2y$10$9GT1JFj8Af6BtNzp0DOZn.pysrM22F5FEYD5un2pXaGdmVIuEz8py', 'seller', 'IMG-63fb3b076d7216.97439373.png'),
+(18, 'Nong', 'Phloeut', 'nongphloeut21@gmail.com', '$2y$10$IA9jvYVZQTBfSgLtml0AA.zCh8wmtzArlofxHOspO4H4dRORav4d.', 'customer', ''),
+(19, 'Nong', 'Phloeut', 'nongphloeut1234@gmail.com', '$2y$10$3sNT40UT.d247j0uVww1Q.OWQbrEYm220xXeJqrbnUN.rK49wLzZ6', 'customer', 'IMG-63fb62b13bfc45.66178265.png'),
+(20, 'Nong', 'Phleut', 'nongphloeut222@gmail.com', '$2y$10$1/zZs1qaj/PFXhXEDs6H/u2VWKoM/xwAlV5ryIYghOy8fSjfOGeFC', 'customer', 'IMG-63fb65503a1730.50597223.png'),
+(21, 'Nong', 'Phloeut', 'nongphloeut1222@gmail.com', '$2y$10$cIlsR0sDjVD1k8n/XOdiYeyWfTP2cTrNyFzSeExU4kcU.o2Nu4FWC', 'seller', 'IMG-63fb66e81d3f02.54356633.png'),
+(22, 'kadin', 'sit', 'kadin@gmail.com', '$2y$10$Ci5hhphKzeOx4WTpxx9JouXjEL1vY9f6YQCQ5TJyErwGEYxNroxlm', 'customer', 'IMG-6401fa58f2f155.85834839.png');
 
 -- --------------------------------------------------------
 
@@ -302,19 +307,19 @@ ALTER TABLE `hall_seats`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
