@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 17, 2023 at 03:31 PM
+-- Host: 127.0.0.1
+-- Generation Time: Feb 19, 2023 at 01:31 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,7 +87,8 @@ CREATE TABLE `hall_seats` (
 -- (See below for the actual view)
 --
 CREATE TABLE `hall_shows` (
-`movie_id` int(11)
+`show_id` int(11)
+,`movie_id` int(11)
 ,`title` varchar(100)
 ,`genre` varchar(100)
 ,`country` varchar(100)
@@ -127,10 +128,11 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`movie_id`, `title`, `country`, `genre`, `duration`, `released`, `language`, `description`, `image`, `trailer`, `post`) VALUES
-(28, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', 'the king', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 1),
-(29, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', 'the king', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 0),
-(30, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', 'the king', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 0),
-(31, 'The king', 'English', 'Adventure', '01:11:00', 2023, 'English', '                        the king \r\n                    ', 'IMG-63eeee7488ae47.72690192.jpg', 'https://www.youtube.com/embed/fDg3PTQ1tzM&quot;', 0);
+(32, 'cxvcb', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
+(33, 'asdf', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
+(34, 'niv', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
+(35, 'the', 'France', 'Action', '02:00:07', 2023, 'Khmer', 'sdgfhgjhkj', 'IMG-63f097a60668a4.69175820.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1),
+(36, 'x cv', 'France', 'Adventure', '02:00:07', 2023, 'Poland', 'adsfdgfhgj ASDSFDGHGHMJ sadfsdgf', 'IMG-63f0aafff33515.45391044.jpg', 'https://www.youtube.com/embed/U9Br9QWyq9s', 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +153,15 @@ CREATE TABLE `shows` (
 --
 
 INSERT INTO `shows` (`show_id`, `movie_id`, `time_start`, `hall_id`, `date_show`) VALUES
-(1, 29, '2:00', 2, '2023-02-08');
+(1, 29, '2:00', 2, '2023-02-08'),
+(22, 32, 'A1', 1, '2023-01-01'),
+(23, 34, 'A1', 2, '2023-01-25'),
+(24, 35, 'A7', 4, '2023-01-01'),
+(25, 33, 'A1', 3, '2023-01-01'),
+(26, 36, 'A5', 3, '2023-01-01'),
+(27, 32, 'A1', 1, '2023-01-01'),
+(28, 36, '7:00 PM', 1, '2023-01-18'),
+(29, 32, '7:00 PM', 4, '2023-01-31');
 
 -- --------------------------------------------------------
 
@@ -208,7 +218,7 @@ INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, 
 --
 DROP TABLE IF EXISTS `hall_shows`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `hall_shows`  AS SELECT `movies`.`movie_id` AS `movie_id`, `movies`.`title` AS `title`, `movies`.`genre` AS `genre`, `movies`.`country` AS `country`, `movies`.`duration` AS `duration`, `movies`.`released` AS `released`, `movies`.`language` AS `language`, `movies`.`description` AS `description`, `movies`.`image` AS `image`, `movies`.`trailer` AS `trailer`, `shows`.`date_show` AS `date_show`, `shows`.`time_start` AS `time_start`, `halls`.`hall_name` AS `hall_name` FROM ((`shows` join `movies` on(`shows`.`movie_id` = `movies`.`movie_id`)) join `halls` on(`shows`.`hall_id` = `halls`.`hall_id`))  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `hall_shows`  AS SELECT `shows`.`show_id` AS `show_id`, `movies`.`movie_id` AS `movie_id`, `movies`.`title` AS `title`, `movies`.`genre` AS `genre`, `movies`.`country` AS `country`, `movies`.`duration` AS `duration`, `movies`.`released` AS `released`, `movies`.`language` AS `language`, `movies`.`description` AS `description`, `movies`.`image` AS `image`, `movies`.`trailer` AS `trailer`, `shows`.`date_show` AS `date_show`, `shows`.`time_start` AS `time_start`, `halls`.`hall_name` AS `hall_name` FROM ((`shows` join `movies` on(`shows`.`movie_id` = `movies`.`movie_id`)) join `halls` on(`shows`.`hall_id` = `halls`.`hall_id`))  ;
 
 -- --------------------------------------------------------
 
@@ -292,13 +302,13 @@ ALTER TABLE `hall_seats`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `show_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
